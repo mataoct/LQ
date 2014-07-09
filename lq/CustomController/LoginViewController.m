@@ -1,0 +1,130 @@
+//
+//  LoginViewController.m
+//  lq
+//
+//  Created by  matao on 14-7-6.
+//  Copyright (c) 2014年 马 涛. All rights reserved.
+//
+
+#import "LoginViewController.h"
+
+@interface LoginViewController ()
+
+@end
+
+@implementation LoginViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+
+    
+    
+    _headText = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 260, 20)];
+    
+    
+    _headText.text = @"tmd赶快登陆";
+    _headText.textAlignment = NSTextAlignmentCenter;
+    
+    _userName = [[UITextField alloc] initWithFrame:CGRectMake(30, 60, 260, 20)];
+    _userPwd = [[UITextField alloc] initWithFrame:CGRectMake(30, 90, 260, 20)];
+
+    _userPwd.placeholder = @"密码";
+    _userName.placeholder = @"用户名";
+    
+    
+    _userName.returnKeyType = UIReturnKeyDone;
+    _userPwd.returnKeyType = UIReturnKeyDone;
+    
+    _userPwd.delegate = self;
+    _userName.delegate = self;
+    
+//    _userName.backgroundColor = [UIColor greenColor];
+//    _userPwd.backgroundColor = [UIColor greenColor] ;
+    
+    
+    _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 120, 120, 20)];
+    _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 120, 120, 20)];
+    
+    [_rememberPwdBtn setTitle:@"记住密码" forState:UIControlStateNormal];
+    [_forgetPwdBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
+    
+    _forgetPwdBtn.backgroundColor = [UIColor blueColor];
+    _rememberPwdBtn.backgroundColor = [UIColor blueColor];
+    
+    _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 160, 260, 30)];
+    [_loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
+    _loginBtn.backgroundColor = [UIColor greenColor];
+    
+    _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 200, 120, 20)];
+    _fastRegBtn.backgroundColor = [UIColor grayColor];
+    [_fastRegBtn setTitle:@"快速注册" forState:UIControlStateNormal];
+    [_fastRegBtn addTarget:self action:@selector(gotoRegist) forControlEvents:UIControlEventTouchUpInside];
+    
+    _subText =[[UILabel alloc] initWithFrame:CGRectMake(30, 230, 260, 20)];
+    _subText.text = @"其他登陆方式";
+    _subText.textAlignment   = NSTextAlignmentCenter;
+    
+    
+    _otherLoginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 260, 50, 50)];
+    _otherLoginBtn.backgroundColor =[UIColor purpleColor];
+    
+    
+    NSLog(@"view loaded");
+    
+    [self.view addSubview:_headText];
+    [self.view addSubview:_userPwd];
+    [self.view addSubview:_userName];
+    [self.view addSubview:_rememberPwdBtn];
+    [self.view addSubview:_forgetPwdBtn];
+    [self.view addSubview:_loginBtn];
+    [self.view addSubview:_fastRegBtn];
+    [self.view addSubview:_subText];
+    [self.view addSubview:_otherLoginBtn];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == _userName || textField == _userPwd) {
+        
+        NSLog(@"heheh");
+        
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+
+-(void)gotoRegist
+{
+    RegistViewController *registVC = [[RegistViewController alloc] init];
+    [self.navigationController pushViewController:registVC animated:YES];
+}
+
+@end
