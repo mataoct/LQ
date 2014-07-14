@@ -57,7 +57,13 @@
     
     _loginVC = [[LoginViewController alloc] init];
     _loginVC.title = @"会员";
-    _memberCenterNC = [[MainNavigationController alloc] initWithRootViewController:_loginVC];
+    
+    
+    _mbVC = [[MemberCenterViewController alloc] init];
+    _mbVC.title  = @"会员";
+    
+//    _memberCenterNC = [[MainNavigationController alloc] initWithRootViewController:_loginVC];
+    _memberCenterNC = [[MainNavigationController alloc] initWithRootViewController:_mbVC];
     
     UITabBarItem *memberCenterItem = [[UITabBarItem alloc] initWithTitle:@"会员" image:nil selectedImage:nil];
     _memberCenterNC.tabBarItem=memberCenterItem ;

@@ -16,6 +16,8 @@
 
 #import "MenuViewController.h"
 
+#import "MemberCenterViewController.h"
+
 @interface LQUITabBarController : UITabBarController<UITabBarControllerDelegate>
 
 //@property (nonatomic,strong) MainViewController *mainVC;
@@ -23,7 +25,7 @@
 @property (nonatomic,strong) MainNavigationController *mainNC;
 
 @property (nonatomic,strong) LoginViewController *loginVC;
-
+@property (nonatomic,strong) MemberCenterViewController *mbVC;
 @property (nonatomic,strong) MainNavigationController *memberCenterNC;
 
 @property (nonatomic,strong) MenuViewController *menuVC;

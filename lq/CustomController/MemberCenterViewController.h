@@ -10,4 +10,31 @@
 
 @interface MemberCenterViewController : LQ7ViewController
 
+@property (nonatomic,strong) UIImageView *headImageView;
+@property (nonatomic,strong) UILabel *nameLabel;
+@property (nonatomic,strong) UILabel *telLabel;
+@property (nonatomic,strong) UIImageView *sexImageView;
+@property (nonatomic,strong) UIButton *punchBtn;
+
+@property (nonatomic,strong) UILabel *priceLabel;
+@property (nonatomic,strong) UILabel *priceLabel2;
+@property (nonatomic,strong) UILabel *integrationLabel;
+@property (nonatomic,strong) UILabel *integrationLabel2;
+@property (nonatomic,strong) UILabel *daylyLabel;
+@property (nonatomic,strong) UILabel *daylyLabel2;
+
+
+
+@property (nonatomic,strong) UIButton *myOrderBtn;
+@property (nonatomic,strong) UIButton *myFavorBtn;
+@property (nonatomic,strong) UIButton *myCouponBtn;
+
+@property (nonatomic,strong) UIButton *myCommentBtn;
+@property (nonatomic,strong) UIButton *myAddrBtn;
+@property (nonatomic,strong) UIButton *bussInfoBtn;
+
+@property (nonatomic,strong) UIButton *logoutBtn;
+
+
+
 @end
