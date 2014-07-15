@@ -7,6 +7,7 @@
 //
 
 #import "MemberCenterViewController.h"
+#import "ShooInfoController.h"
 
 @interface MemberCenterViewController ()
 
@@ -87,6 +88,9 @@
     _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 190, 300, 40)];
     _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 230, 300, 40)];
     
+    [_bussInfoBtn setTitle:@"商家信息" forState:UIControlStateNormal];
+    [_bussInfoBtn addTarget:self action:@selector(gotoShopInfoController) forControlEvents:UIControlEventTouchUpInside];
+    
     
     
     [_myOrderBtn setTitle:@"我的订单" forState:UIControlStateNormal];
@@ -148,5 +152,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(void)gotoShopInfoController
+{
+    ShooInfoController *shopInfoVC = [[ShooInfoController alloc] init];
+//    shopInfoVC.title = @"商家信息";
+    [self.navigationController pushViewController:shopInfoVC animated:YES];
+    
+}
 
 @end

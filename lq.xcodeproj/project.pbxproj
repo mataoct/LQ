@@ -12,6 +12,7 @@
 		A01AD62D1952D4D4005DD9C4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD6281952D4D4005DD9C4 /* CycleScrollView.m */; };
 		A01AD62F1952D4D4005DD9C4 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD62C1952D4D4005DD9C4 /* NSTimer+Addition.m */; };
 		A03E0BB0196AB9C8007C5612 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E0BAF196AB9C8007C5612 /* RegistViewController.m */; };
+		A05E832D1975698600E2B553 /* ShooInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E832C1975698600E2B553 /* ShooInfoController.m */; };
 		A0664C92195E96E300F3E490 /* BaseRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0664C91195E96E300F3E490 /* BaseRequestModel.m */; };
 		A0664C95195E981C00F3E490 /* MainPageBaseRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0664C94195E981C00F3E490 /* MainPageBaseRequestModel.m */; };
 		A09EC04F1951ABD70036219B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC04E1951ABD70036219B /* Foundation.framework */; };
@@ -112,6 +113,8 @@
 		A01AD62C1952D4D4005DD9C4 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		A03E0BAE196AB9C8007C5612 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistViewController.h; path = CustomController/RegistViewController.h; sourceTree = "<group>"; };
 		A03E0BAF196AB9C8007C5612 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistViewController.m; path = CustomController/RegistViewController.m; sourceTree = "<group>"; };
+		A05E832B1975698600E2B553 /* ShooInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShooInfoController.h; path = CustomController/ShooInfoController.h; sourceTree = "<group>"; };
+		A05E832C1975698600E2B553 /* ShooInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShooInfoController.m; path = CustomController/ShooInfoController.m; sourceTree = "<group>"; };
 		A0664C90195E96E300F3E490 /* BaseRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseRequestModel.h; path = Model/BaseRequestModel.h; sourceTree = "<group>"; };
 		A0664C91195E96E300F3E490 /* BaseRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseRequestModel.m; path = Model/BaseRequestModel.m; sourceTree = "<group>"; };
 		A0664C93195E981C00F3E490 /* MainPageBaseRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainPageBaseRequestModel.h; path = Model/MainPageBaseRequestModel.h; sourceTree = "<group>"; };
@@ -896,6 +899,8 @@
 				A0ECE334196B94B9003E0BE3 /* MemberCenterViewController.m */,
 				A0ECE336196B975C003E0BE3 /* MenuViewController.h */,
 				A0ECE337196B975C003E0BE3 /* MenuViewController.m */,
+				A05E832B1975698600E2B553 /* ShooInfoController.h */,
+				A05E832C1975698600E2B553 /* ShooInfoController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1030,6 +1035,7 @@
 				A01AD62F1952D4D4005DD9C4 /* NSTimer+Addition.m in Sources */,
 				A09EC157195278FC0036219B /* AlixPayResult.m in Sources */,
 				A01AD62D1952D4D4005DD9C4 /* CycleScrollView.m in Sources */,
+				A05E832D1975698600E2B553 /* ShooInfoController.m in Sources */,
 				A09EC163195278FC0036219B /* ASIDownloadCache.m in Sources */,
 				A0B10D3119693F6D003CFAC4 /* LoginViewController.m in Sources */,
 				A09EC168195278FC0036219B /* Reachability.m in Sources */,
