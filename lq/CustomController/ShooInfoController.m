@@ -66,7 +66,7 @@
     _headLabel.backgroundColor = [UIColor greenColor];
     
     _introduceField.text = @"简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容";
-    _introduceField.editable = false;
+    _introduceField.editable  = false;
     _introduceField.backgroundColor = [UIColor orangeColor];
     
     [_introduceView addSubview:_headLabel];
