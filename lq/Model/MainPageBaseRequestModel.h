@@ -9,7 +9,7 @@
 #import "BaseRequestModel.h"
 #import "CoreHelper.h"
 
-@interface MainPageBaseRequestModel : BaseRequestModel
+@interface MainPageBaseRequestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 
 @property (nonatomic,strong) NSString *sellId;
 

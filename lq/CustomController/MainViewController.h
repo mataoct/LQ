@@ -12,10 +12,13 @@
 #import "UIImageView+WebCache.h"
 #import "MenuItemView.h"
 
+
+#import "MainPageBaseRequestModel.h"
 #import "DiscountTableViewController.h"
 
-@interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate>
+@interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate>
 
 @property (nonatomic,retain) CycleScrollView *headView;
+@property (nonatomic,retain) MainPageBaseRequestModel  *requestModel;
 
 @end

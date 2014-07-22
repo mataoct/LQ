@@ -47,6 +47,11 @@
 //    [self.item setRightBarButtonItem:rightItem];
     
     
+    _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:@"100"];
+    _requestModel.delegate = self;
+    [_requestModel postData];
+    
+    
     [self setBackButtonHide:YES];
     
     NSArray *arr = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/15/xyws20140615_3.jpg",@"img",@"aciontUrl1",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/19/zqmzd20140619.jpg",@"img",@"aciontUrl2",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/15/zx20140615_2.jpg",@"img",@"aciontUrl3",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://i3.17173.itc.cn/2014/818/2014/06/0620/yzqx-sy.jpg",@"img",@"aciontUrl4",@"url", nil], nil];

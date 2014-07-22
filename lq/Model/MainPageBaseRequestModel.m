@@ -34,7 +34,7 @@
     
     NSString *token = [CoreHelper tokenController:@"controller" action:@"action"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@""];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiGoodsHandler.ashx?action=getpageinfo"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -46,18 +46,22 @@
     
     [request setDelegate:self];
     
+    NSLog(@"post ready");
+    
     [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
 }
 
 
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
-    
+    NSLog(@"post start");
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
-    
+    NSLog(@"%@",request.responseString);
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
