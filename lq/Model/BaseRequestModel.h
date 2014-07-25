@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
-
+#import "BaseResponseModel.h"
 
 
 @protocol RequestModelDelegate <NSObject>
 
 @required
 
--(void)requestSuccess;
+-(void)requestSuccess:(BaseResponseModel *)model;
 -(void)requestFailed;
 
 @end

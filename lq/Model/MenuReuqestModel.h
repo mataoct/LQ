@@ -1,16 +1,16 @@
 //
-//  MainPageBaseRequestModel.h
+//  MenuReuqestModel.h
 //  lq
 //
-//  Created by  matao on 14-6-28.
+//  Created by 马涛 on 14-7-25.
 //  Copyright (c) 2014年 马 涛. All rights reserved.
 //
 
 #import "BaseRequestModel.h"
 #import "CoreHelper.h"
-#import "MainResponseModel.h"
+#import "MenuResponseModel.h"
 
-@interface MainPageBaseRequestModel : BaseRequestModel<ASIHTTPRequestDelegate>
+@interface MenuReuqestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 
 @property (nonatomic,strong) NSString *sellId;
 

@@ -1,34 +1,27 @@
 //
-//  MainPageBaseRequestModel.m
+//  MenuReuqestModel.m
 //  lq
 //
-//  Created by  matao on 14-6-28.
+//  Created by 马涛 on 14-7-25.
 //  Copyright (c) 2014年 马 涛. All rights reserved.
 //
 
-#import "MainPageBaseRequestModel.h"
-#import "BaseResponseModel.h"
+#import "MenuReuqestModel.h"
 
-@implementation MainPageBaseRequestModel
+@implementation MenuReuqestModel
+
 
 -(id)initWithSellId:(NSString *)sellerId
 {
     self = [super init];
     if (self) {
         //
-        
         _sellId = [[NSString alloc] init];
-        
         _sellId = sellerId;
         
     }
     return self;
 }
-
-
-
-
-
 
 -(void)postData
 {
@@ -62,25 +55,23 @@
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
-//    NSLog(@"%@",request.responseString);
-
+    //    NSLog(@"%@",request.responseString);
+    
     NSError *err;
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&err];
-    MainResponseModel *model = [[MainResponseModel alloc] initWithDic:jsonDic];
+    MenuResponseModel *model = [[MenuResponseModel alloc] initWithDic:jsonDic];
     if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
         [[super delegate] requestSuccess:model];
     }
     
     
-
+    
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     
 }
-
-
 
 
 

@@ -184,6 +184,14 @@
 
 
 
+-(void)requestFailed
+{
+}
 
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    MainResponseModel *mainResponseModel = (MainResponseModel *)model;
+    NSLog(@"model %@",mainResponseModel.sliderArr);
+}
 
 @end

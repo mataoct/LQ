@@ -28,6 +28,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    _menuRequest = [[MenuReuqestModel alloc] initWithSellId:@"100"];
+    
+    _menuRequest.delegate = self;
+    [_menuRequest postData];
+    
+    
     _classfy = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 70, 20)];
     _volume = [[UIButton alloc] initWithFrame:CGRectMake(90, 30, 70, 20)];
     _time = [[UIButton alloc] initWithFrame:CGRectMake(160, 30, 70, 20)];
@@ -93,6 +100,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    MenuReuqestModel *menuRequestModel = (MenuReuqestModel *)model;
+    
+    NSLog(@"%@",menuRequestModel);
+}
+
+-(void)requestFailed
+{
+    
 }
 
 @end
