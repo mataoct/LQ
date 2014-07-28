@@ -33,9 +33,9 @@
 -(void)postData
 {
     
-    NSString *token = [CoreHelper tokenController:@"ApiGoodsHandler" action:@"getgoodslist"];
+    NSString *token = [CoreHelper tokenController:@"ApiGoodsHandler" action:@"getpageinfo"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiGoodsHandler.ashx?action=getgoodslist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiGoodsHandler.ashx?action=getpageinfo"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

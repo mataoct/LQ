@@ -15,6 +15,8 @@
 		A010B0D9198263FD00E170DA /* MenuResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0D8198263FD00E170DA /* MenuResponseModel.m */; };
 		A010B0DC1982646000E170DA /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0DB1982646000E170DA /* GoodsModel.m */; };
 		A010B0DF1982647B00E170DA /* CategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0DE1982647B00E170DA /* CategoriesModel.m */; };
+		A010B0E219863B2000E170DA /* ProductionRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0E119863B2000E170DA /* ProductionRequestModel.m */; };
+		A010B0E51986428600E170DA /* ProdutionResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0E41986428600E170DA /* ProdutionResponseModel.m */; };
 		A016D668195FEFD9006C7AEB /* CoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A016D667195FEFD9006C7AEB /* CoreHelper.m */; };
 		A016D66B195FF0A6006C7AEB /* NSString+MD5HexDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = A016D66A195FF0A6006C7AEB /* NSString+MD5HexDigest.m */; };
 		A01AD62D1952D4D4005DD9C4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD6281952D4D4005DD9C4 /* CycleScrollView.m */; };
@@ -128,6 +130,10 @@
 		A010B0DB1982646000E170DA /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoodsModel.m; path = Model/GoodsModel.m; sourceTree = "<group>"; };
 		A010B0DD1982647B00E170DA /* CategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesModel.h; path = Model/CategoriesModel.h; sourceTree = "<group>"; };
 		A010B0DE1982647B00E170DA /* CategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesModel.m; path = Model/CategoriesModel.m; sourceTree = "<group>"; };
+		A010B0E019863B2000E170DA /* ProductionRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductionRequestModel.h; path = Model/ProductionRequestModel.h; sourceTree = "<group>"; };
+		A010B0E119863B2000E170DA /* ProductionRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductionRequestModel.m; path = Model/ProductionRequestModel.m; sourceTree = "<group>"; };
+		A010B0E31986428600E170DA /* ProdutionResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProdutionResponseModel.h; path = Model/ProdutionResponseModel.h; sourceTree = "<group>"; };
+		A010B0E41986428600E170DA /* ProdutionResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProdutionResponseModel.m; path = Model/ProdutionResponseModel.m; sourceTree = "<group>"; };
 		A016D666195FEFD9006C7AEB /* CoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreHelper.h; path = Helper/CoreHelper.h; sourceTree = "<group>"; };
 		A016D667195FEFD9006C7AEB /* CoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreHelper.m; path = Helper/CoreHelper.m; sourceTree = "<group>"; };
 		A016D669195FF0A6006C7AEB /* NSString+MD5HexDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5HexDigest.h"; path = "CoreHelper/NSString+MD5HexDigest.h"; sourceTree = "<group>"; };
@@ -491,6 +497,8 @@
 				A0ECE331196B8FB0003E0BE3 /* RegistModel.m */,
 				A010B0D419825EA800E170DA /* MenuReuqestModel.h */,
 				A010B0D519825EA800E170DA /* MenuReuqestModel.m */,
+				A010B0E019863B2000E170DA /* ProductionRequestModel.h */,
+				A010B0E119863B2000E170DA /* ProductionRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -514,6 +522,8 @@
 				A010B0DB1982646000E170DA /* GoodsModel.m */,
 				A010B0DD1982647B00E170DA /* CategoriesModel.h */,
 				A010B0DE1982647B00E170DA /* CategoriesModel.m */,
+				A010B0E31986428600E170DA /* ProdutionResponseModel.h */,
+				A010B0E41986428600E170DA /* ProdutionResponseModel.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -1093,6 +1103,7 @@
 				A09EC168195278FC0036219B /* Reachability.m in Sources */,
 				A0B10D3419698DAE003CFAC4 /* LQ7ViewController.m in Sources */,
 				A09EC15A195278FC0036219B /* SBJSON.m in Sources */,
+				A010B0E51986428600E170DA /* ProdutionResponseModel.m in Sources */,
 				A09EC161195278FC0036219B /* ASIDataCompressor.m in Sources */,
 				A09EC16F195278FC0036219B /* SDImageCache.m in Sources */,
 				A09EC177195278FC0036219B /* SVProgressHUD.m in Sources */,
@@ -1103,6 +1114,7 @@
 				A010B0CD1982436D00E170DA /* AdModel.m in Sources */,
 				A09EC197195296FA0036219B /* LQUITabBarController.m in Sources */,
 				A09EC05F1951ABD70036219B /* AppDelegate.m in Sources */,
+				A010B0E219863B2000E170DA /* ProductionRequestModel.m in Sources */,
 				A09EC170195278FC0036219B /* SDWebImageDecoder.m in Sources */,
 				A09EC164195278FC0036219B /* ASIFormDataRequest.m in Sources */,
 				A0664C95195E981C00F3E490 /* MainPageBaseRequestModel.m in Sources */,

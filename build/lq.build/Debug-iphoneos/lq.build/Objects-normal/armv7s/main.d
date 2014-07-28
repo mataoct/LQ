@@ -1,0 +1,41 @@
+dependencies: /WorkSpace/LQ3/lq/main.m /WorkSpace/LQ3/lq/AppDelegate.h \
+  /WorkSpace/LQ3/lq/CoreHelper/Base64codeFunc.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUITabBarController.h \
+  /WorkSpace/LQ3/lq/CustomController/MainViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUIViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/CycleScrollView/CycleScrollView.h \
+  /WorkSpace/LQ3/lq/SDWebImage/UIImageView+WebCache.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageCompat.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManagerDelegate.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManager.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h \
+  /WorkSpace/LQ3/lq/CustomView/MenuItemView.h \
+  /WorkSpace/LQ3/lq/Model/MainPageBaseRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/BaseRequestModel.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIFormDataRequest.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequest.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequestConfig.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequestDelegate.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIProgressDelegate.h \
+  /WorkSpace/LQ3/lq/ASIHttpRequest/ASICacheDelegate.h \
+  /WorkSpace/LQ3/lq/Model/BaseResponseModel.h \
+  /WorkSpace/LQ3/lq/Helper/CoreHelper.h \
+  /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h \
+  /WorkSpace/LQ3/lq/Model/MainResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/SliderModel.h \
+  /WorkSpace/LQ3/lq/Model/AdModel.h /WorkSpace/LQ3/lq/Model/HotModel.h \
+  /WorkSpace/LQ3/lq/CustomController/DiscountTableViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/MainNavigationController.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUINavigationController.h \
+  /WorkSpace/LQ3/lq/CustomController/LoginViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/LQ7ViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/RegistViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/MenuViewController.h \
+  /WorkSpace/LQ3/lq/Model/MenuReuqestModel.h \
+  /WorkSpace/LQ3/lq/Model/MenuResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/CategoriesModel.h \
+  /WorkSpace/LQ3/lq/Model/GoodsModel.h \
+  /WorkSpace/LQ3/lq/Model/ProductionRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/ProdutionResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/MemberCenterViewController.h

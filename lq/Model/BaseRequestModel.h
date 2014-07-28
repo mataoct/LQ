@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
 #import "BaseResponseModel.h"
+#import "CoreHelper.h"
 
 
 @protocol RequestModelDelegate <NSObject>
@@ -24,6 +25,7 @@
 
 
 @property (nonatomic,assign) id<RequestModelDelegate> delegate;
+@property (nonatomic,assign) NSInteger tag;
 
 
 -(void)postData;

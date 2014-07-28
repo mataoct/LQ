@@ -53,6 +53,10 @@
     [_price setTitle:@"价格" forState:UIControlStateNormal];
     
     
+    
+    [_price addTarget:self action:@selector(interfacetest) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     [self.view addSubview:_classfy];
     [self.view addSubview:_volume];
     [self.view addSubview:_time];
@@ -104,7 +108,12 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    MenuReuqestModel *menuRequestModel = (MenuReuqestModel *)model;
+    
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+    
+    MenuResponseModel *menuRequestModel = (MenuResponseModel *)model;
     
     NSLog(@"%@",menuRequestModel);
 }
@@ -112,6 +121,15 @@
 -(void)requestFailed
 {
     
+}
+
+-(void)interfacetest
+{
+    _productionModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:@"1"];
+    _productionModel.delegate = self;
+    
+    _productionModel.tag = 1;
+    [_productionModel postData];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "LQ7ViewController.h"
 #import "MenuReuqestModel.h"
+#import "ProductionRequestModel.h"
 
 @interface MenuViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
@@ -17,6 +18,7 @@
 @property (nonatomic,strong) UIButton *time;
 @property (nonatomic,strong) UIButton *price;
 @property (nonatomic,strong) MenuReuqestModel *menuRequest;
+@property (nonatomic,strong) ProductionRequestModel *productionModel;
 
 //@property (nonatomic,strong) UIButton *classbtn;
 
