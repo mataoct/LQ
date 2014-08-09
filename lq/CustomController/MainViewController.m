@@ -73,19 +73,8 @@
 
         
         NSURL *url = [[NSURL alloc] initWithString:[[arr objectAtIndex:i] objectForKey:@"img"]];
-//        SDWebImageManager *manager = [SDWebImageManager sharedManager];UIImage *cachedImage = [manager imageWithURL:url]; // 将需要缓存的图片加载进来
-//        if (cachedImage) {
-//            // 如果Cache命中，则直接利用缓存的图片进行有关操作      // Use the cached image immediatly
-//        }
-//        else {
-//            // 如果Cache没有命中，则去下载指定网络位置的图片，并且给出一个委托方法      // Start an async download
-//            [manager downloadWithURL:url delegate:self];
-//        }
-        
-        
-        
-        
-        [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@""]];
+
+        [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
         tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
@@ -96,11 +85,12 @@
     _headView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
         return viewsArray[pageIndex];
     };
+    
     _headView.totalPagesCount = ^NSInteger(void){
         return [arr count];
     };
     _headView.TapActionBlock = ^(NSInteger pageIndex){
-        NSLog(@"点击了第%d个,%@",pageIndex,[[arr objectAtIndex:pageIndex] objectForKey:@"url"]);
+//        NSLog(@"点击了第%d个,%@",pageIndex,[[arr objectAtIndex:pageIndex] objectForKey:@"url"]);
     };
     [self.view addSubview:_headView];
     
@@ -130,6 +120,7 @@
     
     
     [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
+//    [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
     
     
     [self.view addSubview:fastOrder];
@@ -172,9 +163,15 @@
 
 -(void)jumpToDiscountTable
 {
-    DiscountTableViewController *discountTable = [[DiscountTableViewController alloc] initWithStyle:UITableViewStylePlain withDic:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil]];
+//    DiscountTableViewController *discountTable = [[DiscountTableViewController alloc] initWithStyle:UITableViewStylePlain withDic:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil]];
+//    
+//    [self.navigationController pushViewController:discountTable animated:YES];
     
-    [self.navigationController pushViewController:discountTable animated:YES];
+    
+    NSLog(@"%@",self.navigationController);
+    
+    CouponViewController *couponVC = [[CouponViewController alloc] initWithTitle:@"电子优惠券"];
+    [self.navigationController presentViewController:couponVC animated:YES completion:nil];
 }
 
 - (void)webImageManager:(SDWebImageManager *)imageManager didFinishWithImage:(UIImage *)image

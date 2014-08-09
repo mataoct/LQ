@@ -66,7 +66,7 @@
     
     DiscountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:discountCellStr];
     if (cell == nil) {
-        cell = [[DiscountTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:discountCellStr andModel:[NSDictionary dictionaryWithObjectsAndKeys:@"heh",@"hehe", nil]];
+        cell = [[DiscountTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:discountCellStr ];
     }
     
     // Configure the cell...

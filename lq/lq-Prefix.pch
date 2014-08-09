@@ -16,4 +16,4 @@
 #endif
 
 
-#define safeString(obj) ([obj isEqual:[NSNull null]] ? @"" : (obj))
+#define safeString(obj) ([obj isEqual:[NSNull null]] ? @"" : ([NSString stringWithFormat:@"%@",obj]))

@@ -14,7 +14,7 @@
 
 
 #import "MainPageBaseRequestModel.h"
-#import "DiscountTableViewController.h"
+#import "CouponViewController.h"
 
 @interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate>
 

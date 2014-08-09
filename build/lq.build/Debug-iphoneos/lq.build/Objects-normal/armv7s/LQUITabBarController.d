@@ -37,4 +37,15 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ3/lq/Model/GoodsModel.h \
   /WorkSpace/LQ3/lq/Model/ProductionRequestModel.h \
   /WorkSpace/LQ3/lq/Model/ProdutionResponseModel.h \
-  /WorkSpace/LQ3/lq/CustomController/MemberCenterViewController.h
+  /WorkSpace/LQ3/lq/CustomView/Cell/MenuTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomController/GoodsViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/CommentTableViewCell.h \
+  /WorkSpace/LQ3/lq/Model/CommentModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentReuqestModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentListResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/MemberCenterViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/CartViewController.h \
+  /WorkSpace/LQ3/lq/Model/CartRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/ShoppingCartListResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/ShoppingCartItemModel.h

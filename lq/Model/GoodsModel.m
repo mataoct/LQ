@@ -17,7 +17,10 @@
         //
         
         _title = [[NSString alloc] init];
-        _img = [[NSString alloc] init];
+        _img = [[NSURL alloc] init];
+        
+        _images = [[NSMutableArray alloc] init];
+        
         _gid = [[NSString alloc] init];
         _nowprice = [[NSString alloc] init];
         _originalprice = [[NSString alloc] init];
@@ -28,7 +31,18 @@
         
         
         _title = safeString([dic objectForKey:@"title"]);
-        _img = safeString([dic objectForKey:@"img"]);
+        
+        
+        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])];
+        
+        
+        NSArray *imageTempArr = [[dic objectForKey:@"data"] objectForKey:@"images"];
+        
+        for (id imageTemp in imageTempArr) {
+            NSURL *imageUrl = [[NSURL alloc] initWithString:safeString(imageTemp)];
+            [_images addObject:imageUrl];
+        }
+        
         _gid = safeString([dic objectForKey:@"gid"]);
         _nowprice = safeString([dic objectForKey:@"nowprice"]);
         _originalprice = safeString([dic objectForKey:@"originalprice"]);
@@ -36,6 +50,9 @@
         _score = safeString([dic objectForKey:@"score"]);
         _isfav = safeString([dic objectForKey:@"isfav"]);
         _content = safeString([dic objectForKey:@"content"]);
+        
+        
+
         
     }
     return self;

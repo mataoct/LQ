@@ -12,4 +12,5 @@
 static UIWebView *phoneCallWebView;
 @interface CoreHelper : NSObject
 +(NSString *)tokenController:(NSString *)controller action:(NSString *)action;
++(NSString *)timeStampToDate:(NSString *)timeStamp;
 @end

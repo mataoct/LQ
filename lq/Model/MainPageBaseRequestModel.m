@@ -1,4 +1,4 @@
-//
+   //
 //  MainPageBaseRequestModel.m
 //  lq
 //
@@ -57,7 +57,7 @@
 
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
-    NSLog(@"post start");
+    NSLog(@"main page post start");
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request

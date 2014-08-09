@@ -10,6 +10,10 @@
 
 @interface BaseResponseModel : NSObject
 
+
+@property (nonatomic,assign) NSInteger ResponseTag;
+
 -(id)initWithDic:(NSDictionary *)dic;
+
 
 @end

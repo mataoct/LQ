@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CouponModel.h"
 
 @interface DiscountTableViewCell : UITableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andModel:(NSDictionary *)dic;
+//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andModel:(NSDictionary *)dic;
+
+
+@property (nonatomic,strong) UIImageView *headImage;
+@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) UILabel *contentText;
+@property (nonatomic,strong) UILabel *timeLabel;
+@property (nonatomic,strong) UILabel *couponLabel;
+@property (nonatomic,strong) UILabel *couponValueLabel;
+@property (nonatomic,strong) UILabel *timeValueLabel;
+@property (nonatomic,strong) UIButton *checkBtn;
+@property (nonatomic,strong) CouponModel *model;
+
+-(void)fillCellByModel:(CouponModel *)model;
 
 @end

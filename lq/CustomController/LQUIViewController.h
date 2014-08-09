@@ -12,6 +12,7 @@
 
 //@property (nonatomic,retain) UINavigationController *navi;
 @property (nonatomic,retain) UINavigationItem *item;
+@property (nonatomic,retain) UINavigationBar *bar;
 -(id)initWithTitle:(NSString *)str;
 -(void)setBackButtonHide:(BOOL)hide;
 @end

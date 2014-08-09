@@ -52,6 +52,8 @@
     [_time setTitle:@"时间" forState:UIControlStateNormal];
     [_price setTitle:@"价格" forState:UIControlStateNormal];
     
+    _menuResponseModel = [[MenuResponseModel alloc] init];
+    
     
     
     [_price addTarget:self action:@selector(interfacetest) forControlEvents:UIControlEventTouchUpInside];
@@ -66,6 +68,8 @@
     NSLog(@"bounds height = %f",self.view.frame.size.height);
     
     _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(20, 60, 280, self.view.frame.size.height-20 - 40 - 44 - 60 - 20) style:UITableViewStylePlain];
+    _menuTable.delegate = self;
+    _menuTable.dataSource = self;
     
     _menuTable.backgroundColor = [UIColor purpleColor];
     
@@ -95,7 +99,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    NSLog(@"%d",[_menuResponseModel.goodsArr count]);
+    return [_menuResponseModel.goodsArr count]?[_menuResponseModel.goodsArr count]:0;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -103,19 +108,69 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    
+     NSLog(@"%d ",indexPath.row);
+    static NSString *cellIdetifier = @"cellMenu";
+    MenuTableViewCell *cell  = [_menuTable dequeueReusableCellWithIdentifier:cellIdetifier];
+    
+    if (cell       == nil) {
+        cell = [[MenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
+    }
+    
+    
+    GoodsModel *model = [[GoodsModel alloc]init];
+    
+    model = [ _menuResponseModel.goodsArr objectAtIndex:indexPath.row];
+    
+    
+    
+    NSLog(@"%@ ",model.title);
+    [cell fillCellByModel:[_menuResponseModel.goodsArr objectAtIndex:indexPath.row]];
+    NSLog(@"fill finish %d ",indexPath.row);
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    GoodsModel *model = [[GoodsModel alloc]init];
+    
+    model = [ _menuResponseModel.goodsArr objectAtIndex:indexPath.row];
+    
+    GoodsViewController  *goodController = [[GoodsViewController alloc] initWithGid:model.gid Title:@"菜品详情"];
+//    [self.navigationController pushViewController:goodController animated:YES];
+    
+    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:goodController];
+    
+    [self presentViewController:tempNavi animated:YES completion:nil];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     
-//    if (<#condition#>) {
-//        <#statements#>
-//    }
     
-    MenuResponseModel *menuRequestModel = (MenuResponseModel *)model;
-    
-    NSLog(@"%@",menuRequestModel);
+    switch (model.ResponseTag) {
+        case 200:
+        {
+            ProdutionResponseModel *productionResponsModel = (ProdutionResponseModel *)model;
+            NSLog(@"%@",productionResponsModel);
+        }
+            break;
+            
+        default:
+        {
+            _menuResponseModel = (MenuResponseModel *)model;
+            
+            [_menuTable reloadData];
+            NSLog(@"%@",_menuResponseModel);
+        }
+            break;
+    }
 }
 
 -(void)requestFailed
@@ -128,7 +183,7 @@
     _productionModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:@"1"];
     _productionModel.delegate = self;
     
-    _productionModel.tag = 1;
+    _productionModel.tag = 200;
     [_productionModel postData];
 }
 

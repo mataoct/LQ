@@ -12,7 +12,7 @@
 
 @property (nonatomic,retain) NSString *headTitle;
 
-@property (nonatomic,retain) UINavigationBar *bar;
+
 //@property (nonatomic,retain) UINavigationItem *item;
 @property (nonatomic,retain) UIBarButtonItem *leftItem;
 @end
@@ -95,7 +95,17 @@
 
 -(void)backToPrevious
 {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    if (self.navigationController) {
+         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+   
 }
 
 

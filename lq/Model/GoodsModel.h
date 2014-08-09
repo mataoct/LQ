@@ -11,7 +11,11 @@
 @interface GoodsModel : NSObject
 
 
-@property (nonatomic,strong) NSString *img;
+@property (nonatomic,strong) NSURL *img;
+
+
+@property (nonatomic,strong) NSMutableArray *images;
+
 @property (nonatomic,strong) NSString *gid;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *nowprice;

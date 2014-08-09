@@ -1,6 +1,7 @@
 dependencies: /WorkSpace/LQ3/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ3/lq/CustomController/MenuViewController.h \
   /WorkSpace/LQ3/lq/CustomController/LQ7ViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUINavigationController.h \
   /WorkSpace/LQ3/lq/Model/MenuReuqestModel.h \
   /WorkSpace/LQ3/lq/Model/BaseRequestModel.h \
   /WorkSpace/LQ3/lq/ASIHttpRequest/ASIFormDataRequest.h \
@@ -16,4 +17,19 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ3/lq/Model/CategoriesModel.h \
   /WorkSpace/LQ3/lq/Model/GoodsModel.h \
   /WorkSpace/LQ3/lq/Model/ProductionRequestModel.h \
-  /WorkSpace/LQ3/lq/Model/ProdutionResponseModel.h
+  /WorkSpace/LQ3/lq/Model/ProdutionResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/MenuTableViewCell.h \
+  /WorkSpace/LQ3/lq/SDWebImage/UIImageView+WebCache.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageCompat.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManagerDelegate.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManager.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h \
+  /WorkSpace/LQ3/lq/CustomController/GoodsViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUIViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/CycleScrollView/CycleScrollView.h \
+  /WorkSpace/LQ3/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/CommentTableViewCell.h \
+  /WorkSpace/LQ3/lq/Model/CommentModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentReuqestModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentListResponseModel.h

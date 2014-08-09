@@ -12,25 +12,12 @@
 
 -(id)initWithDic:(NSDictionary *)dic
 {
-//    @property (nonatomic,strong) NSMutableArray *imageArr;
-//    @property (nonatomic,strong) NSString *gid;
-//    @property (nonatomic,strong) NSString *title;
-//    @property (nonatomic,strong) NSString *nowprice;
-//    @property (nonatomic,strong) NSString *originalprice;
-//    @property (nonatomic,strong) NSString *sales;
-//    @property (nonatomic,strong) NSString *isfav;
-//    @property (nonatomic,strong) NSString *tag;
-//    @property (nonatomic,strong) NSString *content;
-//    @property (nonatomic,strong) NSString *favCount;
-//    @property (nonatomic,strong) NSString *shareCount;
-//    @property (nonatomic,strong) NSString *cid;
-//    @property (nonatomic,strong) NSString *cname;
     
     self = [super initWithDic:dic];
     if (self) {
         //
         
-        _imageArr = [[NSMutableArray alloc] initWithArray:[[dic objectForKey:@"data"] objectForKey:@"imges"]];
+        _imageArr = [[NSMutableArray alloc] initWithArray:[[dic objectForKey:@"data"] objectForKey:@"images"]];
         _gid = [[NSString alloc] init];
         _title = [[NSString alloc] init];
         _nowprice = [[NSString alloc] init];
@@ -45,19 +32,19 @@
         _cid = [[NSString alloc] init];
         _cname = [[NSString alloc] init];
         
-        _gid = [[dic objectForKey:@"data"] objectForKey:@"gid"];
-        _title = [[dic objectForKey:@"data"] objectForKey:@"title"];
-        _nowprice = [[dic objectForKey:@"data"] objectForKey:@"nowprice"];
-        _originalprice = [[dic objectForKey:@"data"] objectForKey:@"originalprice"];
-        _sales = [[dic objectForKey:@"data"] objectForKey:@"sales"];
-        _score = [[dic objectForKey:@"data"] objectForKey:@"score"];
-        _isfav = [[dic objectForKey:@"data"] objectForKey:@"isfav"];
-        _tag = [[dic objectForKey:@"data"] objectForKey:@"tag"];
-        _content = [[dic objectForKey:@"data"] objectForKey:@"content"];
-        _favCount = [[dic objectForKey:@"data"] objectForKey:@"favcount"];
-        _shareCount = [[dic objectForKey:@"data"] objectForKey:@"sharecount"];
-        _cid = [[dic objectForKey:@"data"] objectForKey:@"cid"];
-        _cname = [[dic objectForKey:@"data"] objectForKey:@"cname"];
+        _gid = safeString( [[dic objectForKey:@"data"] objectForKey:@"gid"]);
+        _title = safeString([[dic objectForKey:@"data"] objectForKey:@"title"]);
+        _nowprice = safeString([[dic objectForKey:@"data"] objectForKey:@"nowprice"]);
+        _originalprice = safeString([[dic objectForKey:@"data"] objectForKey:@"originalprice"]);
+        _sales = safeString([[dic objectForKey:@"data"] objectForKey:@"sales"]);
+        _score = safeString([[dic objectForKey:@"data"] objectForKey:@"score"]);
+        _isfav = safeString([[dic objectForKey:@"data"] objectForKey:@"isfav"]);
+        _tag = safeString([[dic objectForKey:@"data"] objectForKey:@"tag"]);
+        _content = safeString([[dic objectForKey:@"data"] objectForKey:@"content"]);
+        _favCount = safeString([[dic objectForKey:@"data"] objectForKey:@"favcount"]);
+        _shareCount = safeString([[dic objectForKey:@"data"] objectForKey:@"sharecount"]);
+        _cid = safeString([[dic objectForKey:@"data"] objectForKey:@"cid"]);
+        _cname = safeString([[dic objectForKey:@"data"] objectForKey:@"cname"]);
     }
     
     return self;

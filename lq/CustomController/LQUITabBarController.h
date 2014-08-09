@@ -18,6 +18,10 @@
 
 #import "MemberCenterViewController.h"
 
+#import "CartViewController.h"
+
+#import "InfoViewController.h"
+
 @interface LQUITabBarController : UITabBarController<UITabBarControllerDelegate>
 
 //@property (nonatomic,strong) MainViewController *mainVC;
@@ -29,7 +33,12 @@
 @property (nonatomic,strong) MainNavigationController *memberCenterNC;
 
 @property (nonatomic,strong) MenuViewController *menuVC;
-
 @property (nonatomic,strong) MainNavigationController *menuNC;
+
+@property (nonatomic,strong) CartViewController *cartVC;
+@property (nonatomic,strong) MainNavigationController *cartNC;
+
+@property (nonatomic,strong) InfoViewController *infoVC;
+@property (nonatomic,strong) MainNavigationController *infoNC;
 
 @end
