@@ -15,7 +15,7 @@
 @property (nonatomic,strong) NSString *totalPrice;
 @property (nonatomic,strong) NSURL *img;
 @property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSString *description;
+@property (nonatomic,strong) NSString *mydescription;
 @property (nonatomic,strong) NSString *nowPrice;
 @property (nonatomic,strong) NSString *originalPrice;
 

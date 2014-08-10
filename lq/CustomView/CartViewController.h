@@ -11,6 +11,8 @@
 #import "ShoppingCartListResponseModel.h"
 #import "CartTableViewCell.h"
 
+#import "SignatureRequestModel.h"
+
 @interface CartViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) UITableView *cartTable;
@@ -23,4 +25,6 @@
 @property (nonatomic,strong) ShoppingCartListResponseModel *responseModel;
 
 @property (nonatomic,strong) NSMutableDictionary  *selectDic;
+
+@property (nonatomic,strong) SignatureRequestModel *signRequestModel;
 @end

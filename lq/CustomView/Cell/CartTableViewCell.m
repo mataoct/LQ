@@ -71,7 +71,7 @@
     
     [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
     _titleLabel.text = _model.title;
-    _detailLabel.text = _model.description;
+    _detailLabel.text = _model.mydescription;
     _priceLabel.text = _model.nowPrice;
     _disPriceLabel.text = _model.originalPrice;
     _countValueLabel.text = _model.totalPrice;

@@ -133,6 +133,7 @@
 		A0FBCE7519543D17000146C3 /* MenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCE7419543D17000146C3 /* MenuItemView.m */; };
 		A0FBCE7919544EC3000146C3 /* DiscountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCE7819544EC3000146C3 /* DiscountTableViewController.m */; };
 		A0FBCE7C19544EF3000146C3 /* DiscountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCE7B19544EF3000146C3 /* DiscountTableViewCell.m */; };
+		A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */; };
 		A0FBDAE4198E327A007484A7 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBDAE3198E327A007484A7 /* MenuTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -497,6 +498,8 @@
 		A0FBCE7819544EC3000146C3 /* DiscountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscountTableViewController.m; path = CustomController/DiscountTableViewController.m; sourceTree = "<group>"; };
 		A0FBCE7A19544EF3000146C3 /* DiscountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscountTableViewCell.h; path = CustomView/Cell/DiscountTableViewCell.h; sourceTree = "<group>"; };
 		A0FBCE7B19544EF3000146C3 /* DiscountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscountTableViewCell.m; path = CustomView/Cell/DiscountTableViewCell.m; sourceTree = "<group>"; };
+		A0FBD7BE19966C3C004520B8 /* SignatureRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignatureRequestModel.h; path = Model/SignatureRequestModel.h; sourceTree = "<group>"; };
+		A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignatureRequestModel.m; path = Model/SignatureRequestModel.m; sourceTree = "<group>"; };
 		A0FBDAE2198E327A007484A7 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewCell.h; path = CustomView/Cell/MenuTableViewCell.h; sourceTree = "<group>"; };
 		A0FBDAE3198E327A007484A7 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewCell.m; path = CustomView/Cell/MenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -600,6 +603,8 @@
 				A00504CC199273E100318806 /* InfoRequestModel.m */,
 				A0A1C1451993D173009F7B5A /* CouponRequestModel.h */,
 				A0A1C1461993D173009F7B5A /* CouponRequestModel.m */,
+				A0FBD7BE19966C3C004520B8 /* SignatureRequestModel.h */,
+				A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -1273,6 +1278,7 @@
 				A09EC165195278FC0036219B /* ASIHTTPRequest.m in Sources */,
 				A09EC167195278FC0036219B /* ASINetworkQueue.m in Sources */,
 				A00504D01992756D00318806 /* InfoResponseModel.m in Sources */,
+				A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */,
 				A0664C92195E96E300F3E490 /* BaseRequestModel.m in Sources */,
 				A09EC166195278FC0036219B /* ASIInputStream.m in Sources */,
 				A002F1001995136A00ABFD4D /* CouponDetailViewController.m in Sources */,

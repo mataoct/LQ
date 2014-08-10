@@ -53,6 +53,7 @@
     _cartTable.dataSource = self;
     
     _requestModel.delegate = self;
+    _requestModel.tag = 10001;
     [_requestModel postData];
     
     [self.view addSubview:_cartTable];
@@ -86,8 +87,23 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (ShoppingCartListResponseModel *)model;
-    [self reLayoutViews];
+    
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            _responseModel = (ShoppingCartListResponseModel *)model;
+            [self reLayoutViews];
+        }
+            break;
+        case 10002:
+        {
+        
+        }
+        default:
+            break;
+    }
+    
+
 }
 
 -(void)reLayoutViews
@@ -125,6 +141,9 @@
     [cell changeSelectStatus];
     
     if (cell.selectStatus) {
+        
+//        ShoppingCartItemModel * tempModel = [[ShoppingCartItemModel alloc] initWithDic:[_responseModel.cartArr objectAtIndex:indexPath.row]];
+        
         [_selectDic setObject:[_responseModel.cartArr objectAtIndex:indexPath.row] forKey:[NSString stringWithFormat:@"%d",indexPath.row]];
     }
     else
@@ -142,7 +161,18 @@
 
 -(void)sendOrder
 {
-    NSLog(@"%@",_selectDic);
+//    for (ShoppingCartItemModel *item in [_selectDic allValues]) {
+//        
+//        NSLog(@"%@,%@",item.title,item.img);
+//    }
+
+    
+    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:@"3" args:[_selectDic allValues]];
+    
+    [_signRequestModel postData];
+    _signRequestModel.delegate = self;
+    _signRequestModel.tag = 10002;
+    
 }
 
 

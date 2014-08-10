@@ -22,7 +22,7 @@
         _totalPrice = [[NSString alloc] init];
         _num = [[NSString alloc] init];
         _title = [[NSString alloc] init];
-        _description= [[NSString alloc] init];
+        _mydescription= [[NSString alloc] init];
         _nowPrice = [[NSString alloc] init];
         _originalPrice = [[NSString alloc] init];
         
@@ -33,7 +33,7 @@
         _totalPrice = safeString([dic objectForKey:@"totalprice"]);
         _num = safeString([dic objectForKey:@"num"]);
         _title = safeString([dic objectForKey:@"title"]);
-        _description = safeString([dic objectForKey:@"description"]);
+        _mydescription = safeString([dic objectForKey:@"description"]);
         _nowPrice = safeString([dic objectForKey:@"nowprice"]);
         _originalPrice = safeString([dic objectForKey:@"originalprice"]);
     }
