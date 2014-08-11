@@ -16,10 +16,10 @@
     if (self) {
         //
         _gid = [[NSString alloc] init];
-        _img = [[NSString alloc] init];
+        _img = [[NSURL alloc] init];
         
         _gid = safeString([dic objectForKey:@"gid"]);
-        _img = safeString([dic objectForKey:@"img"]);
+        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])] ;
         
     }
     return self;

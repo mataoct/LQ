@@ -6,9 +6,11 @@
 //  Copyright (c) 2014年 马 涛. All rights reserved.
 //
 
-#import "LQ7ViewController.h"
+#import "LQUIViewController.h"
+#import "RegistModel.h"
+#import "RegisterResponseModel.h"
 
-@interface RegistViewController : LQ7ViewController<UITextFieldDelegate>
+@interface RegistViewController : LQUIViewController<UITextFieldDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) UITextField *telText;
 @property (nonatomic,strong) UITextField *verifyCodeText;
@@ -17,4 +19,10 @@
 
 @property (nonatomic,strong) UIButton *getVerifyCodeBtn;
 @property (nonatomic,strong) UIButton *registBtn;
+
+
+@property (nonatomic,strong) RegisterResponseModel *responseModel;
+@property (nonatomic,strong) RegistModel *requestModel;
+
+
 @end

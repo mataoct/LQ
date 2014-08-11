@@ -8,7 +8,7 @@
 
 #import "BaseRequestModel.h"
 #import "ShoppingCartItemModel.h"
-
+#import "SignatureResponseModel.h"
 
 @interface SignatureRequestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 

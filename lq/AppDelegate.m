@@ -19,13 +19,13 @@
     
     
     
-    LQUITabBarController *tabbar = [[LQUITabBarController alloc] init];
+    _tabbar = [[LQUITabBarController alloc] init];
     
     
 //    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:tabbar];
     
-    self.window.rootViewController = tabbar;
-    tabbar.delegate = self;
+    self.window.rootViewController = _tabbar;
+    _tabbar.delegate = self;
     
     
 //    UINavigationController *navi = [[UINavigationController alloc] init];
@@ -72,6 +72,37 @@
 {
 //    self
 }
+
+
+
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    switch (viewController.tabBarItem.tag) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        {
+            if (![CoreHelper checkLogin]) {
+                
+                LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+                [_tabbar presentViewController:navi animated:YES completion:nil];
+                
+                return false;
+            }
+            return true;
+        }
+            break;
+
+            
+        default:
+            return true;
+            break;
+    }
+}
+
 
 
 @end

@@ -97,7 +97,15 @@
             break;
         case 10002:
         {
-        
+            _signResponseModel = (SignatureResponseModel *)model;
+            
+            NSLog(@"%@",_signResponseModel.orderId);
+            
+            OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] initWithTitle:@"订单详情" orderId:_signResponseModel.orderId];
+            
+            
+            [self presentViewController:orderDetailVC animated:YES completion:nil];
+            
         }
         default:
             break;

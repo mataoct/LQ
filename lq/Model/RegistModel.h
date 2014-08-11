@@ -7,6 +7,7 @@
 //
 
 #import "BaseRequestModel.h"
+#import "RegisterResponseModel.h"
 
 @interface RegistModel : BaseRequestModel
 
@@ -17,7 +18,10 @@
 @property (nonatomic,strong) NSString *pwd;
 
 
--(id)initWithTel:(NSString *)tel verifyCode:(NSString *)verifyCode nikcName:(NSString *)nickName pwd:(NSString *)pwd;
--(void)getVerifyCodeByTel:(NSString *)tel;
+-(id)initWithTel:(NSString *)tel ;
+
+-(void)fillModelWithverifyCode:(NSString *)verifyCode nikcName:(NSString *)nickName pwd:(NSString *)pwd;
+
+-(void)getVerifyCodeByTel;
 
 @end

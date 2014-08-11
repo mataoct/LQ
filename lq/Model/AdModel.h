@@ -10,7 +10,7 @@
 
 @interface AdModel : NSObject
 @property (nonatomic,strong) NSString *url;
-@property (nonatomic,strong) NSString *img;
+@property (nonatomic,strong) NSURL *img;
 @property (nonatomic,strong) NSString *title;
 
 

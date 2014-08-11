@@ -12,6 +12,7 @@
 
 
 @property (nonatomic,assign) NSInteger ResponseTag;
+@property (nonatomic,assign) NSInteger ResponseStatus;
 
 -(id)initWithDic:(NSDictionary *)dic;
 

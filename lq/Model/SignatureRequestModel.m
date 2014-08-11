@@ -84,19 +84,19 @@
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
-        NSLog(@"%@",request.responseString);
+//        NSLog(@"%@",request.responseString);
     
     NSError *err;
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&err];
-//    CouponResponseModel *model = [[CouponResponseModel alloc] initWithDic:jsonDic];
-//    //    model.tag = [super tag];
-//    
-//    
-//    model.ResponseTag = self.tag;
-//    
-//    if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
-//        [[super delegate] requestSuccess:model];
-//    }
+    SignatureResponseModel *model = [[SignatureResponseModel alloc] initWithDic:jsonDic];
+    //    model.tag = [super tag];
+    
+    
+    model.ResponseTag = self.tag;
+    
+    if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
+        [[super delegate] requestSuccess:model];
+    }
     
     
     

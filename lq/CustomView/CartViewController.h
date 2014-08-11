@@ -12,6 +12,9 @@
 #import "CartTableViewCell.h"
 
 #import "SignatureRequestModel.h"
+#import "SignatureResponseModel.h"
+
+#import "OrderDetailViewController.h"
 
 @interface CartViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
@@ -27,4 +30,5 @@
 @property (nonatomic,strong) NSMutableDictionary  *selectDic;
 
 @property (nonatomic,strong) SignatureRequestModel *signRequestModel;
+@property (nonatomic,strong) SignatureResponseModel *signResponseModel;
 @end

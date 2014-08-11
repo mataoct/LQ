@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/Model/SignatureRequestModel.m"
-            timestampString = "429324531.839399"
+            filePath = "lq/CustomView/Cell/CartTableViewCell.m"
+            timestampString = "429366513.710844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-postData"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-fillCellByModel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/Model/SignatureRequestModel.m"
-            timestampString = "429324553.839015"
+            filePath = "lq/CustomController/MainViewController.m"
+            timestampString = "429375267.491582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-postData"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-setScroller:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,29 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/Model/SignatureRequestModel.m"
-            timestampString = "429324554.512923"
+            filePath = "lq/CustomController/MainViewController.m"
+            timestampString = "429375267.491582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-postData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "lq/Model/SignatureRequestModel.m"
-            timestampString = "429324794.918327"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-postData"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-setScroller:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

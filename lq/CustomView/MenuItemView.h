@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotModel.h"
+
+@protocol MenuItemDelegate <NSObject>
+
+-(void)menuItemClick:(NSInteger)tag;
+
+@end
+
 
 @interface MenuItemView : UIScrollView
 
-- (id)initWithFrame:(CGRect)frame andDate:(NSDictionary *)dic;
+@property (nonatomic,assign) id<MenuItemDelegate> menuDelegate;
+
+- (void)setDataSource:(NSArray *)arr;
 
 @end

@@ -14,6 +14,18 @@
 
 @implementation RegistViewController
 
+
+-(id)initWithTitle:(NSString *)str
+{
+    self = [super initWithTitle:str];
+    if (self) {
+        //
+        
+        
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -66,7 +78,8 @@
     [_getVerifyCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_registBtn setTitle:@"注册" forState:UIControlStateNormal];
     
-    
+    [_getVerifyCodeBtn addTarget:self action:@selector(getVerifyCodeByTel) forControlEvents:UIControlEventTouchUpInside];
+    [_registBtn addTarget:self action:@selector(sendRegisterInfo) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_telText];
     [self.view addSubview:_verifyCodeText];
@@ -102,6 +115,47 @@
         [textField resignFirstResponder];
     }
     return YES;
+}
+
+
+-(void)getVerifyCodeByReuqest
+{
+    _requestModel = [[RegistModel alloc] initWithTel:_telText.text];
+    _requestModel.delegate = self;
+    _requestModel.tag = 10001;
+    [_requestModel getVerifyCodeByTel];
+}
+
+
+-(void)sendRegisterInfo
+{
+    [_requestModel fillModelWithverifyCode:_verifyCodeText.text nikcName:_telText.text pwd:_pwdText.text];
+    _requestModel.delegate = self;
+    _requestModel.tag = 10002;
+    [_requestModel postData];
+}
+
+
+-(void)requestFailed
+{
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            
+        }
+            break;
+        case 10002:
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 @end

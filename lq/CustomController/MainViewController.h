@@ -15,10 +15,13 @@
 
 #import "MainPageBaseRequestModel.h"
 #import "CouponViewController.h"
+#import "SliderModel.h"
 
-@interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate>
+@interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate,MenuItemDelegate>
 
 @property (nonatomic,retain) CycleScrollView *headView;
 @property (nonatomic,retain) MainPageBaseRequestModel  *requestModel;
+@property (nonatomic,strong) MainResponseModel *mainResponseModel;
+@property (nonatomic,strong) MenuItemView *menuList;
 
 @end

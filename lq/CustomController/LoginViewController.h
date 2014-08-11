@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 马 涛. All rights reserved.
 //
 
-#import "LQ7ViewController.h"
+#import "LQUIViewController.h"
 #import "RegistViewController.h"
 
-@interface LoginViewController : LQ7ViewController<UITextFieldDelegate>
+@interface LoginViewController : LQUIViewController<UITextFieldDelegate>
 
 @property (nonatomic,strong) UILabel *headText;
 @property (nonatomic,strong) UITextField *userName;

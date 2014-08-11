@@ -19,8 +19,11 @@ enum tokens{
 @property (nonatomic,strong) NSString *userpwd;
 
 @property (nonatomic,strong) NSString *token;
-//@property (nonatomic,strong) NSString *sinaToken;
+@property (nonatomic,strong) NSString *sellerID;
 
 @property (nonatomic,assign) enum tokens tokenType;
+
+
+-(id)initWithUsername:(NSString *)username Pwd:(NSString *)userpwd sellerId:(NSString *)sellerID;
 
 @end

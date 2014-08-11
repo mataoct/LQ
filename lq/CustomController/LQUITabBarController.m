@@ -48,8 +48,10 @@
     }
     
     _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithTitle:@"首页"]];
-    UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"main" image:nil selectedImage:nil];
+    UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:nil selectedImage:nil];
+    mainItem.tag = 0;
     _mainNC.tabBarItem=mainItem ;
+    
     
     
     
@@ -63,6 +65,7 @@
     _memberCenterNC = [[MainNavigationController alloc] initWithRootViewController:_mbVC];
     
     UITabBarItem *memberCenterItem = [[UITabBarItem alloc] initWithTitle:@"会员" image:nil selectedImage:nil];
+    memberCenterItem.tag = 4;
     _memberCenterNC.tabBarItem=memberCenterItem ;
     
     
@@ -72,6 +75,7 @@
     _menuNC = [[MainNavigationController alloc] initWithRootViewController:_menuVC];
     
     UITabBarItem *menuItem = [[UITabBarItem alloc] initWithTitle:@"菜单" image:nil selectedImage:nil];
+    menuItem.tag = 1;
     _menuNC.tabBarItem = menuItem   ;
     
     
@@ -81,17 +85,18 @@
     _cartNC = [[MainNavigationController alloc] initWithRootViewController:_cartVC];
     
     UITabBarItem *cartItem = [[UITabBarItem alloc] initWithTitle:@"购物车" image:nil selectedImage:nil];
+    cartItem.tag = 3;
     _cartNC.tabBarItem = cartItem;
     
     
     
     _infoVC = [[InfoViewController alloc] init];
-    _infoVC.title = @"活动咨询";
+    _infoVC.title = @"活动资讯";
     _infoNC = [[MainNavigationController alloc] initWithRootViewController:_infoVC];
     
-    UITabBarItem *infoItem = [[UITabBarItem alloc] initWithTitle:@"活动咨询" image:nil selectedImage:nil];
+    UITabBarItem *infoItem = [[UITabBarItem alloc] initWithTitle:@"活动资讯" image:nil selectedImage:nil];
     _infoNC.tabBarItem = infoItem;
-    
+    infoItem.tag = 2;
     
     self.viewControllers = [NSArray arrayWithObjects:_mainNC,_menuNC,_infoNC,_cartNC,_memberCenterNC, nil];
     

@@ -11,19 +11,17 @@
 
 @implementation MenuItemView
 
-- (id)initWithFrame:(CGRect)frame andDate:(NSDictionary *)dic
+
+
+
+- (void)setDataSource:(NSArray *)arr
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        
-        
 
         
         //[image setImageWithURL:dic placeholderImage:nil];
         
         
-        for (int i = 1; i<= [dic count]; i++) {
+        for (int i = 1; i<= [arr count]; i++) {
             //
             
             int row  = fabs(i%2 - 1);
@@ -32,29 +30,32 @@
             
             UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(row*150 + 10 , colum*150 + 10, 130, 130)];
 //            image.text = [NSString stringWithFormat:@"%d",i];
+
+            HotModel *model = [arr objectAtIndex:i-1];
             
             
             image.userInteractionEnabled = YES;
             
-            image.tag = i;
+            [image setImageWithURL:model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+            
+            image.tag = i-1;
             
             UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTouch:)];
             
             [image addGestureRecognizer:imageTouch];
             
-            image.backgroundColor = [UIColor blueColor];
+//            image.backgroundColor = [UIColor blueColor];
             
             
             [self addSubview:image];
         }
         
-        self.contentSize = CGSizeMake(320, [dic count]%2 == 0?150*([dic count]/2):150*([dic count]/2 + 1) );
+        self.contentSize = CGSizeMake(320, [arr count]%2 == 0?150*([arr count]/2):150*([arr count]/2 + 1) );
         
         self.backgroundColor = [UIColor lightGrayColor];
         
-    }
-    return self;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -71,8 +72,13 @@
 -(void)imageTouch:(UIGestureRecognizer *)gesture
 {
     
+    
+    if ([self.menuDelegate respondsToSelector:@selector(menuItemClick:)]) {
+        //
+        [self.menuDelegate menuItemClick:gesture.view.tag];
+    }
 //    NSLog(@"touch") ;
-    NSLog(@"%d",gesture.view.tag);
+//    NSLog(@"%d",gesture.view.tag);
 
 
 }

@@ -19,10 +19,12 @@
         
 //        NSLog(@"dic %@",dic);
         
+        _ResponseStatus = [[dic objectForKey:@"status"] integerValue];
         
-        if ([[dic objectForKey:@"status"] integerValue] != 1) {
+        
+        if (_ResponseStatus != 1) {
             
-            NSLog(@"接口返回错误");
+            NSLog(@"接口返回错误 %@ ",dic);
             
             return nil;
         }

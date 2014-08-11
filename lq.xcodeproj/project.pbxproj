@@ -134,7 +134,13 @@
 		A0FBCE7919544EC3000146C3 /* DiscountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCE7819544EC3000146C3 /* DiscountTableViewController.m */; };
 		A0FBCE7C19544EF3000146C3 /* DiscountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCE7B19544EF3000146C3 /* DiscountTableViewCell.m */; };
 		A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */; };
+		A0FBD7C3199725B2004520B8 /* SignatureResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7C2199725B2004520B8 /* SignatureResponseModel.m */; };
+		A0FBD7C619976076004520B8 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7C519976076004520B8 /* OrderDetailViewController.m */; };
+		A0FBD7C9199760A3004520B8 /* OrderDetailResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7C8199760A3004520B8 /* OrderDetailResponseModel.m */; };
+		A0FBD7CC199765B2004520B8 /* OrderDetailRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD7CB199765B2004520B8 /* OrderDetailRequestModel.m */; };
 		A0FBDAE4198E327A007484A7 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FBDAE3198E327A007484A7 /* MenuTableViewCell.m */; };
+		A0FC641A19990C72007D9A06 /* RegisterResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FC641919990C72007D9A06 /* RegisterResponseModel.m */; };
+		A0FC641D19991750007D9A06 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FC641C19991750007D9A06 /* UserInfoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,8 +506,20 @@
 		A0FBCE7B19544EF3000146C3 /* DiscountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscountTableViewCell.m; path = CustomView/Cell/DiscountTableViewCell.m; sourceTree = "<group>"; };
 		A0FBD7BE19966C3C004520B8 /* SignatureRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignatureRequestModel.h; path = Model/SignatureRequestModel.h; sourceTree = "<group>"; };
 		A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignatureRequestModel.m; path = Model/SignatureRequestModel.m; sourceTree = "<group>"; };
+		A0FBD7C1199725B2004520B8 /* SignatureResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignatureResponseModel.h; path = Model/SignatureResponseModel.h; sourceTree = "<group>"; };
+		A0FBD7C2199725B2004520B8 /* SignatureResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignatureResponseModel.m; path = Model/SignatureResponseModel.m; sourceTree = "<group>"; };
+		A0FBD7C419976076004520B8 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailViewController.h; path = CustomController/OrderDetailViewController.h; sourceTree = "<group>"; };
+		A0FBD7C519976076004520B8 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailViewController.m; path = CustomController/OrderDetailViewController.m; sourceTree = "<group>"; };
+		A0FBD7C7199760A3004520B8 /* OrderDetailResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailResponseModel.h; path = Model/OrderDetailResponseModel.h; sourceTree = "<group>"; };
+		A0FBD7C8199760A3004520B8 /* OrderDetailResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailResponseModel.m; path = Model/OrderDetailResponseModel.m; sourceTree = "<group>"; };
+		A0FBD7CA199765B2004520B8 /* OrderDetailRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailRequestModel.h; path = Model/OrderDetailRequestModel.h; sourceTree = "<group>"; };
+		A0FBD7CB199765B2004520B8 /* OrderDetailRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailRequestModel.m; path = Model/OrderDetailRequestModel.m; sourceTree = "<group>"; };
 		A0FBDAE2198E327A007484A7 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewCell.h; path = CustomView/Cell/MenuTableViewCell.h; sourceTree = "<group>"; };
 		A0FBDAE3198E327A007484A7 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewCell.m; path = CustomView/Cell/MenuTableViewCell.m; sourceTree = "<group>"; };
+		A0FC641819990C72007D9A06 /* RegisterResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterResponseModel.h; path = Model/RegisterResponseModel.h; sourceTree = "<group>"; };
+		A0FC641919990C72007D9A06 /* RegisterResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterResponseModel.m; path = Model/RegisterResponseModel.m; sourceTree = "<group>"; };
+		A0FC641B19991750007D9A06 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = Model/UserInfoModel.h; sourceTree = "<group>"; };
+		A0FC641C19991750007D9A06 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = Model/UserInfoModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +623,8 @@
 				A0A1C1461993D173009F7B5A /* CouponRequestModel.m */,
 				A0FBD7BE19966C3C004520B8 /* SignatureRequestModel.h */,
 				A0FBD7BF19966C3C004520B8 /* SignatureRequestModel.m */,
+				A0FBD7CA199765B2004520B8 /* OrderDetailRequestModel.h */,
+				A0FBD7CB199765B2004520B8 /* OrderDetailRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -646,6 +666,14 @@
 				A0A1C1401993C71B009F7B5A /* CouponModel.m */,
 				A0A1C1421993D0D0009F7B5A /* CouponResponseModel.h */,
 				A0A1C1431993D0D0009F7B5A /* CouponResponseModel.m */,
+				A0FBD7C1199725B2004520B8 /* SignatureResponseModel.h */,
+				A0FBD7C2199725B2004520B8 /* SignatureResponseModel.m */,
+				A0FBD7C7199760A3004520B8 /* OrderDetailResponseModel.h */,
+				A0FBD7C8199760A3004520B8 /* OrderDetailResponseModel.m */,
+				A0FC641819990C72007D9A06 /* RegisterResponseModel.h */,
+				A0FC641919990C72007D9A06 /* RegisterResponseModel.m */,
+				A0FC641B19991750007D9A06 /* UserInfoModel.h */,
+				A0FC641C19991750007D9A06 /* UserInfoModel.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -1091,6 +1119,8 @@
 				A0A1C1491993D25D009F7B5A /* CouponViewController.m */,
 				A002F0FE1995136A00ABFD4D /* CouponDetailViewController.h */,
 				A002F0FF1995136A00ABFD4D /* CouponDetailViewController.m */,
+				A0FBD7C419976076004520B8 /* OrderDetailViewController.h */,
+				A0FBD7C519976076004520B8 /* OrderDetailViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1276,6 +1306,8 @@
 				A010B0DF1982647B00E170DA /* CategoriesModel.m in Sources */,
 				A0FBCE72195420A1000146C3 /* MainNavigationController.m in Sources */,
 				A09EC165195278FC0036219B /* ASIHTTPRequest.m in Sources */,
+				A0FBD7C9199760A3004520B8 /* OrderDetailResponseModel.m in Sources */,
+				A0FC641A19990C72007D9A06 /* RegisterResponseModel.m in Sources */,
 				A09EC167195278FC0036219B /* ASINetworkQueue.m in Sources */,
 				A00504D01992756D00318806 /* InfoResponseModel.m in Sources */,
 				A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */,
@@ -1292,6 +1324,7 @@
 				A09EC162195278FC0036219B /* ASIDataDecompressor.m in Sources */,
 				A002EDC71991311B00141C49 /* ShoppingCartListResponseModel.m in Sources */,
 				A002EDC419912FAD00141C49 /* ShoppingCartItemModel.m in Sources */,
+				A0FC641D19991750007D9A06 /* UserInfoModel.m in Sources */,
 				A09EC15B195278FC0036219B /* SBJsonBase.m in Sources */,
 				A0A53CE51952BEDD00DBD397 /* LQUIViewController.m in Sources */,
 				A09EC156195278FC0036219B /* AlixPayOrder.m in Sources */,
@@ -1330,12 +1363,15 @@
 				A010B0CD1982436D00E170DA /* AdModel.m in Sources */,
 				A00504D619927A5800318806 /* InfoViewController.m in Sources */,
 				A002EDBE1991188400141C49 /* CommentTableViewCell.m in Sources */,
+				A0FBD7C619976076004520B8 /* OrderDetailViewController.m in Sources */,
 				A09EC197195296FA0036219B /* LQUITabBarController.m in Sources */,
+				A0FBD7CC199765B2004520B8 /* OrderDetailRequestModel.m in Sources */,
 				A09EC05F1951ABD70036219B /* AppDelegate.m in Sources */,
 				A0A1C14A1993D25D009F7B5A /* CouponViewController.m in Sources */,
 				A010B0E219863B2000E170DA /* ProductionRequestModel.m in Sources */,
 				A09EC170195278FC0036219B /* SDWebImageDecoder.m in Sources */,
 				A00723751988EC8E00F8F720 /* CommentModel.m in Sources */,
+				A0FBD7C3199725B2004520B8 /* SignatureResponseModel.m in Sources */,
 				A09EC164195278FC0036219B /* ASIFormDataRequest.m in Sources */,
 				A00504D3199275C400318806 /* InfoModel.m in Sources */,
 				A0664C95195E981C00F3E490 /* MainPageBaseRequestModel.m in Sources */,

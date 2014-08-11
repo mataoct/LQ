@@ -17,12 +17,12 @@
         //
         _url = [[NSString alloc] init];
         _title = [[NSString alloc] init];
-        _img = [[NSString alloc] init];
+        _img = [[NSURL alloc] init];
         
         
         _url =  safeString([dic objectForKey:@"url"]);
         _title = safeString([dic objectForKey:@"title"]);
-        _img = safeString([dic objectForKey:@"img"]);
+        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])] ;
         
     }
     return self;

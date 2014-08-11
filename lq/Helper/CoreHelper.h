@@ -13,4 +13,14 @@ static UIWebView *phoneCallWebView;
 @interface CoreHelper : NSObject
 +(NSString *)tokenController:(NSString *)controller action:(NSString *)action;
 +(NSString *)timeStampToDate:(NSString *)timeStamp;
+
+
++(BOOL)checkLogin;
+
++(void)setLoginInfo:(NSString *)tel;
+
++(void)logout;
+
++(NSString *)getLoginInfo;
+
 @end

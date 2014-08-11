@@ -10,9 +10,10 @@
 #import "Base64codeFunc.h"
 #import "LQUITabBarController.h"
 #import "LQUINavigationController.h"
+#import "LoginViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate,UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic,strong) LQUITabBarController *tabbar;
 @end

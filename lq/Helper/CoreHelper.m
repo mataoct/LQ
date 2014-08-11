@@ -109,4 +109,35 @@
     return [[ud objectForKey:@"netStatus"] intValue];
 }
 
+
++(BOOL)checkLogin
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    if (![[ud objectForKey:@"loginUser"] isEqualToString:@""]&&[ud objectForKey:@"loginUser"]) {
+        return true;
+    }
+    //    return true;
+    return false;
+}
+
++(void)setLoginInfo:(NSString *)tel
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:tel forKey:@"loginUser"];
+    [ud synchronize];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"kLoginStatusChangeNotification" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"1",@"loginStatus", nil ]];
+}
+
++(NSString *)getLoginInfo
+{
+    if ([self checkLogin]) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        return [ud objectForKey:@"loginUser"];
+    }
+    return @"unknow";
+}
+
+
 @end

@@ -82,15 +82,23 @@
     
     NSLog(@"view loaded");
     
-    [self.view addSubview:_headText];
-    [self.view addSubview:_userPwd];
-    [self.view addSubview:_userName];
-    [self.view addSubview:_rememberPwdBtn];
-    [self.view addSubview:_forgetPwdBtn];
-    [self.view addSubview:_loginBtn];
-    [self.view addSubview:_fastRegBtn];
-    [self.view addSubview:_subText];
-    [self.view addSubview:_otherLoginBtn];
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64)];
+    
+    [temp addSubview:_headText];
+    [temp addSubview:_userPwd];
+    [temp addSubview:_userName];
+    [temp addSubview:_rememberPwdBtn];
+    [temp addSubview:_forgetPwdBtn];
+    [temp addSubview:_loginBtn];
+    [temp addSubview:_fastRegBtn];
+    [temp addSubview:_subText];
+    [temp addSubview:_otherLoginBtn];
+    
+    temp.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:temp];
+    
+
 }
 
 - (void)didReceiveMemoryWarning

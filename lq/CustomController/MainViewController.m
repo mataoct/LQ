@@ -48,34 +48,58 @@
     
     
     _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:@"100"];
+    _mainResponseModel = [[MainResponseModel alloc] init];
     _requestModel.delegate = self;
     [_requestModel postData];
     
+    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 234, 320,self.view.frame.size.height- 20 -44 - 47 - 100 -70 -10)];
+    
+    
+    [self.view addSubview:_menuList];
+    
     
     [self setBackButtonHide:YES];
-    
-    NSArray *arr = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/15/xyws20140615_3.jpg",@"img",@"aciontUrl1",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/19/zqmzd20140619.jpg",@"img",@"aciontUrl2",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://images.17173.com/2014/act/2014/06/15/zx20140615_2.jpg",@"img",@"aciontUrl3",@"url", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"http://i3.17173.itc.cn/2014/818/2014/06/0620/yzqx-sy.jpg",@"img",@"aciontUrl4",@"url", nil], nil];
-    [self setScroller:arr];
-    [self setMenu];
-    [self menuList];
+
     // Do any additional setup after loading the view.
+}
+
+
+-(void)reFillLayouts
+{
+    
+//
+    
+//    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+//    
+//    for (SliderModel *tempSlider in _mainResponseModel.sliderArr) {
+//        [tempArr addObject:tempSlider.img];
+//    }
+    
+    [self setScroller:_mainResponseModel.sliderArr];
+    
+    [self setMenu];
+    [_menuList setDataSource:_mainResponseModel.hotArr];
+    _menuList.menuDelegate = self;
 }
 
 
 -(void)setScroller:(NSArray *)arr
 {
     NSMutableArray *viewsArray = [@[] mutableCopy];
-    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
+//    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < [arr count]; ++i) {
         UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
         
         tempLabel.userInteractionEnabled = YES;
+        
+        SliderModel *tempSlider = [[SliderModel alloc] init];
+        tempSlider = [arr objectAtIndex:i];
 
         
-        NSURL *url = [[NSURL alloc] initWithString:[[arr objectAtIndex:i] objectForKey:@"img"]];
+        NSURL *url = [[NSURL alloc] initWithString:tempSlider.img];
 
         [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
-        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
+//        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
     
@@ -90,7 +114,13 @@
         return [arr count];
     };
     _headView.TapActionBlock = ^(NSInteger pageIndex){
-//        NSLog(@"点击了第%d个,%@",pageIndex,[[arr objectAtIndex:pageIndex] objectForKey:@"url"]);
+        
+        SliderModel *tempSlider = [[SliderModel alloc] init];
+        tempSlider = [arr objectAtIndex:pageIndex];
+        
+        NSLog(@"点击了第%d个,%@",pageIndex,tempSlider.type);
+        
+        
     };
     [self.view addSubview:_headView];
     
@@ -129,18 +159,33 @@
     [self.view addSubview:discount];
     
     
-    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(0, 180, 320, 36)];
-    adView.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180, 320, 36)];
+//    adView.backgroundColor = [UIColor lightGrayColor];
+    
+    [adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    
+    
+    adView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adTouch:)];
+    
+    [adView addGestureRecognizer:imageTouch];
+    
+    
+    
     [self.view addSubview:adView];
     
 }
 
--(void)menuList
+
+-(void)menuItemClick:(NSInteger)tag
 {
-    
-    MenuItemView *menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 234, 320,self.view.frame.size.height- 20 -44 - 47 - 100 -70 -10) andDate:[NSDictionary  dictionaryWithObjectsAndKeys:@"1",@"1",@"1",@"2",@"1",@"3",@"1",@"4",@"1",@"5",@"1",@"6",@"1",@"7", nil]];
-    
-    [self.view addSubview:menuList];
+    NSLog(@"click tag %d",tag);
+}
+
+-(void)adTouch:(UIGestureRecognizer *)gesture
+{
+    NSLog(@"ad to %@",_mainResponseModel.admodel.url);
 }
 
 
@@ -187,8 +232,9 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    MainResponseModel *mainResponseModel = (MainResponseModel *)model;
-    NSLog(@"model %@",mainResponseModel.sliderArr);
+    _mainResponseModel = (MainResponseModel *)model;
+    NSLog(@"model %@",_mainResponseModel.sliderArr);
+    [self reFillLayouts];
 }
 
 @end
