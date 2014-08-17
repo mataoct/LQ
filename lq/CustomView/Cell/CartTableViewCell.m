@@ -35,8 +35,8 @@
         
         _model = [[ShoppingCartItemModel alloc] init];
         
-        _selectStatus = 0;
         
+        _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
         
         [self addSubview:_headView];
         [self addSubview:_titleLabel];
@@ -76,6 +76,7 @@
     _disPriceLabel.text = _model.originalPrice;
     _countValueLabel.text = _model.totalPrice;
     _sumValueLabel.text = _model.num;
+    _selectStatus = 0;
 }
 
 

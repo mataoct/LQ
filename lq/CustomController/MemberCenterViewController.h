@@ -7,8 +7,14 @@
 //
 
 #import "LQ7ViewController.h"
+#import "CoreHelper.h"
+#import "UIImageView+WebCache.h"
+#import "UserInfoRequestModel.h"
+#import "MyCommentViewController.h"
+#import "UserCouponViewController.h"
+#import "MyFavViewController.h"
 
-@interface MemberCenterViewController : LQ7ViewController
+@interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate>
 
 @property (nonatomic,strong) UIImageView *headImageView;
 @property (nonatomic,strong) UILabel *nameLabel;
@@ -35,6 +41,7 @@
 
 @property (nonatomic,strong) UIButton *logoutBtn;
 
-
+@property (nonatomic,strong) UserInfoRequestModel *requestModel;
+@property (nonatomic,strong) AnotherUserInfoResponseModel *responseModel;
 
 @end

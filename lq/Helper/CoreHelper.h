@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NSString+MD5HexDigest.h"
 
+#import "UserInfoModel.h"
+
 static UIWebView *phoneCallWebView;
 @interface CoreHelper : NSObject
 +(NSString *)tokenController:(NSString *)controller action:(NSString *)action;
@@ -17,10 +19,12 @@ static UIWebView *phoneCallWebView;
 
 +(BOOL)checkLogin;
 
-+(void)setLoginInfo:(NSString *)tel;
++(void)setLoginInfo:(NSDictionary *)user;
 
 +(void)logout;
 
-+(NSString *)getLoginInfo;
++(UserInfoModel *)getLoginInfo;
+
++(void)callService:(NSString *)num;
 
 @end

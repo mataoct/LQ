@@ -19,6 +19,9 @@
 @property (nonatomic,strong) NSString *expiry;
 @property (nonatomic,strong) NSString *description;
 
+@property (nonatomic,strong) NSString *sellerId;
+@property (nonatomic,strong) NSString *status;
+
 
 -(id)initWithDic:(NSDictionary *)dic;
 

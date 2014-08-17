@@ -7,6 +7,9 @@
 //
 
 #import "BaseRequestModel.h"
+#import "UserInfoModel.h"
+#import "CoreHelper.h"
+
 enum tokens{
     sinaToken=1,
     qqToken=2

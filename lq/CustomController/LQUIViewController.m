@@ -38,6 +38,9 @@
         _headTitle = [[NSString alloc] init];
         _headTitle = str;
 
+        
+//        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     }
     return self;
@@ -70,7 +73,7 @@
     
     [_item setLeftBarButtonItem:_leftItem];
     
-//    bar.backgroundColor = [UIColor blueColor];
+    _bar.tintColor = [UIColor greenColor];
     [_bar pushNavigationItem:_item animated:NO];
     self.navigationController.navigationBarHidden  = YES;
     [self.view addSubview:_bar];
@@ -99,6 +102,8 @@
     
     if (self.navigationController) {
          [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        
+//        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else
     {

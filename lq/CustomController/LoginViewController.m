@@ -52,6 +52,9 @@
 //    _userName.backgroundColor = [UIColor greenColor];
 //    _userPwd.backgroundColor = [UIColor greenColor] ;
     
+    _userModel = [[UserInfoModel alloc] init];
+    
+    
     
     _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 120, 120, 20)];
     _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 120, 120, 20)];
@@ -64,6 +67,9 @@
     
     _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 160, 260, 30)];
     [_loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
+    
+    
+    [_loginBtn addTarget:self action:@selector(goLogin) forControlEvents:UIControlEventTouchUpInside];
     _loginBtn.backgroundColor = [UIColor greenColor];
     
     _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 200, 120, 20)];
@@ -132,7 +138,28 @@
 -(void)gotoRegist
 {
     RegistViewController *registVC = [[RegistViewController alloc] init];
-    [self.navigationController pushViewController:registVC animated:YES];
+    [self presentViewController:registVC animated:YES completion:nil];
+}
+
+-(void)goLogin
+{
+    _requestModel = [[LoginRequestModel alloc] initWithUsername:_userName.text Pwd:_userPwd.text sellerId:@"100"];
+    _requestModel.delegate = self;
+    [_requestModel postData];
+}
+
+-(void)requestFailed
+{
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    _userModel = (UserInfoModel *)model;
+    
+    NSLog(@"%@",_userModel.uid);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 @end

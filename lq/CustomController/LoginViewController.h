@@ -9,7 +9,10 @@
 #import "LQUIViewController.h"
 #import "RegistViewController.h"
 
-@interface LoginViewController : LQUIViewController<UITextFieldDelegate>
+#import "LoginRequestModel.h"
+#import "UserInfoModel.h"
+
+@interface LoginViewController : LQUIViewController<UITextFieldDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) UILabel *headText;
 @property (nonatomic,strong) UITextField *userName;
@@ -23,6 +26,7 @@
 
 @property (nonatomic,strong) UIButton *otherLoginBtn;
 
-
+@property (nonatomic,strong) LoginRequestModel *requestModel;
+@property (nonatomic,strong) UserInfoModel * userModel;
 
 @end

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomView/Cell/CartTableViewCell.m"
-            timestampString = "429366513.710844"
+            filePath = "lq/CustomController/UserCouponViewController.m"
+            timestampString = "429937223.093137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-fillCellByModel:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-requestSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomController/MainViewController.m"
-            timestampString = "429375267.491582"
+            filePath = "lq/CustomController/UserCouponViewController.m"
+            timestampString = "429937223.460651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-setScroller:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-requestSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomController/MainViewController.m"
-            timestampString = "429375267.491582"
+            filePath = "lq/Model/CouponRequestModel.m"
+            timestampString = "429937259.124188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-setScroller:"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-requestFinished:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lq/Model/CouponRequestModel.m"
+            timestampString = "429937259.728135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-requestFinished:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lq/Model/CouponRequestModel.m"
+            timestampString = "429937316.933671"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-requestFinished:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

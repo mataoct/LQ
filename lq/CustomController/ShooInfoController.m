@@ -23,6 +23,22 @@
     return self;
 }
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        //
+        
+        _requestModel = [[SellerInfoRequestModel alloc] initWithSeller:@"100"];
+        _responseModel = [[SellerInfoResponseModel alloc] init];
+        
+        
+        
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,11 +55,10 @@
     
     
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.text = @"XXXXXX外卖商店";
     
-    _telLabel.text = @"10010";
-    _addressLabel.text = @"五四路新华都广场";
     
+    
+
     
     
     [_infoView addSubview:_titleLabel];
@@ -62,10 +77,8 @@
     
     
     
-    _headLabel.text = @"商家简介";
     _headLabel.backgroundColor = [UIColor greenColor];
     
-    _introduceField.text = @"简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容";
     _introduceField.editable  = false;
     _introduceField.backgroundColor = [UIColor orangeColor];
     
@@ -73,13 +86,35 @@
     [_introduceView addSubview:_introduceField];
     
     
-    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self.view addSubview:_infoView];
     [self.view addSubview:_introduceView];
     
+    _requestModel.delegate = self;
+    [_requestModel postData];
+    
     
 }
+
+
+
+-(void)reFillLayouts
+{
+    _titleLabel.text = _responseModel.name;
+    _telLabel.text = _responseModel.phone;
+    _addressLabel.text = _responseModel.address;
+    _headLabel.text = @"商家简介";
+    
+    _introduceField.text = _responseModel.myDescription;
+    
+    [_telBtn setBackgroundColor:[UIColor blueColor]];
+    [_telBtn addTarget:self action:@selector(makePhoneCall) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_addressBtn addTarget:self action:@selector(showMap) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -97,5 +132,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)requestFailed
+{
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    _responseModel = (SellerInfoResponseModel *)model;
+    [self reFillLayouts];
+}
+
+-(void)makePhoneCall
+{
+    [CoreHelper callService:_responseModel.phone];
+}
+
+-(void)showMap
+{
+    HKBaiduMapViewController *mapVC = [[HKBaiduMapViewController alloc] initWithX:_responseModel.pointy Y:_responseModel.pointx];
+    
+    [self.navigationController pushViewController:mapVC animated:YES];
+}
 
 @end

@@ -65,7 +65,7 @@
         
         self.currentPageIndex = 0;
         
-        _pageIndex = [[UIPageControl alloc] initWithFrame:CGRectMake(self.scrollView.frame.origin.x, self.scrollView.frame.size.height - 20, 320, 20)];
+        _pageIndex = [[UIPageControl alloc] initWithFrame:CGRectMake(240, self.scrollView.frame.size.height - 30, 80, 30)];
         
         _pageIndex.currentPage = 0;
         [self addSubview:_pageIndex];

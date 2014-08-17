@@ -21,8 +21,8 @@
     if (self) {
         //
         
-        
-
+//        [self.tabBar setTintColor:[UIColor orangeColor]];
+//        [self.tabBar setSelectedImageTintColor:[UIColor redColor]];
         
     }
     return self;
@@ -47,7 +47,9 @@
         self.navigationController.navigationBar.translucent = NO;
     }
     
-    _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithTitle:@"首页"]];
+//    _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithTitle:@"首页"]];
+    
+    _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:nil selectedImage:nil];
     mainItem.tag = 0;
     _mainNC.tabBarItem=mainItem ;
@@ -98,7 +100,7 @@
     _infoNC.tabBarItem = infoItem;
     infoItem.tag = 2;
     
-    self.viewControllers = [NSArray arrayWithObjects:_mainNC,_menuNC,_infoNC,_cartNC,_memberCenterNC, nil];
+    self.viewControllers = [NSArray arrayWithObjects:_mainNC,_infoNC,_menuNC,_cartNC,_memberCenterNC, nil];
     
 }
 

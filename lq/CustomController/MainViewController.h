@@ -17,7 +17,13 @@
 #import "CouponViewController.h"
 #import "SliderModel.h"
 
-@interface MainViewController : LQUIViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate,MenuItemDelegate>
+#import "WaterFlowViewController.h"
+#import "CoreHelper.h"
+#import "MyFavViewController.h"
+#import "LoginViewController.h"
+#import "LQ7ViewController.h"
+
+@interface MainViewController : LQ7ViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate,MenuItemDelegate>
 
 @property (nonatomic,retain) CycleScrollView *headView;
 @property (nonatomic,retain) MainPageBaseRequestModel  *requestModel;

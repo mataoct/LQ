@@ -9,6 +9,7 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
   /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h \
   /WorkSpace/LQ3/lq/CustomView/MenuItemView.h \
+  /WorkSpace/LQ3/lq/Model/HotModel.h \
   /WorkSpace/LQ3/lq/Model/MainPageBaseRequestModel.h \
   /WorkSpace/LQ3/lq/Model/BaseRequestModel.h \
   /WorkSpace/LQ3/lq/ASIHttpRequest/ASIFormDataRequest.h \
@@ -22,5 +23,17 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h \
   /WorkSpace/LQ3/lq/Model/MainResponseModel.h \
   /WorkSpace/LQ3/lq/Model/SliderModel.h \
-  /WorkSpace/LQ3/lq/Model/AdModel.h /WorkSpace/LQ3/lq/Model/HotModel.h \
-  /WorkSpace/LQ3/lq/CustomController/DiscountTableViewController.h
+  /WorkSpace/LQ3/lq/Model/AdModel.h \
+  /WorkSpace/LQ3/lq/CustomController/CouponViewController.h \
+  /WorkSpace/LQ3/lq/Model/CouponRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/CouponResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/CouponModel.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/DiscountTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomController/CouponDetailViewController.h \
+  /WorkSpace/LQ3/lq/Model/CommentReuqestModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentListResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentModel.h \
+  /WorkSpace/LQ3/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/CommentTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomController/LQUINavigationController.h \
+  /WorkSpace/LQ3/lq/CustomController/WaterFlowViewController.h

@@ -113,31 +113,46 @@
 +(BOOL)checkLogin
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    if (![[ud objectForKey:@"loginUser"] isEqualToString:@""]&&[ud objectForKey:@"loginUser"]) {
+    if (![[ud objectForKey:@"loginUser"] isEqual:@""]&&[ud objectForKey:@"loginUser"]) {
         return true;
     }
     //    return true;
     return false;
 }
 
-+(void)setLoginInfo:(NSString *)tel
++(void)setLoginInfo:(NSDictionary *)user
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:tel forKey:@"loginUser"];
+    [ud setObject:user forKey:@"loginUser"];
     [ud synchronize];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:@"kLoginStatusChangeNotification" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"1",@"loginStatus", nil ]];
 }
 
-+(NSString *)getLoginInfo
++(UserInfoModel *)getLoginInfo
 {
     if ([self checkLogin]) {
         NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        return [ud objectForKey:@"loginUser"];
+        
+        UserInfoModel *model = [[UserInfoModel alloc] initWithDic:[ud objectForKey:@"loginUser"]];
+        
+        return model;
     }
-    return @"unknow";
+    return nil;
 }
 
++(void)logout
+{
+    if ([self checkLogin]) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:@"" forKey:@"loginUser"];
+        [ud synchronize];
+        
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"kLoginStatusChangeNotification" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"0",@"loginStatus", nil ]];
+    }
+}
 
 @end

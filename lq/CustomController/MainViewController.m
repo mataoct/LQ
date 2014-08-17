@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "UIImageView+WebCache.h"
 
 @interface MainViewController ()
 
@@ -21,6 +20,15 @@
 {
     self = [super init];
     if (self) {
+//        self.navigationController.navigationItem.title = @"首页";
+        self.title = @"首页";
+    
+//        NSDictionary *dict=[NSDictionary dictionaryWithObjects:
+//                            [NSArray arrayWithObjects:[UIColor whiteColor],[UIFont boldSystemFontOfSize:17],[UIColor clearColor],nil]
+//                                                       forKeys:
+//                            [NSArray arrayWithObjects:NSForegroundColorAttributeName,NSFontAttributeName,NSShadowAttributeName,nil]];
+//        self.navigationController.navigationBar.titleTextAttributes=dict;
+//
         
     }
     return self;
@@ -52,13 +60,13 @@
     _requestModel.delegate = self;
     [_requestModel postData];
     
-    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 234, 320,self.view.frame.size.height- 20 -44 - 47 - 100 -70 -10)];
+    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 50)];
     
     
     [self.view addSubview:_menuList];
     
     
-    [self setBackButtonHide:YES];
+//    [self setBackButtonHide:YES];
 
     // Do any additional setup after loading the view.
 }
@@ -88,13 +96,19 @@
     NSMutableArray *viewsArray = [@[] mutableCopy];
 //    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < [arr count]; ++i) {
-        UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
+        UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 170)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 140, 320, 30)];
+        textLabel.alpha = 0.5;
+        textLabel.backgroundColor = [UIColor grayColor];
+        
+        
+        [tempLabel addSubview:textLabel];
         
         tempLabel.userInteractionEnabled = YES;
         
         SliderModel *tempSlider = [[SliderModel alloc] init];
         tempSlider = [arr objectAtIndex:i];
-
+        textLabel.text = tempSlider.title;
         
         NSURL *url = [[NSURL alloc] initWithString:tempSlider.img];
 
@@ -103,7 +117,7 @@
         [viewsArray addObject:tempLabel];
     }
     
-    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 65, 320, 70) animationDuration:3];
+    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 170) animationDuration:3];
     _headView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
     
     _headView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
@@ -129,10 +143,10 @@
 
 -(void)setMenu
 {
-    UIButton *fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 140, 80, 36)];
-    UIButton *picWall = [[UIButton alloc] initWithFrame:CGRectMake(80, 140, 80, 36)];
-    UIButton *myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 140, 80, 36)];
-    UIButton *discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 140, 80, 36)];
+    UIButton *fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 170, 80, 80)];
+    UIButton *picWall = [[UIButton alloc] initWithFrame:CGRectMake(80, 170, 80, 80)];
+    UIButton *myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 170, 80, 80)];
+    UIButton *discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 80, 80)];
     
     fastOrder.backgroundColor    = [UIColor lightGrayColor];
     
@@ -150,16 +164,13 @@
     
     
     [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
-//    [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
+    [myFav addTarget:self action:@selector(jumpToMyFav) forControlEvents:UIControlEventTouchUpInside];
+    [picWall addTarget:self action:@selector(jumpToWaterFlow) forControlEvents:UIControlEventTouchUpInside];
+    
+
     
     
-    [self.view addSubview:fastOrder];
-    [self.view addSubview:picWall];
-    [self.view addSubview:myFav];
-    [self.view addSubview:discount];
-    
-    
-    UIImageView *adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 180, 320, 36)];
+    UIImageView *adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
 //    adView.backgroundColor = [UIColor lightGrayColor];
     
     [adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
@@ -172,7 +183,10 @@
     [adView addGestureRecognizer:imageTouch];
     
     
-    
+    [self.view addSubview:fastOrder];
+    [self.view addSubview:picWall];
+    [self.view addSubview:myFav];
+    [self.view addSubview:discount];
     [self.view addSubview:adView];
     
 }
@@ -217,6 +231,34 @@
     
     CouponViewController *couponVC = [[CouponViewController alloc] initWithTitle:@"电子优惠券"];
     [self.navigationController presentViewController:couponVC animated:YES completion:nil];
+}
+
+-(void)jumpToWaterFlow
+{
+    WaterFlowViewController *waterVC = [[WaterFlowViewController alloc] initWithTitle:@"瀑布流" sellerid:@"100" start:@"0" limit:@"10"];
+//    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:waterVC];
+    [self.navigationController presentViewController:waterVC animated:YES completion:nil];
+}
+-(void)jumpToMyFav
+{
+    if (![CoreHelper checkLogin]) {
+        
+        LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+        [self.navigationController presentViewController:navi animated:YES completion:nil];
+        
+    }
+    else
+    {
+        MyFavViewController *favVC = [[MyFavViewController alloc] init];
+//        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:favVC];
+//        [self presentViewController:navi animated:YES completion:nil];
+        
+        [self.navigationController pushViewController:favVC animated:YES];
+//        [self presentViewController:favVC animated:YES completion:nil]  ;
+        
+    }
+
 }
 
 - (void)webImageManager:(SDWebImageManager *)imageManager didFinishWithImage:(UIImage *)image

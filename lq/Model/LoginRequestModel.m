@@ -18,11 +18,11 @@
         //
         _username = [[NSString alloc] init];
         _userpwd = [[NSString alloc] init];
-        
+        _sellerID = [[NSString alloc] init];
 
         _userpwd = userpwd;
         _username = username;
-        
+        _sellerID = sellerID;
         _tokenType = 0;
     }
     return self;
@@ -89,27 +89,20 @@
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
-    //    NSLog(@"%@",request.responseString);
-    
-    
-    
-    
-    
     NSError *err;
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&err];
     
     
-//    RegisterResponseModel *model= [[RegisterResponseModel alloc] initWithDic:jsonDic];
-//    model.ResponseTag = request.tag;
-//    if (model.ResponseStatus == 1)
-//    {
-//        if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
-//        {
-//            [[super delegate] requestSuccess:model];
-//        }
-//    }
-    
-    
+    UserInfoModel *model= [[UserInfoModel alloc] initWithDic:jsonDic];
+    model.ResponseTag = request.tag;
+    if (model.ResponseStatus == 1)
+    {
+        if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+        {
+            [CoreHelper setLoginInfo:jsonDic];
+            [[super delegate] requestSuccess:model];
+        }
+    }
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

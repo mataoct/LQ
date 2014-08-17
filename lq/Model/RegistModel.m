@@ -111,7 +111,7 @@
     
     
     RegisterResponseModel *model= [[RegisterResponseModel alloc] initWithDic:jsonDic];
-    model.ResponseTag = request.tag;
+    model.ResponseTag = self.tag;
     if (model.ResponseStatus == 1)
     {
         if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])

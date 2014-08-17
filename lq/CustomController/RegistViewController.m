@@ -74,19 +74,27 @@
     _getVerifyCodeBtn.backgroundColor = [UIColor greenColor];
     _registBtn.backgroundColor = [UIColor redColor];
     
-//    [_getVerifyCodeBtn setTitle:@"获取验证码" forState:UIControllerSta]
     [_getVerifyCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_registBtn setTitle:@"注册" forState:UIControlStateNormal];
     
-    [_getVerifyCodeBtn addTarget:self action:@selector(getVerifyCodeByTel) forControlEvents:UIControlEventTouchUpInside];
+    [_getVerifyCodeBtn addTarget:self action:@selector(getVerifyCodeByReuqest) forControlEvents:UIControlEventTouchUpInside];
     [_registBtn addTarget:self action:@selector(sendRegisterInfo) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:_telText];
-    [self.view addSubview:_verifyCodeText];
-    [self.view addSubview:_getVerifyCodeBtn];
-    [self.view addSubview:_nickText];
-    [self.view addSubview:_pwdText];
-    [self.view addSubview:_registBtn];
+    
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64)];
+    
+    
+    
+    [temp addSubview:_telText];
+    [temp addSubview:_verifyCodeText];
+    [temp addSubview:_getVerifyCodeBtn];
+    [temp addSubview:_nickText];
+    [temp addSubview:_pwdText];
+    [temp addSubview:_registBtn];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    [self.view addSubview:temp];
     
 }
 
@@ -145,7 +153,7 @@
     switch (model.ResponseTag) {
         case 10001:
         {
-            
+            NSLog(@"verifity code send");
         }
             break;
         case 10002:

@@ -8,13 +8,17 @@
 
 #import "BaseRequestModel.h"
 #import "CouponResponseModel.h"
+#import "UserCouponResponseModel.h"
+#import "MyFavResponseModel.h"
+
 @interface CouponRequestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 
 @property (nonatomic,strong) NSString *sellerId;
 @property (nonatomic,strong) NSString *start;
 @property (nonatomic,strong) NSString *limit;
-
+@property (nonatomic,strong) NSString *uid;
 
 -(id)initWithSeller:(NSString *)sellerId Start:(NSString *)start Limit:(NSString *)limit;
-
+-(void)postUserCoupon;
+-(void)postFav;
 @end

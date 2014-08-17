@@ -31,6 +31,9 @@
         //        self.edgesForExtendedLayout=UIRectEdgeNone;
         self.navigationController.navigationBar.translucent = NO;
     }
+    
+    
+//    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
 }
 

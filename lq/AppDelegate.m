@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
+BMKMapManager* _mapManager;
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -28,6 +31,13 @@
     _tabbar.delegate = self;
     
     
+    _mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [_mapManager start:@"vIPbxUHPjFqitsdURYsq4F7Q" generalDelegate:self];
+    
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
 //    UINavigationController *navi = [[UINavigationController alloc] init];
     
     
@@ -37,6 +47,11 @@
 //    NSString *decodeStr = __BASE64(encodeStr);
 //    
 //    NSLog(@"decodeStr %@ ,reEncodeStr %@", decodeStr,__TEXT(decodeStr));
+    
+    [[UINavigationBar appearance] setBarTintColor:DarkGreen];
+    
+    
+//;
     
     [self.window makeKeyAndVisible];
     return YES;

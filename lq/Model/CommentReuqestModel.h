@@ -21,4 +21,6 @@
 
 -(void)postDataCoupon;
 
+-(void)postDataWaterFlow;
+
 @end

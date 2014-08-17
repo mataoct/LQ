@@ -52,7 +52,7 @@
     _telLabel.backgroundColor = [UIColor greenColor];
     
     _punchBtn.backgroundColor = [UIColor grayColor];
-    
+            [_punchBtn setEnabled:false];
     _priceLabel.text = @"9.00";
     _priceLabel2.text = @"账户余额";
     _priceLabel.font = [UIFont systemFontOfSize:12];
@@ -90,7 +90,8 @@
     
     [_bussInfoBtn setTitle:@"商家信息" forState:UIControlStateNormal];
     [_bussInfoBtn addTarget:self action:@selector(gotoShopInfoController) forControlEvents:UIControlEventTouchUpInside];
-    
+    [_myCommentBtn setTitle:@"我的评论" forState:UIControlStateNormal];
+    [_myAddrBtn setTitle:@"我的收货地址" forState:UIControlStateNormal];
     
     
     [_myOrderBtn setTitle:@"我的订单" forState:UIControlStateNormal];
@@ -111,10 +112,14 @@
     _logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 178 , 300,  20)];
     
     [_logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+    
+    [_logoutBtn addTarget:self action:@selector(userlogout) forControlEvents:UIControlEventTouchUpInside];
     _logoutBtn.backgroundColor = [UIColor redColor];
     
     
-    
+    [_myCommentBtn addTarget:self action:@selector(gotoCommentViewController) forControlEvents:UIControlEventTouchUpInside];
+    [_myCouponBtn addTarget:self action:@selector(gotoCouponViewController) forControlEvents:UIControlEventTouchUpInside];
+    [_myFavorBtn addTarget:self action:@selector(gotoMyFavViewController) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_headImageView];
     [self.view addSubview:_nameLabel];
@@ -134,12 +139,76 @@
     [self.view addSubview:_myAddrBtn];
     [self.view addSubview:_bussInfoBtn];
     [self.view addSubview:_logoutBtn];
+    
+//    [self reFillLayouts];
+    
+//    UserInfoModel *user = [CoreHelper getLoginInfo];
+//    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:user.uid];
+    
+    _responseModel = [[AnotherUserInfoResponseModel alloc] init];
+    
+    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:@"3"];
+    _requestModel.delegate = self;
+    [_requestModel postData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//-(void)reFillLayouts
+//{
+//    
+//    UserInfoModel *user = [CoreHelper getLoginInfo];
+//    
+//    [_headImageView setImageWithURL:user.avatar placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+//    
+//    if (user.sex == 1) {
+//        [_sexImageView setImage:[UIImage imageNamed:@""]];
+//    }
+//    else
+//    {
+//        [_sexImageView setImage:[UIImage imageNamed:@""]];
+//    }
+//    
+//    _nameLabel.text = user.nickName;
+//    _telLabel.text = user.phone;
+//    
+//}
+
+-(void)reFillContent
+{
+    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    
+    if (_responseModel.sex == 1) {
+        [_sexImageView setImage:[UIImage imageNamed:@""]];
+    }
+    else
+    {
+        [_sexImageView setImage:[UIImage imageNamed:@""]];
+    }
+    
+    _nameLabel.text = _responseModel.userName;
+    _telLabel.text = _responseModel.phone;
+    
+    _priceLabel.text = _responseModel.money;
+    _integrationLabel.text = _responseModel.integral;
+    _daylyLabel.text = _responseModel.signIntegral;
+    
+    
+    if (_responseModel.signin == 1) {
+//        [_sexImageView setImage:[UIImage imageNamed:@""]];
+        
+        [_punchBtn setEnabled:false];
+    }
+    else
+    {
+//        [_sexImageView setImage:[UIImage imageNamed:@""]];
+        [_punchBtn setEnabled:true];
+    }
+    
 }
 
 /*
@@ -160,6 +229,40 @@
 //    shopInfoVC.title = @"商家信息";
     [self.navigationController pushViewController:shopInfoVC animated:YES];
     
+}
+
+-(void)gotoCommentViewController
+{
+    MyCommentViewController *commVC = [[MyCommentViewController alloc] initWithTitle:@"我的评论"];
+    [self presentViewController:commVC animated:YES completion:nil];
+}
+
+-(void)gotoCouponViewController
+{
+    UserCouponViewController *coupVC = [[UserCouponViewController alloc] initWithTitle:@"我的优惠券"];
+    [self presentViewController:coupVC animated:YES completion:nil];
+}
+-(void)gotoMyFavViewController
+{
+    MyFavViewController *favVC = [[MyFavViewController alloc] init];
+    [self.navigationController pushViewController:favVC animated:YES];
+}
+
+-(void)userlogout
+{
+    [CoreHelper logout];
+    
+    [self.tabBarController setSelectedIndex:0];
+}
+
+-(void)requestFailed
+{
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    _responseModel = (AnotherUserInfoResponseModel *)model;
+    [self reFillContent];
 }
 
 @end

@@ -81,6 +81,31 @@
     NSLog(@"post already %@",self);
 }
 
+-(void)postDataWaterFlow
+{
+    NSString *token = [CoreHelper tokenController:@"SourceMaterialHandler" action:@"imgcommentlist"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/SourceMaterialHandler.ashx?action=imgcommentlist"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_start forKey:@"start"];
+    [request addPostValue:_limit forKey:@"limit"];
+    [request addPostValue:_gid forKey:@"pid"];
+    [request setRequestMethod:@"POST"];
+    
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
 
 
 -(void)requestStarted:(ASIHTTPRequest *)request

@@ -28,9 +28,9 @@
             int colum = (i - 1)/2;
             
             
-            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(row*150 + 10 , colum*150 + 10, 130, 130)];
+            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(row*160 + 5 , colum*110 + 5, 150, 100)];
 //            image.text = [NSString stringWithFormat:@"%d",i];
-
+            
             HotModel *model = [arr objectAtIndex:i-1];
             
             
@@ -49,10 +49,15 @@
             
             [self addSubview:image];
         }
+    
+    float contentHeight = [arr count]%2 == 0?110*([arr count]/2):110*([arr count]/2 + 1);
+    
+    
+    NSLog(@"%f,%f",contentHeight,self.frame.size.height );
+    
+    self.contentSize = CGSizeMake(320, self.frame.size.height >contentHeight ?self.frame.size.height:contentHeight );
         
-        self.contentSize = CGSizeMake(320, [arr count]%2 == 0?150*([arr count]/2):150*([arr count]/2 + 1) );
-        
-        self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = BackGray;
         
 }
 
