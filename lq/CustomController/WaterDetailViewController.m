@@ -59,21 +59,37 @@
     // Do any additional setup after loading the view.
     
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    _viewCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 20, 50, 20)];
-    _commentNumLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(250, 20, 50, 20)];
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 300, 100)];
-    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(0, 140, 300, 40)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 300, 20)];
+    _titleLabel.font = [UIFont systemFontOfSize:16];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    _viewCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 30, 50, 20)];
+    _viewCountLabel.font = [UIFont systemFontOfSize:12];
     
     
-    _commentHeadLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 200, 60, 20)];
-    _commentNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 200, 24, 20)];
+    _commentNumLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(240, 30, 50, 20)];
+    _commentNumLabel1.font = [UIFont systemFontOfSize:12];
+    
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 40, 280, 200)];
+    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(10, 240, 280, 110)];
+    _detailText.font = [UIFont systemFontOfSize:14];
+    
+    
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 300, 37)];
+    UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 10)];tempLabel.backgroundColor = BackGray;
+    _commentHeadLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 17, 15, 15)];
+    [_commentHeadLabel setImage:[UIImage imageNamed:@"评论标题图标.png"]];
+    _commentNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 15, 100, 15)];
+    _commentNumLabel.font = [UIFont systemFontOfSize:12];
+    UILabel *tempLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 36, 300, 1)];tempLabel2.backgroundColor = BackGray;
+    [temp addSubview:tempLabel];[temp addSubview:tempLabel2];
+    [temp addSubview:_commentHeadLabel];
+    [temp addSubview:_commentNumLabel];
     
     
     
     
-    
-    UIView *tableHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    UIView *tableHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 387)];
     
     
     [tableHeader addSubview:_titleLabel];
@@ -82,19 +98,19 @@
     [tableHeader addSubview:_viewCountLabel];
     [tableHeader addSubview:_detailText];
     
-    [tableHeader addSubview:_commentNumLabel];
-    [tableHeader addSubview:_commentHeadLabel];
+    [tableHeader addSubview:temp];
+//    [tableHeader addSubview:_commentHeadLabel];
     
-    tableHeader.backgroundColor = [UIColor grayColor];
+    tableHeader.backgroundColor = [UIColor whiteColor];
     
-    _commentTable  = [[UITableView alloc] initWithFrame:CGRectMake(10, 64, 300, self.view.frame.size.height - 66 -40 ) style:UITableViewStylePlain];
+    _commentTable  = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 74 -40 ) style:UITableViewStylePlain];
     
     _commentTable.tableHeaderView = tableHeader;
     _commentTable.delegate = self;
     _commentTable.dataSource = self;
     [self.view addSubview:_commentTable];
     
-    _commentTable.backgroundColor = [UIColor greenColor];
+    _commentTable.backgroundColor = BackGray;
     
     
     _waterDetailRequestModel.delegate = self;
@@ -111,9 +127,10 @@
 {
 
     _titleLabel.text = _waterDetailResponseModel.title;
-    [_imgView setImageWithURL:_waterDetailResponseModel.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [_imgView setImageWithURL:_waterDetailResponseModel.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     _viewCountLabel.text = [NSString stringWithFormat:@"浏览：%@", _waterDetailResponseModel.myViews];
     _commentNumLabel1.text = [NSString stringWithFormat:@"评论：%@", _waterDetailResponseModel.commentNum];
+     _commentNumLabel.text = [NSString stringWithFormat:@"评论(%@)", _waterDetailResponseModel.commentNum];
     _detailText.text = _waterDetailResponseModel.myDescription;
     _detailText.editable = false;
 //
@@ -225,7 +242,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 52.0;
+    return 44.0;
 }
 
 -(void)requestFailed

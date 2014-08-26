@@ -18,7 +18,7 @@
 @property (nonatomic,strong) UIImageView *sexImageView;
 @property (nonatomic,strong) UILabel *userLabel;
 @property (nonatomic,strong) UILabel *timeLabel;
-@property (nonatomic,strong) UITextView *contentText;
+@property (nonatomic,strong) UILabel *contentText;
 
 -(void)fillWithModel:(CommentModel *)model;
 

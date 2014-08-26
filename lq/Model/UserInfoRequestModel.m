@@ -19,7 +19,9 @@
         
         _sellerid = [[NSString alloc] init];
         _uid = [[NSString alloc] init];
-        
+//        _linkMan = [[NSString alloc] init];
+//        _phone = [[NSString alloc ] init];
+//        _address = [[NSString alloc] init];
         
         _sellerid = sellerId;
         _uid = uid;
@@ -43,7 +45,58 @@
     [request addPostValue:_uid forKey:@"uid"];
 
     [request setRequestMethod:@"POST"];
-    //    request.tag = 10002;
+    request.tag = 10001;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+
+-(void)getAddress
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getreceiptinfo"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=getreceiptinfo"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_sellerid forKey:@"sellerId"];
+    [request addPostValue:_uid forKey:@"uid"];
+    
+    [request setRequestMethod:@"POST"];
+    request.tag = 10002;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+-(void)sendAddressLinkMan:(NSString *)linkMan phone:(NSString *)phone address:(NSString *)address
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"updatereceiptinfo"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=updatereceiptinfo"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_sellerid forKey:@"sellerId"];
+    [request addPostValue:_uid forKey:@"uid"];
+    [request addPostValue:linkMan forKey:@"linkman"];
+    [request addPostValue:phone forKey:@"phone"];
+    [request addPostValue:address forKey:@"address"];
+    
+    [request setRequestMethod:@"POST"];
+    request.tag = 10003;
     [request setDelegate:self];
     
     NSLog(@"post ready %@",token);
@@ -67,15 +120,56 @@
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&err];
     
     
-    AnotherUserInfoResponseModel *model= [[AnotherUserInfoResponseModel alloc] initWithDic:jsonDic];
-    model.ResponseTag = self.tag;
-    if (model.ResponseStatus == 1)
-    {
-        if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+    
+    switch (request.tag) {
+        case 10001:
         {
-            [[super delegate] requestSuccess:model];
+            AnotherUserInfoResponseModel *model= [[AnotherUserInfoResponseModel alloc] initWithDic:jsonDic];
+            model.ResponseTag = self.tag;
+            if (model.ResponseStatus == 1)
+            {
+                if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+                {
+                    [[super delegate] requestSuccess:model];
+                }
+            }
         }
+            break;
+        case 10002:
+        {
+            AddressResponseModel *model  = [[AddressResponseModel alloc] initWithDic:jsonDic];
+            
+            model.ResponseTag = self.tag;
+            
+            if (model.ResponseStatus == 1)
+            {
+                if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+                {
+                    [[super delegate] requestSuccess:model];
+                }
+            }
+        }
+            break;
+        case 10003:
+        {
+            BaseResponseModel *model  = [[BaseResponseModel alloc] initWithDic:jsonDic];
+            model.ResponseTag = self.tag;
+            if (model.ResponseStatus == 1)
+            {
+                if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+                {
+                    [[super delegate] requestSuccess:model];
+                }
+            }
+        }
+            break;
+        default:
+            break;
     }
+    
+    
+    
+
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

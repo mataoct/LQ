@@ -28,12 +28,8 @@
     self = [super init];
     if (self) {
         //
-        
         _requestModel = [[SellerInfoRequestModel alloc] initWithSeller:@"100"];
         _responseModel = [[SellerInfoResponseModel alloc] init];
-        
-        
-        
         
     }
     return self;
@@ -44,22 +40,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.navigationController.navigationBarHidden = false;
+    
     self.title = @"商家信息";
     
     _infoView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 180)];
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 60)];
-    _telLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 61, 240, 60)];
-    _telBtn = [[UIButton alloc] initWithFrame:CGRectMake(241, 61, 60, 60)];
-    _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 121, 240, 60)];
-    _addressBtn = [[UIButton alloc] initWithFrame:CGRectMake(241, 121, 60, 60)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    _telLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 45, 235, 44)];
+    _telBtn = [[UIButton alloc] initWithFrame:CGRectMake(236, 45, 64, 44)];
+    _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, 235, 44)];
+    _addressBtn = [[UIButton alloc] initWithFrame:CGRectMake(236, 90, 64, 44)];
     
+    
+    _telBtn.backgroundColor = [UIColor whiteColor];
+    [_telBtn setBackgroundImage:[UIImage imageNamed:@"电话.png"] forState:UIControlStateNormal];
+    
+    _addressBtn.backgroundColor = [UIColor whiteColor];
+    [_addressBtn setBackgroundImage:[UIImage imageNamed:@"地址.png"] forState:UIControlStateNormal];
     
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     
+    self.view.backgroundColor = BackGray;
     
-    
-
-    
+    _telLabel.backgroundColor = [UIColor whiteColor];
+    _titleLabel.backgroundColor = [UIColor whiteColor];
+    _addressLabel.backgroundColor = [UIColor whiteColor];
     
     [_infoView addSubview:_titleLabel];
     [_infoView addSubview:_telLabel];
@@ -67,26 +72,36 @@
     [_infoView addSubview:_addressLabel];
     [_infoView addSubview:_addressBtn];
     
+    [_infoView setBackgroundColor:BackGray];
     
     
     
     
-    _introduceView = [[UIView alloc] initWithFrame:CGRectMake(10, 200, 300, 240)];
-    _headLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
-    _introduceField = [[UITextView alloc] initWithFrame:CGRectMake(0, 31, 300, 210)];
+    
+    _introduceView = [[UIView alloc] initWithFrame:CGRectMake(10, 154, 300, 125)];
+    _headLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 24)];
+    _introduceField = [[UITextView alloc] initWithFrame:CGRectMake(0, 25, 300, 100)];
     
     
     
-    _headLabel.backgroundColor = [UIColor greenColor];
+    _headLabel.backgroundColor = [UIColor whiteColor];
     
     _introduceField.editable  = false;
-    _introduceField.backgroundColor = [UIColor orangeColor];
+    _introduceField.backgroundColor = [UIColor whiteColor];
     
     [_introduceView addSubview:_headLabel];
     [_introduceView addSubview:_introduceField];
     
     
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    
+    _titleLabel.font = [UIFont systemFontOfSize:16];
+    _telLabel.font = [UIFont systemFontOfSize:14];
+    _addressLabel.font = [UIFont systemFontOfSize:14];
+    
+    _headLabel.font = [UIFont systemFontOfSize:13];
+    
+    
     
     [self.view addSubview:_infoView];
     [self.view addSubview:_introduceView];
@@ -108,7 +123,7 @@
     
     _introduceField.text = _responseModel.myDescription;
     
-    [_telBtn setBackgroundColor:[UIColor blueColor]];
+//    [_telBtn setBackgroundColor:[UIColor blueColor]];
     [_telBtn addTarget:self action:@selector(makePhoneCall) forControlEvents:UIControlEventTouchUpInside];
     
     [_addressBtn addTarget:self action:@selector(showMap) forControlEvents:UIControlEventTouchUpInside];

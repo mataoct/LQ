@@ -18,16 +18,28 @@
         
         _model = [[CommentModel alloc] init];
         
-        _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 36)];
+        _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 4, 36, 36)];
         
-        _userLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 40, 16)];
-        _sexImageView = [[UIImageView alloc] initWithFrame:CGRectMake(80, 0, 16, 16)];
-        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 0, 100, 16)];
+        _userLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 4, 60, 16)];
+        _sexImageView = [[UIImageView alloc] initWithFrame:CGRectMake(110, 4, 16, 16)];
+        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 4, 100, 16)];
         
-        _contentText = [[UITextView alloc] initWithFrame:CGRectMake(40, 20, 220, 36)];
-        _contentText.editable = false;
+        _contentText = [[UILabel alloc] initWithFrame:CGRectMake(50, 22, 220, 16)];
+        
+        
+        _userLabel.font = [UIFont systemFontOfSize:14];
+        _contentText.font = [UIFont systemFontOfSize:12];
+        _timeLabel.font = [UIFont systemFontOfSize:12];
+        
+        _timeLabel.textAlignment = NSTextAlignmentRight;
+        
+//        _contentText.backgroundColor = [UIColor greenColor];
+//        _contentText.editable = false;
+        _contentText.userInteractionEnabled = false;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+//        self.backgroundColor = [UIColor greenColor];
         
         [self addSubview:_headImageView];
         [self addSubview:_userLabel];
@@ -54,9 +66,9 @@
 -(void)fillWithModel:(CommentModel *)model
 {
     _model = model;
-    [_headImageView setImageWithURL:_model.avatar placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
-    [_sexImageView setImage:[UIImage imageNamed:@""]];
-    _model.sex==1?[_sexImageView setImage:[UIImage imageNamed:@"male.png"]]:[_sexImageView setImage:[UIImage imageNamed:@"female.png"]];
+    [_headImageView setImageWithURL:_model.avatar placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+//    [_sexImageView setImage:[UIImage imageNamed:@""]];
+    _model.sex==1?[_sexImageView setImage:[UIImage imageNamed:@"性别男.png"]]:[_sexImageView setImage:[UIImage imageNamed:@"性别-女.png"]];
     
     _userLabel.text = _model.username;
     _timeLabel.text = _model.dateline;

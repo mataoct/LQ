@@ -33,7 +33,7 @@
         _totalPrice = safeString([dic objectForKey:@"totalprice"]);
         _num = safeString([dic objectForKey:@"num"]);
         _title = safeString([dic objectForKey:@"title"]);
-        _mydescription = safeString([dic objectForKey:@"description"]);
+        _mydescription = safeString([dic objectForKey:@"content"]);
         _nowPrice = safeString([dic objectForKey:@"nowprice"]);
         _originalPrice = safeString([dic objectForKey:@"originalprice"]);
     }

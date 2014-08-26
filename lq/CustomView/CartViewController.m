@@ -31,26 +31,35 @@
     
     _selectDic = [[NSMutableDictionary alloc] init];
     
-    _cartTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 20-44 - 60 - 60) style:UITableViewStylePlain];
-    _priceCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 40, 20)];
-    _priceCountValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 20, 40, 20)];
-    _checkBtn = [[UIButton alloc] initWithFrame:CGRectMake(220, 20, 60, 20)];
+    _cartTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 20-44 - 60 - 50) style:UITableViewStylePlain];
+    _priceCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 20)];
+    _priceCountValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 20, 60, 20)];
+    _checkBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 10, 100, 40)];
     
-    _checkBtn.backgroundColor = [UIColor redColor];
+    _checkBtn.backgroundColor = Pink;
+    _checkBtn.layer.cornerRadius = 4.0;
+    [_checkBtn setTitle:@"结算" forState:UIControlStateNormal];
+    
+    _priceCountLabel.font = [UIFont systemFontOfSize:12];
+    _priceCountValueLabel.font = [UIFont systemFontOfSize:16];
+    
     
     [_checkBtn addTarget:self action:@selector(sendOrder) forControlEvents:UIControlEventTouchUpInside];
     
-    _footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 20-44 -60 - 60, 320, 60)];
+    _footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 20-44 -60 - 50, 320, 60)];
     
     [_footView addSubview:_priceCountLabel];
     [_footView addSubview:_priceCountValueLabel];
     [_footView addSubview:_checkBtn];
     
-    _footView.backgroundColor = [UIColor greenColor];
+    _footView.backgroundColor = DarkGray;
     
     
     _cartTable.delegate = self;
     _cartTable.dataSource = self;
+    _cartTable.backgroundColor = BackGray;
+    _cartTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.view.backgroundColor = BackGray;
     
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
@@ -117,16 +126,16 @@
 -(void)reLayoutViews
 {
     [_cartTable reloadData];
-    _priceCountLabel.text = @"总计：";
+    _priceCountLabel.text = @"合计：";
     _priceCountLabel.textColor = [UIColor blackColor];
-    _priceCountValueLabel.text = _responseModel.totalPrice  ;
+    _priceCountValueLabel.text = [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
     _priceCountValueLabel.textColor = [UIColor blackColor];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 110.0;
+    return 100.0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

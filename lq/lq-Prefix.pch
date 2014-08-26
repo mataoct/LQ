@@ -22,3 +22,11 @@
 #define DarkGreen     [UIColor colorWithRed:21/255.0 green:134/255.0 blue:98/255.0 alpha:1]
 
 #define BackGray    [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
+
+#define Pink    [UIColor colorWithRed:252/255.0 green:54/255.0 blue:79/255.0 alpha:1]
+
+#define Orange    [UIColor colorWithRed:251/255.0 green:178/255.0 blue:11/255.0 alpha:1]
+
+#define DarkGray    [UIColor colorWithRed:52/255.0 green:57/255.0 blue:66/255.0 alpha:1]
+
+#define SkyBlue    [UIColor colorWithRed:66/255.0 green:178/255.0 blue:226/255.0 alpha:1]

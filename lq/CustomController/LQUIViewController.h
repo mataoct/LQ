@@ -13,6 +13,7 @@
 //@property (nonatomic,retain) UINavigationController *navi;
 @property (nonatomic,retain) UINavigationItem *item;
 @property (nonatomic,retain) UINavigationBar *bar;
+@property (nonatomic,retain) UIView *statusView;
 -(id)initWithTitle:(NSString *)str;
 -(void)setBackButtonHide:(BOOL)hide;
 @end

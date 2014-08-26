@@ -73,7 +73,7 @@
 +(NSDate*) convertDateFromString:(NSString*)uiDate
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
-    [formatter setDateFormat:@"yyyy年MM月dd日 hh时mm分"];
+    [formatter setDateFormat:@"yyyy年MM月dd日"];
     NSDate *date=[formatter dateFromString:uiDate];
     return date;
 }
@@ -83,7 +83,7 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *destDateString = [dateFormatter stringFromDate:date];
     return destDateString;
     

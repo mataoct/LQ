@@ -30,13 +30,18 @@
     if (self) {
         //
         
-        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 36)];
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 36)];
         
-        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 42, 16)];
         
-        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(52, 10, 42, 16)];
-        integrationLabel.text = @"当前积分";
+//        headView.backgroundColor  = BackGray;
         
+        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 26)];
+        integrationLabel.backgroundColor = [UIColor whiteColor];
+        integrationLabel.textAlignment = NSTextAlignmentCenter;
+        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 210, 26)];
+        _integralValueLabel.backgroundColor = [UIColor whiteColor];
+        integrationLabel.text = @"可用积分：";
+        integrationLabel.font = [UIFont systemFontOfSize:16];_integralValueLabel.font = [UIFont systemFontOfSize:16];
         [headView addSubview:integrationLabel];
         [headView addSubview:_integralValueLabel];
         
@@ -98,7 +103,7 @@
 }
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 100.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +133,7 @@
     NSLog(@"relayouts");
     
     [_couponTable reloadData];
-//    _integralValueLabel.text = _responseModel.
+    _integralValueLabel.text = @"20";
 }
 
 

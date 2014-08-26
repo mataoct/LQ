@@ -17,7 +17,7 @@
 @property (nonatomic,strong) NSURL *img;
 @property (nonatomic,strong) NSString *extrcedit;
 @property (nonatomic,strong) NSString *expiry;
-@property (nonatomic,strong) NSString *description;
+@property (nonatomic,strong) NSString *myDescription;
 
 @property (nonatomic,strong) NSString *sellerId;
 @property (nonatomic,strong) NSString *status;

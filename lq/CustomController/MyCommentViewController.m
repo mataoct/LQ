@@ -30,7 +30,7 @@
     if (self) {
         //
         
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = BackGray;
         
         _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:@"3" start:@"0" limit:@"10" type:@"0"];
         _responseModel = [[MyCommentResponseModel alloc] init];
@@ -56,6 +56,8 @@
         
         _commentTable.delegate = self;
         _commentTable.dataSource =self;
+        _commentTable.backgroundColor = BackGray;
+        _commentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         _requestModel.delegate = self;
         [_requestModel postData];
@@ -83,7 +85,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"cell";
+    static NSString *identifier = @"Acell";
     MyCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[MyCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
@@ -96,7 +98,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 100.0;
 }
 
 /*

@@ -41,4 +41,6 @@
 @property (nonatomic,strong) InfoViewController *infoVC;
 @property (nonatomic,strong) MainNavigationController *infoNC;
 
+
+
 @end

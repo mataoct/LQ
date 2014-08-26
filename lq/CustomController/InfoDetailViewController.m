@@ -33,7 +33,7 @@
         
         _model = model;
         
-        
+        self.title = @"活动资讯详情";
         
     }
     return self;
@@ -44,24 +44,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 320)];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 300, 20)];
-    _mainImageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 300, 60)];
-    _contentText = [[UITextView alloc] initWithFrame:CGRectMake(0, 100, 300, 100)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 300, 20)];
+    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 34, 300, 12)];
+    _mainImageview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 50, 280, 150)];
+    _contentText = [[UITextView alloc] initWithFrame:CGRectMake(10, 210, 280, 100)];
     _contentText.editable = false;
+    _contentText.userInteractionEnabled = false;
     
+    _timeLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    _titleLabel.font = [UIFont systemFontOfSize:20];
+    _timeLabel.font = [UIFont systemFontOfSize:12];
+    _contentText.font = [UIFont systemFontOfSize:14];
     
     [temp addSubview:_titleLabel];
     [temp addSubview:_mainImageview];
     [temp addSubview:_contentText];
     [temp addSubview:_timeLabel];
     
+    temp.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = BackGray;
+    
+    
     
     _titleLabel.text = _model.title;
     _timeLabel.text = _model.dateLine;
-    [_mainImageview setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [_mainImageview setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
     _contentText.text = _model.summary;
     
     

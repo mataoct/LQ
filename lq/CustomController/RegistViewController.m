@@ -40,11 +40,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _telText = [[UITextField alloc] initWithFrame:CGRectMake(30, 30, 260, 20)];
-    _verifyCodeText = [[UITextField alloc] initWithFrame:CGRectMake(30, 60, 180, 20)];
-    _getVerifyCodeBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 60, 80, 20)];
-    _nickText = [[UITextField alloc] initWithFrame:CGRectMake(30, 90, 260, 20)];
-    _pwdText = [[UITextField alloc] initWithFrame:CGRectMake(30, 120, 260, 20)];
+    
+    
+    _telText = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 300, 45)];
+    _verifyCodeText = [[UITextField alloc] initWithFrame:CGRectMake(10, 65, 205, 45)];
+    _getVerifyCodeBtn = [[UIButton alloc] initWithFrame:CGRectMake(215, 65, 95, 45)];
+    _nickText = [[UITextField alloc] initWithFrame:CGRectMake(10, 120, 300, 45)];
+    _pwdText = [[UITextField alloc] initWithFrame:CGRectMake(10, 175, 300, 45)];
+    
+    
+    
+    _telText.backgroundColor = [UIColor whiteColor];
+    _verifyCodeText.backgroundColor = [UIColor whiteColor];
+    _nickText.backgroundColor = [UIColor whiteColor];
+    _pwdText.backgroundColor = [UIColor whiteColor];
+    
+    _pwdText.secureTextEntry = YES;
+    
     
     
     _telText.returnKeyType = UIReturnKeyDone;
@@ -68,14 +80,17 @@
     
     
     
-    _registBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 160, 260, 20)];
+    _registBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 294, 300, 48)];
     
     
-    _getVerifyCodeBtn.backgroundColor = [UIColor greenColor];
-    _registBtn.backgroundColor = [UIColor redColor];
+    _getVerifyCodeBtn.backgroundColor = SkyBlue;
+    _registBtn.backgroundColor = Orange;
     
     [_getVerifyCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    _getVerifyCodeBtn.font = [UIFont systemFontOfSize:16];
     [_registBtn setTitle:@"注册" forState:UIControlStateNormal];
+    _registBtn.layer.cornerRadius = 6.0;
+    _registBtn.font = [UIFont systemFontOfSize:16];
     
     [_getVerifyCodeBtn addTarget:self action:@selector(getVerifyCodeByReuqest) forControlEvents:UIControlEventTouchUpInside];
     [_registBtn addTarget:self action:@selector(sendRegisterInfo) forControlEvents:UIControlEventTouchUpInside];
@@ -92,7 +107,7 @@
     [temp addSubview:_pwdText];
     [temp addSubview:_registBtn];
     
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:BackGray];
     
     [self.view addSubview:temp];
     

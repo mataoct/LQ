@@ -16,37 +16,71 @@
     if (self) {
         // Initialization code
         
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        _headView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 95, 70)];
+        
+        _headView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 95, 75)];
+        
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 10, 105, 20)];
-        _shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(230, 10, 30, 20)];
-        _favBtn = [[UIButton alloc] initWithFrame:CGRectMake(270, 10, 30, 20)];
-        _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 35, 375, 15)];
+        _shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(220, 10, 30, 20)];
+        _favBtn = [[UIButton alloc] initWithFrame:CGRectMake(260, 10, 30, 20)];
+        _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 185, 15)];
         
-        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 55, 30, 20)];
-        _disPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 55, 30, 20)];
-        _disLineLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 55, 30, 20)];
-        
-        
-        _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 75, 30, 15)];
-        _countValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 75, 30, 15)];
-        
-        _toBuyButton = [[UIButton alloc] initWithFrame:CGRectMake(205, 70, 75, 20)];
+        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 50, 50, 20)];
+        _disPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
+        _disLineLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
         
         
-        [self addSubview:_headView];
-        [self addSubview:_titleLabel];
-        [self addSubview:_shareBtn];
-        [self addSubview:_favBtn];
-        [self addSubview:_detailLabel];
-        [self addSubview:_priceLabel];
-        [self addSubview:_disPriceLabel];
-        [self addSubview:_disLineLabel];
-        [self addSubview:_countLabel];
-        [self addSubview:_countValueLabel];
-        [self addSubview:_toBuyButton];
+        _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 70, 40, 15)];
+        _countValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(155, 70, 30, 15)];
+        
+        _toBuyButton = [[UIButton alloc] initWithFrame:CGRectMake(210, 65, 80, 20)];
+        [_toBuyButton setTitle:@"加入购物车" forState:UIControlStateNormal];
+
         
         
+        
+//        _addToCartBtn = [[UIButton alloc] initWithFrame:CGRectMake(220, 70, 80, 20)];
+//        
+//        [_addToCartBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
+        [_toBuyButton setBackgroundColor:Orange];
+        [_toBuyButton setFont:[UIFont systemFontOfSize:14]];
+        _toBuyButton.layer.cornerRadius = 3;
+        
+        _titleLabel.font = [UIFont systemFontOfSize:20];
+        _detailLabel.font = [UIFont systemFontOfSize:12];
+        
+        
+        
+        _priceLabel.font = [UIFont systemFontOfSize:20];
+        _disPriceLabel.font = [UIFont systemFontOfSize:12];
+        _countLabel.font = [UIFont systemFontOfSize:12];
+        
+        _countLabel.text = @"销量：";
+        _countValueLabel.font = [UIFont systemFontOfSize:12];
+        
+        
+        _favBtn.backgroundColor = [UIColor blueColor];
+        _shareBtn.backgroundColor = [UIColor greenColor];
+        
+        
+        UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 95)];
+        tempView.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = BackGray;
+        
+        [tempView addSubview:_headView];
+        [tempView addSubview:_titleLabel];
+        [tempView addSubview:_shareBtn];
+        [tempView addSubview:_favBtn];
+        [tempView addSubview:_detailLabel];
+        [tempView addSubview:_priceLabel];
+        [tempView addSubview:_disPriceLabel];
+        [tempView addSubview:_disLineLabel];
+        [tempView addSubview:_countLabel];
+        [tempView addSubview:_countValueLabel];
+        [tempView addSubview:_toBuyButton];
+        
+        [self addSubview:tempView];
         
     }
     return self;
@@ -64,18 +98,22 @@
     _model = [[GoodsModel alloc] init];
     _model = model;
     
-    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"placeholder.png"] success:nil failure:nil];
+    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
     _titleLabel.text = _model.title;
     _detailLabel.text = _model.content;
     
-    
-    
-    
-    _priceLabel.text = _model.nowprice;
-    _disPriceLabel.text = _model.originalprice;
+    _priceLabel.text = [NSString stringWithFormat:@"￥%@",_model.nowprice];
+    _disPriceLabel.text = [NSString stringWithFormat:@"￥%@",_model.originalprice];
     _countValueLabel.text = _model.sales;
     
-
+    if ([_model.isfav intValue] == 0) {
+        //
+        [_favBtn setImage:[UIImage imageNamed:@"fav.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_favBtn setImage:[UIImage imageNamed:@"notfav.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

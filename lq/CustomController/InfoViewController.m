@@ -27,9 +27,12 @@
 {
     [super viewDidLoad];
     
-    
+//    [self.view setBackgroundColor:BackGray];
     _model = [[InfoRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
-    _infoTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 64 -60) style:UITableViewStylePlain];
+    _infoTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 64 - 49 ) style:UITableViewStylePlain];
+    _infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _infoTable.backgroundColor = BackGray;
+    _infoTable.showsVerticalScrollIndicator = false;
     _responseModel = [[InfoResponseModel alloc] init];
     
     
@@ -65,7 +68,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 100.0;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

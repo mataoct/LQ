@@ -52,6 +52,7 @@
 @property (nonatomic,strong) UITextView *contentTv;
 
 @property (nonatomic,strong) UIImageView *tableTitleImgview;
+@property (nonatomic,strong) UILabel *commentCountLabel;
 @property (nonatomic,strong) UITableView *commentTable;
 
 

@@ -20,16 +20,33 @@
         _model = [[InfoModel alloc] init];
         _headImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 95, 70)];
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 10, 175, 20)];
-        _contentText = [[UITextView alloc] initWithFrame:CGRectMake(115, 45, 175, 40)];
-        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 90, 100, 16)];
+        _contentText = [[UITextView alloc] initWithFrame:CGRectMake(115, 30, 175, 36)];
+        _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 70, 100, 10)];
         
 //        _titleLabel.backgroundColor = [UIColor orangeColor];
         _contentText.editable = false;
+        _contentText.userInteractionEnabled = false;
         
-        [self addSubview:_headImage];
-        [self addSubview:_titleLabel];
-        [self addSubview:_contentText];
-        [self addSubview:_timeLabel];
+        
+        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _contentText.font = [UIFont systemFontOfSize:12];
+        _timeLabel.font = [UIFont systemFontOfSize:12];
+        _timeLabel.textAlignment = NSTextAlignmentRight;
+        
+        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 90)];
+        
+        [temp addSubview:_headImage];
+        [temp addSubview:_titleLabel];
+        [temp addSubview:_contentText];
+        [temp addSubview:_timeLabel];
+        
+        temp.backgroundColor = [UIColor whiteColor];
+        
+        self.backgroundColor = BackGray;
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [self addSubview:temp];
         
     }
     return self;
@@ -52,7 +69,7 @@
 {
     _model = model;
     
-    [_headImage setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [_headImage setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
     _titleLabel.text = _model.title;
     _contentText.text = _model.summary;
     _timeLabel.text = _model.dateLine;

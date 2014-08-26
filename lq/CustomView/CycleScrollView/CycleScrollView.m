@@ -63,10 +63,12 @@
         [self addSubview:self.scrollView];
         
         
+        
         self.currentPageIndex = 0;
         
-        _pageIndex = [[UIPageControl alloc] initWithFrame:CGRectMake(240, self.scrollView.frame.size.height - 30, 80, 30)];
+        _pageIndex = [[UIPageControl alloc] initWithFrame:CGRectMake(self.scrollView.frame.size.width - 80, self.scrollView.frame.size.height - 30, 80, 30)];
         
+//        _pageIndex.backgroundColor = [UIColor blackColor];
         _pageIndex.currentPage = 0;
         [self addSubview:_pageIndex];
     }

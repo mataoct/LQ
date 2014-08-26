@@ -35,16 +35,16 @@
     [_menuRequest postData];
     
     
-    _classfy = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 70, 20)];
-    _volume = [[UIButton alloc] initWithFrame:CGRectMake(90, 30, 70, 20)];
-    _time = [[UIButton alloc] initWithFrame:CGRectMake(160, 30, 70, 20)];
-    _price = [[UIButton alloc] initWithFrame:CGRectMake(230, 30, 70, 20)];
+    _classfy = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 75, 30)];
+    _volume = [[UIButton alloc] initWithFrame:CGRectMake(85, 10, 75, 30)];
+    _time = [[UIButton alloc] initWithFrame:CGRectMake(160, 10, 75, 30)];
+    _price = [[UIButton alloc] initWithFrame:CGRectMake(235, 10, 75, 30)];
     
     
-    _classfy.backgroundColor = [UIColor greenColor];
-    _volume.backgroundColor = [UIColor greenColor];
-    _time.backgroundColor = [UIColor greenColor];
-    _price.backgroundColor = [UIColor greenColor];
+    _classfy.backgroundColor = DarkGreen;
+    _volume.backgroundColor = DarkGreen;
+    _time.backgroundColor = DarkGreen;
+    _price.backgroundColor = DarkGreen;
     
     
     [_classfy setTitle:@"分类" forState:UIControlStateNormal];
@@ -67,13 +67,16 @@
     
     NSLog(@"bounds height = %f",self.view.frame.size.height);
     
-    _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(20, 60, 280, self.view.frame.size.height-20 - 40 - 44 - 60 - 20) style:UITableViewStylePlain];
+    _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, 320, self.view.frame.size.height-64 -40 - 50) style:UITableViewStylePlain];
     _menuTable.delegate = self;
     _menuTable.dataSource = self;
     
-    _menuTable.backgroundColor = [UIColor purpleColor];
+    _menuTable.backgroundColor = BackGray;
+    
+    _menuTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:_menuTable];
+    self.view.backgroundColor = BackGray;
     
 }
 
@@ -132,7 +135,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return 105.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -145,9 +148,9 @@
     GoodsViewController  *goodController = [[GoodsViewController alloc] initWithGid:model.gid Title:@"菜品详情"];
 //    [self.navigationController pushViewController:goodController animated:YES];
     
-    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:goodController];
+//    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:goodController];
     
-    [self presentViewController:tempNavi animated:YES completion:nil];
+    [self presentViewController:goodController animated:YES completion:nil];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model

@@ -27,18 +27,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"标题--电话.png"] style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    self.item.rightBarButtonItem = rightButton;
 
+    self.view.backgroundColor = BackGray;
+    
+    _headText = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 64)];
     
     
-    _headText = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 260, 20)];
-    
-    
-    _headText.text = @"tmd赶快登陆";
+    _headText.text = @"您尚未登录，请先登录，享受更多会员优惠！";
     _headText.textAlignment = NSTextAlignmentCenter;
+    _headText.font = [UIFont systemFontOfSize:14];
+    _headText.textColor = [UIColor darkGrayColor];
     
-    _userName = [[UITextField alloc] initWithFrame:CGRectMake(30, 60, 260, 20)];
-    _userPwd = [[UITextField alloc] initWithFrame:CGRectMake(30, 90, 260, 20)];
-
+    _userName = [[UITextField alloc] initWithFrame:CGRectMake(10, 64, 300, 44)];
+    _userName.backgroundColor = [UIColor whiteColor];
+    _userPwd = [[UITextField alloc] initWithFrame:CGRectMake(10, 120, 300, 44)];
+    _userPwd.backgroundColor = [UIColor whiteColor];
     _userPwd.placeholder = @"密码";
     _userName.placeholder = @"用户名";
     
@@ -56,8 +62,8 @@
     
     
     
-    _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 120, 120, 20)];
-    _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 120, 120, 20)];
+    _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 174, 120, 20)];
+    _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 174, 120, 20)];
     
     [_rememberPwdBtn setTitle:@"记住密码" forState:UIControlStateNormal];
     [_forgetPwdBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
@@ -65,31 +71,34 @@
     _forgetPwdBtn.backgroundColor = [UIColor blueColor];
     _rememberPwdBtn.backgroundColor = [UIColor blueColor];
     
-    _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 160, 260, 30)];
-    [_loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-    
-    
+    _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 226, 300, 46)];
+    [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [_loginBtn addTarget:self action:@selector(goLogin) forControlEvents:UIControlEventTouchUpInside];
-    _loginBtn.backgroundColor = [UIColor greenColor];
+    _loginBtn.backgroundColor = Orange;
+    _loginBtn.layer.cornerRadius = 6.0;
     
-    _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 200, 120, 20)];
-    _fastRegBtn.backgroundColor = [UIColor grayColor];
-    [_fastRegBtn setTitle:@"快速注册" forState:UIControlStateNormal];
+    
+    
+    _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 290, 120, 20)];
+//    _fastRegBtn.backgroundColor = [UIColor grayColor];
+    _fastRegBtn.font = [UIFont systemFontOfSize:14];
+    [_fastRegBtn setTitle:@"手机号快速注册" forState:UIControlStateNormal];
     [_fastRegBtn addTarget:self action:@selector(gotoRegist) forControlEvents:UIControlEventTouchUpInside];
+    [_fastRegBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     
-    _subText =[[UILabel alloc] initWithFrame:CGRectMake(30, 230, 260, 20)];
-    _subText.text = @"其他登陆方式";
-    _subText.textAlignment   = NSTextAlignmentCenter;
+//    _subText =[[UILabel alloc] initWithFrame:CGRectMake(30, 230, 260, 20)];
+//    _subText.text = @"其他登陆方式";
+//    _subText.textAlignment   = NSTextAlignmentCenter;
     
-    
-    _otherLoginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 260, 50, 50)];
-    _otherLoginBtn.backgroundColor =[UIColor purpleColor];
+//    
+//    _otherLoginBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 260, 50, 50)];
+//    _otherLoginBtn.backgroundColor =[UIColor purpleColor];
     
     
     NSLog(@"view loaded");
     
     UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64)];
-    
+    temp.backgroundColor = BackGray;
     [temp addSubview:_headText];
     [temp addSubview:_userPwd];
     [temp addSubview:_userName];
@@ -99,8 +108,6 @@
     [temp addSubview:_fastRegBtn];
     [temp addSubview:_subText];
     [temp addSubview:_otherLoginBtn];
-    
-    temp.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:temp];
     
@@ -137,7 +144,7 @@
 
 -(void)gotoRegist
 {
-    RegistViewController *registVC = [[RegistViewController alloc] init];
+    RegistViewController *registVC = [[RegistViewController alloc] initWithTitle:@"注册"];
     [self presentViewController:registVC animated:YES completion:nil];
 }
 
@@ -160,6 +167,17 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+
+-(void)selectRightAction:(id)sender
+{
+//    _saveRequestModel   = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
+//    _saveRequestModel.delegate = self;
+//    _saveRequestModel.tag = 10002;
+//    [_saveRequestModel sendAddressLinkMan:_nameTf.text phone:_telTf.text address:_addrTf.text];
+    
+    NSLog(@"call");
 }
 
 @end

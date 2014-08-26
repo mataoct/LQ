@@ -26,7 +26,7 @@
         _avatar = [NSURL URLWithString: safeString([dic objectForKey:@"avatar"])];
         _username = safeString([dic objectForKey:@"username"]);
         _sex = [safeString([dic objectForKey:@"sex"]) integerValue];
-        _dateline = safeString([dic objectForKey:@"dateline"]);
+        _dateline = [CoreHelper timeStampToDate:safeString([dic objectForKey:@"dateline"])];
         _message = safeString([dic objectForKey:@"message"]);
         
     }

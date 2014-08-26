@@ -34,6 +34,8 @@
     
     self.title = @"我的收藏";
     
+    self.navigationController.navigationBarHidden = false;
+    
     _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
     _requestModel.uid = @"3";
     
@@ -44,18 +46,25 @@
     _selecFlag = 0;
     _selectDic = [[NSMutableDictionary alloc] init];
     
-    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 36)];
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     
-    _allCheckBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 8, 80, 20)];
-    _favCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 8, 100, 20)];
+    _allCheckBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 5, 80, 20)];
+    [_allCheckBtn setTitle:@"全选" forState:UIControlStateNormal];
+    _allCheckBtn.backgroundColor = [UIColor blueColor];
+    _favCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, 100, 20)];
     
     [temp addSubview:_allCheckBtn];
     [temp addSubview:_favCountLabel];
     [temp setBackgroundColor:[UIColor grayColor]];
     
-    _favTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 56, 300, self.view.frame.size.height - 48 - 64 -56)];
+    self.view.backgroundColor = BackGray;
+    temp.backgroundColor = [UIColor whiteColor];
+    
+    
+    _favTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, 320, self.view.frame.size.height - 40 - 64 - 50)];
     _favTable.delegate = self;
     _favTable.dataSource = self;
+    _favTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     _favTable.backgroundColor = [UIColor greenColor];
     [self.view addSubview:temp];
@@ -66,7 +75,7 @@
 
 -(void)reFillLayout
 {
-    _favCountLabel.text = [NSString stringWithFormat:@"共收藏%@个",_responseModel.num];
+    _favCountLabel.text = [NSString stringWithFormat:@"共收藏:%@个",_responseModel.num];
     [_favTable reloadData];
     
     [_allCheckBtn addTarget:self action:@selector(allCheck) forControlEvents:UIControlEventTouchUpInside];
@@ -132,7 +141,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 100.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

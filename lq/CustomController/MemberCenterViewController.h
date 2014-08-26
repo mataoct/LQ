@@ -13,6 +13,7 @@
 #import "MyCommentViewController.h"
 #import "UserCouponViewController.h"
 #import "MyFavViewController.h"
+#import "AddressViewController.h"
 
 @interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate>
 

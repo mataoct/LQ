@@ -95,24 +95,70 @@ BMKMapManager* _mapManager;
 {
     switch (viewController.tabBarItem.tag) {
         case 1:
+        {
+            {
+                if (![CoreHelper checkLogin]) {
+                    
+                    LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+                    //                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+                    [_tabbar presentViewController:loginController animated:YES completion:nil];
+                    
+                    return false;
+                }
+                [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-3.png"]];
+                return true;
+            }
+            break;
+
+        }
         case 2:
+        {
+            if (![CoreHelper checkLogin]) {
+                
+                LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+                //                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+                [_tabbar presentViewController:loginController animated:YES completion:nil];
+                
+                return false;
+            }
+            [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-2.png"]];
+            return true;
+        }
+            break;
+
         case 3:
+        {
+            if (![CoreHelper checkLogin]) {
+                
+                LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+                //                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+                [_tabbar presentViewController:loginController animated:YES completion:nil];
+                
+                return false;
+            }
+            [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-4.png"]];
+            return true;
+        }
+            break;
+
         case 4:
         {
             if (![CoreHelper checkLogin]) {
                 
                 LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
-                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
-                [_tabbar presentViewController:navi animated:YES completion:nil];
+//                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+                [_tabbar presentViewController:loginController animated:YES completion:nil];
                 
                 return false;
             }
+            [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-5.png"]];
             return true;
         }
             break;
 
             
         default:
+            [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-1.png"]];
             return true;
             break;
     }

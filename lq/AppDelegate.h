@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Base64codeFunc.h"
+//#import "Base64codeFunc.h"
 #import "LQUITabBarController.h"
 #import "LQUINavigationController.h"
 #import "LoginViewController.h"

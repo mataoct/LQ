@@ -60,7 +60,7 @@
     _requestModel.delegate = self;
     [_requestModel postData];
     
-    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 50)];
+    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
     
     
     [self.view addSubview:_menuList];
@@ -112,7 +112,7 @@
         
         NSURL *url = [[NSURL alloc] initWithString:tempSlider.img];
 
-        [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+        [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
 //        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
@@ -148,7 +148,7 @@
     UIButton *myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 170, 80, 80)];
     UIButton *discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 80, 80)];
     
-    fastOrder.backgroundColor    = [UIColor lightGrayColor];
+//    fastOrder.backgroundColor    = [UIColor lightGrayColor];
     
     
     [fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -157,10 +157,16 @@
     [discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
     
-    [fastOrder setTitle:@"快速预约" forState:UIControlStateNormal];
-    [picWall setTitle:@"图片墙" forState:UIControlStateNormal];
-    [myFav setTitle:@"我的收藏" forState:UIControlStateNormal];
-    [discount setTitle:@"优惠券" forState:UIControlStateNormal];
+//    [fastOrder setTitle:@"快速预约" forState:UIControlStateNormal];
+//    [picWall setTitle:@"图片墙" forState:UIControlStateNormal];
+//    [myFav setTitle:@"我的收藏" forState:UIControlStateNormal];
+//    [discount setTitle:@"优惠券" forState:UIControlStateNormal];
+    
+    
+    [fastOrder setBackgroundImage:[UIImage imageNamed:@"首页_02.png"] forState:UIControlStateNormal];
+    [picWall setBackgroundImage:[UIImage imageNamed:@"首页_03.png"] forState:UIControlStateNormal];
+    [myFav setBackgroundImage:[UIImage imageNamed:@"首页_04.png"] forState:UIControlStateNormal];
+    [discount setBackgroundImage:[UIImage imageNamed:@"首页_05.png"] forState:UIControlStateNormal];
     
     
     [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
@@ -173,7 +179,7 @@
     UIImageView *adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
 //    adView.backgroundColor = [UIColor lightGrayColor];
     
-    [adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
     
     
     adView.userInteractionEnabled = YES;
@@ -188,6 +194,8 @@
     [self.view addSubview:myFav];
     [self.view addSubview:discount];
     [self.view addSubview:adView];
+    
+    [self.view setBackgroundColor:BackGray];
     
 }
 
@@ -235,7 +243,7 @@
 
 -(void)jumpToWaterFlow
 {
-    WaterFlowViewController *waterVC = [[WaterFlowViewController alloc] initWithTitle:@"瀑布流" sellerid:@"100" start:@"0" limit:@"10"];
+    WaterFlowViewController *waterVC = [[WaterFlowViewController alloc] initWithTitle:@"图片墙" sellerid:@"100" start:@"0" limit:@"10"];
 //    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:waterVC];
     [self.navigationController presentViewController:waterVC animated:YES completion:nil];
 }
@@ -244,8 +252,8 @@
     if (![CoreHelper checkLogin]) {
         
         LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
-        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
-        [self.navigationController presentViewController:navi animated:YES completion:nil];
+//        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+        [self.navigationController presentViewController:loginController animated:YES completion:nil];
         
     }
     else

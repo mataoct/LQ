@@ -15,6 +15,7 @@
 
 //@property (nonatomic,retain) UINavigationItem *item;
 @property (nonatomic,retain) UIBarButtonItem *leftItem;
+//@property (nonatomic,retain) UIBarButtonItem *rightItem;
 @end
 
 @implementation LQUIViewController
@@ -68,15 +69,49 @@
     _bar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, 320, 44)];
     _item = [[UINavigationItem alloc] initWithTitle:_headTitle];
     
+//    _item.titleView.tintColor = [UIColor whiteColor];
     
-    _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(backToPrevious)];
+//    _bar.tintColor = [UIColor whiteColor];
+    
+    
+    [_bar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIColor whiteColor], UITextAttributeTextColor,
+                                [UIColor colorWithRed:0 green:0.7 blue:0.8 alpha:0],UITextAttributeTextShadowColor,
+                                [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],UITextAttributeTextShadowOffset,
+                                [UIFont systemFontOfSize:18], UITextAttributeFont,
+                                nil]];
+    
+    
+    _statusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    
+    
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    temp.backgroundColor = DarkGreen;
+    [_bar addSubview:temp];
+    
+    
+    _leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回.png"] style:UIBarButtonItemStyleDone target:self action:@selector(backToPrevious)];
+    
+    _statusView.backgroundColor = DarkGreen;
+    
+    self.view.backgroundColor = BackGray;
     
     [_item setLeftBarButtonItem:_leftItem];
     
-    _bar.tintColor = [UIColor greenColor];
+    
+//    _rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(selectRightAction:)];
+//    self.navigationItem.rightBarButtonItem = rightButton;
+
+//    [_item setRightBarButtonItem:_rightItem];
+    
+//    _bar.translucent = YES;
+//    
+//    _bar.barStyle = UIBarStyleBlack;
+    
+    _bar.tintColor = [UIColor whiteColor];
     [_bar pushNavigationItem:_item animated:NO];
-    self.navigationController.navigationBarHidden  = YES;
     [self.view addSubview:_bar];
+    [self.view addSubview:_statusView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -125,6 +160,12 @@
         [_item setLeftBarButtonItem:_leftItem];
     }
 }
+
+
+//-(void)selectRightAction:(id)sender
+//{
+//    NSLog(@"right clicl");
+//}
 
 
 @end

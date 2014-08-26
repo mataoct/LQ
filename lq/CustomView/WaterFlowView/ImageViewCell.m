@@ -43,7 +43,7 @@
 
 -(void)setImageWithURL:(NSURL *)imageUrl{
 
-    [imageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [imageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     
 }
 

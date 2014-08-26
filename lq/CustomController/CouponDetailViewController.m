@@ -53,27 +53,50 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 300, 100)];
-    _extcreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 100, 16)];
-    _extcreditValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 120, 40, 16)];
-    _expireLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 136, 100, 16)];
-    _expireValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 136, 40, 16)];
-    
-    _checkBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, 120, 100, 32)];
-    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(0, 152, 300, 40)];
-    
-    
-    _commentHeadLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 200, 60, 20)];
-    _commentNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 200, 24, 20)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 300, 20)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 45, 280, 200)];
+//    _imgView.backgroundColor = [UIColor orangeColor];
     
     
     
+    _extcreditLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 100, 16)];_extcreditLabel.text = @"兑换所需积分：";
+    _extcreditValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 248, 40, 16)];
+    _expireLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 268, 100, 16)];_expireLabel.text = @"有效期至：";
+    _expireValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 268, 100, 16)];
+    
+    _extcreditLabel.font = [UIFont systemFontOfSize:12];
+        _extcreditValueLabel.font = [UIFont systemFontOfSize:12];
+        _expireLabel.font = [UIFont systemFontOfSize:12];
+        _expireValueLabel.font = [UIFont systemFontOfSize:12];
+    
+    _checkBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 250, 120, 34)];
+    _checkBtn.backgroundColor = Orange;
+    _checkBtn.layer.cornerRadius = 4;
+    [_checkBtn setTitle:@"兑换" forState:UIControlStateNormal];
+    _checkBtn.font = [UIFont systemFontOfSize:16];
+    _extcreditValueLabel.font = [UIFont systemFontOfSize:14];
+    
+    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(8, 285, 280, 64)];
+    
+    UIView *hehe = [[UIView alloc] initWithFrame:CGRectMake(0, 354, 300, 12)];
+    hehe.backgroundColor = BackGray;
+    UIView *hehe2 = [[UIView alloc] initWithFrame:CGRectMake(0, 390, 300, 1)];
+    hehe2.backgroundColor = BackGray;
+    _detailText.font = [UIFont systemFontOfSize:15];
+    
+    _commentHeadLabel = [[UIImageView alloc] initWithFrame:CGRectMake(10, 372, 15, 15)];
+    _commentNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(37, 372, 60, 15)];
+    _commentNumLabel.font = [UIFont systemFontOfSize:12];
+    [_commentHeadLabel setImage:[UIImage imageNamed:@"评论标题图标.png"]];
+    
+    _titleLabel.font = [UIFont systemFontOfSize:18];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     
     
-    UIView *tableHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    UIView *tableHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 391)];
+    tableHeader.backgroundColor = [UIColor whiteColor];
     
-    
+    [tableHeader addSubview:hehe];[tableHeader addSubview:hehe2];
     [tableHeader addSubview:_titleLabel];
     [tableHeader addSubview:_imgView];
     [tableHeader addSubview:_extcreditLabel];
@@ -86,9 +109,9 @@
     [tableHeader addSubview:_commentNumLabel];
     [tableHeader addSubview:_commentHeadLabel];
     
-    tableHeader.backgroundColor = [UIColor grayColor];
+//    tableHeader.backgroundColor = [UIColor grayColor];
     
-    _commentTable  = [[UITableView alloc] initWithFrame:CGRectMake(10, 64, 300, self.view.frame.size.height - 66 -40 ) style:UITableViewStylePlain];
+    _commentTable  = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 74 - 40 ) style:UITableViewStylePlain];
     
     _commentTable.tableHeaderView = tableHeader;
     _commentTable.delegate = self;
@@ -97,16 +120,16 @@
     
     _commentTable.backgroundColor = [UIColor greenColor];
     
-    
+    _commentTable.showsVerticalScrollIndicator = NO;
     //填充UI
     
 
     
     _titleLabel.text = _model.title;
-    [_imgView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
-    _extcreditValueLabel.text = _model.extrcedit;
+    [_imgView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
+    _extcreditValueLabel.text = [NSString stringWithFormat:@"%@分",_model.extrcedit];
     _expireValueLabel.text = _model.expiry;
-    _detailText.text = _model.description;
+    _detailText.text = _model.myDescription;
     _detailText.editable = false;
     
     
@@ -114,6 +137,11 @@
     _requestModel.delegate = self;
     _responseModel = [[CommentListResponseModel alloc] init];
     [_requestModel postDataCoupon];
+    
+    
+//    _commentTable.backgroundColor = BackGray;
+    
+    
     
     //        //评论框
     _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 40, 320, 40)];
@@ -218,7 +246,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 52.0;
+    return 44.0;
 }
 
 -(void)requestFailed
@@ -232,6 +260,8 @@
     _responseModel = (CommentListResponseModel *)model;
     
     [_commentTable reloadData];
+    _commentNumLabel.text = [NSString stringWithFormat:@"评论(%d)",_responseModel.commentNum];
+
     
 }
 

@@ -33,6 +33,15 @@
     }
     
     
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                  [UIColor whiteColor], UITextAttributeTextColor,
+                                  [UIColor colorWithRed:0 green:0.7 blue:0.8 alpha:0],UITextAttributeTextShadowColor,
+                                  [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],UITextAttributeTextShadowOffset,
+                                  [UIFont systemFontOfSize:18], UITextAttributeFont,
+                                  nil]];
+    
+    
 //    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
 }

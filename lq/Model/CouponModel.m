@@ -19,7 +19,7 @@
         _title = [[NSString alloc] init];
         _expiry = [[NSString alloc] init];
         _extrcedit = [[NSString alloc] init];
-        _description = [[NSString alloc] init];
+        _myDescription = [[NSString alloc] init];
         
         _img = [[NSURL alloc] init];
         _sellerId = [[NSString alloc] init];
@@ -31,7 +31,7 @@
         _expiry =  [CoreHelper timeStampToDate:safeString([dic objectForKey:@"expriy"])] ;
         _extrcedit = safeString([dic objectForKey:@"extcredit"] );
         _title = safeString([dic objectForKey:@"title"]);
-        _description = safeString([dic objectForKey:@"description"]);
+        _myDescription = safeString([dic objectForKey:@"description"]);
         _sellerId = safeString([dic objectForKey:@"sellerid"]);
         _status = safeString([dic objectForKey:@"status"]);
         

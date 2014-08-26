@@ -36,7 +36,7 @@
             
             image.userInteractionEnabled = YES;
             
-            [image setImageWithURL:model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+            [image setImageWithURL:model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
             
             image.tag = i-1;
             

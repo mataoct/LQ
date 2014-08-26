@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _couponTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 74) style:UITableViewStylePlain];
+    _couponTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64) style:UITableViewStylePlain];
     
     [self.view addSubview:_couponTable];
     
@@ -84,7 +84,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 100.0;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

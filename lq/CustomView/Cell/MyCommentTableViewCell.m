@@ -17,20 +17,33 @@
         // Initialization code
         
         
-        
-        _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 90, 70 )];
-        _title = [[UILabel alloc] initWithFrame:CGRectMake(110, 10, 90, 20)];
-        _content = [[UITextView alloc] initWithFrame:CGRectMake(110, 30, 180, 40)];
-        _time = [[UILabel alloc] initWithFrame:CGRectMake(110, 70, 100, 20)];
+        _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 95, 70 )];
+        _title = [[UILabel alloc] initWithFrame:CGRectMake(115, 10, 160, 20)];
+        _content = [[UITextView alloc] initWithFrame:CGRectMake(115, 30, 180, 38)];
+        _time = [[UILabel alloc] initWithFrame:CGRectMake(115, 68, 100, 12)];
         
         _model = [[MyCommentModel alloc] init];
         
         _content.editable = false;
+        _content.userInteractionEnabled = false;
         
-        [self addSubview:_headImg];
-        [self addSubview:_title];
-        [self addSubview:_content];
-        [self addSubview:_time];
+        
+        _time.font = [UIFont systemFontOfSize:12];
+        _content.font = [UIFont systemFontOfSize:12];
+        _title.font = [UIFont systemFontOfSize:18];
+        
+        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 320, 90)];
+        
+        temp.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = BackGray;
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [temp addSubview:_headImg];
+        [temp addSubview:_title];
+        [temp addSubview:_content];
+        [temp addSubview:_time];
+        [self addSubview:temp];
     }
     return self;
 }
@@ -40,7 +53,7 @@
     _model = model;
     
     
-    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@""] success:nil failure:nil];
+    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
     
     _title.text = _model.title;
     _content.text = [NSString stringWithFormat:@"评论内容：%@",_model.content];
