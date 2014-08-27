@@ -88,7 +88,7 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"another user info request failed");
+    NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
     
 }
 

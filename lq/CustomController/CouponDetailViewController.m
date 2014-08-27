@@ -132,7 +132,7 @@
     _detailText.text = _model.myDescription;
     _detailText.editable = false;
     
-    
+    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
     _requestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_model.couponid];
     _requestModel.delegate = self;
     _responseModel = [[CommentListResponseModel alloc] init];
@@ -257,11 +257,36 @@
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     
-    _responseModel = (CommentListResponseModel *)model;
-    
-    [_commentTable reloadData];
-    _commentNumLabel.text = [NSString stringWithFormat:@"评论(%d)",_responseModel.commentNum];
 
+    
+    
+    
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            _responseModel = (CommentListResponseModel *)model;
+            
+            [_commentTable reloadData];
+            _commentNumLabel.text = [NSString stringWithFormat:@"评论(%d)",_responseModel.commentNum];
+            
+        }
+            break;
+
+        case 10003:
+        {
+            
+            NSLog(@"评论成功");
+            
+            [_textView resignFirstResponder];
+            _textView.text = @"";
+            
+            [_requestModel postDataCoupon];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
 }
 
@@ -333,8 +358,17 @@
 
 -(void)resignTextView
 {
-	[_textView resignFirstResponder];
-    _textView.text = @"";
+    
+    //发起评论请求
+    
+    _userCommentRequestModel.delegate = self;
+    _userCommentRequestModel.tag = 10002;
+    
+    [_userCommentRequestModel sendCouponComment:_model.couponid message:_textView.text];
+    
+    
+    
+    
 }
 
 @end

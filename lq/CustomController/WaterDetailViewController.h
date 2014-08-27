@@ -14,6 +14,7 @@
 #import "CommentReuqestModel.h"
 #import "HPGrowingTextView.h"
 #import "CommentTableViewCell.h"
+#import "UserCommentRequestModel.h"
 
 @interface WaterDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
 
@@ -32,7 +33,8 @@
 @property (nonatomic,strong) CommentReuqestModel *commentRequestModel;
 @property (nonatomic,strong) WaterDetailResponseModel *waterDetailResponseModel;
 @property (nonatomic,strong) CommentListResponseModel *commentResponseModel;
-
+@property (nonatomic,strong) UserCommentRequestModel *userCommentRequestModel;
+//@property (nonatomic,strong)
 
 @property (nonatomic,strong) UIView *containerView;
 @property (nonatomic,strong) HPGrowingTextView *textView;

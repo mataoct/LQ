@@ -3,18 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>B29LRPE257.com.mt.lq</string>
-	<key>com.apple.developer.pass-type-identifiers</key>
-	<array>
-		<string>B29LRPE257.*</string>
-	</array>
+	<string>8Z34CDGPVY.com.mt.lq</string>
 	<key>com.apple.developer.team-identifier</key>
-	<string>B29LRPE257</string>
+	<string>8Z34CDGPVY</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>B29LRPE257.com.mt.lq</string>
+		<string>8Z34CDGPVY.com.mt.lq</string>
 	</array>
 </dict>
 </plist>

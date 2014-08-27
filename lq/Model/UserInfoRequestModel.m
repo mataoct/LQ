@@ -107,6 +107,31 @@
 }
 
 
+-(void)sign
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"userregist"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=userregist"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_sellerid forKey:@"sellerId"];
+    [request addPostValue:_uid forKey:@"uid"];
+    
+    [request setRequestMethod:@"POST"];
+    request.tag = 10004;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
     NSLog(@"another user info request start");
@@ -163,6 +188,19 @@
             }
         }
             break;
+        case 10004:
+        {
+            SignResponseModel *model = [[SignResponseModel alloc] initWithDic:jsonDic];
+            model.ResponseTag = self.tag;
+//            if (model.ResponseStatus == 1)
+//            {
+                if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+                {
+                    [[super delegate] requestSuccess:model];
+                }
+//            }
+        }
+            break;
         default:
             break;
     }
@@ -174,7 +212,7 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"another user info request failed");
+    NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
 
 }
 

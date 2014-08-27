@@ -35,7 +35,7 @@
         
         _waterDetailRequestModel = [[WaterDetailRequestModel alloc] initWithPid:_pid];
         _waterDetailResponseModel = [[WaterDetailResponseModel alloc] init];
-        
+        _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(keyboardWillShow:)
@@ -265,13 +265,25 @@
             
             _commentRequestModel.delegate = self;
             _commentRequestModel.tag = 10002;
-            [_commentRequestModel postData];
+            [_commentRequestModel postDataWaterFlow];
         }
             break;
         case 10002:
         {
             _commentResponseModel = (CommentListResponseModel *)model;
             [_commentTable reloadData];
+        }
+            break;
+            
+        case 10003:
+        {
+            
+            NSLog(@"评论成功");
+            
+            [_textView resignFirstResponder];
+            
+            [_commentRequestModel postDataWaterFlow];
+            _textView.text = @"";
         }
             break;
             
@@ -351,8 +363,19 @@
 
 -(void)resignTextView
 {
-	[_textView resignFirstResponder];
-    _textView.text = @"";
+    
+    //发起评论请求
+    
+    _userCommentRequestModel.delegate = self;
+    _userCommentRequestModel.tag = 10003;
+    
+    [_userCommentRequestModel sendPicComment:_pid message:_textView.text];
+    
+    
+    
+    
+    //等待请求完成
+
 }
 
 @end

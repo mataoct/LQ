@@ -19,6 +19,8 @@
         
 //        NSLog(@"dic %@",dic);
         
+        _ErrMessage = [[NSString alloc] init];
+        
         _ResponseStatus = [[dic objectForKey:@"status"] integerValue];
         
         
@@ -26,7 +28,10 @@
             
             NSLog(@"接口返回错误 %@ ",dic);
             
-            return nil;
+            
+            _ErrMessage = [dic objectForKey:@"message"];
+            
+//            return nil;
         }
         
     }

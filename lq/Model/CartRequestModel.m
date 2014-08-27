@@ -80,6 +80,6 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"Cart request failed");
+    NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
 }
 @end

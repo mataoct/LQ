@@ -9,4 +9,5 @@ dependencies: /WorkSpace/LQ3/lq/Model/LoginRequestModel.m \
   /WorkSpace/LQ3/lq/ASIHttpRequest/ASICacheDelegate.h \
   /WorkSpace/LQ3/lq/Model/BaseResponseModel.h \
   /WorkSpace/LQ3/lq/Helper/CoreHelper.h \
-  /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h
+  /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h \
+  /WorkSpace/LQ3/lq/Model/UserInfoModel.h

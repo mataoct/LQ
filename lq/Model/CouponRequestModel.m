@@ -167,6 +167,6 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
-    
+    NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
 }
 @end

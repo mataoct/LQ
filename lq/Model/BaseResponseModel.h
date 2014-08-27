@@ -14,6 +14,8 @@
 @property (nonatomic,assign) NSInteger ResponseTag;
 @property (nonatomic,assign) NSInteger ResponseStatus;
 
+@property (nonatomic,strong) NSString *ErrMessage;
+
 -(id)initWithDic:(NSDictionary *)dic;
 
 

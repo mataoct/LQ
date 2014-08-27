@@ -13,6 +13,7 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ3/lq/Model/BaseResponseModel.h \
   /WorkSpace/LQ3/lq/Helper/CoreHelper.h \
   /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h \
+  /WorkSpace/LQ3/lq/Model/UserInfoModel.h \
   /WorkSpace/LQ3/lq/Model/MenuResponseModel.h \
   /WorkSpace/LQ3/lq/Model/CategoriesModel.h \
   /WorkSpace/LQ3/lq/Model/GoodsModel.h \

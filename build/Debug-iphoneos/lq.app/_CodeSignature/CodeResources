@@ -134,11 +134,43 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		pE9708ZvefMd95UXyTiQKI849FQ=
+		r+T98c2FnSvvqNSFVaA4d/8OWNU=
 		</data>
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
 		V1VdV48TyrImURVWCaose9yz87E=
+		</data>
+		<key>MessageEntryBackground.png</key>
+		<data>
+		ckbm+qfTcBLE+jG2A08q6tL69B8=
+		</data>
+		<key>MessageEntryBackground@2x.png</key>
+		<data>
+		V0Zl8xYWKAR7UyiVq1ElVhKA+SI=
+		</data>
+		<key>MessageEntryInputField.png</key>
+		<data>
+		exScFtyuJE2eXqCT3BsJcqmBnaA=
+		</data>
+		<key>MessageEntryInputField@2x.png</key>
+		<data>
+		ENE6CgnzqA2UdE6hEq6RqWOy804=
+		</data>
+		<key>MessageEntrySendButton.png</key>
+		<data>
+		IfpDdNSrygjSnoRNdRJbaztUHSY=
+		</data>
+		<key>MessageEntrySendButton@2x.png</key>
+		<data>
+		hatKVI353kdLPhN6yIV7oG40cvo=
+		</data>
+		<key>MessageEntrySendButtonPressed.png</key>
+		<data>
+		H0/SZ3A+TmyeFc8nmRVU/G/1LZQ=
+		</data>
+		<key>MessageEntrySendButtonPressed@2x.png</key>
+		<data>
+		6haXNGaTInJTbjFwHz/sO5Lin4Y=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -160,9 +192,13 @@
 		<data>
 		bsnH0mTXMKgCiM75bjX4+3ARVAs=
 		</data>
+		<key>bgArrow.png</key>
+		<data>
+		zJJn8bnaCbesI78nQzbyMQR+WJ8=
+		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		DER31g5FTr54TAxmCwtzjxy21cE=
+		28oPsZHnl4d78iVPWDM79vKyNGo=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<data>
@@ -423,6 +459,170 @@
 		<key>readme.txt</key>
 		<data>
 		nrVEpMR3sAOwpmklmij9mf0U89A=
+		</data>
+		<key>tabbg-1.png</key>
+		<data>
+		ee+bkQc7fqfIeAUzuJJUFyHVNDk=
+		</data>
+		<key>tabbg-2.png</key>
+		<data>
+		KUhyMzJojkU12E3jmtIpll5/mHg=
+		</data>
+		<key>tabbg-3.png</key>
+		<data>
+		zOsjXByZ28fAIEgq1gjkZFeBNOE=
+		</data>
+		<key>tabbg-4.png</key>
+		<data>
+		NwMWGpPdIsR42YFyywQfPPFpR2U=
+		</data>
+		<key>tabbg-5.png</key>
+		<data>
+		XNTqa5AR5q0oMiGP3pT7DaR6hWQ=
+		</data>
+		<key>tabbg.png</key>
+		<data>
+		xv4y8IvWg36CA6EsbvBh5sfkMSk=
+		</data>
+		<key>会员_02.png</key>
+		<data>
+		7BGB5CByKnQv+ft2XskZCGHj3Hg=
+		</data>
+		<key>会员_03.png</key>
+		<data>
+		+I4c9WbQe5i2oSZM8rKcFJxbgSM=
+		</data>
+		<key>会员_04.png</key>
+		<data>
+		hlGVUHQjEdlZhtFEuQFWikLsnao=
+		</data>
+		<key>会员_箭头右.png</key>
+		<data>
+		V+q3A4DBaQfD3o7oUUu22YbObaw=
+		</data>
+		<key>会员_背景图.png</key>
+		<data>
+		Sxp6Jcw1VMORuey2IlIKwrFrkAc=
+		</data>
+		<key>列表背景.png</key>
+		<data>
+		HycfoNGxabRzZux/rNWyZHQocf4=
+		</data>
+		<key>图片默认1.png</key>
+		<data>
+		eP7oFkBmaS5pvQ/AOP0UW68purM=
+		</data>
+		<key>图片默认2.png</key>
+		<data>
+		n3TpU0RLeSCO/Xbk8MM/boo11d8=
+		</data>
+		<key>地址.png</key>
+		<data>
+		Akv8HF/+uzSQ2CHDFr7TrIY3mRk=
+		</data>
+		<key>头像-会员.png</key>
+		<data>
+		Y3sy0oraChr8ckUJ7fTP48cLiU0=
+		</data>
+		<key>头像-评论.png</key>
+		<data>
+		LFvH7wzo2luzbUEKr24AksbVIfg=
+		</data>
+		<key>头像-资料修改.png</key>
+		<data>
+		K61BOO0U51o2Q/BaBV0fJ5l/kbU=
+		</data>
+		<key>性别-女.png</key>
+		<data>
+		jQUzIYcAusRmfCdL5H1ry/jXNlw=
+		</data>
+		<key>性别男.png</key>
+		<data>
+		pcAVLEfedFMhuutA6+GMH0bW0Ow=
+		</data>
+		<key>标题--电话.png</key>
+		<data>
+		E3bONuG8TYLIHn3TcirfD0mtR8g=
+		</data>
+		<key>标题-分享.png</key>
+		<data>
+		OehZo60eyLyX1CHX7+p0Kl0Z7R0=
+		</data>
+		<key>标题-搜索.png</key>
+		<data>
+		BHOKviD6Nzgk3p2W+1NYvxxYx2k=
+		</data>
+		<key>标题-收藏.png</key>
+		<data>
+		kiAJYKKOo8qiLECe/82oithfu0c=
+		</data>
+		<key>标题-设置.png</key>
+		<data>
+		wEivq99lTrkK5WBHBXPGxqjDlC0=
+		</data>
+		<key>消息提示.png</key>
+		<data>
+		SyguRmEVSCsVI1q3jRcY80I9gSk=
+		</data>
+		<key>电话.png</key>
+		<data>
+		44qW663iZ9UPz+UIvOpgCD8IM+0=
+		</data>
+		<key>登录1_03.png</key>
+		<data>
+		pmMe35WSAKN5eg3Ew0+8U8looMI=
+		</data>
+		<key>登录2_03.png</key>
+		<data>
+		HdSC4NS20qEjIxemOQM/Azgj6rI=
+		</data>
+		<key>签到-bg.png</key>
+		<data>
+		dQ67qxChX8HmAZPnY1RAXVGKNTA=
+		</data>
+		<key>菜单栏-主页.png</key>
+		<data>
+		XiQ2nF5thjamUTUG1s8cstiC7w0=
+		</data>
+		<key>菜单栏-会员.png</key>
+		<data>
+		5ZeCAEkj4A+ghWxoqUB8inwBOIw=
+		</data>
+		<key>菜单栏-活动资讯.png</key>
+		<data>
+		1Gupq9Tni0DV+RFOitaimdJWkEI=
+		</data>
+		<key>菜单栏-菜单.png</key>
+		<data>
+		zar3pKfry8rl8DOh0yd+GOqTU70=
+		</data>
+		<key>菜单栏-购物车.png</key>
+		<data>
+		nE3SHojaRpvflIN2+QellhauKYg=
+		</data>
+		<key>评论标题图标.png</key>
+		<data>
+		t8mw55OxvUFfOOKwyqU6onAV3SQ=
+		</data>
+		<key>返回.png</key>
+		<data>
+		93cHqdyESFaJ4DC6OCzm/ohW6rs=
+		</data>
+		<key>首页_02.png</key>
+		<data>
+		dVS8HJgUpFE8WagYkn+en0HW7SY=
+		</data>
+		<key>首页_03.png</key>
+		<data>
+		HKeV7E5LQAhNyTT2Zm0t3jJFzr8=
+		</data>
+		<key>首页_04.png</key>
+		<data>
+		6qKL0TBUUuZdsu+NPv3lscOpkOI=
+		</data>
+		<key>首页_05.png</key>
+		<data>
+		ewmM3T/WNFL6olagv1gPlMDLDqM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -557,11 +757,43 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		pE9708ZvefMd95UXyTiQKI849FQ=
+		r+T98c2FnSvvqNSFVaA4d/8OWNU=
 		</data>
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
 		V1VdV48TyrImURVWCaose9yz87E=
+		</data>
+		<key>MessageEntryBackground.png</key>
+		<data>
+		ckbm+qfTcBLE+jG2A08q6tL69B8=
+		</data>
+		<key>MessageEntryBackground@2x.png</key>
+		<data>
+		V0Zl8xYWKAR7UyiVq1ElVhKA+SI=
+		</data>
+		<key>MessageEntryInputField.png</key>
+		<data>
+		exScFtyuJE2eXqCT3BsJcqmBnaA=
+		</data>
+		<key>MessageEntryInputField@2x.png</key>
+		<data>
+		ENE6CgnzqA2UdE6hEq6RqWOy804=
+		</data>
+		<key>MessageEntrySendButton.png</key>
+		<data>
+		IfpDdNSrygjSnoRNdRJbaztUHSY=
+		</data>
+		<key>MessageEntrySendButton@2x.png</key>
+		<data>
+		hatKVI353kdLPhN6yIV7oG40cvo=
+		</data>
+		<key>MessageEntrySendButtonPressed.png</key>
+		<data>
+		H0/SZ3A+TmyeFc8nmRVU/G/1LZQ=
+		</data>
+		<key>MessageEntrySendButtonPressed@2x.png</key>
+		<data>
+		6haXNGaTInJTbjFwHz/sO5Lin4Y=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -583,9 +815,13 @@
 		<data>
 		bsnH0mTXMKgCiM75bjX4+3ARVAs=
 		</data>
+		<key>bgArrow.png</key>
+		<data>
+		zJJn8bnaCbesI78nQzbyMQR+WJ8=
+		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		DER31g5FTr54TAxmCwtzjxy21cE=
+		28oPsZHnl4d78iVPWDM79vKyNGo=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<data>
@@ -846,6 +1082,170 @@
 		<key>readme.txt</key>
 		<data>
 		nrVEpMR3sAOwpmklmij9mf0U89A=
+		</data>
+		<key>tabbg-1.png</key>
+		<data>
+		ee+bkQc7fqfIeAUzuJJUFyHVNDk=
+		</data>
+		<key>tabbg-2.png</key>
+		<data>
+		KUhyMzJojkU12E3jmtIpll5/mHg=
+		</data>
+		<key>tabbg-3.png</key>
+		<data>
+		zOsjXByZ28fAIEgq1gjkZFeBNOE=
+		</data>
+		<key>tabbg-4.png</key>
+		<data>
+		NwMWGpPdIsR42YFyywQfPPFpR2U=
+		</data>
+		<key>tabbg-5.png</key>
+		<data>
+		XNTqa5AR5q0oMiGP3pT7DaR6hWQ=
+		</data>
+		<key>tabbg.png</key>
+		<data>
+		xv4y8IvWg36CA6EsbvBh5sfkMSk=
+		</data>
+		<key>会员_02.png</key>
+		<data>
+		7BGB5CByKnQv+ft2XskZCGHj3Hg=
+		</data>
+		<key>会员_03.png</key>
+		<data>
+		+I4c9WbQe5i2oSZM8rKcFJxbgSM=
+		</data>
+		<key>会员_04.png</key>
+		<data>
+		hlGVUHQjEdlZhtFEuQFWikLsnao=
+		</data>
+		<key>会员_箭头右.png</key>
+		<data>
+		V+q3A4DBaQfD3o7oUUu22YbObaw=
+		</data>
+		<key>会员_背景图.png</key>
+		<data>
+		Sxp6Jcw1VMORuey2IlIKwrFrkAc=
+		</data>
+		<key>列表背景.png</key>
+		<data>
+		HycfoNGxabRzZux/rNWyZHQocf4=
+		</data>
+		<key>图片默认1.png</key>
+		<data>
+		eP7oFkBmaS5pvQ/AOP0UW68purM=
+		</data>
+		<key>图片默认2.png</key>
+		<data>
+		n3TpU0RLeSCO/Xbk8MM/boo11d8=
+		</data>
+		<key>地址.png</key>
+		<data>
+		Akv8HF/+uzSQ2CHDFr7TrIY3mRk=
+		</data>
+		<key>头像-会员.png</key>
+		<data>
+		Y3sy0oraChr8ckUJ7fTP48cLiU0=
+		</data>
+		<key>头像-评论.png</key>
+		<data>
+		LFvH7wzo2luzbUEKr24AksbVIfg=
+		</data>
+		<key>头像-资料修改.png</key>
+		<data>
+		K61BOO0U51o2Q/BaBV0fJ5l/kbU=
+		</data>
+		<key>性别-女.png</key>
+		<data>
+		jQUzIYcAusRmfCdL5H1ry/jXNlw=
+		</data>
+		<key>性别男.png</key>
+		<data>
+		pcAVLEfedFMhuutA6+GMH0bW0Ow=
+		</data>
+		<key>标题--电话.png</key>
+		<data>
+		E3bONuG8TYLIHn3TcirfD0mtR8g=
+		</data>
+		<key>标题-分享.png</key>
+		<data>
+		OehZo60eyLyX1CHX7+p0Kl0Z7R0=
+		</data>
+		<key>标题-搜索.png</key>
+		<data>
+		BHOKviD6Nzgk3p2W+1NYvxxYx2k=
+		</data>
+		<key>标题-收藏.png</key>
+		<data>
+		kiAJYKKOo8qiLECe/82oithfu0c=
+		</data>
+		<key>标题-设置.png</key>
+		<data>
+		wEivq99lTrkK5WBHBXPGxqjDlC0=
+		</data>
+		<key>消息提示.png</key>
+		<data>
+		SyguRmEVSCsVI1q3jRcY80I9gSk=
+		</data>
+		<key>电话.png</key>
+		<data>
+		44qW663iZ9UPz+UIvOpgCD8IM+0=
+		</data>
+		<key>登录1_03.png</key>
+		<data>
+		pmMe35WSAKN5eg3Ew0+8U8looMI=
+		</data>
+		<key>登录2_03.png</key>
+		<data>
+		HdSC4NS20qEjIxemOQM/Azgj6rI=
+		</data>
+		<key>签到-bg.png</key>
+		<data>
+		dQ67qxChX8HmAZPnY1RAXVGKNTA=
+		</data>
+		<key>菜单栏-主页.png</key>
+		<data>
+		XiQ2nF5thjamUTUG1s8cstiC7w0=
+		</data>
+		<key>菜单栏-会员.png</key>
+		<data>
+		5ZeCAEkj4A+ghWxoqUB8inwBOIw=
+		</data>
+		<key>菜单栏-活动资讯.png</key>
+		<data>
+		1Gupq9Tni0DV+RFOitaimdJWkEI=
+		</data>
+		<key>菜单栏-菜单.png</key>
+		<data>
+		zar3pKfry8rl8DOh0yd+GOqTU70=
+		</data>
+		<key>菜单栏-购物车.png</key>
+		<data>
+		nE3SHojaRpvflIN2+QellhauKYg=
+		</data>
+		<key>评论标题图标.png</key>
+		<data>
+		t8mw55OxvUFfOOKwyqU6onAV3SQ=
+		</data>
+		<key>返回.png</key>
+		<data>
+		93cHqdyESFaJ4DC6OCzm/ohW6rs=
+		</data>
+		<key>首页_02.png</key>
+		<data>
+		dVS8HJgUpFE8WagYkn+en0HW7SY=
+		</data>
+		<key>首页_03.png</key>
+		<data>
+		HKeV7E5LQAhNyTT2Zm0t3jJFzr8=
+		</data>
+		<key>首页_04.png</key>
+		<data>
+		6qKL0TBUUuZdsu+NPv3lscOpkOI=
+		</data>
+		<key>首页_05.png</key>
+		<data>
+		ewmM3T/WNFL6olagv1gPlMDLDqM=
 		</data>
 	</dict>
 	<key>rules</key>

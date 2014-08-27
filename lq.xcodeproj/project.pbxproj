@@ -31,6 +31,7 @@
 		A00504DC1992853600318806 /* InfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00504DB1992853600318806 /* InfoDetailViewController.m */; };
 		A00723751988EC8E00F8F720 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00723741988EC8E00F8F720 /* CommentModel.m */; };
 		A007237B1988F0DA00F8F720 /* CommentListResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A007237A1988F0DA00F8F720 /* CommentListResponseModel.m */; };
+		A00ACBB419AE25FA001E79EA /* UserCommentRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00ACBB319AE25FA001E79EA /* UserCommentRequestModel.m */; };
 		A00FC24C19823BAC003591BA /* SliderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FC24B19823BAC003591BA /* SliderModel.m */; };
 		A010B0CD1982436D00E170DA /* AdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0CC1982436D00E170DA /* AdModel.m */; };
 		A010B0D0198243C100E170DA /* HotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A010B0CF198243C100E170DA /* HotModel.m */; };
@@ -82,6 +83,7 @@
 		A069B0F919AB8A31006E6494 /* tabbg-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F419AB8A31006E6494 /* tabbg-3.png */; };
 		A069B0FA19AB8A31006E6494 /* tabbg-4.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F519AB8A31006E6494 /* tabbg-4.png */; };
 		A069B0FB19AB8A31006E6494 /* tabbg-5.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F619AB8A31006E6494 /* tabbg-5.png */; };
+		A06E4D9C19ADEAEA009E9278 /* SignResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */; };
 		A09EC04F1951ABD70036219B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC04E1951ABD70036219B /* Foundation.framework */; };
 		A09EC0511951ABD70036219B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC0501951ABD70036219B /* CoreGraphics.framework */; };
 		A09EC0531951ABD70036219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC0521951ABD70036219B /* UIKit.framework */; };
@@ -261,6 +263,8 @@
 		A00723741988EC8E00F8F720 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentModel.m; path = Model/CommentModel.m; sourceTree = "<group>"; };
 		A00723791988F0DA00F8F720 /* CommentListResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentListResponseModel.h; path = Model/CommentListResponseModel.h; sourceTree = "<group>"; };
 		A007237A1988F0DA00F8F720 /* CommentListResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentListResponseModel.m; path = Model/CommentListResponseModel.m; sourceTree = "<group>"; };
+		A00ACBB219AE25FA001E79EA /* UserCommentRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCommentRequestModel.h; path = Model/UserCommentRequestModel.h; sourceTree = "<group>"; };
+		A00ACBB319AE25FA001E79EA /* UserCommentRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCommentRequestModel.m; path = Model/UserCommentRequestModel.m; sourceTree = "<group>"; };
 		A00FC24A19823BAC003591BA /* SliderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderModel.h; path = Model/SliderModel.h; sourceTree = "<group>"; };
 		A00FC24B19823BAC003591BA /* SliderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderModel.m; path = Model/SliderModel.m; sourceTree = "<group>"; };
 		A010B0CB1982436D00E170DA /* AdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdModel.h; path = Model/AdModel.h; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 		A069B0F419AB8A31006E6494 /* tabbg-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-3.png"; sourceTree = "<group>"; };
 		A069B0F519AB8A31006E6494 /* tabbg-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-4.png"; sourceTree = "<group>"; };
 		A069B0F619AB8A31006E6494 /* tabbg-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-5.png"; sourceTree = "<group>"; };
+		A06E4D9A19ADEAEA009E9278 /* SignResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignResponseModel.h; path = Model/SignResponseModel.h; sourceTree = "<group>"; };
+		A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignResponseModel.m; path = Model/SignResponseModel.m; sourceTree = "<group>"; };
 		A09EC04B1951ABD70036219B /* lq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09EC04E1951ABD70036219B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A09EC0501951ABD70036219B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -815,6 +821,8 @@
 				A05E4B09199F74EB00A7C424 /* UserInfoRequestModel.m */,
 				A05E4B11199F811200A7C424 /* MyCommentRequestModel.h */,
 				A05E4B12199F811200A7C424 /* MyCommentRequestModel.m */,
+				A00ACBB219AE25FA001E79EA /* UserCommentRequestModel.h */,
+				A00ACBB319AE25FA001E79EA /* UserCommentRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -884,6 +892,8 @@
 				A05E4B24199FB25900A7C424 /* MyFavResponseModel.m */,
 				A0C7AE0C19A9D1C200303B8A /* AddressResponseModel.h */,
 				A0C7AE0D19A9D1C200303B8A /* AddressResponseModel.m */,
+				A06E4D9A19ADEAEA009E9278 /* SignResponseModel.h */,
+				A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -1649,6 +1659,7 @@
 				A09EC166195278FC0036219B /* ASIInputStream.m in Sources */,
 				A002F1001995136A00ABFD4D /* CouponDetailViewController.m in Sources */,
 				A0ECE338196B975C003E0BE3 /* MenuViewController.m in Sources */,
+				A06E4D9C19ADEAEA009E9278 /* SignResponseModel.m in Sources */,
 				A05E4B0D199F7DFA00A7C424 /* MyCommentModel.m in Sources */,
 				A09EC15D195278FC0036219B /* SBJsonWriter.m in Sources */,
 				A05E4B04199E94D500A7C424 /* HKBaiduMapViewController.mm in Sources */,
@@ -1662,6 +1673,7 @@
 				A002EDC71991311B00141C49 /* ShoppingCartListResponseModel.m in Sources */,
 				A002EDC419912FAD00141C49 /* ShoppingCartItemModel.m in Sources */,
 				A0C7E66C199D0031003BEF2F /* SellerInfoRequestModel.m in Sources */,
+				A00ACBB419AE25FA001E79EA /* UserCommentRequestModel.m in Sources */,
 				A0FC641D19991750007D9A06 /* UserInfoModel.m in Sources */,
 				A0413CCA199A65BF00726C51 /* WaterDetailRequestModel.m in Sources */,
 				A09EC15B195278FC0036219B /* SBJsonBase.m in Sources */,

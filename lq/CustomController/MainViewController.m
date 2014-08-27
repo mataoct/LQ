@@ -278,6 +278,7 @@
 
 -(void)requestFailed
 {
+    NSLog(@"main page error");
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model

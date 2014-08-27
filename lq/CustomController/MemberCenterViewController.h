@@ -14,8 +14,11 @@
 #import "UserCouponViewController.h"
 #import "MyFavViewController.h"
 #import "AddressViewController.h"
+#import "SignResponseModel.h"
 
 @interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate>
+
+@property (nonatomic,strong) UIButton *settingBtn;
 
 @property (nonatomic,strong) UIImageView *headImageView;
 @property (nonatomic,strong) UILabel *nameLabel;
@@ -43,6 +46,8 @@
 @property (nonatomic,strong) UIButton *logoutBtn;
 
 @property (nonatomic,strong) UserInfoRequestModel *requestModel;
+@property (nonatomic,strong) UserInfoRequestModel *signRequestModel;
 @property (nonatomic,strong) AnotherUserInfoResponseModel *responseModel;
+@property (nonatomic,strong) SignResponseModel *signResponseModel;
 
 @end

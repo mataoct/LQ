@@ -9,7 +9,7 @@
 #import "BaseRequestModel.h"
 #import "AnotherUserInfoResponseModel.h"
 #import "AddressResponseModel.h"
-
+#import "SignResponseModel.h"
 @interface UserInfoRequestModel : BaseRequestModel
 
 @property (nonatomic,strong) NSString *sellerid;
@@ -26,4 +26,6 @@
 
 -(void)getAddress;
 -(void)sendAddressLinkMan:(NSString *)linkMan phone:(NSString *)phone address:(NSString *)address;
+
+-(void)sign;
 @end

@@ -31,7 +31,10 @@
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
     
-    
+    _settingBtn = [[UIButton alloc] initWithFrame:CGRectMake(278, 28, 32, 32)];
+    [_settingBtn setTitle:@"设置" forState:UIControlStateNormal];
+    [_settingBtn addTarget:self action:@selector(settingBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_settingBtn setBackgroundColor:[UIColor blackColor]];
     
     _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10+64, 80, 80)];
     
@@ -53,6 +56,7 @@
     
     UIImageView *temp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 165)];
     [temp setImage:[UIImage imageNamed:@"会员_背景图"]];
+    temp.userInteractionEnabled  = YES;
     
     
     _nameLabel.font = [UIFont systemFontOfSize:18];
@@ -160,6 +164,7 @@
     
     self.view.backgroundColor = BackGray;
     
+    [temp addSubview:_settingBtn];
     [temp addSubview:_headImageView];
     [temp addSubview:_nameLabel];
     [temp addSubview:_sexImageView];
@@ -190,9 +195,10 @@
 //    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:user.uid];
     
     _responseModel = [[AnotherUserInfoResponseModel alloc] init];
-    
+    _signResponseModel = [[SignResponseModel alloc] init];
     _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:@"3"];
     _requestModel.delegate = self;
+    _requestModel.tag = 10001;
     [_requestModel postData];
 }
 
@@ -255,6 +261,8 @@
     _daylyLabel.text = _responseModel.signIntegral;
     
     [_punchBtn setBackgroundImage:[UIImage imageNamed:@"签到-bg.png"] forState:UIControlStateNormal];
+    [_punchBtn setBackgroundImage:[UIImage imageNamed:@"签到-bg.png"] forState:UIControlStateDisabled];
+    _punchBtn.font = [UIFont systemFontOfSize:14];
     if (_responseModel.signin == 1) {
         
         [_punchBtn setTitle:@"已签到" forState:UIControlStateNormal];
@@ -265,8 +273,9 @@
         [_punchBtn setTitle:@"签到" forState:UIControlStateNormal];
 
         [_punchBtn setEnabled:true];
+//        [_punchBtn addTarget:self action:@selector(punchClick) forControlEvents:UIControlEventTouchUpInside];
     }
-    
+//
 }
 
 /*
@@ -326,8 +335,51 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (AnotherUserInfoResponseModel *)model;
-    [self reFillContent];
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            
+            _responseModel = (AnotherUserInfoResponseModel *)model;
+            [self reFillContent];
+        }
+            break;
+        case 10002:
+        {
+            if (model.ResponseStatus == 1) {
+                _signResponseModel = (SignResponseModel *)model;
+                [self signFinish];
+
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+
+-(void)signFinish
+{
+    //更新按钮状态
+    [_punchBtn setTitle:@"已签到" forState:UIControlStateNormal];
+    [_punchBtn setEnabled:false];
+    //更新积分显示
+    
+    _integrationLabel.text =  [NSString stringWithFormat:@"%d分",[_responseModel.integral integerValue] + _signResponseModel.integral];
+}
+
+
+-(void)settingBtnClick:(id)sender
+{
+    NSLog(@"setting click");
+}
+
+-(void)punchClick
+{
+    _signRequestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:@"3"];
+    _signRequestModel.delegate = self;
+    _signRequestModel.tag = 10002;
+    [_signRequestModel sign];
 }
 
 @end

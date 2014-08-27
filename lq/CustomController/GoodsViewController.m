@@ -56,7 +56,7 @@
     _commentRequestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_gid];
     _model = [[ProdutionResponseModel alloc] init];
     _commentResponseModel = [[CommentListResponseModel alloc] init];
-    
+    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
     
     _scrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 300, 160) animationDuration:0];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 170, 150, 20)];
@@ -369,6 +369,18 @@
             [_commentTable reloadData];
              _commentCountLabel.text = [NSString stringWithFormat:@"评论(%d)", _commentResponseModel.commentNum];
         }
+            break;
+        case 10003:
+        {
+            
+            NSLog(@"评论成功");
+            
+            [_textView resignFirstResponder];
+            
+            [_commentRequestModel postData];
+            _textView.text = @"";
+        }
+            break;
         default:
             break;
     }
@@ -440,8 +452,19 @@
 
 -(void)resignTextView
 {
-	[_textView resignFirstResponder];
-    _textView.text = @"";
+    //发起评论请求
+    
+    _userCommentRequestModel.delegate = self;
+    _userCommentRequestModel.tag = 10003;
+    
+    [_userCommentRequestModel sendGoodComment:_gid message:_textView.text];
+    
+    
+    
+    
+//    //等待请求完成
+//	[_textView resignFirstResponder];
+//    _textView.text = @"";
 }
 
 

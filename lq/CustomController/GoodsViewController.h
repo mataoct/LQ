@@ -18,6 +18,7 @@
 #import "CommentTableViewCell.h"
 
 #import "CommentReuqestModel.h"
+#import "UserCommentRequestModel.h"
 
 @interface GoodsViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
 
@@ -28,6 +29,7 @@
 @property (nonatomic,strong) ProductionRequestModel *requestModel;
 @property (nonatomic,strong) CommentReuqestModel *commentRequestModel;
 @property (nonatomic,strong) CommentListResponseModel *commentResponseModel;
+@property (nonatomic,strong) UserCommentRequestModel *userCommentRequestModel;
 @property (nonatomic,strong) CycleScrollView *scrollView;
 @property (nonatomic,strong) NSString *gid;
 @property (nonatomic,strong) UILabel *titleLabel;

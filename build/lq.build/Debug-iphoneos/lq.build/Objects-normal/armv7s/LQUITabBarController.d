@@ -10,6 +10,7 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
   /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h \
   /WorkSpace/LQ3/lq/CustomView/MenuItemView.h \
+  /WorkSpace/LQ3/lq/Model/HotModel.h \
   /WorkSpace/LQ3/lq/Model/MainPageBaseRequestModel.h \
   /WorkSpace/LQ3/lq/Model/BaseRequestModel.h \
   /WorkSpace/LQ3/lq/ASIHttpRequest/ASIFormDataRequest.h \
@@ -21,31 +22,77 @@ dependencies: /WorkSpace/LQ3/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ3/lq/Model/BaseResponseModel.h \
   /WorkSpace/LQ3/lq/Helper/CoreHelper.h \
   /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h \
+  /WorkSpace/LQ3/lq/Model/UserInfoModel.h \
   /WorkSpace/LQ3/lq/Model/MainResponseModel.h \
   /WorkSpace/LQ3/lq/Model/SliderModel.h \
-  /WorkSpace/LQ3/lq/Model/AdModel.h /WorkSpace/LQ3/lq/Model/HotModel.h \
-  /WorkSpace/LQ3/lq/CustomController/DiscountTableViewController.h \
-  /WorkSpace/LQ3/lq/CustomController/MainNavigationController.h \
+  /WorkSpace/LQ3/lq/Model/AdModel.h \
+  /WorkSpace/LQ3/lq/CustomController/CouponViewController.h \
+  /WorkSpace/LQ3/lq/Model/CouponRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/CouponResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/CouponModel.h \
+  /WorkSpace/LQ3/lq/Model/UserCouponResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/MyFavResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/GoodsModel.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/DiscountTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomController/CouponDetailViewController.h \
+  /WorkSpace/LQ3/lq/Model/CommentReuqestModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentListResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/CommentModel.h \
+  /WorkSpace/LQ3/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/CommentTableViewCell.h \
   /WorkSpace/LQ3/lq/CustomController/LQUINavigationController.h \
-  /WorkSpace/LQ3/lq/CustomController/LoginViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/WaterFlowViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/WaterFlowView/WaterFlowView.h \
+  /WorkSpace/LQ3/lq/CustomView/WaterFlowView/WaterFlowViewCell.h \
+  /WorkSpace/LQ3/lq/CustomView/WaterFlowView/ImageViewCell.h \
+  /WorkSpace/LQ3/lq/Model/WatetFlowRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/WaterFlowResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/WaterFlowModel.h \
+  /WorkSpace/LQ3/lq/CustomController/WaterDetailViewController.h \
+  /WorkSpace/LQ3/lq/Model/WaterDetailRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/WaterDetailResponseModel.h \
   /WorkSpace/LQ3/lq/CustomController/LQ7ViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/MyFavViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/MyFavTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ3/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ3/lq/CustomController/LoginViewController.h \
   /WorkSpace/LQ3/lq/CustomController/RegistViewController.h \
+  /WorkSpace/LQ3/lq/Model/RegistModel.h \
+  /WorkSpace/LQ3/lq/Model/RegisterResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/LoginRequestModel.h \
+  /WorkSpace/LQ3/lq/CustomController/MainNavigationController.h \
   /WorkSpace/LQ3/lq/CustomController/MenuViewController.h \
   /WorkSpace/LQ3/lq/Model/MenuReuqestModel.h \
   /WorkSpace/LQ3/lq/Model/MenuResponseModel.h \
   /WorkSpace/LQ3/lq/Model/CategoriesModel.h \
-  /WorkSpace/LQ3/lq/Model/GoodsModel.h \
   /WorkSpace/LQ3/lq/Model/ProductionRequestModel.h \
   /WorkSpace/LQ3/lq/Model/ProdutionResponseModel.h \
   /WorkSpace/LQ3/lq/CustomView/Cell/MenuTableViewCell.h \
   /WorkSpace/LQ3/lq/CustomController/GoodsViewController.h \
-  /WorkSpace/LQ3/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
-  /WorkSpace/LQ3/lq/CustomView/Cell/CommentTableViewCell.h \
-  /WorkSpace/LQ3/lq/Model/CommentModel.h \
-  /WorkSpace/LQ3/lq/Model/CommentReuqestModel.h \
-  /WorkSpace/LQ3/lq/Model/CommentListResponseModel.h \
   /WorkSpace/LQ3/lq/CustomController/MemberCenterViewController.h \
+  /WorkSpace/LQ3/lq/Model/UserInfoRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/AnotherUserInfoResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/AddressResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/SignResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/MyCommentViewController.h \
+  /WorkSpace/LQ3/lq/CustomView/Cell/MyCommentTableViewCell.h \
+  /WorkSpace/LQ3/lq/Model/MyCommentModel.h \
+  /WorkSpace/LQ3/lq/Model/MyCommentRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/MyCommentResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/UserCouponViewController.h \
+  /WorkSpace/LQ3/lq/CustomController/AddressViewController.h \
   /WorkSpace/LQ3/lq/CustomView/CartViewController.h \
   /WorkSpace/LQ3/lq/Model/CartRequestModel.h \
   /WorkSpace/LQ3/lq/Model/ShoppingCartListResponseModel.h \
-  /WorkSpace/LQ3/lq/Model/ShoppingCartItemModel.h
+  /WorkSpace/LQ3/lq/Model/SignatureRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/SignatureResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/OrderDetailViewController.h \
+  /WorkSpace/LQ3/lq/Model/OrderDetailRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/OrderDetailResponseModel.h \
+  /WorkSpace/LQ3/lq/CustomController/InfoViewController.h \
+  /WorkSpace/LQ3/lq/Model/InfoRequestModel.h \
+  /WorkSpace/LQ3/lq/Model/InfoResponseModel.h \
+  /WorkSpace/LQ3/lq/Model/InfoModel.h \
+  /WorkSpace/LQ3/lq/CustomView/InfoTableViewCell.h \
+  /WorkSpace/LQ3/lq/CustomController/InfoDetailViewController.h
