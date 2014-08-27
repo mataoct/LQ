@@ -95,7 +95,7 @@
     
     NSString *token = [CoreHelper tokenController:@"CouponHandler" action:@"couponcomment"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/CouponHandler?action=couponcomment"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/CouponHandler.ashx?action=couponcomment"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -140,6 +140,11 @@
             }
            
     
+}
+
+-(void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"%@ asihttp error :: %@",NSStringFromClass(self.class),request.responseString);
 }
 
 

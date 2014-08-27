@@ -135,6 +135,7 @@
     _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
     _requestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_model.couponid];
     _requestModel.delegate = self;
+    _requestModel.tag = 10001;
     _responseModel = [[CommentListResponseModel alloc] init];
     [_requestModel postDataCoupon];
     
@@ -272,7 +273,7 @@
         }
             break;
 
-        case 10003:
+        case 10002:
         {
             
             NSLog(@"评论成功");
