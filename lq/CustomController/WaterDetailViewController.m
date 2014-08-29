@@ -35,7 +35,7 @@
         
         _waterDetailRequestModel = [[WaterDetailRequestModel alloc] initWithPid:_pid];
         _waterDetailResponseModel = [[WaterDetailResponseModel alloc] init];
-        _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
+        _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(keyboardWillShow:)

@@ -56,7 +56,7 @@
     _commentRequestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_gid];
     _model = [[ProdutionResponseModel alloc] init];
     _commentResponseModel = [[CommentListResponseModel alloc] init];
-    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
+    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     
     _scrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 300, 160) animationDuration:0];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 170, 150, 20)];

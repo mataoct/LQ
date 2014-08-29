@@ -13,8 +13,11 @@
 @interface MenuReuqestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 
 @property (nonatomic,strong) NSString *sellId;
+@property (nonatomic,strong) NSString *uid;
+@property (nonatomic,strong) NSString *start;
+@property (nonatomic,strong) NSString *limit;
 
 
--(id)initWithSellId:(NSString *)sellerId;
+-(id)initWithSellId:(NSString *)sellerId uid:(NSString *)uid;
 
 @end

@@ -33,7 +33,7 @@
         
         _orderId = orderid;
         
-        _requestModel = [[OrderDetailRequestModel alloc] initWithUid:@"3" orderId:_orderId];
+        _requestModel = [[OrderDetailRequestModel alloc] initWithUid:[CoreHelper getLoginUid] orderId:_orderId];
         
         _responseModel = [[OrderDetailResponseModel alloc] init];
         

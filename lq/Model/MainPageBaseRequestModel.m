@@ -51,13 +51,13 @@
     
     [request startAsynchronous];
     
-    NSLog(@"post already %@",self);
+//    NSLog(@"post already %@",self);
 }
 
 
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
-    NSLog(@"main page post start");
+//    NSLog(@"main page post start");
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request

@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    _requestModel = [[CartRequestModel alloc] initWithUid:@"3"];
+    _requestModel = [[CartRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     
     _selectDic = [[NSMutableDictionary alloc] init];
     
@@ -184,7 +184,7 @@
 //    }
 
     
-    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:@"3" args:[_selectDic allValues]];
+    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:[_selectDic allValues]];
     
     [_signRequestModel postData];
     _signRequestModel.delegate = self;

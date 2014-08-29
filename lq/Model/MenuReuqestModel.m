@@ -11,13 +11,16 @@
 @implementation MenuReuqestModel
 
 
--(id)initWithSellId:(NSString *)sellerId
+-(id)initWithSellId:(NSString *)sellerId uid:(NSString *)uid
 {
     self = [super init];
     if (self) {
         //
         _sellId = [[NSString alloc] init];
         _sellId = sellerId;
+        
+        _uid = [[NSString alloc] init];
+        _uid = uid;
         
     }
     return self;
@@ -36,6 +39,8 @@
     
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_sellId forKey:@"sellerId"];
+    [request addPostValue:_uid forKey:@"uid"];
+
     [request setRequestMethod:@"POST"];
     
     [request setDelegate:self];

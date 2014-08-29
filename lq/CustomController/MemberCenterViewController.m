@@ -196,7 +196,7 @@
     
     _responseModel = [[AnotherUserInfoResponseModel alloc] init];
     _signResponseModel = [[SignResponseModel alloc] init];
-    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:@"3"];
+    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
     [_requestModel postData];
@@ -273,7 +273,7 @@
         [_punchBtn setTitle:@"签到" forState:UIControlStateNormal];
 
         [_punchBtn setEnabled:true];
-//        [_punchBtn addTarget:self action:@selector(punchClick) forControlEvents:UIControlEventTouchUpInside];
+        [_punchBtn addTarget:self action:@selector(punchClick) forControlEvents:UIControlEventTouchUpInside];
     }
 //
 }
@@ -317,7 +317,7 @@
 
 -(void)gotoAddressController
 {
-    AddressViewController *favVC = [[AddressViewController alloc] initWithTitle:@"我的收货地址" uid:@"3"];
+    AddressViewController *favVC = [[AddressViewController alloc] initWithTitle:@"我的收货地址" uid:[CoreHelper getLoginUid]];
     [self presentViewController:favVC animated:YES completion:nil];
 }
 
@@ -376,7 +376,7 @@
 
 -(void)punchClick
 {
-    _signRequestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:@"3"];
+    _signRequestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10002;
     [_signRequestModel sign];

@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     
     
-    _menuRequest = [[MenuReuqestModel alloc] initWithSellId:@"100"];
+    _menuRequest = [[MenuReuqestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
     
     _menuRequest.delegate = self;
     [_menuRequest postData];

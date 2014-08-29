@@ -142,6 +142,16 @@
     return nil;
 }
 
++(NSString *)getLoginUid
+{
+    UserInfoModel *model = [[UserInfoModel alloc] init];
+    
+    
+    model = [self getLoginInfo];
+    
+    return model.uid;
+}
+
 +(void)logout
 {
     if ([self checkLogin]) {

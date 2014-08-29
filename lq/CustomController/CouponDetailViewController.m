@@ -132,16 +132,14 @@
     _detailText.text = _model.myDescription;
     _detailText.editable = false;
     
-    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:@"100"];
+    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     _requestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_model.couponid];
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
     _responseModel = [[CommentListResponseModel alloc] init];
     [_requestModel postDataCoupon];
     
-    
 //    _commentTable.backgroundColor = BackGray;
-    
     
     
     //        //评论框
@@ -258,18 +256,13 @@
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     
-
-    
-    
     
     switch (model.ResponseTag) {
         case 10001:
         {
             _responseModel = (CommentListResponseModel *)model;
-            
             [_commentTable reloadData];
             _commentNumLabel.text = [NSString stringWithFormat:@"评论(%d)",_responseModel.commentNum];
-            
         }
             break;
 
@@ -290,11 +283,6 @@
     }
     
 }
-
-
-
-
-
 
 
 //Code from Brett Schumann
@@ -359,17 +347,11 @@
 
 -(void)resignTextView
 {
-    
     //发起评论请求
-    
     _userCommentRequestModel.delegate = self;
     _userCommentRequestModel.tag = 10002;
     
     [_userCommentRequestModel sendCouponComment:_model.couponid message:_textView.text];
-    
-    
-    
-    
 }
 
 @end

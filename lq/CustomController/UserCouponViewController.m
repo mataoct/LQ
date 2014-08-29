@@ -50,7 +50,7 @@
     _couponTable.dataSource = self;
     _couponTable.delegate = self;
     
-    _requestModel.uid = @"3";
+    _requestModel.uid = [CoreHelper getLoginUid];
     _requestModel.delegate = self;
     [_requestModel postUserCoupon];
 }

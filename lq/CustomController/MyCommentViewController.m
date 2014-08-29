@@ -32,7 +32,7 @@
         
         self.view.backgroundColor = BackGray;
         
-        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:@"3" start:@"0" limit:@"10" type:@"0"];
+        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] start:@"0" limit:@"10" type:@"0"];
         _responseModel = [[MyCommentResponseModel alloc] init];
         
         _allCommnetBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 74, 100, 20)];

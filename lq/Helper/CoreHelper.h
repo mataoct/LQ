@@ -27,4 +27,6 @@ static UIWebView *phoneCallWebView;
 
 +(void)callService:(NSString *)num;
 
++(NSString *)getLoginUid;
+
 @end

@@ -37,7 +37,7 @@
     self.navigationController.navigationBarHidden = false;
     
     _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
-    _requestModel.uid = @"3";
+    _requestModel.uid = [CoreHelper getLoginUid];
     
     _requestModel.delegate = self;
     
