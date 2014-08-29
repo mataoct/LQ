@@ -1,4 +1,4 @@
 dependencies: \
-  /WorkSpace/LQ3/lq/CustomController/MainNavigationController.m \
-  /WorkSpace/LQ3/lq/CustomController/MainNavigationController.h \
-  /WorkSpace/LQ3/lq/CustomController/LQUINavigationController.h
+  /WorkSpace/LQ/lq/CustomController/MainNavigationController.m \
+  /WorkSpace/LQ/lq/CustomController/MainNavigationController.h \
+  /WorkSpace/LQ/lq/CustomController/LQUINavigationController.h

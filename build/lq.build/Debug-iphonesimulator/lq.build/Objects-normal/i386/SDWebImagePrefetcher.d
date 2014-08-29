@@ -1,7 +1,7 @@
-dependencies: /WorkSpace/LQ3/lq/SDWebImage/SDWebImagePrefetcher.m \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImagePrefetcher.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManagerDelegate.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManager.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageCompat.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h
+dependencies: /WorkSpace/LQ/lq/SDWebImage/SDWebImagePrefetcher.m \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImagePrefetcher.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageManagerDelegate.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageManager.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageCompat.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDImageCacheDelegate.h

@@ -1,2 +1,1 @@
-dependencies: /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.m \
-  /WorkSpace/LQ3/lq/CoreHelper/NSString+MD5HexDigest.h
+dependencies: /WorkSpace/LQ/lq/CoreHelper/NSString+MD5HexDigest.m

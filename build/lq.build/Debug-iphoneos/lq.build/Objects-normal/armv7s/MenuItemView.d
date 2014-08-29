@@ -1,9 +1,9 @@
-dependencies: /WorkSpace/LQ3/lq/CustomView/MenuItemView.m \
-  /WorkSpace/LQ3/lq/CustomView/MenuItemView.h \
-  /WorkSpace/LQ3/lq/Model/HotModel.h \
-  /WorkSpace/LQ3/lq/SDWebImage/UIImageView+WebCache.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageCompat.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManagerDelegate.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageManager.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDImageCacheDelegate.h
+dependencies: /WorkSpace/LQ/lq/CustomView/MenuItemView.m \
+  /WorkSpace/LQ/lq/CustomView/MenuItemView.h \
+  /WorkSpace/LQ/lq/Model/HotModel.h \
+  /WorkSpace/LQ/lq/SDWebImage/UIImageView+WebCache.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageCompat.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageManagerDelegate.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageManager.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDImageCacheDelegate.h

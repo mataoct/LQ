@@ -9,7 +9,7 @@
 #import "LQUIViewController.h"
 #import "OrderDetailRequestModel.h"
 #import "OrderDetailResponseModel.h"
-#import "CartTableViewCell.h"
+#import "CartTableViewCell2.h"
 
 @interface OrderDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 

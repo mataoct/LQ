@@ -32,7 +32,7 @@
     _menuRequest = [[MenuReuqestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
     
     _menuRequest.delegate = self;
-    [_menuRequest postData];
+
     
     
     _classfy = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 75, 30)];
@@ -78,6 +78,12 @@
     [self.view addSubview:_menuTable];
     self.view.backgroundColor = BackGray;
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+        [_menuRequest postData];
 }
 
 - (void)didReceiveMemoryWarning

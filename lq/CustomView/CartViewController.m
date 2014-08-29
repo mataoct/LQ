@@ -63,13 +63,31 @@
     
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
-    [_requestModel postData];
+//    [_requestModel postData];
     
     [self.view addSubview:_cartTable];
     [self.view addSubview:_footView];
     
     
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"....");
+    
+    [_requestModel postData];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [_selectDic removeAllObjects];
+    
+    [_requestModel.request cancel];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,7 +130,6 @@
             
             OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] initWithTitle:@"订单详情" orderId:_signResponseModel.orderId];
             
-            
             [self presentViewController:orderDetailVC animated:YES completion:nil];
             
         }
@@ -145,6 +162,8 @@
     if (cell == nil) {
         cell = [[CartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
+//    cell.selectStatus = 0;
     
     [cell fillCellByModel:[_responseModel.cartArr objectAtIndex:indexPath.row]];
     return cell;
@@ -182,6 +201,11 @@
 //        
 //        NSLog(@"%@,%@",item.title,item.img);
 //    }
+    
+    if ([_selectDic count] <= 0) {
+        return;
+    }
+    
 
     
     _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:[_selectDic allValues]];

@@ -1,3 +1,3 @@
-dependencies: /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDecoder.m \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageDecoder.h \
-  /WorkSpace/LQ3/lq/SDWebImage/SDWebImageCompat.h
+dependencies: /WorkSpace/LQ/lq/SDWebImage/SDWebImageDecoder.m \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageDecoder.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDWebImageCompat.h

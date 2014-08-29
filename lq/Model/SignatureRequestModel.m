@@ -68,33 +68,25 @@
     
     [request setDelegate:self];
     
-    NSLog(@"post ready %@",token);
-    
     [request startAsynchronous];
-    
-    NSLog(@"post already %@",self);
     
     
     
 }
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
-    NSLog(@"post start");
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
-//        NSLog(@"%@",request.responseString);
-    
     NSError *err;
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&err];
     SignatureResponseModel *model = [[SignatureResponseModel alloc] initWithDic:jsonDic];
-    //    model.tag = [super tag];
-    
     
     model.ResponseTag = self.tag;
     
     if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
+        NSLog(@"order init success %@",jsonDic);
         [[super delegate] requestSuccess:model];
     }
     

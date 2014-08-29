@@ -58,12 +58,29 @@
     _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:@"100"];
     _mainResponseModel = [[MainResponseModel alloc] init];
     _requestModel.delegate = self;
-    [_requestModel postData];
+    
     
     _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
     
+    [self.view addSubview:_headView];
     
     [self.view addSubview:_menuList];
+    
+    
+    _fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 170, 80, 80)];
+    _picWall = [[UIButton alloc] initWithFrame:CGRectMake(80, 170, 80, 80)];
+    _myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 170, 80, 80)];
+    _discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 80, 80)];
+    _adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
+    
+    
+    [self.view addSubview:_fastOrder];
+    [self.view addSubview:_picWall];
+    [self.view addSubview:_myFav];
+    [self.view addSubview:_discount];
+    [self.view addSubview:_adView];
+    
+    [self.view setBackgroundColor:BackGray];
     
     
 //    [self setBackButtonHide:YES];
@@ -71,6 +88,11 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [_requestModel postData];
+}
 
 -(void)reFillLayouts
 {
@@ -117,7 +139,7 @@
         [viewsArray addObject:tempLabel];
     }
     
-    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 170) animationDuration:3];
+
     _headView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
     
     _headView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
@@ -136,25 +158,22 @@
         
         
     };
-    [self.view addSubview:_headView];
+//    [self.view addSubview:_headView];
     
     
 }
 
 -(void)setMenu
 {
-    UIButton *fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 170, 80, 80)];
-    UIButton *picWall = [[UIButton alloc] initWithFrame:CGRectMake(80, 170, 80, 80)];
-    UIButton *myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 170, 80, 80)];
-    UIButton *discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 80, 80)];
+
     
 //    fastOrder.backgroundColor    = [UIColor lightGrayColor];
     
     
-    [fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [picWall setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [myFav setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [_fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [_picWall setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [_myFav setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [_discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
     
 //    [fastOrder setTitle:@"快速预约" forState:UIControlStateNormal];
@@ -163,39 +182,33 @@
 //    [discount setTitle:@"优惠券" forState:UIControlStateNormal];
     
     
-    [fastOrder setBackgroundImage:[UIImage imageNamed:@"首页_02.png"] forState:UIControlStateNormal];
-    [picWall setBackgroundImage:[UIImage imageNamed:@"首页_03.png"] forState:UIControlStateNormal];
-    [myFav setBackgroundImage:[UIImage imageNamed:@"首页_04.png"] forState:UIControlStateNormal];
-    [discount setBackgroundImage:[UIImage imageNamed:@"首页_05.png"] forState:UIControlStateNormal];
+    [_fastOrder setBackgroundImage:[UIImage imageNamed:@"首页_02.png"] forState:UIControlStateNormal];
+    [_picWall setBackgroundImage:[UIImage imageNamed:@"首页_03.png"] forState:UIControlStateNormal];
+    [_myFav setBackgroundImage:[UIImage imageNamed:@"首页_04.png"] forState:UIControlStateNormal];
+    [_discount setBackgroundImage:[UIImage imageNamed:@"首页_05.png"] forState:UIControlStateNormal];
     
     
-    [discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
-    [myFav addTarget:self action:@selector(jumpToMyFav) forControlEvents:UIControlEventTouchUpInside];
-    [picWall addTarget:self action:@selector(jumpToWaterFlow) forControlEvents:UIControlEventTouchUpInside];
+    [_discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
+    [_myFav addTarget:self action:@selector(jumpToMyFav) forControlEvents:UIControlEventTouchUpInside];
+    [_picWall addTarget:self action:@selector(jumpToWaterFlow) forControlEvents:UIControlEventTouchUpInside];
     
 
     
     
-    UIImageView *adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
+    
 //    adView.backgroundColor = [UIColor lightGrayColor];
     
-    [adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
+    [_adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
     
     
-    adView.userInteractionEnabled = YES;
+    _adView.userInteractionEnabled = YES;
     
     UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adTouch:)];
     
-    [adView addGestureRecognizer:imageTouch];
+    [_adView addGestureRecognizer:imageTouch];
     
     
-    [self.view addSubview:fastOrder];
-    [self.view addSubview:picWall];
-    [self.view addSubview:myFav];
-    [self.view addSubview:discount];
-    [self.view addSubview:adView];
-    
-    [self.view setBackgroundColor:BackGray];
+
     
 }
 

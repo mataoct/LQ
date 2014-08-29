@@ -27,6 +27,8 @@
 @property (nonatomic,assign) id<RequestModelDelegate> delegate;
 @property (nonatomic,assign) NSInteger tag;
 
+@property (nonatomic,strong) ASIFormDataRequest *request;
+
 
 -(void)postData;
 

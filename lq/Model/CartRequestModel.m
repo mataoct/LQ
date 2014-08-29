@@ -34,19 +34,19 @@
     NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiGoodsHandler.ashx?action=getshoppingcartlist"];
     
     
-    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    self.request = [[ASIFormDataRequest alloc] initWithURL:url];
     
     
-    [request addPostValue:token forKey:@"token"];
+    [self.request addPostValue:token forKey:@"token"];
 
-    [request addPostValue:_uid forKey:@"uid"];
-    [request setRequestMethod:@"POST"];
+    [self.request addPostValue:_uid forKey:@"uid"];
+    [self.request setRequestMethod:@"POST"];
     
-    [request setDelegate:self];
+    [self.request setDelegate:self];
     
     NSLog(@"post ready %@",token);
     
-    [request startAsynchronous];
+    [self.request startAsynchronous];
     
     NSLog(@"post already %@",self);
 }

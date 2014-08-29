@@ -47,18 +47,7 @@
     [super viewDidLoad];
     
     
-    _orderTypeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    _takeoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 100, 20)];
-    _inRestroomBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 20, 100, 20)];
-    _dinnerTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 40, 260, 20)];
     
-    _orderInfoTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, 240, 20)];
-    _updateOrderInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 70, 60, 20)];
-    _orderAddressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, 300, 20)];
-    _orderTelLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 110, 140, 20)];
-    _orderLinkManLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 110, 160, 20)];
-    
-    _orderDetailTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 140, 300, 20)];
     
     _orderShippingCostLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 20)];
     _orderTotalLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 0, 90, 20)];
@@ -84,21 +73,78 @@
     
 
     
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 160)];
     
-    [headView addSubview:_orderTypeTitleLabel];
-    [headView addSubview:_takeoutBtn];
-    [headView addSubview:_inRestroomBtn];
-    [headView addSubview:_dinnerTimeLabel];
-    [headView addSubview:_orderInfoTitleLabel];
-    [headView addSubview:_updateOrderInfoBtn];
-    [headView addSubview:_orderAddressLabel];
-    [headView addSubview:_orderTelLabel];
-    [headView addSubview:_orderLinkManLabel];
-    [headView addSubview:_orderDetailTitleLabel];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 214)];
+    
+    //订单类型
+    _orderTypeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 290, 24)];
+    _takeoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 34, 100, 20)];
+    _inRestroomBtn = [[UIButton alloc] initWithFrame:CGRectMake(130, 34, 100, 20)];
+    _dinnerTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 57, 260, 20)];
+    UIView *tempOrderType = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 80)];
+    tempOrderType.backgroundColor = [UIColor whiteColor];
+    _orderTypeTitleLabel.font = [UIFont systemFontOfSize:12];
+    UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(0, 24, 300, 1)];
+    line.backgroundColor = BackGray;
+    [tempOrderType addSubview:_orderTypeTitleLabel];
+    [tempOrderType addSubview:line];
+    [tempOrderType addSubview:_takeoutBtn];
+    [tempOrderType addSubview:_inRestroomBtn];
+    [tempOrderType addSubview:_dinnerTimeLabel];
+    [headView addSubview:tempOrderType];
+    [_takeoutBtn setTitle:@"送餐" forState:UIControlStateNormal];
+    [_inRestroomBtn setTitle:@"到店" forState:UIControlStateNormal];
+    _takeoutBtn.backgroundColor = DarkGreen;_inRestroomBtn.backgroundColor = DarkGreen;
+    _dinnerTimeLabel.font = [UIFont systemFontOfSize:12];
     
     
-    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 150)];
+    //收货信息
+    _orderInfoTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, 24)];
+    _updateOrderInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 0, 60, 24)];
+    _orderAddressLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 34, 290, 20)];
+    _orderTelLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 57, 140, 20)];
+    _orderLinkManLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 57, 140, 20)];
+    
+    _orderDetailTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 90, 300, 24)];
+    UILabel *line2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 24, 300, 1)];
+    line2.backgroundColor = BackGray;
+    
+    UILabel *line3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 300, 10)];
+    line3.backgroundColor = BackGray;
+    UILabel *line4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 114, 300, 1)];
+    line4.backgroundColor = BackGray;
+    
+    _orderInfoTitleLabel.font = [UIFont systemFontOfSize:12];
+    _updateOrderInfoBtn.font = [UIFont systemFontOfSize:12];
+    [_updateOrderInfoBtn setTitleColor:DarkGreen forState:UIControlStateNormal];
+    _orderAddressLabel.font = [UIFont systemFontOfSize:12];
+    _orderTelLabel.font = [UIFont systemFontOfSize:12];
+    _orderLinkManLabel.font = [UIFont systemFontOfSize:12];
+    _orderDetailTitleLabel.font = [UIFont systemFontOfSize:12];
+    
+    UIView *tempInfo = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 300, 115)];
+    tempInfo.backgroundColor = [UIColor whiteColor];
+    [tempInfo addSubview:_orderInfoTitleLabel];
+    [tempInfo addSubview:_updateOrderInfoBtn];
+    [tempInfo addSubview:line2];
+    [tempInfo addSubview:_orderAddressLabel];
+    [tempInfo addSubview:_orderTelLabel];
+    [tempInfo addSubview:_orderLinkManLabel];
+    [tempInfo addSubview:_orderDetailTitleLabel];
+    [tempInfo addSubview:line3];
+    [tempInfo addSubview:line4];
+    [headView addSubview:tempInfo];
+    
+    
+    
+    
+    
+    
+    
+    
+    headView.backgroundColor = BackGray;
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 300, 150)];
     
     [footView addSubview:_orderShippingCostLabel];
     [footView addSubview:_orderTotalLabel];
@@ -116,12 +162,13 @@
     [bottomView addSubview:_submitOrderBtn];
     
     
-    _orderTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 104)];
+    _orderTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 104)];
     
     _orderTable.tableHeaderView = headView;
     _orderTable.tableFooterView = footView;
     _orderTable.delegate = self;
     _orderTable.dataSource = self;
+    _orderTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
     [self.view addSubview:_orderTable];
@@ -150,21 +197,21 @@
         _takeoutBtn.selected = false;
     }
     
-    _dinnerTimeLabel.text = [NSString stringWithFormat:@"用餐时间:%@",_responseModel.orderTime];
+    _dinnerTimeLabel.text = [NSString stringWithFormat:@"用餐时间：%@",_responseModel.orderTime];
     
     
     _orderInfoTitleLabel.text = @"收货信息";
     [_updateOrderInfoBtn setTitle:@"修改信息" forState:UIControlStateNormal];
-    _orderAddressLabel.text = [NSString stringWithFormat:@"收货地址:%@",_responseModel.address];
-    _orderTelLabel.text = [NSString stringWithFormat:@"联系电话:%@",_responseModel.mobile];
-    _orderLinkManLabel.text  =  [NSString stringWithFormat:@"联系人:%@",_responseModel.linkMan];
+    _orderAddressLabel.text = [NSString stringWithFormat:@"收货地址：%@",_responseModel.address];
+    _orderTelLabel.text = [NSString stringWithFormat:@"联系电话：%@",_responseModel.mobile];
+    _orderLinkManLabel.text  =  [NSString stringWithFormat:@"联系人：%@",_responseModel.linkMan];
     
     _orderDetailTitleLabel.text = @"订单详情";
     
     [_orderTable reloadData];
     
     _orderShippingCostLabel.text = [NSString stringWithFormat:@"%@元，满60元免配送费",_responseModel.sendPrice];
-    _orderTotalLabel.text = [NSString stringWithFormat:@"合计:%@",_responseModel.totalPrice];
+    _orderTotalLabel.text = [NSString stringWithFormat:@"合计：%@",_responseModel.totalPrice];
     _orderDiscountTotalLabel.text =_responseModel.totalPrice;
     
     _messageText.text = _responseModel.cconttent;
@@ -177,7 +224,7 @@
     
     
     _totalPayLabel.text = [NSString stringWithFormat:@"总额：%@",_responseModel.totalPrice];
-    _getIntegrationLabel.text = [NSString stringWithFormat:@"获得积分:%@",_responseModel.extCredit];
+    _getIntegrationLabel.text = [NSString stringWithFormat:@"获得积分：%@",_responseModel.extCredit];
     
     
 }
@@ -201,9 +248,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"cell";
-    CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    CartTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[CartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[CartTableViewCell2 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     [cell fillCellByModel:[_responseModel.goodList objectAtIndex:indexPath.row]];
@@ -220,7 +267,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110.0;
+    return 95.0;
 }
 
 /*

@@ -1,11 +1,11 @@
-dependencies: /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequest.m \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequest.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequestConfig.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIHTTPRequestDelegate.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIProgressDelegate.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASICacheDelegate.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/Reachability.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIAuthenticationDialog.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIInputStream.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIDataDecompressor.h \
-  /WorkSpace/LQ3/lq/ASIHttpRequest/ASIDataCompressor.h
+dependencies: /WorkSpace/LQ/lq/ASIHttpRequest/ASIHTTPRequest.m \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIHTTPRequest.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIHTTPRequestConfig.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIHTTPRequestDelegate.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIProgressDelegate.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASICacheDelegate.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/Reachability.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIAuthenticationDialog.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIInputStream.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIDataDecompressor.h \
+  /WorkSpace/LQ/lq/ASIHttpRequest/ASIDataCompressor.h

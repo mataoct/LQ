@@ -30,4 +30,14 @@
 @property (nonatomic,strong) MainResponseModel *mainResponseModel;
 @property (nonatomic,strong) MenuItemView *menuList;
 
+@property (nonatomic,strong)   UIButton *fastOrder;
+@property (nonatomic,strong)   UIButton *picWall;
+@property (nonatomic,strong)   UIButton *myFav;
+@property (nonatomic,strong)   UIButton *discount;
+
+@property (nonatomic,strong) UIImageView *adView;
+
+
+
+
 @end

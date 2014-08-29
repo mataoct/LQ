@@ -101,6 +101,7 @@
     
     _sumValueLabel.text =[NSString stringWithFormat:@"￥%@",_model.totalPrice];
     _selectStatus = 0;
+    _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
 }
 
 

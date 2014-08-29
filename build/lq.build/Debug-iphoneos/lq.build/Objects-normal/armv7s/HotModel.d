@@ -1,2 +1,2 @@
-dependencies: /WorkSpace/LQ3/lq/Model/HotModel.m \
-  /WorkSpace/LQ3/lq/Model/HotModel.h
+dependencies: /WorkSpace/LQ/lq/Model/HotModel.m \
+  /WorkSpace/LQ/lq/Model/HotModel.h

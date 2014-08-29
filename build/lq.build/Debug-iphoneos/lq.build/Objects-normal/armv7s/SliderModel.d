@@ -1,2 +1,2 @@
-dependencies: /WorkSpace/LQ3/lq/Model/SliderModel.m \
-  /WorkSpace/LQ3/lq/Model/SliderModel.h
+dependencies: /WorkSpace/LQ/lq/Model/SliderModel.m \
+  /WorkSpace/LQ/lq/Model/SliderModel.h
