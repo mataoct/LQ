@@ -29,6 +29,8 @@
     if (self) {
         //
         
+
+        
         _orderId = [[NSString alloc] init];
         
         _orderId = orderid;
@@ -135,6 +137,22 @@
     _orderDiscountTotalLabel.font = [UIFont systemFontOfSize:10];
     _messageText = [[UITextView alloc] initWithFrame:CGRectMake(10, 34, 280, 50)];
     _messageText.backgroundColor = [UIColor lightGrayColor];
+    _messageText.delegate = self;
+    _messageText.returnKeyType = UIReturnKeyDone;
+    
+    
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolbar.barStyle = UIBarStyleBlackTranslucent;
+    UIBarButtonItem *hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStyleDone target:self action:@selector(inputDown:)];
+    
+    [toolbar setItems:[NSArray arrayWithObject:hiddenButtonItem]];
+    
+//    UIButton *inputDone = [[UIButton alloc] init];
+//    [inputDone addTarget:self action:@selector(inputDown:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    _messageText.inputAccessoryView = toolbar;
     _couponCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 93, 180, 24)];
     _couponCountLabel.font = [UIFont systemFontOfSize:10];
     _couponBtn = [[UIButton alloc] initWithFrame:CGRectMake(226, 93, 64, 24)];
@@ -216,6 +234,19 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kAddressChange" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressChange:) name:@"kAddressChange" object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 
@@ -439,7 +470,7 @@
 	order.productDescription = @"欢迎使用本软件购物"; //商品描述
         
     order.amount = [NSString stringWithFormat:@"%.2f",0.01];  //[[_dicdata valueForKey:@"total_fee"] floatValue]
-	order.notifyURL =  @"http://www.mto2o.cn/bg/view/alipay/notify_url.aspx"; //回调URL
+	order.notifyURL =  @"http://www.mto2o.cn/bg/view/alipay/notify_ordersurl.aspx"; //回调URL
     //    order.notifyURL = @"http://www.niuhome.com/AlipayReturn";
 	
 	return [order description];
@@ -497,6 +528,69 @@
     {
         //失败
     }
+}
+
+
+//Code from Brett Schumann
+-(void) keyboardWillShow:(NSNotification *)note{
+    // get keyboard size and loctaion
+	CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
+    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    
+    // Need to translate the bounds to account for rotation.
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    
+	// get a rect for the textView frame
+//	CGRect containerFrame = _orderTable.frame;
+//    containerFrame.origin.y = self.view.bounds.size.height - (keyboardBounds.size.height + containerFrame.size.height);
+    
+	// animations settings
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationCurve:[curve intValue]];
+	
+	// set views with new info
+//	_orderTable.frame = containerFrame;
+	_orderTable.frame = CGRectMake(0, 64, 320, self.view.frame.size.height - 104 - keyboardBounds.size.height + 49);
+//    _orderTable.contentOffset = 
+	// commit animations
+	[UIView commitAnimations];
+}
+
+-(void) keyboardWillHide:(NSNotification *)note{
+    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+	
+	// get a rect for the textView frame
+//	CGRect containerFrame = _orderTable.frame;
+//    containerFrame.origin.y = self.view.bounds.size.height - containerFrame.size.height;
+	
+	// animations settings
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationCurve:[curve intValue]];
+    
+	// set views with new info
+//	_containerView.frame = containerFrame;
+	_orderTable.frame = CGRectMake(0, 64, 320, self.view.frame.size.height - 104);
+	// commit animations
+	[UIView commitAnimations];
+}
+
+
+-(void)inputDown:(id)sender
+{
+    
+    [_messageText resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
 }
 
 @end

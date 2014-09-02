@@ -22,7 +22,7 @@
 #import "PartnerConfig.h"
 #import "DataSigner.h"
 
-@interface OrderDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
+@interface OrderDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,UITextViewDelegate>
 
 @property (nonatomic,strong) NSString *orderId;
 @property (nonatomic,strong) OrderDetailRequestModel *requestModel;

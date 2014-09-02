@@ -29,6 +29,8 @@
         
         self.sumLabel.hidden = YES;
         self.sumValueLabel.hidden = YES;
+        
+        
                 
         _addToCartBtn = [[UIButton alloc] initWithFrame:CGRectMake(220, 70, 80, 20)];
         
@@ -36,6 +38,8 @@
         [_addToCartBtn setBackgroundColor:Orange];
         [_addToCartBtn setFont:[UIFont systemFontOfSize:14]];
         _addToCartBtn.layer.cornerRadius = 3;
+        
+        [_addToCartBtn addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_addToCartBtn];
         
@@ -56,7 +60,10 @@
 {
     _myModel = model;
     
-    [self.headView setImageWithURL:_myModel.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    
+    _add2CartModel = [[AddToCartRequestModel alloc] initWithGid:_myModel.gid uid:[CoreHelper getLoginUid]];
+    
+    [self.headView setImageWithURL:_myModel.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     self.titleLabel.text = _myModel.title;
     self.detailLabel.text = _myModel.content;
     self.priceLabel.text = [NSString stringWithFormat:@"￥%@",_myModel.nowprice];
@@ -65,6 +72,43 @@
     self.countValueLabel.text = _myModel.sales;
 //    self.sumValueLabel.text = _myModel.num;
     self.selectStatus = 0;
+}
+
+
+
+-(void)cartBtnClick
+{
+    _add2CartModel.delegate = self;
+    _add2CartModel.tag = 10001;
+    [_add2CartModel postData:@"1"];
+    
+    NSLog(@"add 2 cart");
+}
+
+-(void)requestFailed:(NSString *)errorStr
+{
+    [SVProgressHUD showSuccessWithStatus_custom:errorStr duration:1.5];
+}
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            if (model.ResponseStatus == 1) {
+                //
+                [SVProgressHUD showSuccessWithStatus_custom:@"加入购物车成功" duration:1.5];
+            }
+            else
+            {
+                [SVProgressHUD showSuccessWithStatus_custom:@"加入购物车失败" duration:1.5];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

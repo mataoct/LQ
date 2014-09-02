@@ -101,14 +101,14 @@
     
     
     
-    _myOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 174, 110, 75)];
-    _myFavorBtn = [[UIButton alloc] initWithFrame:CGRectMake(110, 174, 100, 75)];
-    _myCouponBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 174, 110, 75)];
+    _myOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 110, 75)];
+    _myFavorBtn = [[UIButton alloc] initWithFrame:CGRectMake(110, 0, 100, 75)];
+    _myCouponBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 0, 110, 75)];
     
     
-    _myCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 195+64, 320, 45)];
-    _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 240+64, 320, 45)];
-    _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 285+64, 320, 45)];
+    _myCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 195+64-174, 320, 45)];
+    _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 240+64-174, 320, 45)];
+    _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 285+64-174, 320, 45)];
     
 
     
@@ -146,7 +146,7 @@
     [_myAddrBtn setTitle:@"我的收货地址" forState:UIControlStateNormal];
     
     
-    _logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 50 - 60 , 300,  46)];
+    _logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 243 , 300,  46)];
     
     [_logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
     [_logoutBtn setBackgroundColor:DarkGray];
@@ -180,13 +180,29 @@
     [temp addSubview:_daylyLabel2];
     
     [self.view addSubview:temp];
-    [self.view addSubview:_myOrderBtn];
-    [self.view addSubview:_myFavorBtn];
-    [self.view addSubview:_myCouponBtn];
-    [self.view addSubview:_myCommentBtn];
-    [self.view addSubview:_myAddrBtn];
-    [self.view addSubview:_bussInfoBtn];
-    [self.view addSubview:_logoutBtn];
+    
+    
+    
+    UIScrollView *sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 174, 320, self.view.frame.size.height - 49 - 174)];
+    
+//    sv.backgroundColor = [UIColor greenColor];
+    
+    [sv setContentSize:CGSizeMake(320, 325)];
+    
+    
+    
+    
+    
+    
+    [sv addSubview:_myOrderBtn];
+    [sv addSubview:_myFavorBtn];
+    [sv addSubview:_myCouponBtn];
+    [sv addSubview:_myCommentBtn];
+    [sv addSubview:_myAddrBtn];
+    [sv addSubview:_bussInfoBtn];
+    [sv addSubview:_logoutBtn];
+    
+    [self.view addSubview:sv];
     
     
     self.navigationController.navigationBarHidden = YES;

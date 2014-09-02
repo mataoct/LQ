@@ -52,6 +52,8 @@
 		A01AD62D1952D4D4005DD9C4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD6281952D4D4005DD9C4 /* CycleScrollView.m */; };
 		A01AD62F1952D4D4005DD9C4 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD62C1952D4D4005DD9C4 /* NSTimer+Addition.m */; };
 		A02712BA1988F7A50042F6FB /* CommentReuqestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A02712B91988F7A50042F6FB /* CommentReuqestModel.m */; };
+		A030A1F519B60101000A969C /* 勾选-未.png in Resources */ = {isa = PBXBuildFile; fileRef = A030A1F319B60101000A969C /* 勾选-未.png */; };
+		A030A1F619B60101000A969C /* 勾选-已.png in Resources */ = {isa = PBXBuildFile; fileRef = A030A1F419B60101000A969C /* 勾选-已.png */; };
 		A034656E19AF69F800032526 /* FavRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A034656D19AF69F800032526 /* FavRequestModel.m */; };
 		A034657119AF838500032526 /* AddToCartRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A034657019AF838500032526 /* AddToCartRequestModel.m */; };
 		A03E0BB0196AB9C8007C5612 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E0BAF196AB9C8007C5612 /* RegistViewController.m */; };
@@ -316,6 +318,8 @@
 		A01AD62C1952D4D4005DD9C4 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		A02712B81988F7A50042F6FB /* CommentReuqestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentReuqestModel.h; path = Model/CommentReuqestModel.h; sourceTree = "<group>"; };
 		A02712B91988F7A50042F6FB /* CommentReuqestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CommentReuqestModel.m; path = Model/CommentReuqestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A030A1F319B60101000A969C /* 勾选-未.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "勾选-未.png"; sourceTree = "<group>"; };
+		A030A1F419B60101000A969C /* 勾选-已.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "勾选-已.png"; sourceTree = "<group>"; };
 		A034656C19AF69F800032526 /* FavRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavRequestModel.h; path = Model/FavRequestModel.h; sourceTree = "<group>"; };
 		A034656D19AF69F800032526 /* FavRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FavRequestModel.m; path = Model/FavRequestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A034656F19AF838500032526 /* AddToCartRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToCartRequestModel.h; path = Model/AddToCartRequestModel.h; sourceTree = "<group>"; };
@@ -1437,6 +1441,8 @@
 			children = (
 				A0FD2D4F19ACCF0400874332 /* 头像-评论.png */,
 				A0FD2D5019ACCF0400874332 /* 图片默认1.png */,
+				A030A1F319B60101000A969C /* 勾选-未.png */,
+				A030A1F419B60101000A969C /* 勾选-已.png */,
 				A096EB5019B3431200887462 /* 本单详情标题图标.png */,
 				A0FD2D5119ACCF0400874332 /* 图片默认2.png */,
 				A0EF4F6C19AB713400628139 /* 底部菜单栏 */,
@@ -1618,6 +1624,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A030A1F619B60101000A969C /* 勾选-已.png in Resources */,
 				A089303119B028ED00F42B3D /* 签到-bg.png in Resources */,
 				A09EC16D195278FC0036219B /* readme.txt in Resources */,
 				A001AE5919A97E95009BBF0C /* 登录2_03.png in Resources */,
@@ -1639,6 +1646,7 @@
 				A01AB9A219A3A91A00CDBDF9 /* 评论标题图标.png in Resources */,
 				A0B87DF51990E037003091C0 /* MessageEntryBackground@2x.png in Resources */,
 				A069B0F919AB8A31006E6494 /* tabbg-3.png in Resources */,
+				A030A1F519B60101000A969C /* 勾选-未.png in Resources */,
 				A001AE6119A97E95009BBF0C /* 首页_04.png in Resources */,
 				A069B0F719AB8A31006E6494 /* tabbg-1.png in Resources */,
 				A0C7AE1D19A9F6B700303B8A /* 标题-设置.png in Resources */,

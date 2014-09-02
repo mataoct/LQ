@@ -8,10 +8,13 @@
 
 #import "CartTableViewCell.h"
 #import "GoodsModel.h"
+#import "AddToCartRequestModel.h"
 
-@interface MyFavTableViewCell : CartTableViewCell
+@interface MyFavTableViewCell : CartTableViewCell<RequestModelDelegate>
 
 @property (nonatomic,strong) UIButton *addToCartBtn;
 @property (nonatomic,strong) GoodsModel *myModel;
+
+@property (nonatomic,strong) AddToCartRequestModel *add2CartModel;
 
 @end
