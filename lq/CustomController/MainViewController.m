@@ -262,6 +262,7 @@
     else
     {
         MyFavViewController *favVC = [[MyFavViewController alloc] init];
+        [favVC showBackButton];
 //        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:favVC];
 //        [self presentViewController:navi animated:YES completion:nil];
         
@@ -279,7 +280,7 @@
 
 
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
     NSLog(@"main page error");
 }

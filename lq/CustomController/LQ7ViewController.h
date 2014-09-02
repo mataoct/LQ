@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LQ7ViewController : UIViewController
-
+-(void)showBackButton;
 @end

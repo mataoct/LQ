@@ -50,5 +50,4 @@ dependencies: /WorkSpace/LQ/lq/CustomController/ShooInfoController.m \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudSearch.h \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudSearchInfo.h \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudPOIList.h \
-  /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKVersion.h \
-  /WorkSpace/LQ/lq/SVProgressHUD/SVProgressHUD.h
+  /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKVersion.h

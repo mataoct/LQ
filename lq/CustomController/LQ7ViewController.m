@@ -9,7 +9,6 @@
 #import "LQ7ViewController.h"
 
 @interface LQ7ViewController ()
-@property (nonatomic,retain) UIBarButtonItem *leftItem;
 @end
 
 @implementation LQ7ViewController
@@ -40,6 +39,11 @@
                                   [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],UITextAttributeTextShadowOffset,
                                   [UIFont systemFontOfSize:18], UITextAttributeFont,
                                   nil]];
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,5 +62,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)showBackButton
+{
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 13, 24);
+    [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backToPrevious)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    self.navigationItem.leftBarButtonItem = back;
+}
+
+
+-(void)backToPrevious
+{
+    //    [self.navigationController popViewControllerAnimated:YES];
+    
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+//    else
+//    {
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+    
+    NSLog(@"back");
+    
+    
+}
 
 @end

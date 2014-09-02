@@ -245,7 +245,7 @@
     return 44.0;
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
     
 }

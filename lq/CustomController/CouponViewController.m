@@ -130,8 +130,7 @@
 
 }
 
-
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
     
 }

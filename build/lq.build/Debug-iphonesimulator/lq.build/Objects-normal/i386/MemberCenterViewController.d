@@ -32,12 +32,17 @@ dependencies: \
   /WorkSpace/LQ/lq/Model/UserCouponResponseModel.h \
   /WorkSpace/LQ/lq/Model/MyFavResponseModel.h \
   /WorkSpace/LQ/lq/Model/GoodsModel.h \
+  /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
+  /WorkSpace/LQ/lq/Model/HistoryModel.h \
+  /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
-  /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
+  /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \
   /WorkSpace/LQ/lq/CustomController/ShooInfoController.h \
   /WorkSpace/LQ/lq/Model/SellerInfoRequestModel.h \
   /WorkSpace/LQ/lq/Model/SellerInfoResponseModel.h \
@@ -81,5 +86,4 @@ dependencies: \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudSearch.h \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudSearchInfo.h \
   /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKCloudPOIList.h \
-  /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKVersion.h \
-  /WorkSpace/LQ/lq/SVProgressHUD/SVProgressHUD.h
+  /WorkSpace/LQ/lq/BaiduMap_iOSSDK_v2.2.1_Lib/inc/BMKVersion.h

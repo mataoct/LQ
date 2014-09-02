@@ -321,7 +321,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 

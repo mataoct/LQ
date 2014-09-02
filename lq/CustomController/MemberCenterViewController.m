@@ -295,6 +295,7 @@
 -(void)gotoShopInfoController
 {
     ShooInfoController *shopInfoVC = [[ShooInfoController alloc] init];
+    [shopInfoVC showBackButton];
 //    shopInfoVC.title = @"商家信息";
     [self.navigationController pushViewController:shopInfoVC animated:YES];
     
@@ -314,6 +315,7 @@
 -(void)gotoMyFavViewController
 {
     MyFavViewController *favVC = [[MyFavViewController alloc] init];
+    [favVC showBackButton];
     [self.navigationController pushViewController:favVC animated:YES];
 }
 
@@ -337,7 +339,7 @@
     [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-1.png"]];
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BMapKit.h"
 #import "SVProgressHUD.h"
+#import "LQ7ViewController.h"
 
-@interface HKBaiduMapViewController : UIViewController<BMKMapViewDelegate,BMKSearchDelegate>
+@interface HKBaiduMapViewController : LQ7ViewController<BMKMapViewDelegate,BMKSearchDelegate>
 
 @property (nonatomic,strong) BMKMapView *mapView;
 @property (nonatomic,strong) BMKSearch *search;

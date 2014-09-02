@@ -69,7 +69,7 @@
         _ccontent = safeString([dic objectForKey:@"ccontent"]);
         _stotalPrice = safeString([dic objectForKey:@"stotalprice"]);
         _remark = safeString([dic objectForKey:@"remark"]);
-        _createTime = safeString([dic objectForKey:@"createtime"]);
+        _createTime = [CoreHelper timeStampToDate:safeString([dic objectForKey:@"createtime"])];
         _address = safeString([dic objectForKey:@"address"]);
         _mobile = safeString([dic objectForKey:@"mobile"]);
         _linkMan = safeString([dic objectForKey:@"linkman"]);

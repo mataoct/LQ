@@ -86,6 +86,7 @@ dependencies: /WorkSpace/LQ/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/CartViewController.h \
   /WorkSpace/LQ/lq/Model/CartRequestModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartListResponseModel.h \

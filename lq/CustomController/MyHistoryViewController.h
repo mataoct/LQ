@@ -9,6 +9,7 @@
 #import "LQUIViewController.h"
 #import "CouponRequestModel.h"
 #import "CartTableViewCell2.h"
+#import "HistoryDetailTableViewCell.h"
 
 @interface MyHistoryViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate>
 

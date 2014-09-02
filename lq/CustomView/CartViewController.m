@@ -46,7 +46,7 @@
     
     [_checkBtn addTarget:self action:@selector(sendOrder) forControlEvents:UIControlEventTouchUpInside];
     
-    _footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 20-44 -60 - 50, 320, 60)];
+    _footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 20-44 -60 - 49, 320, 60)];
     
     [_footView addSubview:_priceCountLabel];
     [_footView addSubview:_priceCountValueLabel];
@@ -107,9 +107,8 @@
 }
 */
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
-    
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model

@@ -43,7 +43,7 @@
     [_reuqestModel postData:self.model.couponid];
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 
 }

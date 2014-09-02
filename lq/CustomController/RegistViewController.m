@@ -159,7 +159,7 @@
 }
 
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 
@@ -168,7 +168,9 @@
     switch (model.ResponseTag) {
         case 10001:
         {
-            NSLog(@"verifity code send");
+            
+            [SVProgressHUD showSuccessWithStatus_custom:@"验证码已发送" duration:1.5];
+        
         }
             break;
         case 10002:

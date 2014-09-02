@@ -122,7 +122,7 @@
     _commentTable.dataSource = self;
     [self.view addSubview:_commentTable];
     
-    _commentTable.backgroundColor = [UIColor greenColor];
+    _commentTable.backgroundColor = [UIColor clearColor];
     
     _commentTable.showsVerticalScrollIndicator = NO;
     //填充UI
@@ -255,7 +255,7 @@
     return 44.0;
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
     
 }

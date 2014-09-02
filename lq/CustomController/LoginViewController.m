@@ -28,8 +28,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"标题--电话.png"] style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
-    self.item.rightBarButtonItem = rightButton;
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"标题--电话.png"] style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 23, 23);
+    [btn setBackgroundImage:[UIImage imageNamed:@"标题--电话.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(selectRightAction:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *call=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    
+    
+    self.item.rightBarButtonItem = call;
 
     self.view.backgroundColor = BackGray;
     
@@ -48,6 +57,8 @@
     _userPwd.placeholder = @"密码";
     _userName.placeholder = @"用户名";
     
+    
+    _userPwd.secureTextEntry = YES;
     
     _userName.returnKeyType = UIReturnKeyDone;
     _userPwd.returnKeyType = UIReturnKeyDone;
@@ -155,7 +166,7 @@
     [_requestModel postData];
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 
@@ -172,12 +183,9 @@
 
 -(void)selectRightAction:(id)sender
 {
-//    _saveRequestModel   = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
-//    _saveRequestModel.delegate = self;
-//    _saveRequestModel.tag = 10002;
-//    [_saveRequestModel sendAddressLinkMan:_nameTf.text phone:_telTf.text address:_addrTf.text];
+    [CoreHelper callService:@""];
     
-    NSLog(@"call");
+//    NSLog(@"call");
 }
 
 @end

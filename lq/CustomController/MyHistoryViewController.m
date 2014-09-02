@@ -48,6 +48,7 @@
     _hstTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64) style:UITableViewStylePlain];
     _hstTable.delegate = self;
     _hstTable.dataSource = self;
+    _hstTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_hstTable];
     
     
@@ -101,11 +102,20 @@
     else
     {
         static NSString *systemCell = @"cell";
-        UITableViewCell *defaultCell = [tableView dequeueReusableCellWithIdentifier:systemCell];
+        HistoryDetailTableViewCell *defaultCell = [tableView dequeueReusableCellWithIdentifier:systemCell];
         if (defaultCell == nil) {
-            defaultCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:systemCell];
+            defaultCell = [[HistoryDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:systemCell];
         }
-        defaultCell.textLabel.text = @"2";
+//        defaultCell.textLabel.text = @"2";
+        
+        
+        [defaultCell fillCellByModel:temp];
+        
+        if (defaultCell.model.status != 0 ) {
+            [defaultCell.payBtn setHidden:YES];
+        }
+        
+        
         return defaultCell;
     }
     
@@ -119,11 +129,11 @@
     HistoryModel *temp = [_historyResponse.historyArr objectAtIndex:indexPath.section];
     
     if (indexPath.row < [temp.goodArr count] ) {
-        return 90.0;
+        return 91.0;
     }
     else
     {
-        return 160.0;
+        return 161.0;
     }
 }
 
@@ -144,7 +154,7 @@
 }
 */
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
     
 }

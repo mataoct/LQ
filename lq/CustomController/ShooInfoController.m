@@ -148,7 +148,7 @@
 }
 */
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 
@@ -166,7 +166,8 @@
 -(void)showMap
 {
     HKBaiduMapViewController *mapVC = [[HKBaiduMapViewController alloc] initWithX:_responseModel.pointy Y:_responseModel.pointx];
-    
+    [mapVC showBackButton];
+    mapVC.title = @"商家位置";
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 

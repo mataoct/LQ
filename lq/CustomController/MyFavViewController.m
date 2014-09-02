@@ -66,7 +66,7 @@
     _favTable.dataSource = self;
     _favTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    _favTable.backgroundColor = [UIColor greenColor];
+    _favTable.backgroundColor = [UIColor clearColor];
     [self.view addSubview:temp];
     [self.view addSubview:_favTable];
     
@@ -81,7 +81,7 @@
     [_allCheckBtn addTarget:self action:@selector(allCheck) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 

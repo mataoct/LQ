@@ -73,6 +73,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     InfoDetailViewController *detailVC = [[InfoDetailViewController alloc] initWithModel:[_responseModel.infoArr objectAtIndex:indexPath.row]];
+    
+    [detailVC showBackButton];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -83,7 +85,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 

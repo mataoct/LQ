@@ -52,7 +52,6 @@
     [request addPostValue:_tel forKey:@"phone"];
     [request addPostValue:@"100" forKey:@"sellerId"];
     [request setRequestMethod:@"POST"];
-//    request.tag = 10001;
     [request setDelegate:self];
     
     NSLog(@"post ready %@",token);
@@ -119,6 +118,13 @@
             [[super delegate] requestSuccess:model];
         }
     }
+    else
+    {
+        if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+        {
+            [[super delegate] requestFailed:model.ErrMessage];
+        }
+    }
     
     
 }
@@ -126,5 +132,10 @@
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
+    
+    if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+    {
+        [[super delegate] requestFailed:request.responseString];
+    }
 }
 @end

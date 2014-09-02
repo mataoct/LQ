@@ -11,6 +11,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LQUINavigationController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CategoriesModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MainNavigationController.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/HistoryResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/ASIHTTPRequest.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/OrderDetailResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AnotherUserInfoResponseModel.o
@@ -24,6 +25,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CouponDetailViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MenuViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SignResponseModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MyHistoryViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MyCommentModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SBJsonWriter.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/HKBaiduMapViewController.o
@@ -31,6 +33,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MainViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoDetailViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/WatetFlowRequestModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/HistoryDetailTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CartRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SliderModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/ASIDataDecompressor.o
@@ -65,11 +68,13 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CycleScrollView.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/ShooInfoController.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/HistoryModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/ASIDownloadCache.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LoginViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/Reachability.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UserCouponResponseModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AddressViewController2.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CartTableViewCell2.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LQ7ViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SBJSON.o
@@ -96,6 +101,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CommentTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/OrderDetailViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LQUITabBarController.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/updateOrderRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AddressResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/OrderDetailRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AppDelegate.o
@@ -108,6 +114,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/ASIFormDataRequest.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/WaterFlowViewCell.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/Integral2CouponRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MainPageBaseRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SBJsonParser.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/WaterDetailViewController.o
@@ -117,6 +124,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CouponModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/DiscountTableViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UIImageView+WebCache.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/DiscountTableViewCell2.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/BaseResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/Base64codeFunc.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/NSString+SBJSON.o

@@ -74,7 +74,7 @@
 }
 */
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
 }
 -(void)requestSuccess:(BaseResponseModel *)model

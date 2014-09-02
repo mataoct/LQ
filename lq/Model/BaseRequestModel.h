@@ -17,7 +17,7 @@
 @required
 
 -(void)requestSuccess:(BaseResponseModel *)model;
--(void)requestFailed;
+-(void)requestFailed:(NSString *)errorStr;
 
 @end
 

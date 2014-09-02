@@ -58,7 +58,7 @@
     _waterFlow = [[WaterFlowView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 66)];
     _waterFlow.waterFlowViewDatasource = self;
     _waterFlow.waterFlowViewDelegate = self;
-    _waterFlow.backgroundColor = [UIColor greenColor];
+    _waterFlow.backgroundColor = BackGray;
     [self.view addSubview:_waterFlow];
     
     [self loadInternetData];
@@ -170,9 +170,9 @@
 }
 
 
--(void)requestFailed
+-(void)requestFailed:(NSString *)errorStr
 {
-        NSLog(@"water flow success");
+        NSLog(@"water flow failed %@",errorStr);
     [self dataSourceDidError];
 }
 

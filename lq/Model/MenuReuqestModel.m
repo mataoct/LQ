@@ -76,6 +76,10 @@
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     NSLog(@"%@ error :: %@",NSStringFromClass(self.class),request.responseString);
+    if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+    {
+        [[super delegate] requestFailed:request.responseString];
+    }
 }
 
 
