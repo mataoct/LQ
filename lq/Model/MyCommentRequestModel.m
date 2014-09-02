@@ -37,7 +37,7 @@
     
     NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getmycomment"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=getmycomment"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=getmycomment"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

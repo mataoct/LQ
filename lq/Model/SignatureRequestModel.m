@@ -52,7 +52,7 @@
     
     NSString *token = [CoreHelper tokenController:@"apigoodshandler" action:@"addorders"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/handler/api/apigoodshandler.ashx?action=addorders"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/handler/api/apigoodshandler.ashx?action=addorders"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

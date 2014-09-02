@@ -36,7 +36,7 @@
     _isfav = isfav;
     NSString *token = [CoreHelper tokenController:@"apigoodshandler" action:@"favgoods"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/apigoodshandler.ashx?action=favgoods"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/apigoodshandler.ashx?action=favgoods"];
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
             
             

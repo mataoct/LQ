@@ -20,6 +20,9 @@
 #import "CommentReuqestModel.h"
 #import "UserCommentRequestModel.h"
 
+
+#import "AddToCartRequestModel.h"
+
 @interface GoodsViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
 
 
@@ -31,6 +34,10 @@
 @property (nonatomic,strong) CommentListResponseModel *commentResponseModel;
 @property (nonatomic,strong) UserCommentRequestModel *userCommentRequestModel;
 @property (nonatomic,strong) CycleScrollView *scrollView;
+
+
+@property (nonatomic,strong) AddToCartRequestModel *add2CartModel;
+
 @property (nonatomic,strong) NSString *gid;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *nowPriceLabel;
@@ -63,5 +70,8 @@
 
 -(id)initWithGid:(NSString *)gid Title:(NSString *)title;
 -(void)resignTextView;
+
+
+
 
 @end

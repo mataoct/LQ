@@ -55,8 +55,11 @@
         
         _model = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
         _model.delegate = self;
-        [_model postData];
+        _model.tag = 10001;
         
+        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
+        _requestModel.delegate = self;
+        _requestModel.tag = 10002;
         
     }
     return self;
@@ -74,6 +77,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [_model postData];
+    [_requestModel postData];
+//    
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kIntegralChange" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integralChange:) name:@"kIntegralChange" object:nil];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -88,9 +103,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"cell";
-    DiscountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    DiscountTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[DiscountTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[DiscountTableViewCell2 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     [cell fillCellByModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
@@ -109,7 +124,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CouponDetailViewController *detailVC = [[CouponDetailViewController alloc] initWithTitle:@"活动详情" andModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
+    CouponDetailViewController *detailVC = [[CouponDetailViewController alloc] initWithTitle:@"优惠券详情" andModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
     
     [self presentViewController:detailVC animated:YES completion:nil];
 
@@ -123,8 +138,22 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (CouponResponseModel *)model;
-    [self reLayoutViews];
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            _responseModel = (CouponResponseModel *)model;
+            [self reLayoutViews];
+        }
+            break;
+        case 10002:
+        {
+            _userInfoResponseModel = (AnotherUserInfoResponseModel *)model;
+            [self updateIntegral:_userInfoResponseModel.integral];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 -(void)reLayoutViews
@@ -133,7 +162,23 @@
     NSLog(@"relayouts");
     
     [_couponTable reloadData];
-    _integralValueLabel.text = @"20";
+//    _integralValueLabel.text = @"20";
+    
+    
+//    [self updateIntegral:@"20"];
+}
+
+
+//-(void)integralChange:(NSNotification *)noti
+//{
+//    
+//    
+//    NSLog(@"noti is %@",[noti userInfo]);
+//}
+
+-(void)updateIntegral:(NSString *)integral
+{
+    _integralValueLabel.text = integral ;
 }
 
 

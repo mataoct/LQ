@@ -38,7 +38,7 @@
     
     NSString *token = [CoreHelper tokenController:@"SourceMaterialHandler" action:@"getlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/handler/api/SourceMaterialHandler.ashx?action=getlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/handler/api/SourceMaterialHandler.ashx?action=getlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

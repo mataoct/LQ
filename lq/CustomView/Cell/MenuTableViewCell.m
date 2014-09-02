@@ -98,7 +98,7 @@
 //    [super layoutSubviews];
     _model = model;
     
-    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     _titleLabel.text = _model.title;
     _detailLabel.text = _model.content;
     

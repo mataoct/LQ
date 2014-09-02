@@ -49,6 +49,8 @@
     
     _couponTable.dataSource = self;
     _couponTable.delegate = self;
+    _couponTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _couponTable.backgroundColor = BackGray;
     
     _requestModel.uid = [CoreHelper getLoginUid];
     _requestModel.delegate = self;
@@ -101,6 +103,16 @@
     
     [cell fillCellByModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CouponModel *temp = [[CouponModel alloc] init];
+    temp = [_responseModel.couponArr objectAtIndex:indexPath.row];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCouponUse" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:temp.couponid,@"couponId",temp.title,@"title", nil]];
+
 }
 
 @end

@@ -31,10 +31,11 @@
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
     
-    _settingBtn = [[UIButton alloc] initWithFrame:CGRectMake(278, 28, 32, 32)];
-    [_settingBtn setTitle:@"设置" forState:UIControlStateNormal];
+    _settingBtn = [[UIButton alloc] initWithFrame:CGRectMake(277, 37, 23, 23)];
+//    [_settingBtn setTitle:@"设置" forState:UIControlStateNormal];
+    [_settingBtn setBackgroundImage:[UIImage imageNamed:@"标题-设置.png"] forState:UIControlStateNormal];
     [_settingBtn addTarget:self action:@selector(settingBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_settingBtn setBackgroundColor:[UIColor blackColor]];
+//    [_settingBtn setBackgroundColor:[UIColor blackColor]];
     
     _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10+64, 80, 80)];
     
@@ -100,14 +101,14 @@
     
     
     
-    _myOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 174, 100, 75)];
+    _myOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 174, 110, 75)];
     _myFavorBtn = [[UIButton alloc] initWithFrame:CGRectMake(110, 174, 100, 75)];
-    _myCouponBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 174, 100, 75)];
+    _myCouponBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 174, 110, 75)];
     
     
-    _myCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 195+64, 300, 45)];
-    _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 240+64, 300, 45)];
-    _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 285+64, 300, 45)];
+    _myCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 195+64, 320, 45)];
+    _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 240+64, 320, 45)];
+    _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 285+64, 320, 45)];
     
 
     
@@ -154,6 +155,7 @@
     [_logoutBtn addTarget:self action:@selector(userlogout) forControlEvents:UIControlEventTouchUpInside];
 //    _logoutBtn.backgroundColor = [UIColor redColor];
     
+    [_myOrderBtn addTarget:self action:@selector(gotoMyHistoryController) forControlEvents:UIControlEventTouchUpInside];
     
     [_myCouponBtn addTarget:self action:@selector(gotoCouponViewController) forControlEvents:UIControlEventTouchUpInside];
     [_myFavorBtn addTarget:self action:@selector(gotoMyFavViewController) forControlEvents:UIControlEventTouchUpInside];
@@ -313,6 +315,12 @@
 {
     MyFavViewController *favVC = [[MyFavViewController alloc] init];
     [self.navigationController pushViewController:favVC animated:YES];
+}
+
+-(void)gotoMyHistoryController
+{
+    MyHistoryViewController *hstVC = [[MyHistoryViewController alloc] initWithTitle:@"我的订单"];
+    [self presentViewController:hstVC animated:YES completion:nil];
 }
 
 -(void)gotoAddressController

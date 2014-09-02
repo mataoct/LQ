@@ -37,7 +37,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"ActiveHandler" action:@"getlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ActiveHandler.ashx?action=getlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ActiveHandler.ashx?action=getlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

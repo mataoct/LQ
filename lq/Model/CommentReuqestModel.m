@@ -35,7 +35,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"ApiGoodsHandler" action:@"getgoodscomments"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiGoodsHandler.ashx?action=getgoodscomments"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiGoodsHandler.ashx?action=getgoodscomments"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -60,7 +60,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"CouponHandler" action:@"couponcommentlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/CouponHandler.ashx?action=couponcommentlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/CouponHandler.ashx?action=couponcommentlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -85,7 +85,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"SourceMaterialHandler" action:@"imgcommentlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/SourceMaterialHandler.ashx?action=imgcommentlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/SourceMaterialHandler.ashx?action=imgcommentlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];

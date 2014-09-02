@@ -31,6 +31,20 @@
         
         _uid = [[NSString alloc] init];
         _uid = uid;
+        
+        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
+        _responseModel = [[AddressResponseModel alloc] init];
+        
+        
+        
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 74, 100, 20)];
+        _nameTf = [[UITextField alloc] initWithFrame:CGRectMake(10, 96, 300, 48)];
+        
+        _telLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 144, 100, 30)];
+        _telTf = [[UITextField alloc] initWithFrame:CGRectMake(10, 174, 300, 48)];
+        
+        _addrLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 222, 100, 30)];
+        _addrTf = [[UITextView alloc] initWithFrame:CGRectMake(10, 252, 300, 144)];
     }
     return self;
 }
@@ -41,8 +55,8 @@
     [super viewDidLoad];
     
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
-    self.item.rightBarButtonItem = rightButton;
+    _rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    self.item.rightBarButtonItem = _rightButton;
     // Do any additional setup after loading the view.
     
 //    @property (nonatomic,strong) UILabel *nameLabel;
@@ -53,14 +67,6 @@
 //    @property (nonatomic,strong) UITextField *addrTf;
     
     
-    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 74, 100, 20)];
-    _nameTf = [[UITextField alloc] initWithFrame:CGRectMake(10, 96, 300, 48)];
-    
-    _telLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 144, 100, 30)];
-    _telTf = [[UITextField alloc] initWithFrame:CGRectMake(10, 174, 300, 48)];
-    
-    _addrLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 222, 100, 30)];
-    _addrTf = [[UITextView alloc] initWithFrame:CGRectMake(10, 252, 300, 144)];
     
     _nameLabel.font = [UIFont systemFontOfSize:14];
         _telLabel.font = [UIFont systemFontOfSize:14];
@@ -88,8 +94,7 @@
     [self.view addSubview:_addrLabel];
     [self.view addSubview:_addrTf];
     
-    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
-    _responseModel = [[AddressResponseModel alloc] init];
+
     _requestModel.delegate = self;
     
     _requestModel.tag = 10001;

@@ -36,7 +36,7 @@
         _model = [[ShoppingCartItemModel alloc] init];
         
         
-        _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
+//        _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
         
         UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 90)];
         

@@ -61,7 +61,7 @@
     
     
     _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
-    
+    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 170) animationDuration:3];
     [self.view addSubview:_headView];
     
     [self.view addSubview:_menuList];
@@ -96,15 +96,6 @@
 
 -(void)reFillLayouts
 {
-    
-//
-    
-//    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
-//    
-//    for (SliderModel *tempSlider in _mainResponseModel.sliderArr) {
-//        [tempArr addObject:tempSlider.img];
-//    }
-    
     [self setScroller:_mainResponseModel.sliderArr];
     
     [self setMenu];
@@ -116,14 +107,13 @@
 -(void)setScroller:(NSArray *)arr
 {
     NSMutableArray *viewsArray = [@[] mutableCopy];
-//    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
+
     for (int i = 0; i < [arr count]; ++i) {
         UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 170)];
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 140, 320, 30)];
         textLabel.alpha = 0.5;
         textLabel.backgroundColor = [UIColor grayColor];
-        
-        
+    
         [tempLabel addSubview:textLabel];
         
         tempLabel.userInteractionEnabled = YES;
@@ -170,10 +160,10 @@
 //    fastOrder.backgroundColor    = [UIColor lightGrayColor];
     
     
-    [_fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [_picWall setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [_myFav setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [_discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [_fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [_picWall setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [_myFav setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [_discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
     
 //    [fastOrder setTitle:@"快速预约" forState:UIControlStateNormal];

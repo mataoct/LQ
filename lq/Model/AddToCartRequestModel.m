@@ -34,7 +34,7 @@
     _num = num;
     NSString *token = [CoreHelper tokenController:@"apigoodshandler" action:@"addshoppingcart"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/apigoodshandler.ashx?action=addshoppingcart"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/apigoodshandler.ashx?action=addshoppingcart"];
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
     
     

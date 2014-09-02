@@ -54,6 +54,8 @@
     
     _requestModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:_gid];
     _commentRequestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_gid];
+    
+    _add2CartModel = [[AddToCartRequestModel alloc] initWithGid:_gid uid:[CoreHelper getLoginUid]];
     _model = [[ProdutionResponseModel alloc] init];
     _commentResponseModel = [[CommentListResponseModel alloc] init];
     _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
@@ -89,7 +91,10 @@
     _cartBtn.layer.cornerRadius = 4.0;
     
     [_buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+    _buyBtn.hidden = YES;
     [_cartBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [_cartBtn addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     
     UILabel *line1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 279, 300, 1)];
     line1.backgroundColor = BackGray;
@@ -97,14 +102,21 @@
     UILabel *line2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 299, 300, 1)];
     line2.backgroundColor = BackGray;
     
-    _subTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 280, 100, 20)];
-    _subTitleImgview.backgroundColor = [UIColor purpleColor];
+    _subTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 282, 15, 15)];
+    
+    UILabel *subTitle = [[UILabel alloc] initWithFrame:CGRectMake(28, 282, 60, 15)];
+    subTitle.font = [UIFont systemFontOfSize:12];subTitle.text = @"本单详情";
+    
+//    _subTitleImgview.backgroundColor = [UIColor purpleColor];
+    
+    [_subTitleImgview setImage:[UIImage imageNamed:@"本单详情标题图标.png"]];
     _contentTv = [[UITextView alloc] initWithFrame:CGRectMake(10, 300, 300, 60)];
 //    _contentTv.backgroundColor = [UIColor orangeColor];
     
-    _tableTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 60, 20)];
-    _tableTitleImgview.backgroundColor = [UIColor purpleColor];
-    _commentCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 0, 60, 20)];
+    _tableTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 15, 15)];
+//    _tableTitleImgview.backgroundColor = [UIColor purpleColor];
+    [_tableTitleImgview setImage:[UIImage imageNamed:@"评论标题图标.png"]];
+    _commentCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(28, 2, 60, 15)];
     _commentCountLabel.font = [UIFont systemFontOfSize:12];
     _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 20 - 44 - 50)];
     
@@ -154,6 +166,7 @@
     [tempSubView addSubview:_buyBtn];
     [tempSubView addSubview:_cartBtn];
     [tempSubView addSubview:_subTitleImgview];
+    [tempSubView addSubview:subTitle];
     [tempSubView addSubview:_contentTv];
     
     [tempview addSubview:tempSubView];[tempview addSubview:tempSub2];
@@ -257,8 +270,25 @@
     _favValueLabel.text = _model.favCount;
     _shareValueLabel.text = _model.shareCount;
     _contentTv.text = _model.content;
+    
+    
+    
 }
 
+
+-(void)buy
+{
+    
+}
+
+-(void)cartBtnClick
+{
+    _add2CartModel.delegate = self;
+    _add2CartModel.tag = 10004;
+    [_add2CartModel postData:@"1"];
+    
+    NSLog(@"add 2 cart");
+}
 
 -(void)fillScrollerByArray:(NSArray *)arr
 {
@@ -379,6 +409,11 @@
             
             [_commentRequestModel postData];
             _textView.text = @"";
+        }
+            break;
+        case 10004:
+        {
+            [SVProgressHUD showSuccessWithStatus_custom:@"加入购物车成功" duration:1.5];
         }
             break;
         default:

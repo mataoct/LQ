@@ -48,6 +48,7 @@
         [_checkBtn setTitle:@"使用" forState:UIControlStateNormal];
         _checkBtn.font = [UIFont systemFontOfSize:12];
         
+//        [_checkBtn addTarget:self action:@selector(userCoupon) forControlEvents:UIControlEventTouchUpInside];
         
         _couponLabel.text = @"兑换所需积分：";
         _timeLabel.text = @"有效期至：";
@@ -108,5 +109,6 @@
     _couponValueLabel.text = [NSString stringWithFormat:@"%@分",model.extrcedit];
     _timeValueLabel.text = model.expiry;
 }
+
 
 @end

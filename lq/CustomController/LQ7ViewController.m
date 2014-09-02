@@ -9,7 +9,7 @@
 #import "LQ7ViewController.h"
 
 @interface LQ7ViewController ()
-
+@property (nonatomic,retain) UIBarButtonItem *leftItem;
 @end
 
 @implementation LQ7ViewController
@@ -40,10 +40,6 @@
                                   [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],UITextAttributeTextShadowOffset,
                                   [UIFont systemFontOfSize:18], UITextAttributeFont,
                                   nil]];
-    
-    
-//    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

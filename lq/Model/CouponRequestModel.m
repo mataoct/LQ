@@ -37,7 +37,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"CouponHandler" action:@"getlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/CouponHandler.ashx?action=getlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/CouponHandler.ashx?action=getlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -63,7 +63,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getusercouponlist"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=getusercouponlist"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=getusercouponlist"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -89,7 +89,7 @@
 {
     NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"myfavorite"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/Handler/Api/ApiUserHandler.ashx?action=myfavorite"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=myfavorite"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
@@ -103,6 +103,35 @@
     [request addPostValue:_uid forKey:@"uid"];
     [request setRequestMethod:@"POST"];
     request.tag = 10003;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+-(void)postForHistory:(NSString *)uid
+{
+    
+    _uid = uid;
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getorderslist"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=getorderslist"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    
+    [request addPostValue:_sellerId forKey:@"sellerid"];
+    [request addPostValue:_start forKey:@"start"];
+    [request addPostValue:_limit forKey:@"limit"];
+    [request addPostValue:_uid forKey:@"uid"];
+    [request setRequestMethod:@"POST"];
+    request.tag = 10004;
     [request setDelegate:self];
     
     NSLog(@"post ready %@",token);
@@ -130,7 +159,6 @@
     switch (request.tag) {
         case 10001:
         {
-            
             model = [[CouponResponseModel alloc] initWithDic:jsonDic];
         }
             break;
@@ -139,15 +167,19 @@
             model = [[UserCouponResponseModel alloc] initWithDic:jsonDic];
         }
             break;
-            
         case 10003:
         {
             model = [[MyFavResponseModel alloc] initWithDic:jsonDic];
         }
             break;
+        case 10004:
+        {
+            model = [[HistoryResponseModel alloc] initWithDic:jsonDic];
+        }
+            break;
         default:
         {
-            
+//            model = [[HistoryResponseModel alloc] initWithDic:jsonDic];
         }
             break;
     }

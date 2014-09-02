@@ -16,6 +16,8 @@
 #import "AddressViewController.h"
 #import "SignResponseModel.h"
 
+#import "MyHistoryViewController.h"
+
 @interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate>
 
 @property (nonatomic,strong) UIButton *settingBtn;

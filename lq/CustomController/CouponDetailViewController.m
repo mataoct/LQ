@@ -73,7 +73,10 @@
     _checkBtn.backgroundColor = Orange;
     _checkBtn.layer.cornerRadius = 4;
     [_checkBtn setTitle:@"兑换" forState:UIControlStateNormal];
+//    [_checkBtn addTarget:self action:@selector(integsral2Coupon) forControlEvents:UIControlEventTouchUpInside];
     _checkBtn.font = [UIFont systemFontOfSize:16];
+    [_checkBtn addTarget:self action:@selector(integral2Coupon) forControlEvents:UIControlEventTouchUpInside];
+    
     _extcreditValueLabel.font = [UIFont systemFontOfSize:14];
     
     _detailText = [[UITextView alloc] initWithFrame:CGRectMake(8, 285, 280, 64)];
@@ -95,6 +98,7 @@
     
     UIView *tableHeader = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 391)];
     tableHeader.backgroundColor = [UIColor whiteColor];
+    tableHeader.userInteractionEnabled = YES;
     
     [tableHeader addSubview:hehe];[tableHeader addSubview:hehe2];
     [tableHeader addSubview:_titleLabel];
@@ -139,6 +143,9 @@
     _responseModel = [[CommentListResponseModel alloc] init];
     [_requestModel postDataCoupon];
     
+    _integralRequestModel = [[Integral2CouponRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
+    _integralRequestModel.delegate = self;
+    _integralRequestModel.tag = 10003;
 //    _commentTable.backgroundColor = BackGray;
     
     
@@ -277,6 +284,17 @@
             [_requestModel postDataCoupon];
         }
             break;
+        case 10003:
+        {
+            if (model.ResponseStatus == 1) {
+                [SVProgressHUD showSuccessWithStatus_custom:@"领取成功" duration:2.0];
+            }
+            else
+            {
+                [SVProgressHUD showSuccessWithStatus_custom:model.ErrMessage duration:2.0];
+            }
+        }
+            break;
             
         default:
             break;
@@ -352,6 +370,14 @@
     _userCommentRequestModel.tag = 10002;
     
     [_userCommentRequestModel sendCouponComment:_model.couponid message:_textView.text];
+}
+
+
+-(void)integral2Coupon
+{
+    NSLog(@"click ");
+    
+    [_integralRequestModel postData:self.model.couponid];
 }
 
 @end

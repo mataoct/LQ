@@ -16,6 +16,7 @@
 @property (nonatomic,strong) UITextField *telTf;
 @property (nonatomic,strong) UILabel *addrLabel;
 @property (nonatomic,strong) UITextView *addrTf;
+@property (nonatomic,strong) UIBarButtonItem * rightButton;
 
 @property (nonatomic,strong) NSString *uid;
 

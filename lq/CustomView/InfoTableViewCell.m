@@ -69,7 +69,7 @@
 {
     _model = model;
     
-    [_headImage setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    [_headImage setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     _titleLabel.text = _model.title;
     _contentText.text = _model.summary;
     _timeLabel.text = _model.dateLine;

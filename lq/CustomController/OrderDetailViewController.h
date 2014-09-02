@@ -10,12 +10,25 @@
 #import "OrderDetailRequestModel.h"
 #import "OrderDetailResponseModel.h"
 #import "CartTableViewCell2.h"
+#import "UserCouponViewController.h"
+#import "updateOrderRequestModel.h"
+#import "AddressViewController2.h"
+
+
+#import "AlixPayResult.h"
+#import "DataVerifier.h"
+#import "AlixPayOrder.h"
+#import "AlixLibService.h"
+#import "PartnerConfig.h"
+#import "DataSigner.h"
 
 @interface OrderDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) NSString *orderId;
 @property (nonatomic,strong) OrderDetailRequestModel *requestModel;
 @property (nonatomic,strong) OrderDetailResponseModel *responseModel;
+
+@property (nonatomic,strong) updateOrderRequestModel *updateRequestModel;
 
 @property (nonatomic,strong) UILabel *orderTypeTitleLabel;
 @property (nonatomic,strong) UIButton *takeoutBtn;
@@ -39,7 +52,7 @@
 @property (nonatomic,strong) UIButton *couponBtn;
 
 @property (nonatomic,strong) UILabel *payTypeTitleLabel;
-@property (nonatomic,strong) UILabel *alipay;
+@property (nonatomic,strong) UIButton *alipay;
 
 
 @property (nonatomic,strong) UILabel *totalPayLabel;

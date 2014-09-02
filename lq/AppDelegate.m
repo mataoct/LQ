@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+#import "AppDelegate.h"
+#import "AlixPayResult.h"
+#import "DataVerifier.h"
+#import "PartnerConfig.h"
+
 BMKMapManager* _mapManager;
 
 @implementation AppDelegate
@@ -162,6 +167,85 @@ BMKMapManager* _mapManager;
             return true;
             break;
     }
+}
+
+
+
+//独立客户端回调函数
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	
+	[self parse:url application:application];
+	return YES;
+}
+
+- (void)parse:(NSURL *)url application:(UIApplication *)application {
+    
+    //结果处理
+    AlixPayResult* result = [self handleOpenURL:url];
+    
+    
+    NSLog(@"result %d",result.statusCode);
+    
+	if (result)
+    {
+		
+		if (result.statusCode == 9000)
+        {
+			/*
+			 *用公钥验证签名 严格验证请使用result.resultString与result.signString验签
+			 */
+            
+            //交易成功
+            //            NSString* key = AlipayPubKey;
+			id<DataVerifier> verifier;
+            verifier = CreateRSADataVerifier(AlipayPubKey);
+            
+			if ([verifier verifyString:result.resultString withSign:result.signString])
+            {
+                //验证签名成功，交易结果无篡改
+                NSLog(@"success");
+                
+                //                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"alipaySuccess" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"9000",@"payResultStatus", nil]];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"orderlist" object:self];
+			}
+        }
+        else
+        {
+            //交易失败
+            
+            NSLog(@"failed");
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"payReusltCode" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"1",@"payResultStatus", nil]];
+        }
+    }
+    else
+    {
+        //失败
+        NSLog(@"failed 2");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"payReusltCode" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"0",@"payResultStatus", nil]];
+    }
+    
+}
+
+- (AlixPayResult *)resultFromURL:(NSURL *)url {
+	NSString * query = [[url query] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+#if ! __has_feature(objc_arc)
+    return [[[AlixPayResult alloc] initWithString:query] autorelease];
+#else
+	return [[AlixPayResult alloc] initWithString:query];
+#endif
+}
+
+- (AlixPayResult *)handleOpenURL:(NSURL *)url {
+	AlixPayResult * result = nil;
+	
+	if (url != nil && [[url host] compare:@"safepay"] == 0) {
+		result = [self resultFromURL:url];
+	}
+    
+	return result;
 }
 
 

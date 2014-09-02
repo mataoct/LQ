@@ -35,7 +35,7 @@
     
     NSString *token = [CoreHelper tokenController:@"apigoodshandler" action:@"getordersdetail"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://182.254.137.180/bg/handler/api/apigoodshandler.ashx?action=getordersdetail"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/handler/api/apigoodshandler.ashx?action=getordersdetail"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
