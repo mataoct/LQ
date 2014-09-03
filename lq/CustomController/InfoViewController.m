@@ -23,6 +23,19 @@
     return self;
 }
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [_model postData];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+//    [_model.request cancel];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,7 +54,6 @@
     _infoTable.delegate = self;
     _infoTable.dataSource = self;
     _model.delegate = self;
-    [_model postData];
     
     
     // Do any additional setup after loading the view.

@@ -65,7 +65,7 @@
     [request addPostValue:_nums forKey:@"nums"];
     [request addPostValue:_gids forKey:@"gids"];
     [request setRequestMethod:@"POST"];
-    
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     
     [request startAsynchronous];

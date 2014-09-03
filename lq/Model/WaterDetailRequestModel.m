@@ -41,6 +41,7 @@
     [request addPostValue:_pid forKey:@"pid"];
 
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     

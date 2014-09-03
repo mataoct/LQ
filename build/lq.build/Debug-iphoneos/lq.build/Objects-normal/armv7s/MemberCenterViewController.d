@@ -39,6 +39,7 @@ dependencies: \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \

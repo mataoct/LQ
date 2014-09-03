@@ -94,6 +94,12 @@
     [_requestModel postData];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+//    [_requestModel.request cancel];
+}
+
 -(void)reFillLayouts
 {
     [self setScroller:_mainResponseModel.sliderArr];

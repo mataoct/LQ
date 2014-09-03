@@ -46,6 +46,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_gid forKey:@"gid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     
@@ -71,6 +72,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_gid forKey:@"couponid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     
@@ -96,6 +98,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_gid forKey:@"pid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     

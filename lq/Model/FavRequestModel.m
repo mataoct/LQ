@@ -45,6 +45,7 @@
     [request addPostValue:_gid forKey:@"gid"];
     [request addPostValue:_isfav forKey:@"isfav"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     NSLog(@"post ready %@",token);
     [request startAsynchronous];

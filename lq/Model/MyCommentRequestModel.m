@@ -51,6 +51,7 @@
     
     
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     //    request.tag = 10002;
     [request setDelegate:self];
     

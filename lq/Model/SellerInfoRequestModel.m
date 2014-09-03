@@ -39,6 +39,8 @@
     
     [request setDelegate:self];
     
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    
     NSLog(@"post ready %@",token);
     
     [request startAsynchronous];

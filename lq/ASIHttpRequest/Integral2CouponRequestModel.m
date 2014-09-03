@@ -37,6 +37,7 @@
     [request addPostValue:_uid forKey:@"uid"];
     [request addPostValue:_couponId forKey:@"gid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     NSLog(@"post ready %@",token);
     [request startAsynchronous];

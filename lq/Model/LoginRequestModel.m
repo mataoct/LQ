@@ -68,6 +68,7 @@
             [request addPostValue:_userpwd forKey:@"password"];
             
             [request setRequestMethod:@"POST"];
+            request.defaultResponseEncoding = NSUTF8StringEncoding;
             
             [request setDelegate:self];
             

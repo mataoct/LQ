@@ -290,11 +290,15 @@
     NSLog(@"add 2 cart");
 }
 
--(void)fillScrollerByArray:(NSArray *)arr
+-(void)fillScrollerByArray:(NSMutableArray *)arr
 {
-    _scrollView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
+    _scrollView.backgroundColor = [DarkGray colorWithAlphaComponent:0.3];
     
     NSLog(@"-- arr %@",arr);
+    
+    if ([arr count] == 1) {
+        [arr addObject:[arr objectAtIndex:0]];
+    }
     
     
     NSMutableArray *viewsArray = [@[] mutableCopy];

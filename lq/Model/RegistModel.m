@@ -52,6 +52,7 @@
     [request addPostValue:_tel forKey:@"phone"];
     [request addPostValue:@"100" forKey:@"sellerId"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     
     NSLog(@"post ready %@",token);
@@ -81,6 +82,7 @@
     [request addPostValue:_pwd forKey:@"password"];
     
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
 //    request.tag = 10002;
     [request setDelegate:self];
     

@@ -60,6 +60,7 @@ dependencies: /WorkSpace/LQ/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/LoginViewController.h \
   /WorkSpace/LQ/lq/CustomController/RegistViewController.h \
   /WorkSpace/LQ/lq/Model/RegistModel.h \
@@ -74,7 +75,6 @@ dependencies: /WorkSpace/LQ/lq/CustomController/LQUITabBarController.m \
   /WorkSpace/LQ/lq/Model/ProdutionResponseModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MenuTableViewCell.h \
   /WorkSpace/LQ/lq/Model/FavRequestModel.h \
-  /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/GoodsViewController.h \
   /WorkSpace/LQ/lq/CustomController/MemberCenterViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyCommentViewController.h \

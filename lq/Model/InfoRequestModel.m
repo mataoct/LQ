@@ -49,6 +49,7 @@
     [request addPostValue:_start forKey:@"start"];
     [request addPostValue:_limit forKey:@"limit"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     

@@ -43,6 +43,7 @@
     [request addPostValue:_gid forKey:@"gid"];
     [request addPostValue:_num forKey:@"num"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     NSLog(@"post ready %@",token);
     [request startAsynchronous];

@@ -58,6 +58,7 @@
     [request addPostValue:_remark forKey:@"remark"];
     [request addPostValue:_orderId forKey:@"orderid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
     NSLog(@"post ready %@",token);
     [request startAsynchronous];

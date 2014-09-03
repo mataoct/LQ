@@ -42,6 +42,7 @@
     [request addPostValue:_uid forKey:@"uid"];
 
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     

@@ -46,6 +46,7 @@
     [request addPostValue:_pid forKey:@"pid"];
     
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10001;
     [request setDelegate:self];
     
@@ -76,6 +77,7 @@
     [request addPostValue:_gid forKey:@"gid"];
     
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10002;
     [request setDelegate:self];
     
@@ -106,6 +108,7 @@
     [request addPostValue:_couponid forKey:@"couponid"];
     
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10003;
     [request setDelegate:self];
     

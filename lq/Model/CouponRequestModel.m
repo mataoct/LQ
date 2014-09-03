@@ -49,6 +49,7 @@
     [request addPostValue:_start forKey:@"start"];
     [request addPostValue:_limit forKey:@"limit"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10001;
     [request setDelegate:self];
     
@@ -76,6 +77,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_uid forKey:@"uid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10002;
     [request setDelegate:self];
     
@@ -102,6 +104,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_uid forKey:@"uid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10003;
     [request setDelegate:self];
     
@@ -131,6 +134,7 @@
     [request addPostValue:_limit forKey:@"limit"];
     [request addPostValue:_uid forKey:@"uid"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     request.tag = 10004;
     [request setDelegate:self];
     

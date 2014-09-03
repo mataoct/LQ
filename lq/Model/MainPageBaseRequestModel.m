@@ -44,6 +44,7 @@
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_sellId forKey:@"sellerId"];
     [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
     
     [request setDelegate:self];
     
