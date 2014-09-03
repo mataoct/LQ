@@ -85,7 +85,7 @@
 {
     _model = model;
     
-    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    [_headView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     
     //    _headView.backgroundColor = [UIColor purpleColor];
     _titleLabel.text = _model.title;
@@ -99,7 +99,7 @@
     
     _sumValueLabel.text =[NSString stringWithFormat:@"￥%@",_model.totalPrice];
     _selectStatus = 0;
-    _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
+    _selectBtn.image =[UIImage imageNamed:@"勾选-未.png"];
 }
 
 
@@ -110,12 +110,12 @@
         _selectStatus = 1;
         //        [_selectBtn setBackgroundImage:[UIImage imageNamed:@"MessageEntryInputField.png"] forState:UIControlStateNormal];
         
-        _selectBtn.image =[UIImage imageNamed:@"MessageEntryInputField.png"];
+        _selectBtn.image =[UIImage imageNamed:@"勾选-已.png"];
     }
     else
     {
         _selectStatus = 0;
-        _selectBtn.image =[UIImage imageNamed:@"MessageEntrySendButton.png"];
+        _selectBtn.image =[UIImage imageNamed:@"勾选-未.png"];
         //        [_selectBtn setBackgroundImage:[UIImage imageNamed:@"MessageEntrySendButton.png"] forState:UIControlStateNormal];
     }
     
