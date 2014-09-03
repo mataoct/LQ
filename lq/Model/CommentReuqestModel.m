@@ -125,15 +125,11 @@
     CommentListResponseModel *model = [[CommentListResponseModel alloc] initWithDic:jsonDic];
     //    model.tag = [super tag];
     
-    
     model.ResponseTag = self.tag;
     
     if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
         [[super delegate] requestSuccess:model];
     }
-    
-    
-    
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
