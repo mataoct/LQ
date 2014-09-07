@@ -30,6 +30,10 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
   /WorkSpace/LQ/lq/Model/HistoryModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceResponseModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceDetailModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
   /WorkSpace/LQ/lq/ASIHttpRequest/Integral2CouponRequestModel.h \

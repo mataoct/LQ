@@ -41,6 +41,14 @@
     
     _headImageView.layer.cornerRadius = 40.0;
     _headImageView.layer.masksToBounds = YES;
+    _headImageView.userInteractionEnabled = YES;
+    
+    
+    UITapGestureRecognizer *tapHeadImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHeadImage:)];
+    [_headImageView addGestureRecognizer:tapHeadImage];
+    
+    _photoSheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"照片" otherButtonTitles:@"相机", nil];
+    _photoSheet.delegate = self;
     
     _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10+64, 60, 20)];
     _sexImageView = [[UIImageView alloc] initWithFrame:CGRectMake(160, 10+64, 16, 16)];
@@ -54,6 +62,23 @@
     _priceLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(100, 75+64, 60, 15)];
     _integrationLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(165, 75+64, 60, 15)];
     _daylyLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(240, 75+64, 60, 15)];
+    
+    
+    _integrationLabel.userInteractionEnabled = YES;
+    _integrationLabel2.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapIntegral = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIntegra:)];
+    [_integrationLabel addGestureRecognizer:tapIntegral];
+    [_integrationLabel2 addGestureRecognizer:tapIntegral];
+    
+    
+    _priceLabel.userInteractionEnabled = YES;
+    _priceLabel2.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapBalance = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBalance:)];
+    [_priceLabel addGestureRecognizer:tapBalance];
+    [_priceLabel2 addGestureRecognizer:tapBalance];
+    
     
     UIImageView *temp = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 165)];
     [temp setImage:[UIImage imageNamed:@"会员_背景图"]];
@@ -97,10 +122,6 @@
     _daylyLabel.textColor = [UIColor whiteColor];
     _daylyLabel2.textColor = [UIColor whiteColor];
     
-    
-    
-    
-    
     _myOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 110, 75)];
     _myFavorBtn = [[UIButton alloc] initWithFrame:CGRectMake(110, 0, 100, 75)];
     _myCouponBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 0, 110, 75)];
@@ -110,18 +131,6 @@
     _myAddrBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 240+64-174, 320, 45)];
     _bussInfoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 285+64-174, 320, 45)];
     
-
-    
-    
-//    [_myOrderBtn setTitle:@"我的订单" forState:UIControlStateNormal];
-//    [_myFavorBtn setTitle:@"我的收藏夹" forState:UIControlStateNormal];
-//    [_myCouponBtn setTitle:@"我的优惠券" forState:UIControlStateNormal];
-    
-//    _myOrderBtn.backgroundColor = [UIColor whiteColor];
-//    _myFavorBtn.backgroundColor = [UIColor blueColor];
-//    _myCouponBtn.backgroundColor = [UIColor whiteColor];
-    
-    
     [_myOrderBtn setBackgroundImage:[UIImage imageNamed:@"会员_02.png"] forState:UIControlStateNormal];
     [_myFavorBtn setBackgroundImage:[UIImage imageNamed:@"会员_03.png"] forState:UIControlStateNormal];
     [_myCouponBtn setBackgroundImage:[UIImage imageNamed:@"会员_04.png"] forState:UIControlStateNormal];
@@ -129,11 +138,6 @@
     [_myCommentBtn setBackgroundImage:[UIImage imageNamed:@"bgArrow.png"] forState:UIControlStateNormal];
     [_myAddrBtn setBackgroundImage:[UIImage imageNamed:@"bgArrow.png"] forState:UIControlStateNormal];
     [_bussInfoBtn setBackgroundImage:[UIImage imageNamed:@"bgArrow.png"] forState:UIControlStateNormal];
-    
-    
-//    _myCommentBtn.backgroundColor = [UIColor greenColor];
-//    _myAddrBtn.backgroundColor = [UIColor brownColor];
-//    _bussInfoBtn.backgroundColor = [UIColor grayColor];
     
     [_bussInfoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_myCommentBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -407,5 +411,107 @@
     _signRequestModel.tag = 10002;
     [_signRequestModel sign];
 }
+
+-(void)tapHeadImage:(UIGestureRecognizer *)gesture
+{
+    [_photoSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+-(void)tapIntegra:(UIGestureRecognizer *)gesture
+{
+    IntegralViewController *integralVC = [[IntegralViewController alloc] initWithTitle:@"积分明细"];
+    [self presentViewController:integralVC animated:YES completion:nil];
+}
+
+-(void)tapBalance:(UIGestureRecognizer *)gesture
+{
+    BalanceViewController *balanceVC = [[BalanceViewController alloc] initWithTitle:@"积分明细"];
+    [self presentViewController:balanceVC animated:YES completion:nil];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSLog(@"sorry, no camera or camera is unavailable.");
+        return;
+    }
+    //获得相机模式下支持的媒体类型
+    NSArray* availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    BOOL canTakePicture = NO;
+    for (NSString* mediaType in availableMediaTypes) {
+        if ([mediaType isEqualToString:(NSString*)kUTTypeImage]) {
+            //支持拍照
+            canTakePicture = YES;
+            break;
+        }
+    }
+    //检查是否支持拍照
+    if (!canTakePicture) {
+        NSLog(@"sorry, taking picture is not supported.");
+        return;
+    }
+    
+    
+    switch (buttonIndex) {
+        case 0:
+        {
+            
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+            [self presentViewController:imagePicker animated:YES completion:nil];
+            
+        }
+            break;
+        case 1:
+        {
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSLog(@"image info %@",info);
+
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    UIImage *temp = [[UIImage alloc] init];
+    temp = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        [_headImageView setImage:temp];
+//    });
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editInfo {
+    
+    
+    NSLog(@"image EditInfo %@",editInfo);
+    
+//    [self dismissModalViewControllerAnimated:YES];
+//    
+//    UIImage *temp = [[UIImage alloc] init];
+//    temp = [editInfo objectForKey:@"UIImagePickerControllerEditedImage"];
+//    
+//    [_headImageView setImage:temp];
+}
+
 
 @end

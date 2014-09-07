@@ -15,10 +15,11 @@
 #import "MyFavViewController.h"
 #import "AddressViewController.h"
 #import "SignResponseModel.h"
-
+#import "IntegralViewController.h"
+#import "BalanceViewController.h"
 #import "MyHistoryViewController.h"
 
-@interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate>
+@interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIButton *settingBtn;
 
@@ -46,6 +47,8 @@
 @property (nonatomic,strong) UIButton *bussInfoBtn;
 
 @property (nonatomic,strong) UIButton *logoutBtn;
+
+@property (nonatomic,strong) UIActionSheet *photoSheet;
 
 @property (nonatomic,strong) UserInfoRequestModel *requestModel;
 @property (nonatomic,strong) UserInfoRequestModel *signRequestModel;

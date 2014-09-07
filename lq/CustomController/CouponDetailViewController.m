@@ -380,4 +380,10 @@
     [_integralRequestModel postData:self.model.couponid];
 }
 
+
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
+{
+    return [_textView resignFirstResponder];
+}
+
 @end

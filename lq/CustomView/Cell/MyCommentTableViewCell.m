@@ -53,7 +53,7 @@
     _model = model;
     
     
-    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"默认图片1.png"] success:nil failure:nil];
     
     _title.text = _model.title;
     _content.text = [NSString stringWithFormat:@"评论内容：%@",_model.content];

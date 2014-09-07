@@ -35,12 +35,19 @@ dependencies: \
   /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
   /WorkSpace/LQ/lq/Model/HistoryModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceResponseModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceDetailModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
   /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
+  /WorkSpace/LQ/lq/CustomController/IntegralViewController.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/IntegralTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomController/BalanceViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \

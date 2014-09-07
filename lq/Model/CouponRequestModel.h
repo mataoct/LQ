@@ -11,6 +11,8 @@
 #import "UserCouponResponseModel.h"
 #import "MyFavResponseModel.h"
 #import "HistoryResponseModel.h"
+#import "BalanceResponseModel.h"
+#import "IntegralResponseModel.h"
 
 @interface CouponRequestModel : BaseRequestModel<ASIHTTPRequestDelegate>
 
@@ -22,6 +24,10 @@
 -(id)initWithSeller:(NSString *)sellerId Start:(NSString *)start Limit:(NSString *)limit;
 -(void)postUserCoupon;
 -(void)postFav;
+
+
+-(void)postIntegral;
+-(void)postBalance;
 
 
 -(void)postForHistory:(NSString *)uid;

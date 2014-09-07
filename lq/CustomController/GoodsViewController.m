@@ -506,5 +506,15 @@
 //    _textView.text = @"";
 }
 
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
+{
+    return [_textView resignFirstResponder];
+}
+
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [_textView resignFirstResponder];
+//}
+
 
 @end

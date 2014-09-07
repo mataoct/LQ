@@ -104,7 +104,7 @@
 {
     _model = model;
     _titleLabel.text = model.title;
-    [_headImage setImageWithURL:model.img placeholderImage:[UIImage imageNamed:@"默认图片1.png"] success:nil failure:nil];
+    [_headImage setImageWithURL:model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     _contentText.text = model.myDescription;
     _couponValueLabel.text = [NSString stringWithFormat:@"%@分",model.extrcedit];
     _timeValueLabel.text = model.expiry;

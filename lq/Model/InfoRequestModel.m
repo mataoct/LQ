@@ -79,7 +79,8 @@
     
     model.ResponseTag = self.tag;
     
-    if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
+    if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
+    {
         [[super delegate] requestSuccess:model];
     }
     

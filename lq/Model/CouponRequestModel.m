@@ -146,6 +146,64 @@
 }
 
 
+-(void)postIntegral
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getextcreditlog"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=getextcreditlog"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    
+    [request addPostValue:_sellerId forKey:@"sellerid"];
+    [request addPostValue:_start forKey:@"start"];
+    [request addPostValue:_limit forKey:@"limit"];
+    [request addPostValue:_uid forKey:@"uid"];
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    request.tag = 10005;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+
+}
+-(void)postBalance
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"getmoneylog"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=getmoneylog"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    
+    [request addPostValue:_sellerId forKey:@"sellerid"];
+    [request addPostValue:_start forKey:@"start"];
+    [request addPostValue:_limit forKey:@"limit"];
+    [request addPostValue:_uid forKey:@"uid"];
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    request.tag = 10006;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+
+}
+
+
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
     NSLog(@"post start");
@@ -179,6 +237,16 @@
         case 10004:
         {
             model = [[HistoryResponseModel alloc] initWithDic:jsonDic];
+        }
+            break;
+        case 10005:
+        {
+            model = [[IntegralResponseModel alloc] initWithDic:jsonDic];
+        }
+            break;
+        case 10006:
+        {
+            model = [[BalanceResponseModel alloc] initWithDic:jsonDic];
         }
             break;
         default:

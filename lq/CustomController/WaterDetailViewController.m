@@ -378,4 +378,9 @@
 
 }
 
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
+{
+    return [_textView resignFirstResponder];
+}
+
 @end

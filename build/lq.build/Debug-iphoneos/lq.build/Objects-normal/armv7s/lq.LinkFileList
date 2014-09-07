@@ -17,11 +17,13 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/AnotherUserInfoResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/RegisterResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/ASINetworkQueue.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/BalanceDetailModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/InfoResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SellerInfoResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SignatureRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/BaseRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/ASIInputStream.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/BalanceViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/CouponDetailViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/MenuViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SignResponseModel.o
@@ -44,14 +46,17 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/UserInfoModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/WaterDetailRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SBJsonBase.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/BalanceResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/WaterFlowView.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/ImageViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/WaterDetailResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/LQUIViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/WaterFlowModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/IntegralResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/AlixPayOrder.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/UIButton+WebCache.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SDWebImageManager.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/IntegralViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/FavRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/MenuResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/MyFavResponseModel.o
@@ -88,6 +93,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/MenuTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SVProgressHUD.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/UserInfoRequestModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/IntegralTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/HPGrowingTextView.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/SDWebImagePrefetcher.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/MyCommentResponseModel.o
@@ -128,6 +134,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/BaseResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/Base64codeFunc.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/NSString+SBJSON.o
+/WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/IntegralDetailModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/NSString+MD5HexDigest.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/main.o
 /WorkSpace/LQ/build/lq.build/Debug-iphoneos/lq.build/Objects-normal/armv7s/DiscountTableViewCell.o

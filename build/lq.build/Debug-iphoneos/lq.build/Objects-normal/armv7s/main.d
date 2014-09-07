@@ -31,6 +31,10 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
   /WorkSpace/LQ/lq/Model/HistoryModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceResponseModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceDetailModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
   /WorkSpace/LQ/lq/ASIHttpRequest/Integral2CouponRequestModel.h \
@@ -84,6 +88,9 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/Model/MyCommentResponseModel.h \
   /WorkSpace/LQ/lq/CustomController/UserCouponViewController.h \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
+  /WorkSpace/LQ/lq/CustomController/IntegralViewController.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/IntegralTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomController/BalanceViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \

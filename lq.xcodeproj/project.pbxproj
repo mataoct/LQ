@@ -89,6 +89,13 @@
 		A069B0F919AB8A31006E6494 /* tabbg-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F419AB8A31006E6494 /* tabbg-3.png */; };
 		A069B0FA19AB8A31006E6494 /* tabbg-4.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F519AB8A31006E6494 /* tabbg-4.png */; };
 		A069B0FB19AB8A31006E6494 /* tabbg-5.png in Resources */ = {isa = PBXBuildFile; fileRef = A069B0F619AB8A31006E6494 /* tabbg-5.png */; };
+		A06E0A8A19B998430041D9A2 /* IntegralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A8919B998430041D9A2 /* IntegralViewController.m */; };
+		A06E0A8D19B9A6A70041D9A2 /* IntegralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A8C19B9A6A70041D9A2 /* IntegralTableViewCell.m */; };
+		A06E0A9019B9ABBC0041D9A2 /* IntegralDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A8F19B9ABBC0041D9A2 /* IntegralDetailModel.m */; };
+		A06E0A9319B9B0DB0041D9A2 /* BalanceDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9219B9B0DB0041D9A2 /* BalanceDetailModel.m */; };
+		A06E0A9619B9BA4E0041D9A2 /* IntegralResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9519B9BA4E0041D9A2 /* IntegralResponseModel.m */; };
+		A06E0A9919B9BB1C0041D9A2 /* BalanceResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9819B9BB1C0041D9A2 /* BalanceResponseModel.m */; };
+		A06E0A9C19B9C3C20041D9A2 /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */; };
 		A06E4D9C19ADEAEA009E9278 /* SignResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */; };
 		A089302F19B028ED00F42B3D /* 会员_背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = A089302819B028ED00F42B3D /* 会员_背景图.png */; };
 		A089303019B028ED00F42B3D /* 会员_箭头右.png in Resources */ = {isa = PBXBuildFile; fileRef = A089302919B028ED00F42B3D /* 会员_箭头右.png */; };
@@ -384,6 +391,20 @@
 		A069B0F419AB8A31006E6494 /* tabbg-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-3.png"; sourceTree = "<group>"; };
 		A069B0F519AB8A31006E6494 /* tabbg-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-4.png"; sourceTree = "<group>"; };
 		A069B0F619AB8A31006E6494 /* tabbg-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbg-5.png"; sourceTree = "<group>"; };
+		A06E0A8819B998430041D9A2 /* IntegralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntegralViewController.h; path = CustomController/IntegralViewController.h; sourceTree = "<group>"; };
+		A06E0A8919B998430041D9A2 /* IntegralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntegralViewController.m; path = CustomController/IntegralViewController.m; sourceTree = "<group>"; };
+		A06E0A8B19B9A6A70041D9A2 /* IntegralTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntegralTableViewCell.h; path = CustomView/Cell/IntegralTableViewCell.h; sourceTree = "<group>"; };
+		A06E0A8C19B9A6A70041D9A2 /* IntegralTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntegralTableViewCell.m; path = CustomView/Cell/IntegralTableViewCell.m; sourceTree = "<group>"; };
+		A06E0A8E19B9ABBC0041D9A2 /* IntegralDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntegralDetailModel.h; path = Model/IntegralDetailModel.h; sourceTree = "<group>"; };
+		A06E0A8F19B9ABBC0041D9A2 /* IntegralDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntegralDetailModel.m; path = Model/IntegralDetailModel.m; sourceTree = "<group>"; };
+		A06E0A9119B9B0DB0041D9A2 /* BalanceDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BalanceDetailModel.h; path = Model/BalanceDetailModel.h; sourceTree = "<group>"; };
+		A06E0A9219B9B0DB0041D9A2 /* BalanceDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BalanceDetailModel.m; path = Model/BalanceDetailModel.m; sourceTree = "<group>"; };
+		A06E0A9419B9BA4E0041D9A2 /* IntegralResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntegralResponseModel.h; path = Model/IntegralResponseModel.h; sourceTree = "<group>"; };
+		A06E0A9519B9BA4E0041D9A2 /* IntegralResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntegralResponseModel.m; path = Model/IntegralResponseModel.m; sourceTree = "<group>"; };
+		A06E0A9719B9BB1C0041D9A2 /* BalanceResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BalanceResponseModel.h; path = Model/BalanceResponseModel.h; sourceTree = "<group>"; };
+		A06E0A9819B9BB1C0041D9A2 /* BalanceResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BalanceResponseModel.m; path = Model/BalanceResponseModel.m; sourceTree = "<group>"; };
+		A06E0A9A19B9C3C20041D9A2 /* BalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BalanceViewController.h; path = CustomController/BalanceViewController.h; sourceTree = "<group>"; };
+		A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BalanceViewController.m; path = CustomController/BalanceViewController.m; sourceTree = "<group>"; };
 		A06E4D9A19ADEAEA009E9278 /* SignResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignResponseModel.h; path = Model/SignResponseModel.h; sourceTree = "<group>"; };
 		A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignResponseModel.m; path = Model/SignResponseModel.m; sourceTree = "<group>"; };
 		A089302819B028ED00F42B3D /* 会员_背景图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "会员_背景图.png"; sourceTree = "<group>"; };
@@ -942,9 +963,17 @@
 				A06E4D9A19ADEAEA009E9278 /* SignResponseModel.h */,
 				A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */,
 				A096EB5219B3711400887462 /* HistoryResponseModel.h */,
+				A06E0A9419B9BA4E0041D9A2 /* IntegralResponseModel.h */,
+				A06E0A9519B9BA4E0041D9A2 /* IntegralResponseModel.m */,
+				A06E0A9719B9BB1C0041D9A2 /* BalanceResponseModel.h */,
+				A06E0A9819B9BB1C0041D9A2 /* BalanceResponseModel.m */,
 				A096EB5319B3711400887462 /* HistoryResponseModel.m */,
 				A096EB5519B3724500887462 /* HistoryModel.h */,
 				A096EB5619B3724500887462 /* HistoryModel.m */,
+				A06E0A8E19B9ABBC0041D9A2 /* IntegralDetailModel.h */,
+				A06E0A8F19B9ABBC0041D9A2 /* IntegralDetailModel.m */,
+				A06E0A9119B9B0DB0041D9A2 /* BalanceDetailModel.h */,
+				A06E0A9219B9B0DB0041D9A2 /* BalanceDetailModel.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -1410,6 +1439,10 @@
 				A096EB4E19B3348D00887462 /* AddressViewController2.m */,
 				A061424019B4BD1300ED1E7E /* MyHistoryViewController.h */,
 				A061424119B4BD1300ED1E7E /* MyHistoryViewController.m */,
+				A06E0A8819B998430041D9A2 /* IntegralViewController.h */,
+				A06E0A8919B998430041D9A2 /* IntegralViewController.m */,
+				A06E0A9A19B9C3C20041D9A2 /* BalanceViewController.h */,
+				A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1545,6 +1578,8 @@
 				A096EB4519B2DE9100887462 /* DiscountTableViewCell2.m */,
 				A061424319B4D0DE00ED1E7E /* HistoryDetailTableViewCell.h */,
 				A061424419B4D0DE00ED1E7E /* HistoryDetailTableViewCell.m */,
+				A06E0A8B19B9A6A70041D9A2 /* IntegralTableViewCell.h */,
+				A06E0A8C19B9A6A70041D9A2 /* IntegralTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1720,11 +1755,13 @@
 				A05E4B07199F72FC00A7C424 /* AnotherUserInfoResponseModel.m in Sources */,
 				A0FC641A19990C72007D9A06 /* RegisterResponseModel.m in Sources */,
 				A09EC167195278FC0036219B /* ASINetworkQueue.m in Sources */,
+				A06E0A9319B9B0DB0041D9A2 /* BalanceDetailModel.m in Sources */,
 				A00504D01992756D00318806 /* InfoResponseModel.m in Sources */,
 				A0C7E5F0199CFE0D003BEF2F /* SellerInfoResponseModel.m in Sources */,
 				A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */,
 				A0664C92195E96E300F3E490 /* BaseRequestModel.m in Sources */,
 				A09EC166195278FC0036219B /* ASIInputStream.m in Sources */,
+				A06E0A9C19B9C3C20041D9A2 /* BalanceViewController.m in Sources */,
 				A002F1001995136A00ABFD4D /* CouponDetailViewController.m in Sources */,
 				A0ECE338196B975C003E0BE3 /* MenuViewController.m in Sources */,
 				A06E4D9C19ADEAEA009E9278 /* SignResponseModel.m in Sources */,
@@ -1747,14 +1784,17 @@
 				A0FC641D19991750007D9A06 /* UserInfoModel.m in Sources */,
 				A0413CCA199A65BF00726C51 /* WaterDetailRequestModel.m in Sources */,
 				A09EC15B195278FC0036219B /* SBJsonBase.m in Sources */,
+				A06E0A9919B9BB1C0041D9A2 /* BalanceResponseModel.m in Sources */,
 				A012CB3E199A112A000335B6 /* WaterFlowView.m in Sources */,
 				A012CB3D199A112A000335B6 /* ImageViewCell.m in Sources */,
 				A0413CC7199A639700726C51 /* WaterDetailResponseModel.m in Sources */,
 				A0A53CE51952BEDD00DBD397 /* LQUIViewController.m in Sources */,
 				A0413CBB199A4D3100726C51 /* WaterFlowModel.m in Sources */,
+				A06E0A9619B9BA4E0041D9A2 /* IntegralResponseModel.m in Sources */,
 				A09EC156195278FC0036219B /* AlixPayOrder.m in Sources */,
 				A09EC174195278FC0036219B /* UIButton+WebCache.m in Sources */,
 				A09EC172195278FC0036219B /* SDWebImageManager.m in Sources */,
+				A06E0A8A19B998430041D9A2 /* IntegralViewController.m in Sources */,
 				A034656E19AF69F800032526 /* FavRequestModel.m in Sources */,
 				A010B0D9198263FD00E170DA /* MenuResponseModel.m in Sources */,
 				A05E4B25199FB25900A7C424 /* MyFavResponseModel.m in Sources */,
@@ -1791,6 +1831,7 @@
 				A0FBDAE4198E327A007484A7 /* MenuTableViewCell.m in Sources */,
 				A09EC177195278FC0036219B /* SVProgressHUD.m in Sources */,
 				A05E4B0A199F74EB00A7C424 /* UserInfoRequestModel.m in Sources */,
+				A06E0A8D19B9A6A70041D9A2 /* IntegralTableViewCell.m in Sources */,
 				A0B87DE71990DBFA003091C0 /* HPGrowingTextView.m in Sources */,
 				A09EC173195278FC0036219B /* SDWebImagePrefetcher.m in Sources */,
 				A05E4B10199F7F4F00A7C424 /* MyCommentResponseModel.m in Sources */,
@@ -1831,6 +1872,7 @@
 				A044C3B31980B47F00D2139F /* BaseResponseModel.m in Sources */,
 				A09EC17B195279420036219B /* Base64codeFunc.m in Sources */,
 				A09EC159195278FC0036219B /* NSString+SBJSON.m in Sources */,
+				A06E0A9019B9ABBC0041D9A2 /* IntegralDetailModel.m in Sources */,
 				A016D66B195FF0A6006C7AEB /* NSString+MD5HexDigest.m in Sources */,
 				A09EC05B1951ABD70036219B /* main.m in Sources */,
 				A0FBCE7C19544EF3000146C3 /* DiscountTableViewCell.m in Sources */,
