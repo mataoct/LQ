@@ -29,4 +29,10 @@ static UIWebView *phoneCallWebView;
 
 +(NSString *)getLoginUid;
 
+
+
++ (CGFloat)uiWidth;
+
++ (CGFloat)uiHeight;
+
 @end

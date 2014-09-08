@@ -9,12 +9,14 @@
 #import "LQUIViewController.h"
 #import "IntegralTableViewCell.h"
 #import "CouponRequestModel.h"
+#import "CYTableView.h"
 
-@interface BalanceViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
+@interface BalanceViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,CYTableViewDelegate, RequestModelDelegate>
 
 
-@property (nonatomic,strong) UITableView *contentTable;
+@property (nonatomic,strong) CYTableView *contentTable;
 @property (nonatomic,strong) CouponRequestModel *requestModel;
 @property (nonatomic,strong) BalanceResponseModel *responseModel;
+@property (nonatomic,strong) NSMutableArray *sourceArr;
 
 @end

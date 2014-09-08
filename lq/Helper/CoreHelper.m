@@ -165,4 +165,14 @@
     }
 }
 
++ (CGFloat)uiWidth
+{
+    return [[UIScreen mainScreen] bounds].size.width;
+}
+
++ (CGFloat)uiHeight
+{
+    return [[UIScreen mainScreen] bounds].size.height;
+}
+
 @end

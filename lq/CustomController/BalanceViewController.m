@@ -10,6 +10,8 @@
 
 @interface BalanceViewController ()
 
+@property (nonatomic,assign) NSInteger start;
+
 @end
 
 @implementation BalanceViewController
@@ -28,17 +30,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _contentTable =  [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 74) style:UITableViewStylePlain];
+    _contentTable =  [[CYTableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 74) style:UITableViewStylePlain];
     
     _contentTable.delegate = self;
     _contentTable.dataSource = self;
     _contentTable.backgroundColor = BackGray;
     _contentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     _contentTable.showsHorizontalScrollIndicator = false;
+    _start = 0;
+    
+    _contentTable.CYdelegate = self;
+    [_contentTable setHeaderRefreshEnabled:YES];
+    [_contentTable setFooterRefreshEnabled:YES];
     
     [self.view addSubview:_contentTable];
     
-    _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
+    _sourceArr = [[NSMutableArray alloc] init];
+    
+    _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
     _requestModel.uid = [CoreHelper getLoginUid];
     
     _responseModel = [[BalanceResponseModel alloc] init];
@@ -86,7 +95,7 @@
     if (cell == nil) {
         cell = [[IntegralTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    [cell fillCellByBModel:[_responseModel.balanceArr objectAtIndex:indexPath.row]];
+    [cell fillCellByBModel:[_sourceArr objectAtIndex:indexPath.row]];
     
     
     if (indexPath.row % 2 == 0) {
@@ -132,19 +141,95 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //    return 10.0;
-    return [_responseModel.balanceArr count];
+    return [_sourceArr count];
 }
 
 
 -(void)requestFailed:(NSString *)errorStr
 {
-    
+    [_contentTable endHearderRefreshing];
+    _contentTable.headerRefreshing = false;
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     _responseModel = (BalanceResponseModel *)model;
-    [_contentTable reloadData];
+    
+    if ([_responseModel.balanceArr count] > 0) {
+        _start = _start + 10;
+        
+        
+        for (id model in _responseModel.balanceArr) {
+            [_sourceArr addObject:model];
+        }
+        
+        [_contentTable reloadData];
+    }
+    
+    
+    [_contentTable endHearderRefreshing];
+    _contentTable.headerRefreshing = false;
+    
+
+}
+
+
+
+
+#pragma mark - UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if ([scrollView isKindOfClass:[CYTableView class]] && !_contentTable.headerRefreshing && !_contentTable.footerRefreshing)
+    {
+        [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidScroll:scrollView];
+        [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidScroll:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+    if ([scrollView isKindOfClass:[CYTableView class]])
+    {
+            [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidEndDragging:scrollView];
+
+            [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidEndDragging:scrollView];
+
+    }
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark CYTableViewDelegate
+
+-(void)refreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view
+{
+    NSLog(@"loading header");
+    
+//    [self requestAll];
+    
+    _contentTable.headerRefreshing = YES;
+    
+    
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start + 10];
+    [_requestModel postBalance];
+    
+//    [_contentTable setFooterRefreshEnabled:YES];
+//    [_contentTable.tableFooterView removeFromSuperview];
+    //    [_table endHearderRefreshing];
+}
+
+-(void)refreshTableFooterDataSourceIsLoading:(EGORefreshTableHeaderView *)view
+{
+//    [self requestForData: [NSString stringWithFormat:@"/mobilegame/news/newslist?page=%d&pagesize=10",_nextPage] withTag:REQUEST_MORENEWS];
+    //    [_table endFooterRefreshing];
+}
+
+-(void)refreshTableFinish:(EGORefreshTableHeaderView *)view
+{
+    NSLog(@"finish");
 }
 
 @end
