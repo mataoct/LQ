@@ -128,7 +128,7 @@
         tempSlider = [arr objectAtIndex:i];
         textLabel.text = tempSlider.title;
         
-        NSURL *url = [[NSURL alloc] initWithString:tempSlider.img];
+        NSURL *url = [[NSURL alloc] initWithString:[tempSlider.img stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
         [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
 //        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
@@ -154,57 +154,30 @@
         
         
     };
-//    [self.view addSubview:_headView];
     
     
 }
 
 -(void)setMenu
 {
-
-    
-//    fastOrder.backgroundColor    = [UIColor lightGrayColor];
-    
-    
-//    [_fastOrder setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [_picWall setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [_myFav setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [_discount setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    
-    
-//    [fastOrder setTitle:@"快速预约" forState:UIControlStateNormal];
-//    [picWall setTitle:@"图片墙" forState:UIControlStateNormal];
-//    [myFav setTitle:@"我的收藏" forState:UIControlStateNormal];
-//    [discount setTitle:@"优惠券" forState:UIControlStateNormal];
-    
-    
     [_fastOrder setBackgroundImage:[UIImage imageNamed:@"首页_02.png"] forState:UIControlStateNormal];
     [_picWall setBackgroundImage:[UIImage imageNamed:@"首页_03.png"] forState:UIControlStateNormal];
     [_myFav setBackgroundImage:[UIImage imageNamed:@"首页_04.png"] forState:UIControlStateNormal];
     [_discount setBackgroundImage:[UIImage imageNamed:@"首页_05.png"] forState:UIControlStateNormal];
     
-    
+    [_fastOrder addTarget:self action:@selector(callSeller) forControlEvents:UIControlEventTouchUpInside];
     [_discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];
     [_myFav addTarget:self action:@selector(jumpToMyFav) forControlEvents:UIControlEventTouchUpInside];
     [_picWall addTarget:self action:@selector(jumpToWaterFlow) forControlEvents:UIControlEventTouchUpInside];
     
-
-    
-    
-    
-//    adView.backgroundColor = [UIColor lightGrayColor];
     
     [_adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
-    
     
     _adView.userInteractionEnabled = YES;
     
     UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adTouch:)];
     
     [_adView addGestureRecognizer:imageTouch];
-    
-    
-
     
 }
 
@@ -253,31 +226,28 @@
 -(void)jumpToWaterFlow
 {
     WaterFlowViewController *waterVC = [[WaterFlowViewController alloc] initWithTitle:@"图片墙" sellerid:@"100" start:@"0" limit:@"10"];
-//    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:waterVC];
     [self.navigationController presentViewController:waterVC animated:YES completion:nil];
 }
 -(void)jumpToMyFav
 {
-    if (![CoreHelper checkLogin]) {
-        
+    if (![CoreHelper checkLogin])
+    {
         LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
-//        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
         [self.navigationController presentViewController:loginController animated:YES completion:nil];
-        
     }
     else
     {
         MyFavViewController *favVC = [[MyFavViewController alloc] init];
         [favVC showBackButton];
-//        LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:favVC];
-//        [self presentViewController:navi animated:YES completion:nil];
-        
         [self.navigationController pushViewController:favVC animated:YES];
-//        [self presentViewController:favVC animated:YES completion:nil]  ;
-        
     }
-
 }
+
+-(void)callSeller
+{
+    [CoreHelper callService:[CoreHelper getSellerPhone]];
+}
+
 
 - (void)webImageManager:(SDWebImageManager *)imageManager didFinishWithImage:(UIImage *)image
 {

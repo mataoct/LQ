@@ -32,7 +32,7 @@
         _content.font = [UIFont systemFontOfSize:12];
         _title.font = [UIFont systemFontOfSize:18];
         
-        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 320, 90)];
+        UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 90)];
         
         temp.backgroundColor = [UIColor whiteColor];
         self.backgroundColor = BackGray;
@@ -53,7 +53,7 @@
     _model = model;
     
     
-    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"默认图片1.png"] success:nil failure:nil];
+    [_headImg setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
     
     _title.text = _model.title;
     _content.text = [NSString stringWithFormat:@"评论内容：%@",_model.content];

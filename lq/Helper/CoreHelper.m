@@ -175,4 +175,36 @@
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
+
++(void)setSellerPhone:(NSString *)phone
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:phone forKey:@"phone"];
+    [ud synchronize];
+}
+
++(NSString *)getSellerPhone
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    return [ud objectForKey:@"phone"];
+}
+
+
+
++ (void)UMShare:(UIViewController *)controller
+      shareText:(NSString *)shareText
+     shareImage:(UIImage *)shareImage
+       delegate:(id <UMSocialUIDelegate>)delegate
+{
+    [UMSocialSnsService presentSnsIconSheetView:controller
+                                         appKey:kUMengAppKey
+                                      shareText:shareText
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,
+                                                 UMShareToTencent,
+                                                 nil]
+                                       delegate:delegate];
+    
+}
+
 @end

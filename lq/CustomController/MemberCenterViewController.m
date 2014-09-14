@@ -265,7 +265,15 @@
 
 -(void)reFillContent
 {
-    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] success:nil failure:nil];
+    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] success:^(UIImage *image, BOOL cached)
+     {
+         NSLog(@"success");
+     }failure:^(NSError *error){
+//        return er
+        
+        NSLog(@"error %@",error);
+    }
+    ];
     
     if (_responseModel.sex == 1) {
         [_sexImageView setImage:[UIImage imageNamed:@"性别男.png"]];
@@ -494,10 +502,13 @@
     temp = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     
     
+    
+    
 //    dispatch_async(dispatch_get_main_queue(), ^{
         [_headImageView setImage:temp];
 //    });
     
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editInfo {
@@ -511,6 +522,14 @@
 //    temp = [editInfo objectForKey:@"UIImagePickerControllerEditedImage"];
 //    
 //    [_headImageView setImage:temp];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }];
+    
 }
 
 

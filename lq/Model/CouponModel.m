@@ -26,7 +26,7 @@
         _status = [[NSString alloc] init];
         
         
-        _img = [NSURL URLWithString: safeString([dic objectForKey:@"img"])];
+        _img = [NSURL URLWithString: [safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _couponid = safeString([dic objectForKey:@"couponid"]);
         _expiry =  [CoreHelper timeStampToDate:safeString([dic objectForKey:@"expriy"])] ;
         _extrcedit = safeString([dic objectForKey:@"extcredit"] );

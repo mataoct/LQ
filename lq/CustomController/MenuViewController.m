@@ -135,6 +135,7 @@
     
     NSLog(@"%@ ",model.title);
     [cell fillCellByModel:[_menuResponseModel.goodsArr objectAtIndex:indexPath.row]];
+    cell.delegate = self;
     NSLog(@"fill finish %d ",indexPath.row);
     return cell;
 }
@@ -194,6 +195,14 @@
     
     _productionModel.tag = 200;
     [_productionModel postData];
+}
+
+-(void)shareBtnClicked:(GoodsModel *)goodModel
+{
+    NSLog(@"share");
+    
+    
+    [CoreHelper UMShare:self shareText:goodModel.title shareImage:nil delegate:nil];
 }
 
 @end

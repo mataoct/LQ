@@ -24,7 +24,7 @@
         
         
         
-        _img = [NSURL URLWithString: safeString([dic objectForKey:@"img"])];
+        _img = [NSURL URLWithString: [safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _newid = safeString([dic objectForKey:@"newid"]);
         _dateLine =  [CoreHelper timeStampToDate:safeString([dic objectForKey:@"dateline"])] ;
         _summary = safeString([dic objectForKey:@"summary"]);

@@ -27,7 +27,7 @@
         
         _pid = safeString([[dic objectForKey:@"data"] objectForKey:@"pid"]);
         _title = safeString([[dic objectForKey:@"data"] objectForKey:@"title"]);
-        _img = [NSURL URLWithString:safeString([[dic objectForKey:@"data"] objectForKey:@"img"])];
+        _img = [NSURL URLWithString:[safeString([[dic objectForKey:@"data"] objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _myDescription = safeString([[dic objectForKey:@"data"] objectForKey:@"description"]);
         _myViews = safeString([[dic objectForKey:@"data"] objectForKey:@"views"]);
         _commentNum = safeString([[dic objectForKey:@"data"] objectForKey:@"commentnum"]);

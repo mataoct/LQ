@@ -11,12 +11,13 @@
 #import "UIImageView+WebCache.h"
 #import "FavRequestModel.h"
 #import "AddToCartRequestModel.h"
-//@protocol MenuTableViewCellDelegate <NSObject>
-//
-//-(void)shareBtnClick;
+#import "DisLineLabel.h"
+@protocol MenuTableViewCellDelegate <NSObject>
+
+-(void)shareBtnClicked:(GoodsModel *)goodModel;
 //-(void)favBtnClick;
-//
-//@end
+
+@end
 
 @interface MenuTableViewCell : UITableViewCell<RequestModelDelegate>
 
@@ -27,8 +28,8 @@
 @property (nonatomic,strong) UILabel *detailLabel;
 
 @property (nonatomic,strong) UILabel *priceLabel;
-@property (nonatomic,strong) UILabel *disPriceLabel;
-@property (nonatomic,strong) UILabel *disLineLabel;
+@property (nonatomic,strong) DisLineLabel *disPriceLabel;
+//@property (nonatomic,strong) DisLineLabel *disLineLabel;
 @property (nonatomic,strong) UILabel *countLabel;
 @property (nonatomic,strong) UILabel *countValueLabel;
 @property (nonatomic,strong) UIButton *toBuyButton;
@@ -36,6 +37,9 @@
 
 @property (nonatomic,strong) FavRequestModel *favRequestModel;
 @property (nonatomic,strong) AddToCartRequestModel *add2CartModel;
+
+
+@property (nonatomic,assign) id<MenuTableViewCellDelegate> delegate;
 
 -(void)fillCellByModel:(GoodsModel *)model;
 

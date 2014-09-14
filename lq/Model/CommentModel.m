@@ -23,7 +23,7 @@
 
         
         
-        _avatar = [NSURL URLWithString: safeString([dic objectForKey:@"avatar"])];
+        _avatar = [NSURL URLWithString: [safeString([dic objectForKey:@"avatar"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _username = safeString([dic objectForKey:@"username"]);
         _sex = [safeString([dic objectForKey:@"sex"]) integerValue];
         _dateline = [CoreHelper timeStampToDate:safeString([dic objectForKey:@"dateline"])];

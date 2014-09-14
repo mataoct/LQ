@@ -23,7 +23,7 @@
         
         
         _pid = safeString([dic objectForKey:@"pid"]);
-        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])];
+        _img = [NSURL URLWithString:[safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _title = safeString([dic objectForKey:@"title"]);
     }
     return self;

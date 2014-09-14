@@ -28,7 +28,7 @@
         _sellerId = safeString([[dic objectForKey:@"data"] objectForKey:@"sellerid"]);
         _phone = safeString([[dic objectForKey:@"data"] objectForKey:@"phone"]);
         _nickName = safeString([[dic objectForKey:@"data"] objectForKey:@"nickname"]);
-        _avatar = [NSURL URLWithString:safeString([[dic objectForKey:@"data"] objectForKey:@"avatar"])];
+        _avatar = [NSURL URLWithString:[safeString([[dic objectForKey:@"data"] objectForKey:@"avatar"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _sex = [safeString([[dic objectForKey:@"data"] objectForKey:@"orderid"]) integerValue];
     }
     

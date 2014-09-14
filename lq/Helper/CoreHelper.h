@@ -10,6 +10,7 @@
 #import "NSString+MD5HexDigest.h"
 
 #import "UserInfoModel.h"
+#import "UMSocial.h"
 
 static UIWebView *phoneCallWebView;
 @interface CoreHelper : NSObject
@@ -34,5 +35,15 @@ static UIWebView *phoneCallWebView;
 + (CGFloat)uiWidth;
 
 + (CGFloat)uiHeight;
+
+
++(void)setSellerPhone:(NSString *)phone;
+
++(NSString *)getSellerPhone;
+
++ (void)UMShare:(UIViewController *)controller
+      shareText:(NSString *)shareText
+     shareImage:(UIImage *)shareImage
+       delegate:(id <UMSocialUIDelegate>)delegate;
 
 @end

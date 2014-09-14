@@ -54,7 +54,7 @@ BMKMapManager* _mapManager;
 //    NSLog(@"decodeStr %@ ,reEncodeStr %@", decodeStr,__TEXT(decodeStr));
     
     [[UINavigationBar appearance] setBarTintColor:DarkGreen];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
 //;
     
@@ -118,14 +118,14 @@ BMKMapManager* _mapManager;
         }
         case 2:
         {
-            if (![CoreHelper checkLogin]) {
-                
-                LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
-                //                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
-                [_tabbar presentViewController:loginController animated:YES completion:nil];
-                
-                return false;
-            }
+//            if (![CoreHelper checkLogin]) {
+//                
+//                LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+//                //                LQUINavigationController *navi = [[LQUINavigationController alloc] initWithRootViewController:loginController];
+//                [_tabbar presentViewController:loginController animated:YES completion:nil];
+//                
+//                return false;
+//            }
             [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-2.png"]];
             return true;
         }

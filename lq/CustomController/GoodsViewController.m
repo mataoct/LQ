@@ -110,7 +110,7 @@
 //    _subTitleImgview.backgroundColor = [UIColor purpleColor];
     
     [_subTitleImgview setImage:[UIImage imageNamed:@"本单详情标题图标.png"]];
-    _contentTv = [[UITextView alloc] initWithFrame:CGRectMake(10, 300, 300, 60)];
+    _contentTv = [[UITextView alloc] initWithFrame:CGRectMake(10, 300, 280, 60)];
 //    _contentTv.backgroundColor = [UIColor orangeColor];
     
     _tableTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 15, 15)];
@@ -309,7 +309,7 @@
         tempLabel.userInteractionEnabled = YES;
         
         
-        NSURL *url = [[NSURL alloc] initWithString:[arr objectAtIndex:i]];
+        NSURL *url = [[NSURL alloc] initWithString:[[arr objectAtIndex:i]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         
         [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
 //        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
@@ -497,9 +497,6 @@
     _userCommentRequestModel.tag = 10003;
     
     [_userCommentRequestModel sendGoodComment:_gid message:_textView.text];
-    
-    
-    
     
 //    //等待请求完成
 //	[_textView resignFirstResponder];

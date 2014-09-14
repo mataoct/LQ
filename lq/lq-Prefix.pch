@@ -33,3 +33,6 @@
 #define DarkGray    [UIColor colorWithRed:52/255.0 green:57/255.0 blue:66/255.0 alpha:1]
 
 #define SkyBlue    [UIColor colorWithRed:66/255.0 green:178/255.0 blue:226/255.0 alpha:1]
+
+
+#define kUMengAppKey @"53f5e14bfd98c52b78006210"

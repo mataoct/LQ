@@ -27,8 +27,8 @@
         _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 185, 15)];
         
         _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 50, 50, 20)];
-        _disPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
-        _disLineLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
+        _disPriceLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
+//        _disLineLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
         
         
         _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 70, 40, 15)];
@@ -76,7 +76,7 @@
         [tempView addSubview:_detailLabel];
         [tempView addSubview:_priceLabel];
         [tempView addSubview:_disPriceLabel];
-        [tempView addSubview:_disLineLabel];
+//        [tempView addSubview:_disLineLabel];
         [tempView addSubview:_countLabel];
         [tempView addSubview:_countValueLabel];
         [tempView addSubview:_toBuyButton];
@@ -123,6 +123,9 @@
     _add2CartModel = [[AddToCartRequestModel alloc] initWithGid:_model.gid uid:[CoreHelper getLoginUid]];
     
     [_shareBtn setImage:[UIImage imageNamed:@"分享.png"] forState:UIControlStateNormal];
+    
+    [_shareBtn addTarget:self action:@selector(shareBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     [_toBuyButton addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -137,7 +140,9 @@
 
 -(void)shareBtnClick
 {
-    
+    if ([_delegate respondsToSelector:@selector(shareBtnClicked:)]) {
+        [_delegate shareBtnClicked:_model];
+    }
 }
 
 -(void)favBtnClick
@@ -187,7 +192,11 @@
             break;
         case 10002:
         {
-            NSLog(@"添加购物车OK");
+//            NSLog(@"添加购物车OK");
+            
+            [SVProgressHUD showSuccessWithStatus_custom:@"添加购物车成功" duration:1.5];
+            
+            
         }
             break;
             

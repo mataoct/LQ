@@ -22,7 +22,7 @@
         
         _url =  safeString([dic objectForKey:@"url"]);
         _title = safeString([dic objectForKey:@"title"]);
-        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])] ;
+        _img = [NSURL URLWithString:[safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ] ;
         
     }
     return self;

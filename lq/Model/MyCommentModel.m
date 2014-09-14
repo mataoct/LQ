@@ -35,7 +35,7 @@
         _createTime = [CoreHelper timeStampToDate: safeString([dic objectForKey:@"createtime"])];
         _content=  safeString([dic objectForKey:@"content"]);
         _title = safeString([dic objectForKey:@"title"]);
-        _img = [NSURL URLWithString:safeString([dic objectForKey:@"img"])] ;
+        _img = [NSURL URLWithString:[safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ;
         
         
     }

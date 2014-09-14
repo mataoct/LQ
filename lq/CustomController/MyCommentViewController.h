@@ -10,18 +10,22 @@
 #import "MyCommentTableViewCell.h"
 
 #import "MyCommentRequestModel.h"
+#import "CYTableView.h"
 
-@interface MyCommentViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface MyCommentViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,CYTableViewDelegate>
 
-@property (nonatomic,strong) UIButton *allCommnetBtn;
-@property (nonatomic,strong) UIButton *goodCommentBtn;
-@property (nonatomic,strong) UIButton *picCommentBtn;
+//@property (nonatomic,strong) UIButton *allCommnetBtn;
+//@property (nonatomic,strong) UIButton *goodCommentBtn;
+//@property (nonatomic,strong) UIButton *picCommentBtn;
 
-@property (nonatomic,strong) UITableView *commentTable;
+@property (nonatomic,strong) UISegmentedControl *seg;
+
+@property (nonatomic,strong) CYTableView *commentTable;
 
 @property (nonatomic,strong) MyCommentRequestModel *requestModel;
 @property (nonatomic,strong) MyCommentResponseModel *responseModel;
 
+@property (nonatomic,strong) NSMutableArray *sourceArr;
 
 -(id)initWithTitle:(NSString *)str;
 

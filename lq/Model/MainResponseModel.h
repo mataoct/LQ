@@ -18,6 +18,8 @@
 @property (nonatomic,strong) NSMutableArray *hotArr;
 @property (nonatomic,strong) AdModel *admodel;
 
+@property (nonatomic,strong) NSString *phoneStr;
+
 
 -(id)initWithDic:(NSDictionary *)dic;
 

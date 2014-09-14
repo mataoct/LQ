@@ -10,6 +10,8 @@
 
 @interface MyCommentViewController ()
 
+@property (nonatomic,assign) NSInteger start;
+
 @end
 
 @implementation MyCommentViewController
@@ -30,37 +32,41 @@
     if (self) {
         //
         
-        self.view.backgroundColor = BackGray;
         
-        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] start:@"0" limit:@"10" type:@"0"];
+        _sourceArr = [[NSMutableArray alloc] init];
+        
+        self.view.backgroundColor = BackGray;
+        _start = 0;
+        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] start:[NSString stringWithFormat:@"%d",_start] limit:@"10" type:@"0"];
         _responseModel = [[MyCommentResponseModel alloc] init];
         
-        _allCommnetBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 74, 100, 20)];
-        _goodCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(110, 74, 100, 20)];
-        _picCommentBtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 74, 100, 20)];
-        
-        _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 100, 300, self.view.frame.size.height - 100) style:UITableViewStylePlain];
+        _commentTable = [[CYTableView alloc] initWithFrame:CGRectMake(10, 110, 300, self.view.frame.size.height - 110) style:UITableViewStylePlain];
         
         
-        [self.view addSubview:_allCommnetBtn];
-        [self.view addSubview:_goodCommentBtn];
-        [self.view addSubview:_picCommentBtn];
+        NSArray *buttonNames = [NSArray arrayWithObjects:@"所有评论", @"商品评论", @"图片墙评论", nil];
+        _seg = [[UISegmentedControl alloc] initWithItems:buttonNames];
+        [_seg addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+        [_seg setFrame:CGRectMake(10, 74, 300, 26)];
+        [_seg setSelectedSegmentIndex:0];
+        
+        
+//        _seg.segmentedControlStyle
+        
+        _seg.tintColor = DarkGreen;
+        
+        [self.view addSubview:_seg];
         [self.view addSubview:_commentTable];
-        
-        
-        [_allCommnetBtn  addTarget:self action:@selector(allCommentClick) forControlEvents:UIControlEventTouchUpInside];
-        [_goodCommentBtn addTarget:self action:@selector(goodCommentClick) forControlEvents:UIControlEventTouchUpInside];
-        [_picCommentBtn addTarget:self action:@selector(picCommentClick) forControlEvents:UIControlEventTouchUpInside];
-        
         
         
         _commentTable.delegate = self;
         _commentTable.dataSource =self;
         _commentTable.backgroundColor = BackGray;
         _commentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _commentTable.CYdelegate = self;
+            [_commentTable setHeaderRefreshEnabled:YES];
         
         _requestModel.delegate = self;
-        [_requestModel postData];
+        
         
     }
     return self;
@@ -72,6 +78,21 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    _start = 0;
+    [super viewDidAppear:animated];
+    
+    [_requestModel postData];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    _start = 0;
+    [super viewDidDisappear:animated];
+    [_requestModel.request cancel];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -80,7 +101,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_responseModel.myCommArr count]?[_responseModel.myCommArr count]:0;
+    return [_sourceArr count]?[_sourceArr count]:0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,7 +112,7 @@
         cell = [[MyCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    [cell fillCellByModel:[_responseModel.myCommArr objectAtIndex:indexPath.row]];
+    [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -114,31 +135,145 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
+    
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     _responseModel = (MyCommentResponseModel *)model;
-    [_commentTable reloadData];
+    
+    
+    
+    if ([_responseModel.myCommArr count] > 0) {
+        _start = _start +10;
+        
+        
+        
+        for (id model in _responseModel.myCommArr) {
+            [_sourceArr addObject:model];
+        }
+        
+        
+        
+        [_commentTable reloadData];
+    }
+    
+    
+    
+    
+    
+    [_commentTable endHearderRefreshing];
+    
 }
 
 
 -(void)allCommentClick
 {
+    [_requestModel.request cancel];
     _requestModel.type = @"0";
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start];
     [_requestModel postData];
 }
 
 -(void)goodCommentClick
 {
+    [_requestModel.request cancel];
     _requestModel.type = @"1";
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start];
     [_requestModel postData];
 }
 
 -(void)picCommentClick
 {
+    [_requestModel.request cancel];
     _requestModel.type = @"2";
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start];
     [_requestModel postData];
 }
 
+
+-(void)segmentAction:(UISegmentedControl *)seg{
+//    NSInteger Index = seg.selectedSegmentIndex;
+    
+    _start = 0;
+    [_sourceArr removeAllObjects];
+    
+    switch (seg.selectedSegmentIndex) {
+        case 0:
+            [self allCommentClick];
+            break;
+        case 1:
+            [self goodCommentClick];
+            break;
+        case 2:
+            [self picCommentClick];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if ([scrollView isKindOfClass:[CYTableView class]] && !_commentTable.headerRefreshing && !_commentTable.footerRefreshing)
+    {
+        [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidScroll:scrollView];
+        [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidScroll:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+    if ([scrollView isKindOfClass:[CYTableView class]])
+    {
+        [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidEndDragging:scrollView];
+        
+        [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidEndDragging:scrollView];
+        
+    }
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark CYTableViewDelegate
+
+-(void)refreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view
+{
+    NSLog(@"loading header");
+    
+    //    [self requestAll];
+    
+    _commentTable.headerRefreshing = YES;
+    
+    
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start + 10];
+    
+    
+    
+    
+    
+    
+    
+    [_requestModel postData];
+    
+    //    [_contentTable setFooterRefreshEnabled:YES];
+    //    [_contentTable.tableFooterView removeFromSuperview];
+    //    [_table endHearderRefreshing];
+}
+
+-(void)refreshTableFooterDataSourceIsLoading:(EGORefreshTableHeaderView *)view
+{
+    //    [self requestForData: [NSString stringWithFormat:@"/mobilegame/news/newslist?page=%d&pagesize=10",_nextPage] withTag:REQUEST_MORENEWS];
+    //    [_table endFooterRefreshing];
+}
+
+-(void)refreshTableFinish:(EGORefreshTableHeaderView *)view
+{
+    NSLog(@"finish");
+}
 @end

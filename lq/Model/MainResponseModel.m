@@ -37,6 +37,14 @@
             HotModel *model = [[HotModel alloc] initWithDic:hotTemp];
             [_hotArr addObject:model];
         }
+        
+        _phoneStr = [[NSString alloc] init];
+        _phoneStr = safeString([[dic objectForKey:@"data"] objectForKey:@"phone"]);
+        
+        
+        [CoreHelper setSellerPhone:_phoneStr];
+        
+        
     }
     
     NSLog(@"slider array  %@",_sliderArr);

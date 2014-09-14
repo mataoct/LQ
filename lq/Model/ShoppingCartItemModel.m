@@ -28,7 +28,7 @@
         
         
         
-        _img = [NSURL URLWithString: safeString([dic objectForKey:@"img"])];
+        _img = [NSURL URLWithString: [safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         _gid = safeString([dic objectForKey:@"gid"]);
         _totalPrice = safeString([dic objectForKey:@"totalprice"]);
         _num = safeString([dic objectForKey:@"num"]);
