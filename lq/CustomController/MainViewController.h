@@ -23,6 +23,9 @@
 #import "LoginViewController.h"
 #import "LQ7ViewController.h"
 #import "Water2ViewController.h"
+#import "InfoDetailViewController.h"
+
+#import "GoodsViewController.h"
 
 @interface MainViewController : LQ7ViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate,MenuItemDelegate>
 

@@ -194,8 +194,43 @@
 
 -(void)menuItemClick:(NSInteger)tag
 {
-    NSLog(@"click tag %d",tag);
+    GoodsModel *model = [_mainResponseModel.hotArr objectAtIndex:tag];
+    GoodsViewController *gvc = [[GoodsViewController alloc] initWithGid:model.gid Title:@"商品详情"];
+    
+    [self presentViewController:gvc animated:YES completion:nil];
 }
+
+
+-(void)sliderItemClick:(NSInteger)tag
+{
+    //
+    
+    SliderModel *model = [_mainResponseModel.sliderArr objectAtIndex:tag];
+    
+    switch ([model.type integerValue]) {
+        case 1:
+        {
+            WaterDetailViewController *wdVC = [[WaterDetailViewController alloc] initWithTitle:@"图片详情" andPid:model.type_id];
+            [self presentViewController:wdVC animated:YES completion:nil];
+        }
+            break;
+        case 2:
+        {
+            InfoDetailViewController *idVC = [[InfoDetailViewController alloc] init];
+            [self presentViewController:idVC animated:YES completion:nil];
+        }
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
 
 -(void)adTouch:(UIGestureRecognizer *)gesture
 {
