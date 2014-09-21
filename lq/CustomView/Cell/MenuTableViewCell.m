@@ -26,7 +26,7 @@
         _favBtn = [[UIButton alloc] initWithFrame:CGRectMake(260, 10, 20, 20)];
         _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 185, 15)];
         
-        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 50, 50, 20)];
+        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 50, 64, 20)];
         _disPriceLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
 //        _disLineLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(165, 50, 30, 20)];
         
@@ -48,12 +48,12 @@
         [_toBuyButton setFont:[UIFont systemFontOfSize:14]];
         _toBuyButton.layer.cornerRadius = 3;
         
-        _titleLabel.font = [UIFont systemFontOfSize:20];
+        _titleLabel.font = [UIFont systemFontOfSize:16];
         _detailLabel.font = [UIFont systemFontOfSize:12];
         
         
         
-        _priceLabel.font = [UIFont systemFontOfSize:20];
+        _priceLabel.font = [UIFont systemFontOfSize:16];
         _disPriceLabel.font = [UIFont systemFontOfSize:12];
         _countLabel.font = [UIFont systemFontOfSize:12];
         

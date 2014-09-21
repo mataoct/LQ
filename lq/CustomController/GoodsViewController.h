@@ -20,7 +20,7 @@
 #import "CommentReuqestModel.h"
 #import "UserCommentRequestModel.h"
 
-
+#import "DisLineLabel.h"
 #import "AddToCartRequestModel.h"
 
 @interface GoodsViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
@@ -41,7 +41,7 @@
 @property (nonatomic,strong) NSString *gid;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *nowPriceLabel;
-@property (nonatomic,strong) UILabel *orginalPriceLabel;
+@property (nonatomic,strong) DisLineLabel *orginalPriceLabel;
 @property (nonatomic,strong) UILabel *disableLineLabel;
 @property (nonatomic,strong) UILabel *tagLabel;
 @property (nonatomic,strong) UILabel *tagValueLabel;
@@ -57,6 +57,7 @@
 @property (nonatomic,strong) UIButton *buyBtn;
 @property (nonatomic,strong) UIButton *cartBtn;
 
+@property (nonatomic,strong) UILabel *subTitle;
 @property (nonatomic,strong) UIImageView *subTitleImgview;
 @property (nonatomic,strong) UITextView *contentTv;
 

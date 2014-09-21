@@ -10,6 +10,10 @@
 
 @interface GoodsViewController ()
 
+@property (nonatomic,strong) UIView *tempSub2;
+@property (nonatomic,strong) UIView *tempSubView;
+@property (nonatomic,strong) UIView *tempview;
+
 @end
 
 @implementation GoodsViewController
@@ -61,22 +65,23 @@
     _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     
     _scrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 300, 160) animationDuration:0];
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 170, 150, 20)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 170, 180, 20)];
     
-    _nowPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 170, 45, 20)];
+    _nowPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 170, 65, 20)];
     _nowPriceLabel.font = [UIFont systemFontOfSize:20];
-    _orginalPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(265, 172, 30, 20)];
+    _nowPriceLabel.textAlignment = NSTextAlignmentRight;
+    _orginalPriceLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(265, 172, 30, 20)];
     _orginalPriceLabel.font = [UIFont systemFontOfSize:12];
     
     _tagLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 195, 32, 16)];
-    _tagValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 195, 32, 16)];
-    _categoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(75, 195, 32, 16)];
-    _categoryValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 195, 48, 16)];
+    _tagValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 195, 48, 16)];
+    _categoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(91, 195, 32, 16)];
+    _categoryValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(126, 195, 48, 16)];
     
     _favLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 215, 32, 16)];
     _favValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 215, 32, 16)];
-    _shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(75, 215, 32, 16)];
-    _shareValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 215, 32, 16)];
+    _shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(91, 215, 32, 16)];
+    _shareValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(126, 215, 32, 16)];
     _salesLabel = [[UILabel alloc] initWithFrame:CGRectMake(155, 215, 32, 16)];
     _salesValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(187, 215, 32, 16)];
     
@@ -104,13 +109,16 @@
     
     _subTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 282, 15, 15)];
     
-    UILabel *subTitle = [[UILabel alloc] initWithFrame:CGRectMake(28, 282, 60, 15)];
-    subTitle.font = [UIFont systemFontOfSize:12];subTitle.text = @"本单详情";
+    _subTitle = [[UILabel alloc] initWithFrame:CGRectMake(28, 282, 60, 15)];
+    _subTitle.font = [UIFont systemFontOfSize:12];
+    _subTitle.text = @"本单详情";
     
 //    _subTitleImgview.backgroundColor = [UIColor purpleColor];
     
     [_subTitleImgview setImage:[UIImage imageNamed:@"本单详情标题图标.png"]];
     _contentTv = [[UITextView alloc] initWithFrame:CGRectMake(10, 300, 280, 60)];
+    _contentTv.font = [UIFont systemFontOfSize:12];
+    
 //    _contentTv.backgroundColor = [UIColor orangeColor];
     
     _tableTitleImgview = [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 15, 15)];
@@ -121,9 +129,9 @@
     _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 74, 300, self.view.frame.size.height - 20 - 44 - 50)];
     
     
-    UIView *tempSub2 = [[UIView alloc] initWithFrame:CGRectMake(0, 370, 300, 20)];
-    UIView *tempSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 360)];
-    UIView *tempview = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 300, 391)];
+    _tempSub2 = [[UIView alloc] initWithFrame:CGRectMake(0, 370, 300, 20)];
+    _tempSubView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 360)];
+    _tempview = [[UIView alloc] initWithFrame:CGRectMake(0, 10, 300, 391)];
     
     _tagLabel.font = [UIFont systemFontOfSize:12];
     _tagValueLabel.font = [UIFont systemFontOfSize:12];
@@ -146,35 +154,39 @@
     _salesLabel.text = @"销量:";
     
     
-    [tempSub2 addSubview:_tableTitleImgview];
-    [tempSub2 addSubview:_commentCountLabel];
-    [tempSubView addSubview:line1];[tempSubView addSubview:line2];
-    [tempSubView addSubview:_scrollView];
-    [tempSubView addSubview:_titleLabel];
-    [tempSubView addSubview:_nowPriceLabel];
-    [tempSubView addSubview:_orginalPriceLabel];
-    [tempSubView addSubview:_tagLabel];
-    [tempSubView addSubview:_tagValueLabel];
-    [tempSubView addSubview:_categoryLabel];
-    [tempSubView addSubview:_categoryValueLabel];
-    [tempSubView addSubview:_favLabel];
-    [tempSubView addSubview:_favValueLabel];
-    [tempSubView addSubview:_shareLabel];
-    [tempSubView addSubview:_shareValueLabel];
-    [tempSubView addSubview:_salesLabel];
-    [tempSubView addSubview:_salesValueLabel];
-    [tempSubView addSubview:_buyBtn];
-    [tempSubView addSubview:_cartBtn];
-    [tempSubView addSubview:_subTitleImgview];
-    [tempSubView addSubview:subTitle];
-    [tempSubView addSubview:_contentTv];
+    [_tempSub2 addSubview:_tableTitleImgview];
+    [_tempSub2 addSubview:_commentCountLabel];
     
-    [tempview addSubview:tempSubView];[tempview addSubview:tempSub2];
+    
+    [_tempSubView addSubview:line1];
+    [_tempSubView addSubview:line2];
+    [_tempSubView addSubview:_scrollView];
+    [_tempSubView addSubview:_titleLabel];
+    [_tempSubView addSubview:_nowPriceLabel];
+    [_tempSubView addSubview:_orginalPriceLabel];
+    [_tempSubView addSubview:_tagLabel];
+    [_tempSubView addSubview:_tagValueLabel];
+    [_tempSubView addSubview:_categoryLabel];
+    [_tempSubView addSubview:_categoryValueLabel];
+    [_tempSubView addSubview:_favLabel];
+    [_tempSubView addSubview:_favValueLabel];
+    [_tempSubView addSubview:_shareLabel];
+    [_tempSubView addSubview:_shareValueLabel];
+    [_tempSubView addSubview:_salesLabel];
+    [_tempSubView addSubview:_salesValueLabel];
+    [_tempSubView addSubview:_buyBtn];
+    [_tempSubView addSubview:_cartBtn];
+    [_tempSubView addSubview:_subTitleImgview];
+    [_tempSubView addSubview:_subTitle];
+    [_tempSubView addSubview:_contentTv];
+    
+    [_tempview addSubview:_tempSubView];
+    [_tempview addSubview:_tempSub2];
 //    [tempview setBackgroundColor:[UIColor grayColor]];
-    [tempSub2 setBackgroundColor:[UIColor whiteColor]];
+    [_tempSub2 setBackgroundColor:[UIColor whiteColor]];
     _contentTv.editable = false;
     
-    _commentTable.tableHeaderView = tempview;
+    _commentTable.tableHeaderView = _tempview;
     _commentTable.backgroundColor = BackGray;
     
     _commentTable.delegate = self;
@@ -182,8 +194,8 @@
     _commentTable.showsVerticalScrollIndicator = false;
     [self.view addSubview:_commentTable];
     
-    tempSubView.backgroundColor = [UIColor whiteColor];
-    tempview.backgroundColor = BackGray;
+    _tempSubView.backgroundColor = [UIColor whiteColor];
+    _tempview.backgroundColor = BackGray;
     self.view.backgroundColor = BackGray;
     
     
@@ -271,7 +283,26 @@
     _shareValueLabel.text = _model.shareCount;
     _contentTv.text = _model.content;
     
+    CGRect orgRect=_contentTv.frame;//获取原始UITextView的frame
     
+    CGSize  size = [_model.content sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(240, 2000) lineBreakMode:NSLineBreakByWordWrapping]; //UILineBreakModeWordWrap
+    
+    orgRect.size.height=size.height+10;//获取自适应文本内容高度
+    
+    
+    float yLength = orgRect.size.height - _contentTv.frame.size.height;
+    
+    _contentTv.frame=orgRect;//重设UITextView的frame
+    
+    
+    NSLog(@" y length %f",yLength);
+    
+    _contentTv.text=_model.content;
+    
+    [_tempSubView setFrame:CGRectMake(_tempSubView.frame.origin.x, _tempSubView.frame.origin.y, _tempSubView.frame.size.width, _tempSubView.frame.size.height + yLength)];
+    [_tempview setFrame:CGRectMake(_tempview.frame.origin.x, _tempview.frame.origin.y, _tempview.frame.size.width, _tempview.frame.size.height + yLength)];
+    [_tempSub2 setFrame:CGRectMake(_tempSub2.frame.origin.x, _tempSub2.frame.origin.y + yLength, _tempSub2.frame.size.width, _tempSub2.frame.size.height )];
+    _commentTable.tableHeaderView = _tempview;
     
 }
 

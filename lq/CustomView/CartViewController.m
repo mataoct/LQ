@@ -33,7 +33,7 @@
     
     _cartTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 20-44 - 60 - 50) style:UITableViewStylePlain];
     _priceCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 20)];
-    _priceCountValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 20, 60, 20)];
+    _priceCountValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 20, 120, 20)];
     _checkBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 10, 100, 40)];
     
     _checkBtn.backgroundColor = Pink;
@@ -144,7 +144,7 @@
     [_cartTable reloadData];
     _priceCountLabel.text = @"合计：";
     _priceCountLabel.textColor = [UIColor blackColor];
-    _priceCountValueLabel.text = [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
+    _priceCountValueLabel.text = @"￥0.0";// [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
     _priceCountValueLabel.textColor = [UIColor blackColor];
 }
 
@@ -185,6 +185,7 @@
     {
         [_selectDic removeObjectForKey:[NSString stringWithFormat:@"%d",indexPath.row]];
     }
+    [self updateTotalPrice];
 }
 
 
@@ -212,6 +213,23 @@
     [_signRequestModel postData];
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10002;
+    
+}
+
+-(void)updateTotalPrice
+{
+    float total = 0;
+    
+    NSLog(@"%@",_selectDic);
+    
+    for (NSString  *key in _selectDic) {
+        
+        ShoppingCartItemModel *model = _selectDic[key];
+        
+        total = total + [model.num integerValue]* [model.nowPrice floatValue];
+    }
+    
+    _priceCountValueLabel.text = [NSString stringWithFormat:@"￥%.2f",total];
     
 }
 
