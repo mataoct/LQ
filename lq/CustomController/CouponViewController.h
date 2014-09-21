@@ -17,6 +17,8 @@
 #import "UserInfoRequestModel.h"
 #import "AnotherUserInfoResponseModel.h"
 
+#import "MJRefresh.h"
+
 @interface CouponViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) UILabel *integralValueLabel;

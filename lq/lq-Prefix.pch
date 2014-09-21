@@ -21,6 +21,7 @@
 
 #define safeString(obj) ([obj isEqual:[NSNull null]] ? @"" : ([NSString stringWithFormat:@"%@",obj]))
 
+#define MoreDarkGreen [UIColor colorWithRed:15/255.0 green:95/255.0 blue:69/255.0 alpha:1]
 
 #define DarkGreen     [UIColor colorWithRed:21/255.0 green:134/255.0 blue:98/255.0 alpha:1]
 

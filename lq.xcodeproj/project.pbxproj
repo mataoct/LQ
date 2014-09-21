@@ -240,6 +240,17 @@
 		A0C7AE0E19A9D1C200303B8A /* AddressResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C7AE0D19A9D1C200303B8A /* AddressResponseModel.m */; };
 		A0C7E5F0199CFE0D003BEF2F /* SellerInfoResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E5EF199CFE0D003BEF2F /* SellerInfoResponseModel.m */; };
 		A0C7E66C199D0031003BEF2F /* SellerInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E66B199D0031003BEF2F /* SellerInfoRequestModel.m */; };
+		A0E71C4E19CD815C001F4C24 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0E71C3E19CD815C001F4C24 /* MJRefresh.bundle */; };
+		A0E71C4F19CD815C001F4C24 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4119CD815C001F4C24 /* MJRefreshBaseView.m */; };
+		A0E71C5019CD815C001F4C24 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4319CD815C001F4C24 /* MJRefreshConst.m */; };
+		A0E71C5119CD815C001F4C24 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4519CD815C001F4C24 /* MJRefreshFooterView.m */; };
+		A0E71C5219CD815C001F4C24 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4719CD815C001F4C24 /* MJRefreshHeaderView.m */; };
+		A0E71C5319CD815C001F4C24 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4919CD815C001F4C24 /* UIScrollView+Extension.m */; };
+		A0E71C5419CD815C001F4C24 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4B19CD815C001F4C24 /* UIScrollView+MJRefresh.m */; };
+		A0E71C5519CD815C001F4C24 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C4D19CD815C001F4C24 /* UIView+Extension.m */; };
+		A0E71C5819CD81DF001F4C24 /* Water2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C5719CD81DF001F4C24 /* Water2ViewController.m */; };
+		A0E71C5B19CD88C5001F4C24 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E71C5A19CD88C5001F4C24 /* CollectionCell.m */; };
+		A0E71C5D19CD93B8001F4C24 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E71C5C19CD93B8001F4C24 /* CollectionCell.xib */; };
 		A0ECE332196B8FB0003E0BE3 /* RegistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ECE331196B8FB0003E0BE3 /* RegistModel.m */; };
 		A0ECE335196B94B9003E0BE3 /* MemberCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ECE334196B94B9003E0BE3 /* MemberCenterViewController.m */; };
 		A0ECE338196B975C003E0BE3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ECE337196B975C003E0BE3 /* MenuViewController.m */; };
@@ -785,6 +796,27 @@
 		A0C7E5EF199CFE0D003BEF2F /* SellerInfoResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerInfoResponseModel.m; path = Model/SellerInfoResponseModel.m; sourceTree = "<group>"; };
 		A0C7E66A199D0031003BEF2F /* SellerInfoRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerInfoRequestModel.h; path = Model/SellerInfoRequestModel.h; sourceTree = "<group>"; };
 		A0C7E66B199D0031003BEF2F /* SellerInfoRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SellerInfoRequestModel.m; path = Model/SellerInfoRequestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A0E71C3E19CD815C001F4C24 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		A0E71C3F19CD815C001F4C24 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		A0E71C4019CD815C001F4C24 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		A0E71C4119CD815C001F4C24 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		A0E71C4219CD815C001F4C24 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		A0E71C4319CD815C001F4C24 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		A0E71C4419CD815C001F4C24 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		A0E71C4519CD815C001F4C24 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		A0E71C4619CD815C001F4C24 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		A0E71C4719CD815C001F4C24 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		A0E71C4819CD815C001F4C24 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		A0E71C4919CD815C001F4C24 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		A0E71C4A19CD815C001F4C24 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		A0E71C4B19CD815C001F4C24 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		A0E71C4C19CD815C001F4C24 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		A0E71C4D19CD815C001F4C24 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		A0E71C5619CD81DF001F4C24 /* Water2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Water2ViewController.h; path = CustomController/Water2ViewController.h; sourceTree = "<group>"; };
+		A0E71C5719CD81DF001F4C24 /* Water2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Water2ViewController.m; path = CustomController/Water2ViewController.m; sourceTree = "<group>"; };
+		A0E71C5919CD88C5001F4C24 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionCell.h; path = CustomView/Cell/CollectionCell.h; sourceTree = "<group>"; };
+		A0E71C5A19CD88C5001F4C24 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionCell.m; path = CustomView/Cell/CollectionCell.m; sourceTree = "<group>"; };
+		A0E71C5C19CD93B8001F4C24 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionCell.xib; path = CustomView/Cell/CollectionCell.xib; sourceTree = "<group>"; };
 		A0ECE330196B8FB0003E0BE3 /* RegistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistModel.h; path = Model/RegistModel.h; sourceTree = "<group>"; };
 		A0ECE331196B8FB0003E0BE3 /* RegistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = RegistModel.m; path = Model/RegistModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A0ECE333196B94B9003E0BE3 /* MemberCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemberCenterViewController.h; path = CustomController/MemberCenterViewController.h; sourceTree = "<group>"; };
@@ -966,6 +998,7 @@
 		A01AD6251952D311005DD9C4 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				A0E71C3D19CD815C001F4C24 /* MJRefresh */,
 				A075DE9419BDE55F0059E02D /* CustomTable */,
 				A012CB36199A112A000335B6 /* WaterFlowView */,
 				A0B87DDF1990DBFA003091C0 /* HPGrowingTextView */,
@@ -1629,6 +1662,8 @@
 				A012CB41199A1139000335B6 /* WaterFlowViewController.m */,
 				A0413CCB199A66CA00726C51 /* WaterDetailViewController.h */,
 				A0413CCC199A66CA00726C51 /* WaterDetailViewController.m */,
+				A0E71C5619CD81DF001F4C24 /* Water2ViewController.h */,
+				A0E71C5719CD81DF001F4C24 /* Water2ViewController.m */,
 				A09EC195195296FA0036219B /* LQUITabBarController.h */,
 				A09EC196195296FA0036219B /* LQUITabBarController.m */,
 				A0A53CDD1952B2C000DBD397 /* LQUINavigationController.h */,
@@ -1709,6 +1744,29 @@
 			path = CustomView/NIDropDown;
 			sourceTree = "<group>";
 		};
+		A0E71C3D19CD815C001F4C24 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				A0E71C3E19CD815C001F4C24 /* MJRefresh.bundle */,
+				A0E71C3F19CD815C001F4C24 /* MJRefresh.h */,
+				A0E71C4019CD815C001F4C24 /* MJRefreshBaseView.h */,
+				A0E71C4119CD815C001F4C24 /* MJRefreshBaseView.m */,
+				A0E71C4219CD815C001F4C24 /* MJRefreshConst.h */,
+				A0E71C4319CD815C001F4C24 /* MJRefreshConst.m */,
+				A0E71C4419CD815C001F4C24 /* MJRefreshFooterView.h */,
+				A0E71C4519CD815C001F4C24 /* MJRefreshFooterView.m */,
+				A0E71C4619CD815C001F4C24 /* MJRefreshHeaderView.h */,
+				A0E71C4719CD815C001F4C24 /* MJRefreshHeaderView.m */,
+				A0E71C4819CD815C001F4C24 /* UIScrollView+Extension.h */,
+				A0E71C4919CD815C001F4C24 /* UIScrollView+Extension.m */,
+				A0E71C4A19CD815C001F4C24 /* UIScrollView+MJRefresh.h */,
+				A0E71C4B19CD815C001F4C24 /* UIScrollView+MJRefresh.m */,
+				A0E71C4C19CD815C001F4C24 /* UIView+Extension.h */,
+				A0E71C4D19CD815C001F4C24 /* UIView+Extension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		A0FBCE7619544E98000146C3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1734,6 +1792,9 @@
 				A061424419B4D0DE00ED1E7E /* HistoryDetailTableViewCell.m */,
 				A06E0A8B19B9A6A70041D9A2 /* IntegralTableViewCell.h */,
 				A06E0A8C19B9A6A70041D9A2 /* IntegralTableViewCell.m */,
+				A0E71C5919CD88C5001F4C24 /* CollectionCell.h */,
+				A0E71C5A19CD88C5001F4C24 /* CollectionCell.m */,
+				A0E71C5C19CD93B8001F4C24 /* CollectionCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1814,6 +1875,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E71C5D19CD93B8001F4C24 /* CollectionCell.xib in Resources */,
 				A00DA7D719C9E6CD009DBAB4 /* 电话.png in Resources */,
 				A09AA73E19C46B5C0024DC2F /* UMSCommentDetailController.xib in Resources */,
 				A00DA7DE19C9E6CD009DBAB4 /* 首页_04.png in Resources */,
@@ -1836,6 +1898,7 @@
 				A00DA7A819C9E6CD009DBAB4 /* disline.png in Resources */,
 				A00DA7DA19C9E6CD009DBAB4 /* 评论标题图标.png in Resources */,
 				A09AA74319C46B5C0024DC2F /* UMSLoginViewController.xib in Resources */,
+				A0E71C4E19CD815C001F4C24 /* MJRefresh.bundle in Resources */,
 				A00DA7D419C9E6CD009DBAB4 /* 标题-搜索.png in Resources */,
 				A00DA7C719C9E6CD009DBAB4 /* tabbg-4.png in Resources */,
 				A00DA7D019C9E6CD009DBAB4 /* 收藏-已收藏.png in Resources */,
@@ -1908,6 +1971,7 @@
 				A075DEA319BDE55F0059E02D /* PullRefreshTableViewController.m in Sources */,
 				A03E0BB0196AB9C8007C5612 /* RegistViewController.m in Sources */,
 				A010B0D0198243C100E170DA /* HotModel.m in Sources */,
+				A0E71C5819CD81DF001F4C24 /* Water2ViewController.m in Sources */,
 				A010B0D619825EA800E170DA /* MenuReuqestModel.m in Sources */,
 				A0B87DFE1991D260003091C0 /* CartTableViewCell.m in Sources */,
 				A0A1C1441993D0D0009F7B5A /* CouponResponseModel.m in Sources */,
@@ -1929,6 +1993,7 @@
 				A06E0A9319B9B0DB0041D9A2 /* BalanceDetailModel.m in Sources */,
 				A00504D01992756D00318806 /* InfoResponseModel.m in Sources */,
 				A0C7E5F0199CFE0D003BEF2F /* SellerInfoResponseModel.m in Sources */,
+				A0E71C5519CD815C001F4C24 /* UIView+Extension.m in Sources */,
 				A075DEA219BDE55F0059E02D /* EGORefreshTableHeaderView.m in Sources */,
 				A0FBD7C019966C3C004520B8 /* SignatureRequestModel.m in Sources */,
 				A0664C92195E96E300F3E490 /* BaseRequestModel.m in Sources */,
@@ -1966,6 +2031,7 @@
 				A09EC156195278FC0036219B /* AlixPayOrder.m in Sources */,
 				A09EC174195278FC0036219B /* UIButton+WebCache.m in Sources */,
 				A09EC172195278FC0036219B /* SDWebImageManager.m in Sources */,
+				A0E71C5B19CD88C5001F4C24 /* CollectionCell.m in Sources */,
 				A06E0A8A19B998430041D9A2 /* IntegralViewController.m in Sources */,
 				A034656E19AF69F800032526 /* FavRequestModel.m in Sources */,
 				A010B0D9198263FD00E170DA /* MenuResponseModel.m in Sources */,
@@ -1977,6 +2043,7 @@
 				A002EDCA1991326300141C49 /* CartViewController.m in Sources */,
 				A0B87DE81990DBFA003091C0 /* HPTextViewInternal.m in Sources */,
 				A09EC157195278FC0036219B /* AlixPayResult.m in Sources */,
+				A0E71C5119CD815C001F4C24 /* MJRefreshFooterView.m in Sources */,
 				A05E4B16199F832C00A7C424 /* MyCommentTableViewCell.m in Sources */,
 				A034657119AF838500032526 /* AddToCartRequestModel.m in Sources */,
 				A075DEA119BDE55F0059E02D /* CYTableView.m in Sources */,
@@ -1987,6 +2054,7 @@
 				A05E832D1975698600E2B553 /* ShooInfoController.m in Sources */,
 				A096EB5719B3724500887462 /* HistoryModel.m in Sources */,
 				A09EC163195278FC0036219B /* ASIDownloadCache.m in Sources */,
+				A0E71C5319CD815C001F4C24 /* UIScrollView+Extension.m in Sources */,
 				A0B10D3119693F6D003CFAC4 /* LoginViewController.m in Sources */,
 				A00504CD199273E100318806 /* InfoRequestModel.m in Sources */,
 				A09EC168195278FC0036219B /* Reachability.m in Sources */,
@@ -1998,6 +2066,7 @@
 				A0A1C1471993D173009F7B5A /* CouponRequestModel.m in Sources */,
 				A010B0E51986428600E170DA /* ProdutionResponseModel.m in Sources */,
 				A02712BA1988F7A50042F6FB /* CommentReuqestModel.m in Sources */,
+				A0E71C5419CD815C001F4C24 /* UIScrollView+MJRefresh.m in Sources */,
 				A007237B1988F0DA00F8F720 /* CommentListResponseModel.m in Sources */,
 				A09EC161195278FC0036219B /* ASIDataCompressor.m in Sources */,
 				A09EC16F195278FC0036219B /* SDImageCache.m in Sources */,
@@ -2008,6 +2077,7 @@
 				A06E0A8D19B9A6A70041D9A2 /* IntegralTableViewCell.m in Sources */,
 				A0B87DE71990DBFA003091C0 /* HPGrowingTextView.m in Sources */,
 				A09EC173195278FC0036219B /* SDWebImagePrefetcher.m in Sources */,
+				A0E71C5019CD815C001F4C24 /* MJRefreshConst.m in Sources */,
 				A05E4B10199F7F4F00A7C424 /* MyCommentResponseModel.m in Sources */,
 				A09EC16E195278FC0036219B /* MKAnnotationView+WebCache.m in Sources */,
 				A05E4B22199FAEA200A7C424 /* MyFavTableViewCell.m in Sources */,
@@ -2026,6 +2096,7 @@
 				A0A1C14A1993D25D009F7B5A /* CouponViewController.m in Sources */,
 				A010B0E219863B2000E170DA /* ProductionRequestModel.m in Sources */,
 				A09EC170195278FC0036219B /* SDWebImageDecoder.m in Sources */,
+				A0E71C5219CD815C001F4C24 /* MJRefreshHeaderView.m in Sources */,
 				A00723751988EC8E00F8F720 /* CommentModel.m in Sources */,
 				A0FBD7C3199725B2004520B8 /* SignatureResponseModel.m in Sources */,
 				A012CB42199A1139000335B6 /* WaterFlowViewController.m in Sources */,
@@ -2039,6 +2110,7 @@
 				A0413CCD199A66CA00726C51 /* WaterDetailViewController.m in Sources */,
 				A016D668195FEFD9006C7AEB /* CoreHelper.m in Sources */,
 				A0ECE332196B8FB0003E0BE3 /* RegistModel.m in Sources */,
+				A0E71C4F19CD815C001F4C24 /* MJRefreshBaseView.m in Sources */,
 				A05E4B13199F811200A7C424 /* MyCommentRequestModel.m in Sources */,
 				A0A1C1411993C71B009F7B5A /* CouponModel.m in Sources */,
 				A0FBCE7919544EC3000146C3 /* DiscountTableViewController.m in Sources */,

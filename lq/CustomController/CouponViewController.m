@@ -10,6 +10,9 @@
 
 @interface CouponViewController ()
 
+@property (nonatomic,assign) NSInteger start;
+@property (nonatomic,strong) NSMutableArray *sourceArr;
+
 @end
 
 @implementation CouponViewController
@@ -32,8 +35,9 @@
         
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 36)];
         
+        _sourceArr = [[NSMutableArray alloc] init];
         
-//        headView.backgroundColor  = BackGray;
+//        self.view.backgroundColor  = BackGray;
         
         UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 26)];
         integrationLabel.backgroundColor = [UIColor whiteColor];
@@ -47,13 +51,16 @@
         
         _couponTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height - 64)];
         _couponTable.tableHeaderView = headView;
-        
+        _couponTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _couponTable.backgroundColor = BackGray;
         _couponTable.dataSource = self;
         _couponTable.delegate = self;
+        [self addFooter];
         [self.view addSubview:_couponTable];
         
         
-        _model = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
+        
+        _model = [[CouponRequestModel alloc] initWithSeller:@"100" Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
         _model.delegate = self;
         _model.tag = 10001;
         
@@ -81,7 +88,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    _start = 0;
+    _model.start = [NSString stringWithFormat:@"%d",_start];
     [_model postData];
     [_requestModel postData];
 //    
@@ -108,13 +116,13 @@
         cell = [[DiscountTableViewCell2 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    [cell fillCellByModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
+    [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
     
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_responseModel.couponArr count]?[_responseModel.couponArr count]:0;
+    return [_sourceArr count];
 }
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -124,7 +132,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CouponDetailViewController *detailVC = [[CouponDetailViewController alloc] initWithTitle:@"优惠券详情" andModel:[_responseModel.couponArr objectAtIndex:indexPath.row]];
+    CouponDetailViewController *detailVC = [[CouponDetailViewController alloc] initWithTitle:@"优惠券详情" andModel:[_sourceArr objectAtIndex:indexPath.row]];
     
     [self presentViewController:detailVC animated:YES completion:nil];
 
@@ -132,7 +140,7 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
-    
+                [_couponTable footerEndRefreshing];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -141,7 +149,17 @@
         case 10001:
         {
             _responseModel = (CouponResponseModel *)model;
+            
+            if ([_responseModel.couponArr count] > 0) {
+                for (id model in _responseModel.couponArr) {
+                    [_sourceArr addObject:model];
+                }
+                
+                _start++;
+            }
+            
             [self reLayoutViews];
+            [_couponTable footerEndRefreshing];
         }
             break;
         case 10002:
@@ -161,10 +179,6 @@
     NSLog(@"relayouts");
     
     [_couponTable reloadData];
-//    _integralValueLabel.text = @"20";
-    
-    
-//    [self updateIntegral:@"20"];
 }
 
 
@@ -181,4 +195,15 @@
 }
 
 
+- (void)addFooter
+{
+    __unsafe_unretained typeof(self) wself = self;
+    // 添加下拉刷新头部控件
+    [_couponTable addFooterWithCallback:^{
+        // 进入刷新状态就会回调这个Block
+        
+        wself.model.start = [NSString stringWithFormat:@"%d",wself.start];
+        [wself.model postData];
+    }];
+}
 @end

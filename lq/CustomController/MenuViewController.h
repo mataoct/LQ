@@ -12,7 +12,11 @@
 #import "ProductionRequestModel.h"
 #import "MenuTableViewCell.h"
 #import "GoodsViewController.h"
-@interface MenuViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,MenuTableViewCellDelegate>
+#import "NIDropDown.h"
+#import "MJRefresh.h"
+
+
+@interface MenuViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,MenuTableViewCellDelegate,NIDropDownDelegate>
 
 @property (nonatomic,strong) UITableView *menuTable;
 @property (nonatomic,strong) UIButton *classfy;
@@ -24,9 +28,10 @@
 
 @property (nonatomic,strong) MenuResponseModel *menuResponseModel;
 
+@property (nonatomic,strong) NIDropDown *dropDown;
 
 
-//@property (nonatomic,strong) UIButton *classbtn;
+
 
 
 @end

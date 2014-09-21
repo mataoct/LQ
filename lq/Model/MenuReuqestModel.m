@@ -22,6 +22,10 @@
         _uid = [[NSString alloc] init];
         _uid = uid;
         
+        _cid = [[NSString alloc] init];
+        _start = [[NSString alloc] init];
+        _limit = [[NSString alloc] init];
+        
     }
     return self;
 }
@@ -40,6 +44,17 @@
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_sellId forKey:@"sellerId"];
     [request addPostValue:_uid forKey:@"uid"];
+    if (_start && ![_start isEqualToString:@""]) {
+        [request addPostValue:_start forKey:@"start"];
+    }
+    if (_limit && ![_limit isEqualToString:@""]) {
+        [request addPostValue:_limit forKey:@"limit"];
+    }
+    
+    
+    if (_cid && ![_cid isEqualToString:@""]) {
+        [request addPostValue:_cid forKey:@"cid"];
+    }
 
     [request setRequestMethod:@"POST"];
     request.defaultResponseEncoding = NSUTF8StringEncoding;

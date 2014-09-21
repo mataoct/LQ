@@ -46,4 +46,6 @@ static UIWebView *phoneCallWebView;
      shareImage:(UIImage *)shareImage
        delegate:(id <UMSocialUIDelegate>)delegate;
 
++(void)addTabbarBadgeValue;
+
 @end

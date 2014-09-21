@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSString *uid;
 @property (nonatomic,strong) NSString *start;
 @property (nonatomic,strong) NSString *limit;
+@property (nonatomic,strong) NSString *cid;
 
 
 -(id)initWithSellId:(NSString *)sellerId uid:(NSString *)uid;

@@ -48,6 +48,10 @@
         self.navigationController.navigationBar.translucent = NO;
     }
     
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cartBtnBadgeChange:) name:@"kCartBtnBadgeChange" object:nil];
+    
 //    _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithTitle:@"首页"]];
     
     _mainNC = [[MainNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
@@ -136,6 +140,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)cartBtnBadgeChange:(NSNotification *)noti
+{
+    
+    UITabBarItem *cartItem = [self.tabBar.items objectAtIndex:3];
+    
+    if ([noti object])
+    {
+        cartItem.badgeValue = nil;
+    }
+    else
+    {
+        
+        cartItem.badgeValue = [NSString stringWithFormat:@"%d",[cartItem.badgeValue integerValue] + 1];
+    }
+    
+    
+    
+}
+
+//-(void)cartBtnBadge
 
 
 @end

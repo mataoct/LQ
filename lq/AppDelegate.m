@@ -141,6 +141,7 @@ BMKMapManager* _mapManager;
                 
                 return false;
             }
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kCartBtnBadgeChange" object:@"1" userInfo:nil];
             [_tabbar.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-4.png"]];
             return true;
         }

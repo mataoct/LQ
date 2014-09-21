@@ -88,11 +88,12 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
+    cell.backgroundColor = DarkGreen;
     cell.textLabel.text =[list objectAtIndex:indexPath.row];
-    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     UIView * v = [[UIView alloc] init];
-    v.backgroundColor = [UIColor grayColor];
+    v.backgroundColor = MoreDarkGreen;
     cell.selectedBackgroundView = v;
     
     return cell;

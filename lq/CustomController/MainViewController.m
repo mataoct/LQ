@@ -10,6 +10,8 @@
 
 @interface MainViewController ()
 
+@property (nonatomic,strong) UIScrollView *subScorller;
+
 @end
 
 @implementation MainViewController
@@ -54,6 +56,8 @@
 //    
 //    [self.item setRightBarButtonItem:rightItem];
     
+    _subScorller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
     
     _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:@"100"];
     _mainResponseModel = [[MainResponseModel alloc] init];
@@ -62,9 +66,9 @@
     
     _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
     _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 170) animationDuration:3];
-    [self.view addSubview:_headView];
+    [_subScorller addSubview:_headView];
     
-    [self.view addSubview:_menuList];
+    [_subScorller addSubview:_menuList];
     
     
     _fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 170, 80, 80)];
@@ -74,14 +78,15 @@
     _adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
     
     
-    [self.view addSubview:_fastOrder];
-    [self.view addSubview:_picWall];
-    [self.view addSubview:_myFav];
-    [self.view addSubview:_discount];
-    [self.view addSubview:_adView];
+    [_subScorller addSubview:_fastOrder];
+    [_subScorller addSubview:_picWall];
+    [_subScorller addSubview:_myFav];
+    [_subScorller addSubview:_discount];
+    [_subScorller addSubview:_adView];
     
-    [self.view setBackgroundColor:BackGray];
+    [_subScorller setBackgroundColor:BackGray];
     
+    [self.view addSubview:_subScorller];
     
 //    [self setBackButtonHide:YES];
 
@@ -107,6 +112,11 @@
     [self setMenu];
     [_menuList setDataSource:_mainResponseModel.hotArr];
     _menuList.menuDelegate = self;
+    
+    
+    [_subScorller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    [_subScorller setContentSize:CGSizeMake(320, self.view.frame.size.height > _menuList.frame.origin.y + _menuList.frame.size.height ? self.view.frame.size.height : _menuList.frame.origin.y + _menuList.frame.size.height )];
 }
 
 
@@ -211,21 +221,14 @@
 */
 
 -(void)jumpToDiscountTable
-{
-//    DiscountTableViewController *discountTable = [[DiscountTableViewController alloc] initWithStyle:UITableViewStylePlain withDic:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"", nil]];
-//    
-//    [self.navigationController pushViewController:discountTable animated:YES];
-    
-    
-    NSLog(@"%@",self.navigationController);
-    
+{    
     CouponViewController *couponVC = [[CouponViewController alloc] initWithTitle:@"电子优惠券"];
     [self.navigationController presentViewController:couponVC animated:YES completion:nil];
 }
 
 -(void)jumpToWaterFlow
 {
-    WaterFlowViewController *waterVC = [[WaterFlowViewController alloc] initWithTitle:@"图片墙" sellerid:@"100" start:@"0" limit:@"10"];
+    Water2ViewController *waterVC = [[Water2ViewController alloc] initWithTitle:@"图片墙" sellerid:@"100" start:@"0" limit:@"10"];
     [self.navigationController presentViewController:waterVC animated:YES completion:nil];
 }
 -(void)jumpToMyFav

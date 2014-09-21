@@ -207,4 +207,10 @@
     
 }
 
+
++(void)addTabbarBadgeValue
+{    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCartBtnBadgeChange" object:nil userInfo:nil];
+}
+
 @end

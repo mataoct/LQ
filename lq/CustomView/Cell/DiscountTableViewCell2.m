@@ -30,6 +30,8 @@
         
         _reuqestModel = [[Integral2CouponRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
         _reuqestModel.delegate = self;
+        
+//        self.se
     }
     return self;
     

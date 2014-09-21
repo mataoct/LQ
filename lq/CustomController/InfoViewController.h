@@ -10,11 +10,14 @@
 #import "InfoRequestModel.h"
 #import "InfoTableViewCell.h"
 #import "InfoDetailViewController.h"
+#import "MJRefresh.h"
 
 @interface InfoViewController : LQ7ViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *infoTable;
 @property (nonatomic,strong) InfoRequestModel *model;
 @property (nonatomic,strong) InfoResponseModel *responseModel;
+
+@property (nonatomic,strong) NSMutableArray *sourceArr;
 
 @end

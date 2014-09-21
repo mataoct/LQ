@@ -418,6 +418,7 @@
         case 10004:
         {
             [SVProgressHUD showSuccessWithStatus_custom:@"加入购物车成功" duration:1.5];
+            [CoreHelper addTabbarBadgeValue];
         }
             break;
         default:

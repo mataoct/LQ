@@ -109,12 +109,10 @@
     if ([_model.isfav intValue] == 0) {
         //
         [_favBtn setImage:[UIImage imageNamed:@"收藏.png"] forState:UIControlStateNormal];
-        NSLog(@"未收藏");
     }
     else
     {
         [_favBtn setImage:[UIImage imageNamed:@"收藏-已收藏.png"] forState:UIControlStateNormal];
-        NSLog(@"已收藏");
     }
     
     [_favBtn addTarget:self action:@selector(favBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -195,7 +193,7 @@
 //            NSLog(@"添加购物车OK");
             
             [SVProgressHUD showSuccessWithStatus_custom:@"添加购物车成功" duration:1.5];
-            
+            [CoreHelper addTabbarBadgeValue];
             
         }
             break;

@@ -10,6 +10,18 @@
 
 @interface MenuViewController ()
 
+@property (nonatomic,strong) NSMutableArray *categoryArr;
+@property (nonatomic,assign) NSInteger start;
+
+@property (nonatomic,strong) NSMutableArray *sourceArr;
+
+
+
+
+@property (nonatomic,assign) Boolean volumeFlag;
+@property (nonatomic,assign) Boolean timeFlag;
+@property (nonatomic,assign) Boolean priceFlag;
+
 @end
 
 @implementation MenuViewController
@@ -53,11 +65,15 @@
     [_price setTitle:@"价格" forState:UIControlStateNormal];
     
     _menuResponseModel = [[MenuResponseModel alloc] init];
+    _categoryArr = [[NSMutableArray alloc] init];
+    _sourceArr = [[NSMutableArray alloc] init];
     
-    
-    
+    [_classfy addTarget:self action:@selector(classfyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_price addTarget:self action:@selector(interfacetest) forControlEvents:UIControlEventTouchUpInside];
+    [_volume addTarget:self action:@selector(volumeClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    _volumeFlag = true;
+    _priceFlag = true;
     
     [self.view addSubview:_classfy];
     [self.view addSubview:_volume];
@@ -70,6 +86,7 @@
     _menuTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, 320, self.view.frame.size.height-64 -40 - 50) style:UITableViewStylePlain];
     _menuTable.delegate = self;
     _menuTable.dataSource = self;
+    [self addHeader];
     
     _menuTable.backgroundColor = BackGray;
     
@@ -83,7 +100,12 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-        [_menuRequest postData];
+    
+    _start = 0;
+    _menuRequest.start = [NSString stringWithFormat:@"%d",_start] ;
+    _menuRequest.limit = @"10";
+    
+    [_menuRequest postData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,12 +130,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%d",[_menuResponseModel.goodsArr count]);
-    return [_menuResponseModel.goodsArr count]?[_menuResponseModel.goodsArr count]:0;
+//    NSLog(@"%d",[_menuResponseModel.goodsArr count]);
+    return [_sourceArr count];
 }
-
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -126,15 +145,7 @@
         cell = [[MenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetifier];
     }
     
-    
-    GoodsModel *model = [[GoodsModel alloc]init];
-    
-    model = [ _menuResponseModel.goodsArr objectAtIndex:indexPath.row];
-    
-    
-    
-    NSLog(@"%@ ",model.title);
-    [cell fillCellByModel:[_menuResponseModel.goodsArr objectAtIndex:indexPath.row]];
+    [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
     cell.delegate = self;
     NSLog(@"fill finish %d ",indexPath.row);
     return cell;
@@ -150,12 +161,9 @@
     
     GoodsModel *model = [[GoodsModel alloc]init];
     
-    model = [ _menuResponseModel.goodsArr objectAtIndex:indexPath.row];
+    model = [_sourceArr objectAtIndex:indexPath.row];
     
     GoodsViewController  *goodController = [[GoodsViewController alloc] initWithGid:model.gid Title:@"菜品详情"];
-//    [self.navigationController pushViewController:goodController animated:YES];
-    
-//    LQUINavigationController *tempNavi = [[LQUINavigationController alloc] initWithRootViewController:goodController];
     
     [self presentViewController:goodController animated:YES completion:nil];
 }
@@ -176,7 +184,29 @@
         {
             _menuResponseModel = (MenuResponseModel *)model;
             
+            [_categoryArr removeAllObjects];
+            for (CategoriesModel *cate in _menuResponseModel.categoriesArr) {
+                [_categoryArr addObject:cate.title];
+            }
+            
+            
+            if (_start == 0) {
+                [_sourceArr removeAllObjects];
+            }
+            
+            
+            if ([_menuResponseModel.goodsArr count] > 0) {
+                for (id model in _menuResponseModel.goodsArr) {
+                    
+                    [_sourceArr addObject:model];
+                }
+                _start++;
+                
+            }
             [_menuTable reloadData];
+            [_menuTable headerEndRefreshing];
+            
+            
             NSLog(@"%@",_menuResponseModel);
         }
             break;
@@ -186,16 +216,10 @@
 -(void)requestFailed:(NSString *)errorStr
 {
     
+    [_menuTable headerEndRefreshing];
 }
 
--(void)interfacetest
-{
-    _productionModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:@"1"];
-    _productionModel.delegate = self;
-    
-    _productionModel.tag = 200;
-    [_productionModel postData];
-}
+
 
 -(void)shareBtnClicked:(GoodsModel *)goodModel
 {
@@ -203,6 +227,122 @@
     
     
     [CoreHelper UMShare:self shareText:goodModel.title shareImage:nil delegate:nil];
+}
+
+
+
+-(void)classfyBtnClick:(id)sender
+{
+    if(_dropDown == nil)
+    {
+        CGFloat f = ([_categoryArr count] > 5 ? 5 : [_categoryArr count]) * 40.0;
+        _dropDown = [[NIDropDown alloc]showDropDown:sender :&f :_categoryArr];
+        _dropDown.delegate = self;
+    }
+    else
+    {
+        [_dropDown hideDropDown:sender];
+        _dropDown = nil;
+    }
+}
+
+- (void) niDropDownDelegateMethod: (NIDropDown *) sender indexPath:(NSIndexPath *)indexPath {
+    
+    
+    NSLog(@"%d,",indexPath.row);
+    _dropDown = nil;
+    
+    
+    CategoriesModel *temp = [[CategoriesModel alloc] init];
+    
+    temp = [_menuResponseModel.categoriesArr objectAtIndex:indexPath.row];
+    
+    _menuRequest.cid = temp.cid;
+    
+    _start = 0;
+    _menuRequest.start = [NSString stringWithFormat:@"%d",_start];
+    
+    [_menuRequest postData];
+    
+}
+
+
+- (void)addHeader
+{
+    __unsafe_unretained typeof(self) wself = self;
+    // 添加下拉刷新头部控件
+    [_menuTable addHeaderWithCallback:^{
+        // 进入刷新状态就会回调这个Block
+        
+        wself.menuRequest.start = [NSString stringWithFormat:@"%d",wself.start];
+        [wself.menuRequest postData];
+    }];
+}
+
+-(void)volumeClick:(id)sender
+{
+    NSArray *temp  = [_sourceArr sortedArrayUsingComparator:^NSComparisonResult(GoodsModel *obj1,GoodsModel *obj2)
+                      {
+                          NSInteger num1 = [obj1.sales integerValue];
+                          NSInteger num2 = [obj2.sales integerValue];
+                          
+                          return _volumeFlag ? (num1 > num2 ? NSOrderedDescending : NSOrderedDescending) : (num1 < num2 ? NSOrderedDescending : NSOrderedDescending);
+
+                      }];
+    
+    _volumeFlag = !_volumeFlag;
+    
+    
+    [_sourceArr removeAllObjects];
+    for (id model in temp) {
+        [_sourceArr addObject:model];
+    }
+    
+    
+    NSLog(@"temp = %@",_sourceArr);
+    [_menuTable reloadData];
+}
+
+-(void)timeClick:(id)sender
+{
+//    NSArray *temp  = [_sourceArr sortedArrayUsingComparator:^NSComparisonResult(GoodsModel *obj1,GoodsModel *obj2)
+//                      {
+//                          NSComparisonResult result = [obj1. compare:obj2.sales];
+//                          return result == NSOrderedDescending;
+//                      }];
+//    
+//    
+//    [_sourceArr removeAllObjects];
+//    for (id model in temp) {
+//        [_sourceArr addObject:model];
+//    }
+//    
+//    
+//    NSLog(@"temp = %@",_sourceArr);
+//    [_menuTable reloadData];
+}
+
+-(void)interfacetest
+{
+    
+    NSArray *temp  = [_sourceArr sortedArrayUsingComparator:^NSComparisonResult(GoodsModel *obj1,GoodsModel *obj2)
+                      {
+                          NSInteger num1 = [obj1.nowprice integerValue];
+                          NSInteger num2 = [obj2.nowprice integerValue];
+                          
+                          return _priceFlag ? (num1 > num2 ? NSOrderedDescending : NSOrderedDescending) : (num1 < num2 ? NSOrderedDescending : NSOrderedDescending);
+                          
+                      }];
+    
+    _priceFlag = !_priceFlag;
+    
+    
+    [_sourceArr removeAllObjects];
+    for (id model in temp) {
+        [_sourceArr addObject:model];
+    }
+    NSLog(@"temp = %@",_sourceArr);
+    [_menuTable reloadData];
 }
 
 @end
