@@ -13,7 +13,7 @@
 
 -(id)initWithDic:(NSDictionary *)dic
 {
-    self = [super self];
+    self = [super init];
     if (self) {
         
         _img = [[NSURL alloc] init];
@@ -22,6 +22,10 @@
         _title = [[NSString alloc] init];
         _summary= [[NSString alloc] init];
         
+        _description = [[NSString alloc] init];
+        _views = [[NSString alloc] init];
+        _commentnum = [[NSString alloc] init];
+        
         
         
         _img = [NSURL URLWithString: [safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -29,6 +33,11 @@
         _dateLine =  [CoreHelper timeStampToDate:safeString([dic objectForKey:@"dateline"])] ;
         _summary = safeString([dic objectForKey:@"summary"]);
         _title = safeString([dic objectForKey:@"title"]);
+        
+        
+        _description = safeString([dic objectForKey:@"descrition"]);
+        _views = safeString([dic objectForKey:@"views"]);
+        _commentnum = safeString([dic objectForKey:@"commentnum"]);
     }
     return self;
 }

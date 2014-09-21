@@ -155,13 +155,45 @@
     _headView.totalPagesCount = ^NSInteger(void){
         return [arr count];
     };
+    
+    __unsafe_unretained typeof(self) wself = self;
     _headView.TapActionBlock = ^(NSInteger pageIndex){
+        
         
         SliderModel *tempSlider = [[SliderModel alloc] init];
         tempSlider = [arr objectAtIndex:pageIndex];
         
         NSLog(@"点击了第%d个,%@",pageIndex,tempSlider.type);
         
+        
+        switch ([tempSlider.type integerValue]) {
+            case 1:
+            {
+                WaterDetailViewController *wdVC = [[WaterDetailViewController alloc] initWithTitle:@"图片详情" andPid:tempSlider.type_id];
+                [wself presentViewController:wdVC animated:YES completion:nil];
+            }
+                break;
+            case 2:
+            {
+                InfoDetailViewController *idVC = [[InfoDetailViewController alloc] initWithNewsId:tempSlider.type_id];
+                [idVC showBackButton];
+                [wself.navigationController pushViewController:idVC animated:YES];
+            }
+                break;
+            case 3:
+            {
+                GoodsViewController *gVC = [[GoodsViewController alloc] initWithGid:tempSlider.type_id Title:@"商品详情"];
+                [wself presentViewController:gVC animated:YES completion:nil];
+            }
+                break;
+            case 4:
+            {
+//                CouponDetailViewController *cdVC = [[CouponDetailViewController alloc] init]
+            }
+                break;
+            default:
+                break;
+        }
         
     };
     
@@ -201,34 +233,15 @@
 }
 
 
--(void)sliderItemClick:(NSInteger)tag
-{
-    //
-    
-    SliderModel *model = [_mainResponseModel.sliderArr objectAtIndex:tag];
-    
-    switch ([model.type integerValue]) {
-        case 1:
-        {
-            WaterDetailViewController *wdVC = [[WaterDetailViewController alloc] initWithTitle:@"图片详情" andPid:model.type_id];
-            [self presentViewController:wdVC animated:YES completion:nil];
-        }
-            break;
-        case 2:
-        {
-            InfoDetailViewController *idVC = [[InfoDetailViewController alloc] init];
-            [self presentViewController:idVC animated:YES completion:nil];
-        }
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        default:
-            break;
-    }
-    
-}
+//-(void)sliderItemClick:(NSInteger)tag
+//{
+//    //
+//    
+//    SliderModel *model = [_mainResponseModel.sliderArr objectAtIndex:tag];
+//    
+//
+//    
+//}
 
 
 

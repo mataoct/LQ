@@ -39,6 +39,27 @@
     return self;
 }
 
+-(id)initWithNewsId:(NSString *)newsId
+{
+    self = [super init];
+    if (self) {
+        //
+        
+        _model = [[InfoModel alloc] init];
+        
+        _newsId = newsId;
+        
+        _requestModel = [[InfoDetailRequestModel alloc] initWithNewID:_newsId];
+        _requestModel.delegate = self;
+        [_requestModel postData];
+        
+        self.title = @"活动资讯详情";
+        
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,16 +90,25 @@
     self.view.backgroundColor = BackGray;
     
     
+
+    
+    [self.view addSubview:temp];
+    
+    
+    [self fillWithModel];
+}
+
+
+-(void)fillWithModel
+{
     
     _titleLabel.text = _model.title;
     _timeLabel.text = _model.dateLine;
     [_mainImageview setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
     _contentText.text = _model.summary;
     
-    
-    [self.view addSubview:temp];
-    
 }
+
   - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -95,5 +125,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)requestSuccess:(BaseResponseModel *)model
+{
+    _model = (InfoModel *)model;
+    [self fillWithModel];
+}
+
+-(void)requestFailed:(NSString *)errorStr
+{
+    NSLog(@"%@",errorStr);
+}
+
+
 
 @end

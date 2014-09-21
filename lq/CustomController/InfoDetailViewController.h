@@ -9,7 +9,11 @@
 #import "LQ7ViewController.h"
 #import "InfoModel.h"
 #import "UIImageView+WebCache.h"
-@interface InfoDetailViewController : LQ7ViewController
+
+#import "InfoDetailRequestModel.h"
+
+
+@interface InfoDetailViewController : LQ7ViewController<RequestModelDelegate>
 
 @property (nonatomic,strong) InfoModel *model;
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -17,6 +21,14 @@
 @property (nonatomic,strong) UIImageView *mainImageview;
 @property (nonatomic,strong) UITextView *contentText;
 
--(id)initWithModel:(InfoModel *)model; 
+@property (nonatomic,strong) NSString *newsId;
+
+@property (nonatomic,strong) InfoDetailRequestModel *requestModel;
+
+-(id)initWithModel:(InfoModel *)model;
+
+
+
+-(id)initWithNewsId:(NSString *)newsId;
 
 @end

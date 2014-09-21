@@ -141,6 +141,7 @@
 		A075DEA219BDE55F0059E02D /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A075DE9C19BDE55F0059E02D /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A075DEA319BDE55F0059E02D /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A075DE9E19BDE55F0059E02D /* PullRefreshTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A089303819B07A7900F42B3D /* CartTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A089303719B07A7900F42B3D /* CartTableViewCell2.m */; };
+		A08EF40D19CF297C00A00C79 /* InfoDetailRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */; };
 		A096EB4619B2DE9100887462 /* DiscountTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A096EB4519B2DE9100887462 /* DiscountTableViewCell2.m */; };
 		A096EB4919B2DFF600887462 /* Integral2CouponRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096EB4819B2DFF600887462 /* Integral2CouponRequestModel.m */; };
 		A096EB4C19B31F6900887462 /* updateOrderRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096EB4B19B31F6900887462 /* updateOrderRequestModel.m */; };
@@ -490,6 +491,8 @@
 		A075DE9E19BDE55F0059E02D /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		A089303619B07A7900F42B3D /* CartTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewCell2.h; path = CustomView/Cell/CartTableViewCell2.h; sourceTree = "<group>"; };
 		A089303719B07A7900F42B3D /* CartTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewCell2.m; path = CustomView/Cell/CartTableViewCell2.m; sourceTree = "<group>"; };
+		A08EF40B19CF297C00A00C79 /* InfoDetailRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDetailRequestModel.h; path = Model/InfoDetailRequestModel.h; sourceTree = "<group>"; };
+		A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDetailRequestModel.m; path = Model/InfoDetailRequestModel.m; sourceTree = "<group>"; };
 		A096EB4419B2DE9100887462 /* DiscountTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscountTableViewCell2.h; path = CustomView/Cell/DiscountTableViewCell2.h; sourceTree = "<group>"; };
 		A096EB4519B2DE9100887462 /* DiscountTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscountTableViewCell2.m; path = CustomView/Cell/DiscountTableViewCell2.m; sourceTree = "<group>"; };
 		A096EB4719B2DFF600887462 /* Integral2CouponRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Integral2CouponRequestModel.h; path = ASIHttpRequest/Integral2CouponRequestModel.h; sourceTree = "<group>"; };
@@ -1081,6 +1084,8 @@
 				A096EB4819B2DFF600887462 /* Integral2CouponRequestModel.m */,
 				A096EB4A19B31F6900887462 /* updateOrderRequestModel.h */,
 				A096EB4B19B31F6900887462 /* updateOrderRequestModel.m */,
+				A08EF40B19CF297C00A00C79 /* InfoDetailRequestModel.h */,
+				A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -2089,6 +2094,7 @@
 				A002EDBE1991188400141C49 /* CommentTableViewCell.m in Sources */,
 				A0FBD7C619976076004520B8 /* OrderDetailViewController.m in Sources */,
 				A09EC197195296FA0036219B /* LQUITabBarController.m in Sources */,
+				A08EF40D19CF297C00A00C79 /* InfoDetailRequestModel.m in Sources */,
 				A096EB4C19B31F6900887462 /* updateOrderRequestModel.m in Sources */,
 				A0C7AE0E19A9D1C200303B8A /* AddressResponseModel.m in Sources */,
 				A0FBD7CC199765B2004520B8 /* OrderDetailRequestModel.m in Sources */,
