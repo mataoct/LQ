@@ -114,6 +114,10 @@
         if (defaultCell.model.status != 0 ) {
             [defaultCell.payBtn setHidden:YES];
         }
+        else
+        {
+            [defaultCell.payBtn setHidden:NO];
+        }
         
         
         return defaultCell;

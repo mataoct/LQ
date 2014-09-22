@@ -48,6 +48,38 @@
     return self;
 }
 
+-(id)initWithTitle:(NSString *)str andCouponId:(NSString *)couponId
+{
+    self = [super initWithTitle:str];
+    if (self) {
+        //
+        _model = [[CouponModel alloc] init];
+        _coupondId = [[NSString alloc] init];
+        
+        _coupondId = couponId;
+        
+        _couponDetailRequestModel = [[CouponDetailRequestModel alloc] initWithCouponId:_coupondId];
+        
+        _couponDetailRequestModel.delegate = self;
+        _couponDetailRequestModel.tag = 10004;
+        [_couponDetailRequestModel postData];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(keyboardWillShow:)
+													 name:UIKeyboardWillShowNotification
+												   object:nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(keyboardWillHide:)
+													 name:UIKeyboardWillHideNotification
+												   object:nil];
+        
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -128,20 +160,8 @@
     //填充UI
     
 
-    
-    _titleLabel.text = _model.title;
-    [_imgView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
-    _extcreditValueLabel.text = [NSString stringWithFormat:@"%@分",_model.extrcedit];
-    _expireValueLabel.text = _model.expiry;
-    _detailText.text = _model.myDescription;
-    _detailText.editable = false;
-    
-    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
-    _requestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_model.couponid];
-    _requestModel.delegate = self;
-    _requestModel.tag = 10001;
-    _responseModel = [[CommentListResponseModel alloc] init];
-    [_requestModel postDataCoupon];
+    [self refillLayout];
+
     
     _integralRequestModel = [[Integral2CouponRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     _integralRequestModel.delegate = self;
@@ -205,6 +225,23 @@
     [doneBtn setBackgroundImage:selectedSendBtnBackground forState:UIControlStateSelected];
     [_containerView addSubview:doneBtn];
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+}
+
+-(void)refillLayout
+{
+    _titleLabel.text = _model.title;
+    [_imgView setImageWithURL:_model.img placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
+    _extcreditValueLabel.text = [NSString stringWithFormat:@"%@分",_model.extrcedit];
+    _expireValueLabel.text = _model.expiry;
+    _detailText.text = _model.myDescription;
+    _detailText.editable = false;
+    
+    _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
+    _requestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_model.couponid];
+    _requestModel.delegate = self;
+    _requestModel.tag = 10001;
+    _responseModel = [[CommentListResponseModel alloc] init];
+    [_requestModel postDataCoupon];
 }
 
 - (void)didReceiveMemoryWarning
@@ -295,6 +332,11 @@
             }
         }
             break;
+        case 10004:
+        {
+            _model = (CouponModel *)model;
+            [self refillLayout];
+        }
             
         default:
             break;

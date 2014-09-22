@@ -89,12 +89,7 @@
     temp.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = BackGray;
     
-    
-
-    
     [self.view addSubview:temp];
-    
-    
     [self fillWithModel];
 }
 

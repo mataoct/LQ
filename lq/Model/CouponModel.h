@@ -10,7 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "CoreHelper.h"
 
-@interface CouponModel : NSObject
+@interface CouponModel : BaseResponseModel
 
 @property (nonatomic,strong) NSString *couponid;
 @property (nonatomic,strong) NSString *title;

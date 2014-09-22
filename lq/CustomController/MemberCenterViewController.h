@@ -19,6 +19,8 @@
 #import "BalanceViewController.h"
 #import "MyHistoryViewController.h"
 
+#import "SettingViewController.h"
+
 @interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIButton *settingBtn;

@@ -409,7 +409,11 @@
 
 -(void)settingBtnClick:(id)sender
 {
-    NSLog(@"setting click");
+//    NSLog(@"setting click");
+    
+    
+    SettingViewController *setVC = [[SettingViewController alloc] initWithTitle:@"设置"];
+    [self presentViewController:setVC animated:YES completion:nil];
 }
 
 -(void)punchClick

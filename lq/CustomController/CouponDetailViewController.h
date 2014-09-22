@@ -14,6 +14,8 @@
 #import "UserCommentRequestModel.h"
 #import "Integral2CouponRequestModel.h"
 
+#import "CouponDetailRequestModel.h"
+
 @interface CouponDetailViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
 
 @property (nonatomic,strong) UITableView *commentTable;
@@ -36,13 +38,16 @@
 @property (nonatomic,strong) UserCommentRequestModel *userCommentRequestModel;
 @property (nonatomic,strong) Integral2CouponRequestModel *integralRequestModel;
 
-
 @property (nonatomic,strong) UIView *containerView;
 @property (nonatomic,strong) HPGrowingTextView *textView;
 
 
+@property (nonatomic,strong) CouponDetailRequestModel *couponDetailRequestModel;
 
+@property (nonatomic,strong) NSString *coupondId;
 
 -(id)initWithTitle:(NSString *)str andModel:(CouponModel *)model;
+
+-(id)initWithTitle:(NSString *)str andCouponId:(NSString *)couponId;
 
 @end

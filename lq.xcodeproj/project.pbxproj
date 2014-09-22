@@ -100,6 +100,10 @@
 		A02712BA1988F7A50042F6FB /* CommentReuqestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A02712B91988F7A50042F6FB /* CommentReuqestModel.m */; };
 		A034656E19AF69F800032526 /* FavRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A034656D19AF69F800032526 /* FavRequestModel.m */; };
 		A034657119AF838500032526 /* AddToCartRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A034657019AF838500032526 /* AddToCartRequestModel.m */; };
+		A035A45019D0576900277240 /* CouponDetailRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A035A44F19D0576900277240 /* CouponDetailRequestModel.m */; };
+		A035A45319D05DF100277240 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A035A45219D05DF100277240 /* SettingViewController.m */; };
+		A035A45619D0651E00277240 /* CusSettingBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A035A45519D0651E00277240 /* CusSettingBtn.m */; };
+		A035A45919D06D0E00277240 /* UserModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A035A45819D06D0E00277240 /* UserModifyViewController.m */; };
 		A03E0BB0196AB9C8007C5612 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E0BAF196AB9C8007C5612 /* RegistViewController.m */; };
 		A0413CBB199A4D3100726C51 /* WaterFlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CBA199A4D3100726C51 /* WaterFlowModel.m */; };
 		A0413CC1199A4E1700726C51 /* WaterFlowResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CC0199A4E1700726C51 /* WaterFlowResponseModel.m */; };
@@ -409,6 +413,14 @@
 		A034656D19AF69F800032526 /* FavRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FavRequestModel.m; path = Model/FavRequestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A034656F19AF838500032526 /* AddToCartRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToCartRequestModel.h; path = Model/AddToCartRequestModel.h; sourceTree = "<group>"; };
 		A034657019AF838500032526 /* AddToCartRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddToCartRequestModel.m; path = Model/AddToCartRequestModel.m; sourceTree = "<group>"; };
+		A035A44E19D0576900277240 /* CouponDetailRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponDetailRequestModel.h; path = Model/CouponDetailRequestModel.h; sourceTree = "<group>"; };
+		A035A44F19D0576900277240 /* CouponDetailRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponDetailRequestModel.m; path = Model/CouponDetailRequestModel.m; sourceTree = "<group>"; };
+		A035A45119D05DF100277240 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = CustomController/SettingViewController.h; sourceTree = "<group>"; };
+		A035A45219D05DF100277240 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = CustomController/SettingViewController.m; sourceTree = "<group>"; };
+		A035A45419D0651E00277240 /* CusSettingBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CusSettingBtn.h; path = CustomView/CusSettingBtn.h; sourceTree = "<group>"; };
+		A035A45519D0651E00277240 /* CusSettingBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CusSettingBtn.m; path = CustomView/CusSettingBtn.m; sourceTree = "<group>"; };
+		A035A45719D06D0E00277240 /* UserModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModifyViewController.h; path = CustomController/UserModifyViewController.h; sourceTree = "<group>"; };
+		A035A45819D06D0E00277240 /* UserModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModifyViewController.m; path = CustomController/UserModifyViewController.m; sourceTree = "<group>"; };
 		A03E0BAE196AB9C8007C5612 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistViewController.h; path = CustomController/RegistViewController.h; sourceTree = "<group>"; };
 		A03E0BAF196AB9C8007C5612 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistViewController.m; path = CustomController/RegistViewController.m; sourceTree = "<group>"; };
 		A0413CB9199A4D3100726C51 /* WaterFlowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaterFlowModel.h; path = Model/WaterFlowModel.h; sourceTree = "<group>"; };
@@ -1012,6 +1024,8 @@
 				A0FBCE7419543D17000146C3 /* MenuItemView.m */,
 				A09AA75619C523000024DC2F /* DisLineLabel.h */,
 				A09AA75719C523000024DC2F /* DisLineLabel.m */,
+				A035A45419D0651E00277240 /* CusSettingBtn.h */,
+				A035A45519D0651E00277240 /* CusSettingBtn.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -1086,6 +1100,8 @@
 				A096EB4B19B31F6900887462 /* updateOrderRequestModel.m */,
 				A08EF40B19CF297C00A00C79 /* InfoDetailRequestModel.h */,
 				A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */,
+				A035A44E19D0576900277240 /* CouponDetailRequestModel.h */,
+				A035A44F19D0576900277240 /* CouponDetailRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -1723,6 +1739,10 @@
 				A06E0A8919B998430041D9A2 /* IntegralViewController.m */,
 				A06E0A9A19B9C3C20041D9A2 /* BalanceViewController.h */,
 				A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */,
+				A035A45119D05DF100277240 /* SettingViewController.h */,
+				A035A45219D05DF100277240 /* SettingViewController.m */,
+				A035A45719D06D0E00277240 /* UserModifyViewController.h */,
+				A035A45819D06D0E00277240 /* UserModifyViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1984,6 +2004,7 @@
 				A05E4B19199F867600A7C424 /* MyCommentViewController.m in Sources */,
 				A05E4B1F199FA30400A7C424 /* UserCouponViewController.m in Sources */,
 				A010B0D31982448300E170DA /* MainResponseModel.m in Sources */,
+				A035A45319D05DF100277240 /* SettingViewController.m in Sources */,
 				A09EC158195278FC0036219B /* NSObject+SBJSON.m in Sources */,
 				A09AA75819C523000024DC2F /* DisLineLabel.m in Sources */,
 				A0A53CDF1952B2C000DBD397 /* LQUINavigationController.m in Sources */,
@@ -2010,6 +2031,7 @@
 				A061424219B4BD1300ED1E7E /* MyHistoryViewController.m in Sources */,
 				A05E4B0D199F7DFA00A7C424 /* MyCommentModel.m in Sources */,
 				A09EC15D195278FC0036219B /* SBJsonWriter.m in Sources */,
+				A035A45919D06D0E00277240 /* UserModifyViewController.m in Sources */,
 				A05E4B04199E94D500A7C424 /* HKBaiduMapViewController.mm in Sources */,
 				A0ECE335196B94B9003E0BE3 /* MemberCenterViewController.m in Sources */,
 				A0A53CE81952BF1B00DBD397 /* MainViewController.m in Sources */,
@@ -2085,6 +2107,7 @@
 				A0E71C5019CD815C001F4C24 /* MJRefreshConst.m in Sources */,
 				A05E4B10199F7F4F00A7C424 /* MyCommentResponseModel.m in Sources */,
 				A09EC16E195278FC0036219B /* MKAnnotationView+WebCache.m in Sources */,
+				A035A45019D0576900277240 /* CouponDetailRequestModel.m in Sources */,
 				A05E4B22199FAEA200A7C424 /* MyFavTableViewCell.m in Sources */,
 				A0B10D371969A215003CFAC4 /* LoginRequestModel.m in Sources */,
 				A0FBCE7519543D17000146C3 /* MenuItemView.m in Sources */,
@@ -2122,6 +2145,7 @@
 				A0FBCE7919544EC3000146C3 /* DiscountTableViewController.m in Sources */,
 				A09EC175195278FC0036219B /* UIImageView+WebCache.m in Sources */,
 				A096EB4619B2DE9100887462 /* DiscountTableViewCell2.m in Sources */,
+				A035A45619D0651E00277240 /* CusSettingBtn.m in Sources */,
 				A044C3B31980B47F00D2139F /* BaseResponseModel.m in Sources */,
 				A09EC17B195279420036219B /* Base64codeFunc.m in Sources */,
 				A09EC159195278FC0036219B /* NSString+SBJSON.m in Sources */,
