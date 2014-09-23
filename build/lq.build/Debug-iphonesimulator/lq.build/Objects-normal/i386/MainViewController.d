@@ -30,6 +30,10 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
   /WorkSpace/LQ/lq/Model/HistoryModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceResponseModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceDetailModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
   /WorkSpace/LQ/lq/ASIHttpRequest/Integral2CouponRequestModel.h \
@@ -40,11 +44,14 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ/lq/CustomView/HPGrowingTextView/HPGrowingTextView.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CommentTableViewCell.h \
   /WorkSpace/LQ/lq/Model/UserCommentRequestModel.h \
+  /WorkSpace/LQ/lq/Model/CouponDetailRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/LQUINavigationController.h \
   /WorkSpace/LQ/lq/Model/UserInfoRequestModel.h \
   /WorkSpace/LQ/lq/Model/AnotherUserInfoResponseModel.h \
   /WorkSpace/LQ/lq/Model/AddressResponseModel.h \
   /WorkSpace/LQ/lq/Model/SignResponseModel.h \
+  /WorkSpace/LQ/lq/MJRefresh/MJRefresh.h \
+  /WorkSpace/LQ/lq/MJRefresh/UIScrollView+MJRefresh.h \
   /WorkSpace/LQ/lq/CustomController/WaterFlowViewController.h \
   /WorkSpace/LQ/lq/CustomView/WaterFlowView/WaterFlowView.h \
   /WorkSpace/LQ/lq/CustomView/WaterFlowView/WaterFlowViewCell.h \
@@ -59,8 +66,18 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/LoginViewController.h \
   /WorkSpace/LQ/lq/CustomController/RegistViewController.h \
   /WorkSpace/LQ/lq/Model/RegistModel.h \
   /WorkSpace/LQ/lq/Model/RegisterResponseModel.h \
-  /WorkSpace/LQ/lq/Model/LoginRequestModel.h
+  /WorkSpace/LQ/lq/Model/LoginRequestModel.h \
+  /WorkSpace/LQ/lq/CustomController/Water2ViewController.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/CollectionCell.h \
+  /WorkSpace/LQ/lq/CustomController/InfoDetailViewController.h \
+  /WorkSpace/LQ/lq/Model/InfoModel.h \
+  /WorkSpace/LQ/lq/Model/InfoDetailRequestModel.h \
+  /WorkSpace/LQ/lq/CustomController/GoodsViewController.h \
+  /WorkSpace/LQ/lq/Model/ProdutionResponseModel.h \
+  /WorkSpace/LQ/lq/Model/ProductionRequestModel.h \
+  /WorkSpace/LQ/lq/CustomView/DisLineLabel.h

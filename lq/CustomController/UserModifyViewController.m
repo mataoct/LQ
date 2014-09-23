@@ -27,6 +27,43 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    _user = [[UserInfoModel alloc] init];
+    _user = [CoreHelper getLoginInfo];
+    
+    
+    _headLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 44, 24)];
+    _headLabel.font = [UIFont systemFontOfSize:16];
+    _headLabel.text = @"头像";
+    
+    _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(210, 9, 72, 72)];
+    _headImg.userInteractionEnabled = YES;
+    [_headImg setImageWithURL:_user.avatar placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
+    
+    
+    
+    _headImg.layer.cornerRadius = 36.0;
+    _headImg.layer.masksToBounds = YES;
+    _headImg.userInteractionEnabled = YES;
+    
+    
+    UITapGestureRecognizer *tapHeadImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHeadImage:)];
+    [_headImg addGestureRecognizer:tapHeadImage];
+    
+    _photoSheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"相机" otherButtonTitles:@"照片", nil];
+    _photoSheet.delegate = self;
+    
+    
+    
+    
+    _headView = [[UIView alloc] initWithFrame:CGRectMake(10, 74, 300, 90)];
+    _headView.backgroundColor = [UIColor whiteColor];
+    
+    [_headView addSubview:_headImg];
+    [_headView addSubview:_headLabel];
+    
+    [self.view addSubview:_headView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +82,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)tapHeadImage:(UIGestureRecognizer *)gesture
+{
+//    [_photoSheet showFromTabBar:self.tabBarController.tabBar];
+    
+    [_photoSheet showInView:self.view];
+}
 
 @end

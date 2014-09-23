@@ -24,6 +24,7 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ/lq/SDWebImage/SDImageCacheDelegate.h \
   /WorkSpace/LQ/lq/Model/FavRequestModel.h \
   /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
+  /WorkSpace/LQ/lq/CustomView/DisLineLabel.h \
   /WorkSpace/LQ/lq/CustomController/GoodsViewController.h \
   /WorkSpace/LQ/lq/CustomController/LQUIViewController.h \
   /WorkSpace/LQ/lq/CustomView/CycleScrollView/CycleScrollView.h \
@@ -32,4 +33,7 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ/lq/Model/CommentModel.h \
   /WorkSpace/LQ/lq/Model/CommentReuqestModel.h \
   /WorkSpace/LQ/lq/Model/CommentListResponseModel.h \
-  /WorkSpace/LQ/lq/Model/UserCommentRequestModel.h
+  /WorkSpace/LQ/lq/Model/UserCommentRequestModel.h \
+  /WorkSpace/LQ/lq/CustomView/NIDropDown/NIDropDown.h \
+  /WorkSpace/LQ/lq/MJRefresh/MJRefresh.h \
+  /WorkSpace/LQ/lq/MJRefresh/UIScrollView+MJRefresh.h

@@ -8,6 +8,7 @@
 
 #import "LQUIViewController.h"
 #import "CusSettingBtn.h"
+#import "UserModifyViewController.h"
 
 @interface SettingViewController : LQUIViewController
 

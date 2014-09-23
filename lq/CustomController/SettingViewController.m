@@ -44,6 +44,10 @@
     
     _infoModify = [[CusSettingBtn alloc] initWithFrame:CGRectMake(0, 128, 320, 43)];
     _infoModify.textLabel.text = @"资料修改";
+    
+    
+    
+    [_infoModify addTarget:self action:@selector(modifyUserInfoAction:) forControlEvents:UIControlEventTouchUpInside];
 //    
 //    @property (nonatomic,strong) CusSettingBtn *clearPic;
 //    @property (nonatomic,strong) CusSettingBtn *clearData;
@@ -96,6 +100,13 @@
     
     
     
+}
+
+
+-(void)modifyUserInfoAction:(id)sender
+{
+    UserModifyViewController *umVC = [[UserModifyViewController alloc] initWithTitle:@"修改信息"];
+    [self presentViewController:umVC animated:YES completion:nil];
 }
 
 /*

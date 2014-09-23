@@ -7,7 +7,18 @@
 //
 
 #import "LQUIViewController.h"
+#import "UserInfoModel.h"
+#import "UIImageView+WebCache.h"
 
-@interface UserModifyViewController : LQUIViewController
+@interface UserModifyViewController : LQUIViewController<UIActionSheetDelegate>
+
+@property (nonatomic,strong) UserInfoModel *user;
+
+@property (nonatomic,strong) UIImageView *headImg;
+@property (nonatomic,strong) UILabel *headLabel;
+@property (nonatomic,strong) UIView *headView;
+
+@property (nonatomic,strong) UIActionSheet *photoSheet;
+
 
 @end
