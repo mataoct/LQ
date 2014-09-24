@@ -50,7 +50,7 @@
 
 @property (nonatomic,strong) UIButton *logoutBtn;
 
-@property (nonatomic,strong) UIActionSheet *photoSheet;
+//@property (nonatomic,strong) UIActionSheet *photoSheet;
 
 @property (nonatomic,strong) UserInfoRequestModel *requestModel;
 @property (nonatomic,strong) UserInfoRequestModel *signRequestModel;

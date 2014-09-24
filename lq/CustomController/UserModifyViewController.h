@@ -10,7 +10,7 @@
 #import "UserInfoModel.h"
 #import "UIImageView+WebCache.h"
 
-@interface UserModifyViewController : LQUIViewController<UIActionSheetDelegate>
+@interface UserModifyViewController : LQUIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UserInfoModel *user;
 
@@ -19,6 +19,12 @@
 @property (nonatomic,strong) UIView *headView;
 
 @property (nonatomic,strong) UIActionSheet *photoSheet;
+
+
+@property (nonatomic,strong) UILabel *nameLabel;
+@property (nonatomic,strong) UITextField *nameTf;
+@property (nonatomic,strong) UILabel *nickLabel;
+@property (nonatomic,strong) UITextField *nickTf;
 
 
 @end
