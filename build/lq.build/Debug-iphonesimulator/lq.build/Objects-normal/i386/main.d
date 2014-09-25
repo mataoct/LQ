@@ -111,6 +111,9 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \
   /WorkSpace/LQ/lq/CustomView/CusSettingBtn.h \
   /WorkSpace/LQ/lq/CustomController/UserModifyViewController.h \
+  /WorkSpace/LQ/lq/Model/UpdateUserInfoModel.h \
+  /WorkSpace/LQ/lq/CustomController/PwdModifyViewController.h \
+  /WorkSpace/LQ/lq/Model/PasswordRequestModel.h \
   /WorkSpace/LQ/lq/CustomView/CartViewController.h \
   /WorkSpace/LQ/lq/Model/CartRequestModel.h \
   /WorkSpace/LQ/lq/Model/ShoppingCartListResponseModel.h \
@@ -127,6 +130,7 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/alipay/AlixLibService.h \
   /WorkSpace/LQ/lq/alipay/PartnerConfig.h \
   /WorkSpace/LQ/lq/alipay/RSA/DataSigner.h \
+  /WorkSpace/LQ/lq/Model/DelCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/InfoViewController.h \
   /WorkSpace/LQ/lq/Model/InfoRequestModel.h \
   /WorkSpace/LQ/lq/Model/InfoResponseModel.h \

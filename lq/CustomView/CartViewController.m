@@ -10,6 +10,15 @@
 
 @interface CartViewController ()
 
+@property (nonatomic,strong) UIView *emptyView;
+
+@property (nonatomic,strong) UIImageView *emptyImageView;
+@property (nonatomic,strong) UILabel *emptyLabel;
+@property (nonatomic,strong) UIButton *emptyBtn;
+
+
+@property (nonatomic,strong) UITabBarItem *rightButton;
+
 @end
 
 @implementation CartViewController
@@ -26,11 +35,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
     _requestModel = [[CartRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
     
     _selectDic = [[NSMutableDictionary alloc] init];
     
+    _delRequestModel = [[DelCartRequestModel alloc] init];
+    
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 13, 24);
+    [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(deleteCheckedItem:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    self.navigationItem.rightBarButtonItem = back;
+    
+    _emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 20-44 - 60 - 50)];
+    _emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(108, 108, 104, 94)];
+    _emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 212, 320, 20)];
+    _emptyBtn = [[UIButton alloc] initWithFrame:CGRectMake(95, 282, 130, 36)];
+    
+    [_emptyImageView setImage:[UIImage imageNamed:@"购物车-空.png"]];
+    _emptyLabel.text = @"您的购物车还是空的，赶紧去挑选几件吧";
+    _emptyLabel.font = [UIFont systemFontOfSize:13];
+    _emptyLabel.textAlignment = NSTextAlignmentCenter;
+    _emptyLabel.textColor = [UIColor grayColor];
+    
+    [_emptyBtn setTitle:@"去逛逛" forState:UIControlStateNormal];
+    _emptyBtn.layer.cornerRadius = 4;
+    _emptyBtn.layer.masksToBounds = YES;
+    _emptyBtn.backgroundColor = DarkGreen;
+    _emptyBtn.font = [UIFont systemFontOfSize:16];
+    
+    [_emptyBtn addTarget:self action:@selector(goShopping:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    _emptyImageView.userInteractionEnabled =YES;
+    _emptyView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goShopping:)];
+    [_emptyView addGestureRecognizer:tapGesture];
+    
+    [_emptyView addSubview:_emptyImageView];
+    [_emptyView addSubview:_emptyLabel];
+    [_emptyView addSubview:_emptyBtn];
+    
+    
+    
+    
+    
+    //tableView
     _cartTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 20-44 - 60 - 50) style:UITableViewStylePlain];
     _priceCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 20)];
     _priceCountValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 20, 120, 20)];
@@ -65,8 +120,15 @@
     _requestModel.tag = 10001;
 //    [_requestModel postData];
     
+    
+    [self.view addSubview:_emptyView];
     [self.view addSubview:_cartTable];
     [self.view addSubview:_footView];
+    
+    
+    _emptyView.hidden = YES;
+    _cartTable.hidden = YES;
+    _footView.hidden = YES;
     
     
     // Do any additional setup after loading the view.
@@ -109,6 +171,7 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.4];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -132,6 +195,20 @@
             [self presentViewController:orderDetailVC animated:YES completion:nil];
             
         }
+            break;
+        case 10003:
+        {
+            for (NSString *str in [_selectDic allKeys]) {
+                [_responseModel.cartArr removeObject:[_selectDic objectForKey:str]];
+            }
+            
+//            NSLog(@"select all %@",[[_selectDic allKeys] componentsJoinedByString:@","]);
+            
+            [self reLayoutViews];
+            [SVProgressHUD showSuccessWithStatus_custom:@"删除成功" duration:1.2];
+
+        }
+            break;
         default:
             break;
     }
@@ -141,11 +218,26 @@
 
 -(void)reLayoutViews
 {
-    [_cartTable reloadData];
-    _priceCountLabel.text = @"合计：";
-    _priceCountLabel.textColor = [UIColor blackColor];
-    _priceCountValueLabel.text = @"￥0.0";// [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
-    _priceCountValueLabel.textColor = [UIColor blackColor];
+    if ([_responseModel.cartArr count] > 0) {
+        _cartTable.hidden = false;
+        _footView.hidden = false;
+        _emptyView.hidden = true;
+        [_cartTable reloadData];
+        _priceCountLabel.text = @"合计：";
+        _priceCountLabel.textColor = [UIColor blackColor];
+        _priceCountValueLabel.text = @"￥0.0";// [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
+        _priceCountValueLabel.textColor = [UIColor blackColor];
+    }
+    else
+    {
+        _emptyView.hidden = false;
+        _cartTable.hidden = true;
+        _footView.hidden = true;
+        [_cartTable reloadData];
+    }
+    
+    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -210,9 +302,9 @@
     
     _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:[_selectDic allValues]];
     
-    [_signRequestModel postData];
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10002;
+    [_signRequestModel postData];
     
 }
 
@@ -232,6 +324,40 @@
     _priceCountValueLabel.text = [NSString stringWithFormat:@"￥%.2f",total];
     
 }
+
+-(void)goShopping:(id *)gesture
+{
+//    [self.tabBarController.tabBar setsel]
+    [self.tabBarController setSelectedIndex:2];
+    [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-3.png"]];
+}
+
+-(void)deleteCheckedItem:(id)sender
+{
+//    _responseModel.cartArr removeObjectAtIndex:
+    
+    
+    
+    _delRequestModel.uid = [CoreHelper getLoginUid];
+//    _delRequestModel.gid = [[_selectDic allKeys] componentsJoinedByString:@","];
+    
+//    _delRequestModel.gid =
+    
+    
+    ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
+    
+    temp = [_responseModel.cartArr  objectAtIndex:[[[_selectDic allKeys] objectAtIndex:0] intValue]];
+    
+    _delRequestModel.gid = temp.gid;
+    
+    _delRequestModel.tag = 10003;
+    [_delRequestModel postData];
+    
+    
+}
+
+
+
 
 
 @end

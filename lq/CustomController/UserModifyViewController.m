@@ -48,7 +48,7 @@
     _headLabel.text = @"头像";
     
     _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(210, 9, 72, 72)];
-    _headImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 9, 72, 72)];
+//    _headImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 9, 72, 72)];
     
     _headImg.userInteractionEnabled = YES;
     [_headImg setImageWithURL:_user.avatar placeholderImage:[UIImage imageNamed:@"头像-评论.png"] success:nil failure:nil];
@@ -64,7 +64,7 @@
     _headView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 90)];
     _headView.backgroundColor = [UIColor whiteColor];
     [_headView addSubview:_headImg];
-    [_headView addSubview:_headImg2];
+//    [_headView addSubview:_headImg2];
     [_headView addSubview:_headLabel];
     
     
@@ -269,7 +269,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == _nameTf || textField == _nickTf) {
         
-        NSLog(@"heheh");
         
         [textField resignFirstResponder];
     }
@@ -332,7 +331,10 @@
 
 -(void)pwdChange
 {
-    NSLog(@"hehehheeh") ;
+    //
+    
+    PwdModifyViewController * pmVC = [[PwdModifyViewController alloc] initWithTitle:@"修改密码"];
+    [self presentViewController:pmVC animated:YES completion:nil];
 }
 
 
@@ -379,7 +381,7 @@
     [_requestModel postData];
     
     
-    [_headImg2 setImage:[UIImage imageWithData:[[NSData alloc] initWithBase64EncodedString:_requestModel.avatar options:NSDataBase64DecodingIgnoreUnknownCharacters]]];
+//    [_headImg2 setImage:[UIImage imageWithData:[[NSData alloc] initWithBase64EncodedString:_requestModel.avatar options:NSDataBase64DecodingIgnoreUnknownCharacters]]];
     
     
 }

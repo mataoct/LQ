@@ -56,6 +56,8 @@
 		A0413CCD199A66CA00726C51 /* WaterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CCC199A66CA00726C51 /* WaterDetailViewController.m */; };
 		A044C3B31980B47F00D2139F /* BaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A044C3B21980B47F00D2139F /* BaseResponseModel.m */; };
 		A0521A2319D3177D004B00C0 /* UpdateUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */; };
+		A05C433319D3F1F800469F73 /* PwdModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C433219D3F1F800469F73 /* PwdModifyViewController.m */; };
+		A05C433619D3F9C100469F73 /* PasswordRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C433519D3F9C100469F73 /* PasswordRequestModel.m */; };
 		A05E4B04199E94D500A7C424 /* HKBaiduMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B03199E94D500A7C424 /* HKBaiduMapViewController.mm */; };
 		A05E4B07199F72FC00A7C424 /* AnotherUserInfoResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B06199F72FC00A7C424 /* AnotherUserInfoResponseModel.m */; };
 		A05E4B0A199F74EB00A7C424 /* UserInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B09199F74EB00A7C424 /* UserInfoRequestModel.m */; };
@@ -83,6 +85,8 @@
 		A06E0A9919B9BB1C0041D9A2 /* BalanceResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9819B9BB1C0041D9A2 /* BalanceResponseModel.m */; };
 		A06E0A9C19B9C3C20041D9A2 /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */; };
 		A06E4D9C19ADEAEA009E9278 /* SignResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */; };
+		A06E7B4419D410D500F72BE2 /* 购物车-空.png in Resources */ = {isa = PBXBuildFile; fileRef = A06E7B4319D410D500F72BE2 /* 购物车-空.png */; };
+		A06E7B4719D425CF00F72BE2 /* DelCartRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A06E7B4619D425CF00F72BE2 /* DelCartRequestModel.m */; };
 		A075DE9F19BDE55F0059E02D /* CYRefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A075DE9619BDE55F0059E02D /* CYRefreshTableFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A075DEA019BDE55F0059E02D /* CYRefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A075DE9819BDE55F0059E02D /* CYRefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A075DEA119BDE55F0059E02D /* CYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A075DE9A19BDE55F0059E02D /* CYTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -383,6 +387,10 @@
 		A044C3B21980B47F00D2139F /* BaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseResponseModel.m; path = Model/BaseResponseModel.m; sourceTree = "<group>"; };
 		A0521A2119D3177D004B00C0 /* UpdateUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoModel.h; path = Model/UpdateUserInfoModel.h; sourceTree = "<group>"; };
 		A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoModel.m; path = Model/UpdateUserInfoModel.m; sourceTree = "<group>"; };
+		A05C433119D3F1F800469F73 /* PwdModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PwdModifyViewController.h; path = CustomController/PwdModifyViewController.h; sourceTree = "<group>"; };
+		A05C433219D3F1F800469F73 /* PwdModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PwdModifyViewController.m; path = CustomController/PwdModifyViewController.m; sourceTree = "<group>"; };
+		A05C433419D3F9C100469F73 /* PasswordRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordRequestModel.h; path = Model/PasswordRequestModel.h; sourceTree = "<group>"; };
+		A05C433519D3F9C100469F73 /* PasswordRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordRequestModel.m; path = Model/PasswordRequestModel.m; sourceTree = "<group>"; };
 		A05E4B02199E94D500A7C424 /* HKBaiduMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKBaiduMapViewController.h; path = CustomController/HKBaiduMapViewController.h; sourceTree = "<group>"; };
 		A05E4B03199E94D500A7C424 /* HKBaiduMapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HKBaiduMapViewController.mm; path = CustomController/HKBaiduMapViewController.mm; sourceTree = "<group>"; };
 		A05E4B05199F72FC00A7C424 /* AnotherUserInfoResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherUserInfoResponseModel.h; path = Model/AnotherUserInfoResponseModel.h; sourceTree = "<group>"; };
@@ -437,6 +445,9 @@
 		A06E0A9B19B9C3C20041D9A2 /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BalanceViewController.m; path = CustomController/BalanceViewController.m; sourceTree = "<group>"; };
 		A06E4D9A19ADEAEA009E9278 /* SignResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignResponseModel.h; path = Model/SignResponseModel.h; sourceTree = "<group>"; };
 		A06E4D9B19ADEAEA009E9278 /* SignResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignResponseModel.m; path = Model/SignResponseModel.m; sourceTree = "<group>"; };
+		A06E7B4319D410D500F72BE2 /* 购物车-空.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车-空.png"; sourceTree = "<group>"; };
+		A06E7B4519D425CF00F72BE2 /* DelCartRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelCartRequestModel.h; path = Model/DelCartRequestModel.h; sourceTree = "<group>"; };
+		A06E7B4619D425CF00F72BE2 /* DelCartRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelCartRequestModel.m; path = Model/DelCartRequestModel.m; sourceTree = "<group>"; };
 		A075DE9519BDE55F0059E02D /* CYRefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRefreshTableFooterView.h; sourceTree = "<group>"; };
 		A075DE9619BDE55F0059E02D /* CYRefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRefreshTableFooterView.m; sourceTree = "<group>"; };
 		A075DE9719BDE55F0059E02D /* CYRefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -1019,6 +1030,10 @@
 				A035A44F19D0576900277240 /* CouponDetailRequestModel.m */,
 				A0521A2119D3177D004B00C0 /* UpdateUserInfoModel.h */,
 				A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */,
+				A05C433419D3F9C100469F73 /* PasswordRequestModel.h */,
+				A05C433519D3F9C100469F73 /* PasswordRequestModel.m */,
+				A06E7B4519D425CF00F72BE2 /* DelCartRequestModel.h */,
+				A06E7B4619D425CF00F72BE2 /* DelCartRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -1127,6 +1142,7 @@
 		A0839BC219D11AFE00C060F6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A06E7B4319D410D500F72BE2 /* 购物车-空.png */,
 				A0839BC319D11AFE00C060F6 /* bgArrow.png */,
 				A0839BC419D11AFE00C060F6 /* disline.png */,
 				A0839BC519D11AFE00C060F6 /* GrowingTextImg */,
@@ -1748,6 +1764,8 @@
 				A035A45219D05DF100277240 /* SettingViewController.m */,
 				A035A45719D06D0E00277240 /* UserModifyViewController.h */,
 				A035A45819D06D0E00277240 /* UserModifyViewController.m */,
+				A05C433119D3F1F800469F73 /* PwdModifyViewController.h */,
+				A05C433219D3F1F800469F73 /* PwdModifyViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1924,6 +1942,7 @@
 				A09EC16D195278FC0036219B /* readme.txt in Resources */,
 				A0839C3619D11AFE00C060F6 /* 首页_04.png in Resources */,
 				A0839C2D19D11AFE00C060F6 /* 标题-收藏.png in Resources */,
+				A06E7B4419D410D500F72BE2 /* 购物车-空.png in Resources */,
 				A0839C2319D11AFE00C060F6 /* 菜单栏-主页.png in Resources */,
 				A0839C2819D11AFE00C060F6 /* 收藏-已收藏.png in Resources */,
 				A0839C0919D11AFE00C060F6 /* logo-暂代.png in Resources */,
@@ -2089,6 +2108,7 @@
 				A0E71C5319CD815C001F4C24 /* UIScrollView+Extension.m in Sources */,
 				A0B10D3119693F6D003CFAC4 /* LoginViewController.m in Sources */,
 				A00504CD199273E100318806 /* InfoRequestModel.m in Sources */,
+				A06E7B4719D425CF00F72BE2 /* DelCartRequestModel.m in Sources */,
 				A09EC168195278FC0036219B /* Reachability.m in Sources */,
 				A05E4B1C199F9E5300A7C424 /* UserCouponResponseModel.m in Sources */,
 				A096EB4F19B3348D00887462 /* AddressViewController2.m in Sources */,
@@ -2104,7 +2124,9 @@
 				A09EC16F195278FC0036219B /* SDImageCache.m in Sources */,
 				A064D889198F689D007A7419 /* GoodsViewController.m in Sources */,
 				A0FBDAE4198E327A007484A7 /* MenuTableViewCell.m in Sources */,
+				A05C433619D3F9C100469F73 /* PasswordRequestModel.m in Sources */,
 				A09EC177195278FC0036219B /* SVProgressHUD.m in Sources */,
+				A05C433319D3F1F800469F73 /* PwdModifyViewController.m in Sources */,
 				A05E4B0A199F74EB00A7C424 /* UserInfoRequestModel.m in Sources */,
 				A06E0A8D19B9A6A70041D9A2 /* IntegralTableViewCell.m in Sources */,
 				A0B87DE71990DBFA003091C0 /* HPGrowingTextView.m in Sources */,

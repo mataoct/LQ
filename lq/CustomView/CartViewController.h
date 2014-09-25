@@ -15,6 +15,7 @@
 #import "SignatureResponseModel.h"
 
 #import "OrderDetailViewController.h"
+#import "DelCartRequestModel.h"
 
 @interface CartViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
@@ -31,4 +32,6 @@
 
 @property (nonatomic,strong) SignatureRequestModel *signRequestModel;
 @property (nonatomic,strong) SignatureResponseModel *signResponseModel;
+
+@property (nonatomic,strong) DelCartRequestModel *delRequestModel;
 @end

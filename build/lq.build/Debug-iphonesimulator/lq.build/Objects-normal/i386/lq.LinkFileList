@@ -89,6 +89,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UIScrollView+Extension.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LoginViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoRequestModel.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/DelCartRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/Reachability.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UserCouponResponseModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AddressViewController2.o
@@ -104,7 +105,9 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SDImageCache.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/GoodsViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MenuTableViewCell.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/PasswordRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/SVProgressHUD.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/PwdModifyViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UserInfoRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/IntegralTableViewCell.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/HPGrowingTextView.o
@@ -117,6 +120,7 @@
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/LoginRequestModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/MenuItemView.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AddressViewController.o
+/WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/UpdateUserInfoModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/AdModel.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/InfoViewController.o
 /WorkSpace/LQ/build/lq.build/Debug-iphonesimulator/lq.build/Objects-normal/i386/CommentTableViewCell.o

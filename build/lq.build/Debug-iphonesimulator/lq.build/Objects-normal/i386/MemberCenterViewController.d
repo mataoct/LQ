@@ -58,6 +58,9 @@ dependencies: \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \
   /WorkSpace/LQ/lq/CustomView/CusSettingBtn.h \
   /WorkSpace/LQ/lq/CustomController/UserModifyViewController.h \
+  /WorkSpace/LQ/lq/Model/UpdateUserInfoModel.h \
+  /WorkSpace/LQ/lq/CustomController/PwdModifyViewController.h \
+  /WorkSpace/LQ/lq/Model/PasswordRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/ShooInfoController.h \
   /WorkSpace/LQ/lq/Model/SellerInfoRequestModel.h \
   /WorkSpace/LQ/lq/Model/SellerInfoResponseModel.h \

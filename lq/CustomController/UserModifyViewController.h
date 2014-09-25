@@ -11,13 +11,14 @@
 #import "UIImageView+WebCache.h"
 #import "CusSettingBtn.h"
 #import "UpdateUserInfoModel.h"
+#import "PwdModifyViewController.h"
 
 @interface UserModifyViewController : LQUIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) UserInfoModel *user;
 
 @property (nonatomic,strong) UIImageView *headImg;
-@property (nonatomic,strong) UIImageView *headImg2;
+//@property (nonatomic,strong) UIImageView *headImg2;
 @property (nonatomic,strong) UILabel *headLabel;
 @property (nonatomic,strong) UIView *headView;
 
