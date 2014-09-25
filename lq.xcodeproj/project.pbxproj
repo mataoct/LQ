@@ -55,6 +55,7 @@
 		A0413CCA199A65BF00726C51 /* WaterDetailRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CC9199A65BF00726C51 /* WaterDetailRequestModel.m */; };
 		A0413CCD199A66CA00726C51 /* WaterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CCC199A66CA00726C51 /* WaterDetailViewController.m */; };
 		A044C3B31980B47F00D2139F /* BaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A044C3B21980B47F00D2139F /* BaseResponseModel.m */; };
+		A0521A2319D3177D004B00C0 /* UpdateUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */; };
 		A05E4B04199E94D500A7C424 /* HKBaiduMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B03199E94D500A7C424 /* HKBaiduMapViewController.mm */; };
 		A05E4B07199F72FC00A7C424 /* AnotherUserInfoResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B06199F72FC00A7C424 /* AnotherUserInfoResponseModel.m */; };
 		A05E4B0A199F74EB00A7C424 /* UserInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B09199F74EB00A7C424 /* UserInfoRequestModel.m */; };
@@ -380,6 +381,8 @@
 		A0413CCC199A66CA00726C51 /* WaterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaterDetailViewController.m; path = CustomController/WaterDetailViewController.m; sourceTree = "<group>"; };
 		A044C3B11980B47F00D2139F /* BaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseResponseModel.h; path = Model/BaseResponseModel.h; sourceTree = "<group>"; };
 		A044C3B21980B47F00D2139F /* BaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseResponseModel.m; path = Model/BaseResponseModel.m; sourceTree = "<group>"; };
+		A0521A2119D3177D004B00C0 /* UpdateUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoModel.h; path = Model/UpdateUserInfoModel.h; sourceTree = "<group>"; };
+		A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoModel.m; path = Model/UpdateUserInfoModel.m; sourceTree = "<group>"; };
 		A05E4B02199E94D500A7C424 /* HKBaiduMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKBaiduMapViewController.h; path = CustomController/HKBaiduMapViewController.h; sourceTree = "<group>"; };
 		A05E4B03199E94D500A7C424 /* HKBaiduMapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HKBaiduMapViewController.mm; path = CustomController/HKBaiduMapViewController.mm; sourceTree = "<group>"; };
 		A05E4B05199F72FC00A7C424 /* AnotherUserInfoResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherUserInfoResponseModel.h; path = Model/AnotherUserInfoResponseModel.h; sourceTree = "<group>"; };
@@ -1014,6 +1017,8 @@
 				A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */,
 				A035A44E19D0576900277240 /* CouponDetailRequestModel.h */,
 				A035A44F19D0576900277240 /* CouponDetailRequestModel.m */,
+				A0521A2119D3177D004B00C0 /* UpdateUserInfoModel.h */,
+				A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -2112,6 +2117,7 @@
 				A0B10D371969A215003CFAC4 /* LoginRequestModel.m in Sources */,
 				A0FBCE7519543D17000146C3 /* MenuItemView.m in Sources */,
 				A0A96BF419A63FDC009C4A6A /* AddressViewController.m in Sources */,
+				A0521A2319D3177D004B00C0 /* UpdateUserInfoModel.m in Sources */,
 				A010B0CD1982436D00E170DA /* AdModel.m in Sources */,
 				A00504D619927A5800318806 /* InfoViewController.m in Sources */,
 				A002EDBE1991188400141C49 /* CommentTableViewCell.m in Sources */,
