@@ -221,13 +221,20 @@
     _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
-    [_requestModel postData];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+
+{
+    [super viewDidAppear:animated];
+    [_requestModel postData];
 }
 
 
@@ -265,7 +272,9 @@
 
 -(void)reFillContent
 {
-    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] success:^(UIImage *image, BOOL cached)
+    [[SDImageCache sharedImageCache] removeImageForKey:[NSString stringWithFormat:@"%@",_responseModel.avatar]];
+
+    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] options:SDWebImageProgressiveDownload success:^(UIImage *image, BOOL cached)
      {
          NSLog(@"success");
      }failure:^(NSError *error){
@@ -274,6 +283,11 @@
         NSLog(@"error %@",error);
     }
     ];
+    //setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] options:SDWebImageRetryFailed];
+    
+
+    
+//    [_headImageView setImageWithURL:_responseModel.avatar placeholderImage:[UIImage imageNamed:@"头像-会员.png"] success:nil failure:nil];
     
     if (_responseModel.sex == 1) {
         [_sexImageView setImage:[UIImage imageNamed:@"性别男.png"]];

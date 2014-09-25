@@ -73,14 +73,15 @@
     
     
     
-    _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 174, 120, 20)];
-    _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 174, 120, 20)];
+//    _rememberPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 174, 120, 20)];
+    _forgetPwdBtn = [[UIButton alloc] initWithFrame:CGRectMake(220, 174, 80, 20)];
     
-    [_rememberPwdBtn setTitle:@"记住密码" forState:UIControlStateNormal];
+//    [_rememberPwdBtn setTitle:@"记住密码" forState:UIControlStateNormal];
     [_forgetPwdBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-    
-    _forgetPwdBtn.backgroundColor = [UIColor blueColor];
-    _rememberPwdBtn.backgroundColor = [UIColor blueColor];
+    [_forgetPwdBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+//    _forgetPwdBtn.backgroundColor = [UIColor blueColor];
+    _forgetPwdBtn.font = [UIFont systemFontOfSize:14];
+//    _rememberPwdBtn.backgroundColor = [UIColor blueColor];
     
     _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 226, 300, 46)];
     [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
@@ -90,7 +91,7 @@
     
     
     
-    _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(170, 290, 120, 20)];
+    _fastRegBtn = [[UIButton alloc] initWithFrame:CGRectMake(190, 290, 100, 20)];
 //    _fastRegBtn.backgroundColor = [UIColor grayColor];
     _fastRegBtn.font = [UIFont systemFontOfSize:14];
     [_fastRegBtn setTitle:@"手机号快速注册" forState:UIControlStateNormal];
@@ -113,7 +114,7 @@
     [temp addSubview:_headText];
     [temp addSubview:_userPwd];
     [temp addSubview:_userName];
-    [temp addSubview:_rememberPwdBtn];
+//    [temp addSubview:_rememberPwdBtn];
     [temp addSubview:_forgetPwdBtn];
     [temp addSubview:_loginBtn];
     [temp addSubview:_fastRegBtn];
@@ -183,7 +184,7 @@
 
 -(void)selectRightAction:(id)sender
 {
-    [CoreHelper callService:@""];
+    [CoreHelper callService:[CoreHelper getSellerPhone]];
     
 //    NSLog(@"call");
 }

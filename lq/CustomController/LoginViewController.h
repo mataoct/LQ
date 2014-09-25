@@ -19,7 +19,7 @@
 @property (nonatomic,strong) UITextField *userPwd;
 @property (nonatomic,strong) UILabel *subText;
 
-@property (nonatomic,strong) UIButton *rememberPwdBtn;
+//@property (nonatomic,strong) UIButton *rememberPwdBtn;
 @property (nonatomic,strong) UIButton *forgetPwdBtn;
 @property (nonatomic,strong) UIButton *loginBtn;
 @property (nonatomic,strong) UIButton *fastRegBtn;

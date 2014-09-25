@@ -20,6 +20,8 @@
 #import "MyHistoryViewController.h"
 
 #import "SettingViewController.h"
+#import "SDImageCache.h"
+
 
 @interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 

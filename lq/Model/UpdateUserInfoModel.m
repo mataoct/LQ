@@ -48,11 +48,8 @@
     
     [self.request setDelegate:self];
     
-    NSLog(@"post ready %@",token);
-    
     [self.request startAsynchronous];
     
-    NSLog(@"post already %@",self);
 }
 
 
@@ -86,11 +83,6 @@
             [[super delegate] requestFailed:model.ErrMessage];
         }
     }
-    
-
-    
-    
-    
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

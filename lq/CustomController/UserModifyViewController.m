@@ -371,7 +371,7 @@
     _requestModel.nickName = _nickTf.text;
     _requestModel.sellerId = @"100";
     _requestModel.uid = _user.uid;
-    _requestModel.avatar = [UIImageJPEGRepresentation(_headImg.image, 0.5) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+    _requestModel.avatar = [UIImageJPEGRepresentation(_headImg.image, 0.1) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
     
     
     
