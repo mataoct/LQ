@@ -49,10 +49,16 @@
     [super viewDidLoad];
     
     
-//    @property (nonatomic,strong) UILabel *totalPayLabel;
-//    @property (nonatomic,strong) UILabel *getIntegrationLabel;
-//    @property (nonatomic,strong) UIButton *submitOrderBtn;
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 23, 23);
+    [btn setBackgroundImage:[UIImage imageNamed:@"标题--电话.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(selectRightAction:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *call=[[UIBarButtonItem alloc]initWithCustomView:btn];
     
+    
+    
+    self.item.rightBarButtonItem = call;
+ 
     
     _totalPayLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 3, 120, 17)];
     _getIntegrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 120, 17)];
@@ -123,17 +129,13 @@
     [headView addSubview:tempInfo];
     headView.backgroundColor = BackGray;
     
-    
-    
-    
-    
-    
+
     
     _orderShippingCostLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 160, 24)];
     _orderShippingCostLabel.font = [UIFont systemFontOfSize:10];
     _orderTotalLabel = [[UILabel alloc] initWithFrame:CGRectMake(170, 0, 90, 24)];
     _orderTotalLabel.font = [UIFont systemFontOfSize:12];
-    _orderDiscountTotalLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, 50, 24)];
+    _orderDiscountTotalLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(250, 0, 36, 24)];
     _orderDiscountTotalLabel.font = [UIFont systemFontOfSize:10];
     _messageText = [[UITextView alloc] initWithFrame:CGRectMake(10, 34, 280, 50)];
     _messageText.backgroundColor = [UIColor lightGrayColor];
@@ -145,8 +147,9 @@
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolbar.barStyle = UIBarStyleBlackTranslucent;
     UIBarButtonItem *hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStyleDone target:self action:@selector(inputDown:)];
+    UIBarButtonItem *send = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(updateDescription)];
     
-    [toolbar setItems:[NSArray arrayWithObject:hiddenButtonItem]];
+    [toolbar setItems:@[send,hiddenButtonItem]];
     
 //    UIButton *inputDone = [[UIButton alloc] init];
 //    [inputDone addTarget:self action:@selector(inputDown:) forControlEvents:UIControlEventTouchUpInside];
@@ -207,9 +210,6 @@
     
     [self.view addSubview:_orderTable];
     [self.view addSubview:bottomView];
-    
-    
-    
     
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
@@ -273,8 +273,8 @@
     
     NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:[noti userInfo]];
     
-    _updateRequestModel.couponId = [dic objectForKey:@"couponId"];
-    [_updateRequestModel postData];
+//    _updateRequestModel.couponId = [dic objectForKey:@"couponId"];
+//    [_updateRequestModel postData];
     _couponCountLabel.text = [NSString stringWithFormat:@"您将使用优惠券‘%@’",[dic objectForKey:@"title"]] ;
     NSLog(@"coupon use");
 }
@@ -341,7 +341,8 @@
 -(void)addCouponToOrder
 {
     //
-    UserCouponViewController *userCouponVC = [[UserCouponViewController alloc] initWithTitle:@"选择优惠券"];
+    UserCouponViewController *userCouponVC = [[UserCouponViewController alloc] initWithTitle:@"选择优惠券" ];
+    userCouponVC.uoRequestModel = _updateRequestModel;
     [self presentViewController:userCouponVC animated:YES completion:nil];
     
 }
@@ -369,15 +370,12 @@
         case 10002:
         {
             if (model.ResponseStatus == 1) {
-//                [SVProgressHUD showSuccessWithStatus_custom:@"使用优惠券成功" duration:1.6];
+                [SVProgressHUD showSuccessWithStatus_custom:@"订单信息已更新" duration:1.6];
                 
-                NSLog(@"订单信息更新成功");
+//                NSLog(@"订单信息更新成功");
             }
             else
             {
-//                [SVProgressHUD showErrorWithStatus_custom:@"使用优惠券失败" duration:1.5];
-                
-//                _couponCountLabel.text = [NSString stringWithFormat:@"请重新选择优惠券"] ;
                
             }
         }
@@ -555,7 +553,7 @@
 	// set views with new info
 //	_orderTable.frame = containerFrame;
 	_orderTable.frame = CGRectMake(0, 64, 320, self.view.frame.size.height - 104 - keyboardBounds.size.height + 49);
-//    _orderTable.contentOffset = 
+    _orderTable.contentOffset = CGPointMake(0, keyboardBounds.size.height);
 	// commit animations
 	[UIView commitAnimations];
 }
@@ -577,6 +575,7 @@
 	// set views with new info
 //	_containerView.frame = containerFrame;
 	_orderTable.frame = CGRectMake(0, 64, 320, self.view.frame.size.height - 104);
+    _orderTable.contentOffset = CGPointMake(0,0);
 	// commit animations
 	[UIView commitAnimations];
 }
@@ -584,13 +583,29 @@
 
 -(void)inputDown:(id)sender
 {
-    
     [_messageText resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     return YES;
+}
+
+-(void)updateDescription
+{
+    if ([_messageText.text length]> 0) {
+        
+        _updateRequestModel.remark  = _messageText.text;
+        [_updateRequestModel postData];
+    }
+    
+}
+
+-(void)selectRightAction:(id)sender
+{
+    [CoreHelper callService:[CoreHelper getSellerPhone]];
+    
+    //    NSLog(@"call");
 }
 
 @end

@@ -14,6 +14,9 @@
 @property (nonatomic,strong) UIView *tempSubView;
 @property (nonatomic,strong) UIView *tempview;
 
+@property (nonatomic,strong) UIBarButtonItem *shareBtn;
+@property (nonatomic,strong) UIBarButtonItem *favBtn;
+
 @end
 
 @implementation GoodsViewController
@@ -56,6 +59,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    //导航条按钮
+    
+    _shareBtn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(shareBtnClick:)];
+    _favBtn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(favBtnClick:)];
+    _shareBtn.image = [UIImage imageNamed:@"分享.png"];
+    
+    _shareBtn.tintColor = [UIColor whiteColor];
+    
+    
+    NSArray *actionButtonItems = @[_favBtn,_shareBtn];
+    [self.item setRightBarButtonItems:actionButtonItems animated:YES];
+    
     _requestModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:_gid];
     _commentRequestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_gid];
     
@@ -63,6 +79,10 @@
     _model = [[ProdutionResponseModel alloc] init];
     _commentResponseModel = [[CommentListResponseModel alloc] init];
     _userCommentRequestModel = [[UserCommentRequestModel alloc] initWithUid:[CoreHelper getLoginUid]];
+    
+    _favRequestModel = [[FavRequestModel alloc] initWithUid:[CoreHelper getLoginUid] gid:_model.gid];
+    
+    _signResponseModel = [[SignatureResponseModel alloc] init];
     
     _scrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 300, 160) animationDuration:0];
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 170, 180, 20)];
@@ -96,7 +116,8 @@
     _cartBtn.layer.cornerRadius = 4.0;
     
     [_buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
-    _buyBtn.hidden = YES;
+    [_buyBtn addTarget:self action:@selector(buy) forControlEvents:UIControlEventTouchUpInside];
+//    _buyBtn.hidden = YES;
     [_cartBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
     [_cartBtn addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
@@ -263,7 +284,7 @@
     
     
     
-    
+    _requestModel.uid = [CoreHelper getLoginUid];
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
     [_requestModel postData];
@@ -273,6 +294,20 @@
 {
     [self fillScrollerByArray:_model.imageArr];
     
+    
+//    if ([_model.isfav integerValue] == 0) {
+//        //
+//        _favBtn.image = [UIImage imageNamed:@"已收藏.png"];
+//    }
+//    else
+//    {
+//        _favBtn.image = [UIImage imageNamed:@"收藏-已收藏.png"];
+//    }
+//    
+//    
+////    _favBtn.image = [UIImage imageNamed:@"收藏"];
+//
+    [self refillFavBtn];
     _titleLabel.text = _model.title;
     _nowPriceLabel.text = [NSString stringWithFormat:@"￥%@", _model.nowprice];
     _orginalPriceLabel.text =[NSString stringWithFormat:@"￥%@", _model.originalprice];
@@ -310,6 +345,17 @@
 -(void)buy
 {
     
+    ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
+    
+    temp.gid = _model.gid;
+    temp.num = @"1";
+    
+    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:@[temp]];
+    
+    _signRequestModel.delegate = self;
+    _signRequestModel.tag = 10006;
+    [_signRequestModel postData];
+
 }
 
 -(void)cartBtnClick
@@ -330,24 +376,14 @@
     if ([arr count] == 1) {
         [arr addObject:[arr objectAtIndex:0]];
     }
-    
-    
     NSMutableArray *viewsArray = [@[] mutableCopy];
-//    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < [arr count]; ++i) {
         UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 160)];
-        
         tempLabel.userInteractionEnabled = YES;
-        
-        
         NSURL *url = [[NSURL alloc] initWithString:[[arr objectAtIndex:i]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        
         [tempLabel setImageWithURL:url placeholderImage:[UIImage imageNamed:@"图片默认1.png"] success:nil failure:nil];
-//        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
-    
-    
     _scrollView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
         return viewsArray[pageIndex];
     };
@@ -438,7 +474,8 @@
         case 10003:
         {
             
-            NSLog(@"评论成功");
+//            NSLog(@"评论成功");
+            [SVProgressHUD showSuccessWithStatus_custom:@"评论成功" duration:1.2];
             
             [_textView resignFirstResponder];
             
@@ -450,6 +487,34 @@
         {
             [SVProgressHUD showSuccessWithStatus_custom:@"加入购物车成功" duration:1.5];
             [CoreHelper addTabbarBadgeValue];
+        }
+            break;
+        case 10005:
+        {
+            if ([_model.isfav integerValue] == 0) {
+                
+                [SVProgressHUD showSuccessWithStatus_custom:@"收藏成功" duration:1.2];
+                _model.isfav = @"1";
+            }
+            else
+            {
+                _model.isfav = @"0";
+            }
+            
+            [self refillFavBtn];
+        }
+            break;
+            
+        case 10006:
+        {
+            _signResponseModel = (SignatureResponseModel *)model;
+            
+            NSLog(@"%@",_signResponseModel.orderId);
+            
+            OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] initWithTitle:@"订单详情" orderId:_signResponseModel.orderId];
+            
+            [self presentViewController:orderDetailVC animated:YES completion:nil];
+
         }
             break;
         default:
@@ -544,6 +609,38 @@
 //{
 //    [_textView resignFirstResponder];
 //}
+
+-(void)shareBtnClick:(id)sender
+{
+    [CoreHelper UMShare:self shareText:_model.title shareImage:nil delegate:nil];
+}
+
+-(void)favBtnClick:(id)sender
+{
+    _favRequestModel.delegate = self;
+    _favRequestModel.tag = 10005;
+    _favRequestModel.gid = _model.gid;
+    [_favRequestModel postData:[_model.isfav isEqualToString:@"0"]?@"1":@"0"];
+    
+    // isfav == 0  未收藏   //  1 收藏，0 取消收藏
+}
+
+
+-(void)refillFavBtn
+{
+    if ([_model.isfav intValue] == 0) {
+        //
+        [_favBtn setImage:[UIImage imageNamed:@"收藏.png"]];
+        
+        _favBtn.tintColor = [UIColor whiteColor];
+    }
+    else
+    {
+        [_favBtn setImage:[UIImage imageNamed:@"收藏-已收藏.png"]];
+        
+        _favBtn.tintColor = Orange;
+    }
+}
 
 
 @end

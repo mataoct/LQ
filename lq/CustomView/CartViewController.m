@@ -334,25 +334,30 @@
 
 -(void)deleteCheckedItem:(id)sender
 {
-//    _responseModel.cartArr removeObjectAtIndex:
-    
-    
-    
     _delRequestModel.uid = [CoreHelper getLoginUid];
-//    _delRequestModel.gid = [[_selectDic allKeys] componentsJoinedByString:@","];
+ 
     
-//    _delRequestModel.gid =
-    
-    
-    ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
-    
-    temp = [_responseModel.cartArr  objectAtIndex:[[[_selectDic allKeys] objectAtIndex:0] intValue]];
-    
-    _delRequestModel.gid = temp.gid;
-    
-    _delRequestModel.tag = 10003;
-    [_delRequestModel postData];
-    
+    if ([_selectDic count] > 0) {
+        ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
+        
+        
+        for (int i = 0; i < [_selectDic count]; i++) {
+            //
+            temp = [_responseModel.cartArr  objectAtIndex:[[[_selectDic allKeys] objectAtIndex:i] intValue]];
+//            _delRequestModel.gid = [_delRequestModel.gid stringByAppending]
+            if (i == 0) {
+                _delRequestModel.gid = temp.gid;
+            }
+            else
+            {
+                _delRequestModel.gid = [_delRequestModel.gid stringByAppendingFormat:@",%@",temp.gid];
+            }
+        }
+                
+        _delRequestModel.tag = 10003;
+        _delRequestModel.delegate = self;
+        [_delRequestModel postData];
+    }
     
 }
 

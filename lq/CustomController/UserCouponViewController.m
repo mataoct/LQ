@@ -10,6 +10,8 @@
 
 @interface UserCouponViewController ()
 
+@property (nonatomic,strong) CouponModel *temp;
+
 @end
 
 @implementation UserCouponViewController
@@ -33,7 +35,9 @@
         _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
         _responseModel = [[UserCouponResponseModel alloc] init];
         
-       
+        _uoRequestModel = [[updateOrderRequestModel alloc] init];
+        
+        _temp = [[CouponModel alloc] init];
         
     }
     return self;
@@ -54,6 +58,7 @@
     
     _requestModel.uid = [CoreHelper getLoginUid];
     _requestModel.delegate = self;
+    _requestModel.tag = 10001;
     [_requestModel postUserCoupon];
 }
 
@@ -79,8 +84,25 @@
 }
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (UserCouponResponseModel *)model;
-    [_couponTable reloadData];
+    
+    switch (model.ResponseTag) {
+        case 10001:
+            _responseModel = (UserCouponResponseModel *)model;
+            [_couponTable reloadData];
+            break;
+        case 10002:
+            [SVProgressHUD showSuccessWithStatus_custom:@"优惠券使用成功" duration:1.2];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kCouponUse" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:_temp.couponid,@"couponId",_temp.title,@"title", nil]];
+            break;
+        default:
+            break;
+    }
+    
+    
+
+    
+    
+
 }
 
 
@@ -108,10 +130,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CouponModel *temp = [[CouponModel alloc] init];
-    temp = [_responseModel.couponArr objectAtIndex:indexPath.row];
+    _temp = [[CouponModel alloc] init];
+    _temp = [_responseModel.couponArr objectAtIndex:indexPath.row];
+    
+    
+    _uoRequestModel.tag = 10002;
+    _uoRequestModel.delegate = self;
+    _uoRequestModel.couponId = _temp.couponid;
+    
+    [_uoRequestModel postData];
+    
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCouponUse" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:temp.couponid,@"couponId",temp.title,@"title", nil]];
+
 
 }
 

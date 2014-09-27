@@ -45,7 +45,7 @@
 @property (nonatomic,strong) UITableView *orderTable;
 @property (nonatomic,strong) UILabel *orderShippingCostLabel;
 @property (nonatomic,strong) UILabel *orderTotalLabel;
-@property (nonatomic,strong) UILabel *orderDiscountTotalLabel;
+@property (nonatomic,strong) DisLineLabel *orderDiscountTotalLabel;
 
 @property (nonatomic,strong) UITextView *messageText;
 @property (nonatomic,strong) UILabel *couponCountLabel;

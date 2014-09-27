@@ -59,15 +59,6 @@
     self.item.rightBarButtonItem = _rightButton;
     // Do any additional setup after loading the view.
     
-//    @property (nonatomic,strong) UILabel *nameLabel;
-//    @property (nonatomic,strong) UITextField *nameTf;
-//    @property (nonatomic,strong) UILabel *telLabel;
-//    @property (nonatomic,strong) UITextField *telTf;
-//    @property (nonatomic,strong) UILabel *addrLabel;
-//    @property (nonatomic,strong) UITextField *addrTf;
-    
-    
-    
     _nameLabel.font = [UIFont systemFontOfSize:14];
         _telLabel.font = [UIFont systemFontOfSize:14];
         _addrLabel.font = [UIFont systemFontOfSize:14];

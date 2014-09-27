@@ -10,6 +10,24 @@
 
 @implementation ShoppingCartItemModel
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        //
+        _img = [[NSURL alloc] init];
+        _gid = [[NSString alloc] init];
+        //        _sex = [[NSString alloc] init];
+        _totalPrice = [[NSString alloc] init];
+        _num = [[NSString alloc] init];
+        _title = [[NSString alloc] init];
+        _mydescription= [[NSString alloc] init];
+        _nowPrice = [[NSString alloc] init];
+        _originalPrice = [[NSString alloc] init];
+    }
+    return self;
+}
+
 
 -(id)initWithDic:(NSDictionary *)dic
 {

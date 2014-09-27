@@ -9,6 +9,7 @@
 #import "LQUIViewController.h"
 #import "CouponRequestModel.h"
 #import "DiscountTableViewCell.h"
+#import "updateOrderRequestModel.h"
 
 
 @interface UserCouponViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -17,6 +18,9 @@
 
 @property (nonatomic,strong) CouponRequestModel *requestModel;
 @property (nonatomic,strong) UserCouponResponseModel *responseModel;
+
+
+@property (nonatomic,strong) updateOrderRequestModel *uoRequestModel;
 
 
 -(id)initWithTitle:(NSString *)str ;

@@ -10,12 +10,14 @@
 #import "CouponRequestModel.h"
 #import "CartTableViewCell2.h"
 #import "HistoryDetailTableViewCell.h"
+#import "OrderDetailViewController.h"
+#import "MJRefresh.h"
 
-@interface MyHistoryViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface MyHistoryViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,HistoryDetailDelegate>
 
 @property (nonatomic,strong) CouponRequestModel *historyRequest;
 @property (nonatomic,strong) HistoryResponseModel *historyResponse;
-
+@property (nonatomic,strong) UISegmentedControl *seg;
 
 @property (nonatomic,strong) UITableView *hstTable;
 

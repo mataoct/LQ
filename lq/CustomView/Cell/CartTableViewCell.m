@@ -22,7 +22,7 @@
         _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 175, 15)];
     
         _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 45, 50, 20)];
-        _disPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 45, 30, 20)];
+        _disPriceLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(165, 45, 30, 20)];
         _disLineLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 45, 30, 20)];
         
         
@@ -101,6 +101,7 @@
     
     _sumValueLabel.text =[NSString stringWithFormat:@"￥%@",_model.totalPrice];
     _selectStatus = 0;
+    
     _selectBtn.image =[UIImage imageNamed:@"勾选-未.png"];
 }
 

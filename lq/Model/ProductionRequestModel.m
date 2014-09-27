@@ -17,6 +17,7 @@
         //
         _sellId = [[NSString alloc] init];
         _gid = [[NSString alloc] init];
+        _uid = [[NSString alloc] init];
         
         _sellId = sellerId;
         _gid = gid;
@@ -39,6 +40,7 @@
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_sellId forKey:@"sellerId"];
     [request addPostValue:_gid forKey:@"gid"];
+    [request addPostValue:_uid forKey:@"uid"];
     [request setRequestMethod:@"POST"];
     request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];

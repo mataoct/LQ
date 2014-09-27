@@ -36,12 +36,23 @@
     
     self.navigationController.navigationBarHidden = false;
     
+    
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 13, 24);
+    [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(deleteCheckedItem:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    self.navigationItem.rightBarButtonItem = back;
+    
     _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
     _requestModel.uid = [CoreHelper getLoginUid];
     
     _requestModel.delegate = self;
     
     _responseModel = [[MyFavResponseModel alloc] init];
+    
+    _delRequestModel = [[DelCartRequestModel alloc] init];
     
     _selecFlag = 0;
     _selectDic = [[NSMutableDictionary alloc] init];
@@ -69,7 +80,7 @@
     _favTable.backgroundColor = [UIColor clearColor];
     [self.view addSubview:temp];
     [self.view addSubview:_favTable];
-    
+    _requestModel.tag = 10001;
     [_requestModel postFav];
 }
 
@@ -87,8 +98,27 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (MyFavResponseModel *)model;
-    [self reFillLayout];
+    switch (model.ResponseTag) {
+        case 10001:
+            
+            _responseModel = (MyFavResponseModel *)model;
+            [self reFillLayout];
+            break;
+        case 10002:
+        {
+            //delete and reload table
+            
+            for (NSString *str in [_selectDic allKeys]) {
+                [_responseModel.goodsArr removeObject:[_selectDic objectForKey:str]];
+            }
+            [self reFillLayout];
+            [SVProgressHUD showSuccessWithStatus_custom:@"删除成功" duration:1.2];
+
+        }
+            break;
+        default:
+            break;
+    }
     
 }
 
@@ -183,5 +213,66 @@
     
     [_favTable reloadData];
 }
+
+
+-(void)deleteCheckedItem:(id)sender
+{
+    if([_selectDic count] > 0)
+    {
+        
+//        _responseModel.goodsArr remo
+        
+        
+        
+        _delRequestModel.uid = [CoreHelper getLoginUid]; 
+//
+//        
+//        if ([_selectDic count] > 0) {
+//            ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
+//            
+//            temp = [_responseModel.cartArr  objectAtIndex:[[[_selectDic allKeys] objectAtIndex:0] intValue]];
+//            
+//            _delRequestModel.gid = temp.gid;
+//            
+//            _delRequestModel.tag = 10003;
+//            [_delRequestModel postData];
+//        }
+        
+        
+        
+        
+//        for (GoodsModel *model in _selectDic) {
+//            [_responseModel.goodsArr removeObject:model];
+//        }
+        
+        
+        //删除ID 列表
+        
+        if ([_selectDic count] > 0) {
+            //
+            
+            GoodsModel *temp = [[GoodsModel alloc] init];
+            
+            for (int i = 0; i < [_selectDic count]; i ++) {
+                temp = [_responseModel.goodsArr objectAtIndex:[[[_selectDic allKeys] objectAtIndex:i ] intValue]];
+                if (i == 0) {
+                    _delRequestModel.gid = temp.gid;
+                }
+                else
+                {
+                    _delRequestModel.gid = [_delRequestModel.gid stringByAppendingFormat:@",%@",temp.gid];
+                }
+                
+            }
+            _delRequestModel.delegate = self;
+            _delRequestModel.tag = 10002;
+            [_delRequestModel deleteFav];
+            
+        }
+        
+    }
+}
+
+
 
 @end

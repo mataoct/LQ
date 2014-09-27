@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoryModel.h"
+
+@protocol HistoryDetailDelegate <NSObject>
+
+@required
+
+-(void)payNowClick:(NSString *)orderId;
+-(void)cancleOrder:(NSString *)orderId;
+
+@end
+
+
 @interface HistoryDetailTableViewCell : UITableViewCell
 
 @property (nonatomic,strong) UILabel *totalNumLable;
@@ -29,6 +40,11 @@
 
 
 @property (nonatomic,strong) HistoryModel *model;
+
+
+@property (nonatomic,assign) id<HistoryDetailDelegate> delegate;
+
+@property (nonatomic,strong) NSString *orderId;
 
 
 -(void)fillCellByModel:(HistoryModel *)model;

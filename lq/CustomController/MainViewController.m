@@ -107,7 +107,10 @@
 
 -(void)reFillLayouts
 {
-    [self setScroller:_mainResponseModel.sliderArr];
+    if ([_mainResponseModel.sliderArr count] > 0) {
+        
+        [self setScroller:_mainResponseModel.sliderArr];
+    }
     
     [self setMenu];
     [_menuList setDataSource:_mainResponseModel.hotArr];

@@ -66,7 +66,7 @@
 -(void)showBackButton
 {
     UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn. frame=CGRectMake(15, 5, 13, 24);
+    btn. frame=CGRectMake(15, 5, 30, 24);
     [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backToPrevious)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];

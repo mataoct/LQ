@@ -36,10 +36,40 @@
     [self.request addPostValue:token forKey:@"token"];
     
     [self.request addPostValue:_uid forKey:@"uid"];
-    [self.request addPostValue:_gid forKey:@"gid"];
+    [self.request addPostValue:_gid forKey:@"gids"];
     [self.request setRequestMethod:@"POST"];
     
     [self.request setDelegate:self];
+    
+    [self.request setTag:10001];
+    
+    NSLog(@"post ready %@",token);
+    
+    [self.request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+
+-(void)deleteFav
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"delfavorite"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=delfavorite"];
+    
+    
+    self.request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [self.request addPostValue:token forKey:@"token"];
+    
+    [self.request addPostValue:_uid forKey:@"uid"];
+    [self.request addPostValue:_gid forKey:@"gids"];
+    [self.request setRequestMethod:@"POST"];
+    
+    [self.request setDelegate:self];
+    
+    [self.request setTag:10002];
     
     NSLog(@"post ready %@",token);
     
@@ -66,6 +96,7 @@
     
     
     model.ResponseTag = self.tag;
+    
     
     
     if (model.ResponseStatus == 1) {

@@ -11,10 +11,14 @@
 #import "MyFavTableViewCell.h"
 #import "LQ7ViewController.h"
 
+#import "DelCartRequestModel.h"
+
 @interface MyFavViewController : LQ7ViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate>
 
 @property (nonatomic,strong) CouponRequestModel *requestModel;
 @property (nonatomic,strong) MyFavResponseModel *responseModel;
+
+@property (nonatomic,strong) DelCartRequestModel *delRequestModel;
 
 @property (nonatomic,strong) UIButton *allCheckBtn;
 @property (nonatomic,strong) UILabel *favCountLabel;

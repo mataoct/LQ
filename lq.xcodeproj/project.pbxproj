@@ -170,6 +170,18 @@
 		A09AA74519C46B5C0024DC2F /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09AA72419C46B5C0024DC2F /* UMSShareListController.xib */; };
 		A09AA74619C46B5C0024DC2F /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A09AA72519C46B5C0024DC2F /* UMSocialSDKResourcesNew.bundle */; };
 		A09AA75819C523000024DC2F /* DisLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A09AA75719C523000024DC2F /* DisLineLabel.m */; };
+		A09D5A9A19D661FA007B5430 /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5A9919D661FA007B5430 /* 分享@2x.png */; };
+		A09D5A9D19D66464007B5430 /* 收藏-已收藏@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5A9B19D66464007B5430 /* 收藏-已收藏@2x.png */; };
+		A09D5A9E19D66464007B5430 /* 收藏@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5A9C19D66464007B5430 /* 收藏@2x.png */; };
+		A09D5AA219D6A70F007B5430 /* 标题--电话@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA119D6A70F007B5430 /* 标题--电话@2x.png */; };
+		A09D5AAB19D6A830007B5430 /* 地址@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA319D6A830007B5430 /* 地址@2x.png */; };
+		A09D5AAC19D6A830007B5430 /* 电话@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA419D6A830007B5430 /* 电话@2x.png */; };
+		A09D5AAD19D6A830007B5430 /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA519D6A830007B5430 /* 返回@2x.png */; };
+		A09D5AAE19D6A830007B5430 /* 返回-灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA619D6A830007B5430 /* 返回-灰色@2x.png */; };
+		A09D5AAF19D6A830007B5430 /* 男未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA719D6A830007B5430 /* 男未选中@2x.png */; };
+		A09D5AB019D6A830007B5430 /* 男选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA819D6A830007B5430 /* 男选中@2x.png */; };
+		A09D5AB119D6A830007B5430 /* 女未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AA919D6A830007B5430 /* 女未选中@2x.png */; };
+		A09D5AB219D6A830007B5430 /* 女选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A09D5AAA19D6A830007B5430 /* 女选中@2x.png */; };
 		A09EC04F1951ABD70036219B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC04E1951ABD70036219B /* Foundation.framework */; };
 		A09EC0511951ABD70036219B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC0501951ABD70036219B /* CoreGraphics.framework */; };
 		A09EC0531951ABD70036219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09EC0521951ABD70036219B /* UIKit.framework */; };
@@ -559,6 +571,18 @@
 		A09AA72619C46B5C0024DC2F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		A09AA75619C523000024DC2F /* DisLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisLineLabel.h; path = CustomView/DisLineLabel.h; sourceTree = "<group>"; };
 		A09AA75719C523000024DC2F /* DisLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisLineLabel.m; path = CustomView/DisLineLabel.m; sourceTree = "<group>"; };
+		A09D5A9919D661FA007B5430 /* 分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@2x.png"; sourceTree = "<group>"; };
+		A09D5A9B19D66464007B5430 /* 收藏-已收藏@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏-已收藏@2x.png"; sourceTree = "<group>"; };
+		A09D5A9C19D66464007B5430 /* 收藏@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏@2x.png"; sourceTree = "<group>"; };
+		A09D5AA119D6A70F007B5430 /* 标题--电话@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标题--电话@2x.png"; sourceTree = "<group>"; };
+		A09D5AA319D6A830007B5430 /* 地址@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地址@2x.png"; sourceTree = "<group>"; };
+		A09D5AA419D6A830007B5430 /* 电话@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电话@2x.png"; sourceTree = "<group>"; };
+		A09D5AA519D6A830007B5430 /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
+		A09D5AA619D6A830007B5430 /* 返回-灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回-灰色@2x.png"; sourceTree = "<group>"; };
+		A09D5AA719D6A830007B5430 /* 男未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男未选中@2x.png"; sourceTree = "<group>"; };
+		A09D5AA819D6A830007B5430 /* 男选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男选中@2x.png"; sourceTree = "<group>"; };
+		A09D5AA919D6A830007B5430 /* 女未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女未选中@2x.png"; sourceTree = "<group>"; };
+		A09D5AAA19D6A830007B5430 /* 女选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女选中@2x.png"; sourceTree = "<group>"; };
 		A09EC04B1951ABD70036219B /* lq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09EC04E1951ABD70036219B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A09EC0501951ABD70036219B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1142,6 +1166,15 @@
 		A0839BC219D11AFE00C060F6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A09D5AA319D6A830007B5430 /* 地址@2x.png */,
+				A09D5AA419D6A830007B5430 /* 电话@2x.png */,
+				A09D5AA519D6A830007B5430 /* 返回@2x.png */,
+				A09D5AA619D6A830007B5430 /* 返回-灰色@2x.png */,
+				A09D5AA719D6A830007B5430 /* 男未选中@2x.png */,
+				A09D5AA819D6A830007B5430 /* 男选中@2x.png */,
+				A09D5AA919D6A830007B5430 /* 女未选中@2x.png */,
+				A09D5AAA19D6A830007B5430 /* 女选中@2x.png */,
+				A09D5AA119D6A70F007B5430 /* 标题--电话@2x.png */,
 				A06E7B4319D410D500F72BE2 /* 购物车-空.png */,
 				A0839BC319D11AFE00C060F6 /* bgArrow.png */,
 				A0839BC419D11AFE00C060F6 /* disline.png */,
@@ -1152,6 +1185,7 @@
 				A0839BD819D11AFE00C060F6 /* 会员_03.png */,
 				A0839BD919D11AFE00C060F6 /* 会员_04.png */,
 				A0839BDA19D11AFE00C060F6 /* 分享.png */,
+				A09D5A9919D661FA007B5430 /* 分享@2x.png */,
 				A0839BDB19D11AFE00C060F6 /* 列表背景.png */,
 				A0839BDC19D11AFE00C060F6 /* 勾选-已.png */,
 				A0839BDD19D11AFE00C060F6 /* 勾选-未.png */,
@@ -1161,6 +1195,8 @@
 				A0839BE119D11AFE00C060F6 /* 头像-评论.png */,
 				A0839BE219D11AFE00C060F6 /* 底部菜单栏 */,
 				A0839BEF19D11AFE00C060F6 /* 收藏-已收藏.png */,
+				A09D5A9B19D66464007B5430 /* 收藏-已收藏@2x.png */,
+				A09D5A9C19D66464007B5430 /* 收藏@2x.png */,
 				A0839BF019D11AFE00C060F6 /* 收藏.png */,
 				A0839BF119D11AFE00C060F6 /* 标题--电话.png */,
 				A0839BF219D11AFE00C060F6 /* 标题-分享.png */,
@@ -1931,7 +1967,9 @@
 				A0839C2F19D11AFE00C060F6 /* 电话.png in Resources */,
 				A09AA73E19C46B5C0024DC2F /* UMSCommentDetailController.xib in Resources */,
 				A0839C2E19D11AFE00C060F6 /* 标题-设置.png in Resources */,
+				A09D5AAF19D6A830007B5430 /* 男未选中@2x.png in Resources */,
 				A0839C2C19D11AFE00C060F6 /* 标题-搜索.png in Resources */,
+				A09D5AB019D6A830007B5430 /* 男选中@2x.png in Resources */,
 				A0839C1219D11AFE00C060F6 /* 会员_03.png in Resources */,
 				A09AA73C19C46B5C0024DC2F /* UMSocialLocalizable.strings in Resources */,
 				A0839C3719D11AFE00C060F6 /* 首页_05.png in Resources */,
@@ -1944,6 +1982,7 @@
 				A0839C2D19D11AFE00C060F6 /* 标题-收藏.png in Resources */,
 				A06E7B4419D410D500F72BE2 /* 购物车-空.png in Resources */,
 				A0839C2319D11AFE00C060F6 /* 菜单栏-主页.png in Resources */,
+				A09D5AA219D6A70F007B5430 /* 标题--电话@2x.png in Resources */,
 				A0839C2819D11AFE00C060F6 /* 收藏-已收藏.png in Resources */,
 				A0839C0919D11AFE00C060F6 /* logo-暂代.png in Resources */,
 				A0839C3319D11AFE00C060F6 /* 返回.png in Resources */,
@@ -1952,6 +1991,7 @@
 				A0839C2919D11AFE00C060F6 /* 收藏.png in Resources */,
 				A0839C2119D11AFE00C060F6 /* tabbg.png in Resources */,
 				A09AA74619C46B5C0024DC2F /* UMSocialSDKResourcesNew.bundle in Resources */,
+				A09D5AAB19D6A830007B5430 /* 地址@2x.png in Resources */,
 				A09AA74019C46B5C0024DC2F /* UMSCommentInputControlleriPad.xib in Resources */,
 				A0839C0719D11AFE00C060F6 /* MessageEntrySendButtonPressed.png in Resources */,
 				A0839C0E19D11AFE00C060F6 /* 性别-女.png in Resources */,
@@ -1959,17 +1999,21 @@
 				A0839C2A19D11AFE00C060F6 /* 标题--电话.png in Resources */,
 				A09AA74219C46B5C0024DC2F /* UMShareEditViewControlleriPad.xib in Resources */,
 				A0839C2719D11AFE00C060F6 /* 菜单栏-购物车.png in Resources */,
+				A09D5AAE19D6A830007B5430 /* 返回-灰色@2x.png in Resources */,
 				A0839C0119D11AFE00C060F6 /* MessageEntryBackground.png in Resources */,
 				A0839C0619D11AFE00C060F6 /* MessageEntrySendButton@2x.png in Resources */,
 				A09AA74319C46B5C0024DC2F /* UMSLoginViewController.xib in Resources */,
 				A0839C1E19D11AFE00C060F6 /* tabbg-3.png in Resources */,
+				A09D5AB119D6A830007B5430 /* 女未选中@2x.png in Resources */,
 				A0839C1819D11AFE00C060F6 /* 图片默认1.png in Resources */,
 				A0839C3519D11AFE00C060F6 /* 首页_03.png in Resources */,
+				A09D5AB219D6A830007B5430 /* 女选中@2x.png in Resources */,
 				A0E71C4E19CD815C001F4C24 /* MJRefresh.bundle in Resources */,
 				A09AA74119C46B5C0024DC2F /* UMShareEditViewController.xib in Resources */,
 				A09EC176195278FC0036219B /* SVProgressHUD.bundle in Resources */,
 				A09AA73F19C46B5C0024DC2F /* UMSCommentInputController.xib in Resources */,
 				A0839C1A19D11AFE00C060F6 /* 地址.png in Resources */,
+				A09D5A9A19D661FA007B5430 /* 分享@2x.png in Resources */,
 				A0839C1C19D11AFE00C060F6 /* tabbg-1.png in Resources */,
 				A0839C0B19D11AFE00C060F6 /* 会员_背景图.png in Resources */,
 				A0839C2619D11AFE00C060F6 /* 菜单栏-菜单.png in Resources */,
@@ -1978,6 +2022,7 @@
 				A0839C3119D11AFE00C060F6 /* 登录2_03.png in Resources */,
 				A09EC0591951ABD70036219B /* InfoPlist.strings in Resources */,
 				A0839C0219D11AFE00C060F6 /* MessageEntryBackground@2x.png in Resources */,
+				A09D5AAC19D6A830007B5430 /* 电话@2x.png in Resources */,
 				A0839C1519D11AFE00C060F6 /* 列表背景.png in Resources */,
 				A0839C1B19D11AFE00C060F6 /* 头像-评论.png in Resources */,
 				A09AA74519C46B5C0024DC2F /* UMSShareListController.xib in Resources */,
@@ -1989,12 +2034,15 @@
 				A09EC16C195278FC0036219B /* mapapi.bundle in Resources */,
 				A0839C3019D11AFE00C060F6 /* 登录1_03.png in Resources */,
 				A0839C1019D11AFE00C060F6 /* 签到-bg.png in Resources */,
+				A09D5A9D19D66464007B5430 /* 收藏-已收藏@2x.png in Resources */,
 				A0839C0A19D11AFE00C060F6 /* 会员_箭头右.png in Resources */,
+				A09D5A9E19D66464007B5430 /* 收藏@2x.png in Resources */,
 				A09AA74419C46B5C0024DC2F /* UMSnsAccountViewController.xib in Resources */,
 				A0839C0419D11AFE00C060F6 /* MessageEntryInputField@2x.png in Resources */,
 				A0839C2519D11AFE00C060F6 /* 菜单栏-活动资讯.png in Resources */,
 				A0839C2B19D11AFE00C060F6 /* 标题-分享.png in Resources */,
 				A0839C1919D11AFE00C060F6 /* 图片默认2.png in Resources */,
+				A09D5AAD19D6A830007B5430 /* 返回@2x.png in Resources */,
 				A0839C0519D11AFE00C060F6 /* MessageEntrySendButton.png in Resources */,
 				A09EC0611951ABD70036219B /* Images.xcassets in Resources */,
 				A0839C0C19D11AFE00C060F6 /* 头像-会员.png in Resources */,

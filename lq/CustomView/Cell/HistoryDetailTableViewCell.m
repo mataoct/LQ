@@ -18,6 +18,8 @@
         
         _model = [[HistoryModel alloc] init];
         
+        _orderId = [[NSString alloc] init];
+        
         
         UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(10, 1, 300, 160)];
         subView.backgroundColor = [UIColor whiteColor];
@@ -87,8 +89,10 @@
         [_cancleBtn setBackgroundColor:[UIColor grayColor]];
         
         [_payBtn setTitle:@"现在付款" forState:UIControlStateNormal];
-        [_cancleBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+        [_payBtn addTarget:self action:@selector(payForOrder) forControlEvents:UIControlEventTouchUpInside];
         
+        [_cancleBtn setTitle:@"取消订单" forState:UIControlStateNormal];
+        [_cancleBtn addTarget:self action:@selector(cancleClick) forControlEvents:UIControlEventTouchUpInside];
         [subView addSubview:_createTimeLabel];
         [subView addSubview:_payBtn];
         [subView addSubview:_cancleBtn];
@@ -133,28 +137,19 @@
 }
 
 
-//-(void)drawRect:(CGRect)rect
-//{
-//    [super drawRect:rect];
-//    
-//    //获得处理的上下文
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    //指定直线样式
-//    CGContextSetLineCap(context, kCGLineCapSquare);
-//    //直线宽度
-//    CGContextSetLineWidth(context, 1.0);
-//    //设置颜色
-//    CGContextSetRGBStrokeColor(context, 0.314, 0.486, 0.859, 1.0);  //[UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
-//    //开始绘制
-//    CGContextBeginPath(context);
-//    //画笔移动到点(31,170)
-//    CGContextMoveToPoint(context, 10, 57);
-//    //下一点
-//    CGContextAddLineToPoint(context, 300, 57);
-//    //下一点
-////    CGContextAddLineToPoint(context, 159, 148);
-//    //绘制完成
-//    CGContextStrokePath(context);
-//}
+-(void)payForOrder
+{
+    if ([_delegate respondsToSelector:@selector(payNowClick:)]) {
+        [_delegate payNowClick:_orderId];
+    }
+}
+
+
+-(void)cancleClick
+{
+    if ([_delegate respondsToSelector:@selector(cancleOrder:)]) {
+        [_delegate cancleOrder:_orderId];
+    }
+}
 
 @end

@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) NSString *sellId;
 @property (nonatomic,strong) NSString *gid;
+@property (nonatomic,strong) NSString *uid;
 
 
 -(id)initWithSellId:(NSString *)sellerId Gid:(NSString *)gid;

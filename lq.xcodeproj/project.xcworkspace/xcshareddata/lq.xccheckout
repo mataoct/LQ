@@ -12,22 +12,43 @@
 	<dict>
 		<key>263DE303-B3A5-49A1-9553-5ECA91DA17F7</key>
 		<string>https://github.com/mataoct/LQ.git</string>
+		<key>8a890f16-95fc-11e2-a37b-9b4f4f0ad9dd++6291</key>
+		<string>http://10.5.117.200/svn/developer7/IOS/Product/InformationFor17173App/InformationFor17173App/UIKit%25EF%25BC%258BExpand/SVProgressHUD</string>
+		<key>E011A4AEE24DE72A32022B454C8738399F539423</key>
+		<string>https://github.com/mataoct/LQ.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>lq.xcodeproj/project.xcworkspace</string>
+	<string>lq.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>263DE303-B3A5-49A1-9553-5ECA91DA17F7</key>
+		<string>../../../LQ3</string>
+		<key>8a890f16-95fc-11e2-a37b-9b4f4f0ad9dd++6291</key>
+		<string>../..lq/SVProgressHUD/</string>
+		<key>E011A4AEE24DE72A32022B454C8738399F539423</key>
 		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>8a890f16-95fc-11e2-a37b-9b4f4f0ad9dd++6291</key>
+		<string>http://10.5.117.200/svn/developer7</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mataoct/LQ.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>263DE303-B3A5-49A1-9553-5ECA91DA17F7</string>
+	<string>E011A4AEE24DE72A32022B454C8738399F539423</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E011A4AEE24DE72A32022B454C8738399F539423</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LQ</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
@@ -35,6 +56,14 @@
 			<string>263DE303-B3A5-49A1-9553-5ECA91DA17F7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LQ3</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8a890f16-95fc-11e2-a37b-9b4f4f0ad9dd++6291</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SVProgressHUD</string>
 		</dict>
 	</array>
 </dict>

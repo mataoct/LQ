@@ -91,17 +91,10 @@
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn. frame=CGRectMake(15, 5, 12, 23);
+    btn. frame=CGRectMake(15, 5, 30, 24);
     [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backToPrevious)forControlEvents:UIControlEventTouchUpInside];
     _leftItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    
-    
-    
-//    self.item.rightBarButtonItem = call;
-    
-    
-//    _leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回.png"] style:UIBarButtonItemStyleDone target:self action:@selector(backToPrevious)];
     
     _statusView.backgroundColor = DarkGreen;
     
@@ -109,17 +102,6 @@
     
     [_item setLeftBarButtonItem:_leftItem];
     
-    
-//    _rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(selectRightAction:)];
-//    self.navigationItem.rightBarButtonItem = rightButton;
-
-//    [_item setRightBarButtonItem:_rightItem];
-    
-//    _bar.translucent = YES;
-//    
-//    _bar.barStyle = UIBarStyleBlack;
-    
-//    _bar.tintColor = [UIColor whiteColor];
     [_bar pushNavigationItem:_item animated:NO];
     [self.view addSubview:_bar];
     [self.view addSubview:_statusView];

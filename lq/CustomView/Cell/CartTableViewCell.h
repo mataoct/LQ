@@ -10,6 +10,8 @@
 #import "UIImageView+WebCache.h"
 #import "ShoppingCartItemModel.h"
 
+#import "DisLineLabel.h"
+
 @interface CartTableViewCell : UITableViewCell
 
 
@@ -19,7 +21,7 @@
 @property (nonatomic,strong) UILabel *detailLabel;
 
 @property (nonatomic,strong) UILabel *priceLabel;
-@property (nonatomic,strong) UILabel *disPriceLabel;
+@property (nonatomic,strong) DisLineLabel *disPriceLabel;
 @property (nonatomic,strong) UILabel *disLineLabel;
 
 @property (nonatomic,strong) UILabel *countLabel;

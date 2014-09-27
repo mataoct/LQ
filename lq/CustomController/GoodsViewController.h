@@ -14,14 +14,14 @@
 #import "ProductionRequestModel.h"
 #import "UIImageView+WebCache.h"
 #import "HPGrowingTextView.h"
-
 #import "CommentTableViewCell.h"
-
 #import "CommentReuqestModel.h"
 #import "UserCommentRequestModel.h"
-
 #import "DisLineLabel.h"
 #import "AddToCartRequestModel.h"
+#import "SignatureRequestModel.h"
+#import "FavRequestModel.h"
+#import "OrderDetailViewController.h"
 
 @interface GoodsViewController : LQUIViewController<UITableViewDataSource,UITableViewDelegate,RequestModelDelegate,HPGrowingTextViewDelegate>
 
@@ -38,6 +38,10 @@
 
 @property (nonatomic,strong) AddToCartRequestModel *add2CartModel;
 
+
+@property (nonatomic,strong) FavRequestModel *favRequestModel;
+@property (nonatomic,strong) SignatureRequestModel *signRequestModel;
+@property (nonatomic,strong) SignatureResponseModel *signResponseModel;
 @property (nonatomic,strong) NSString *gid;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *nowPriceLabel;
