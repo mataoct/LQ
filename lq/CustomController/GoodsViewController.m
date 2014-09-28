@@ -292,7 +292,12 @@
 
 -(void)fillLayouts
 {
-    [self fillScrollerByArray:_model.imageArr];
+    
+    if ([_model.imageArr count] >0) {
+        
+        [self fillScrollerByArray:_model.imageArr];
+    }
+    
     
     
 //    if ([_model.isfav integerValue] == 0) {
@@ -375,6 +380,12 @@
     
     if ([arr count] == 1) {
         [arr addObject:[arr objectAtIndex:0]];
+        [arr addObject:[arr objectAtIndex:0]];
+    }
+    else if([arr count] == 2)
+    {
+        [arr addObject:[arr objectAtIndex:0]];
+        [arr addObject:[arr objectAtIndex:1]];
     }
     NSMutableArray *viewsArray = [@[] mutableCopy];
     for (int i = 0; i < [arr count]; ++i) {

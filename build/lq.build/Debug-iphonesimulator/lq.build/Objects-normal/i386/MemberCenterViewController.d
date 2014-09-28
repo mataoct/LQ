@@ -44,10 +44,13 @@ dependencies: \
   /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
   /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
   /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/updateOrderRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/MyFavViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/MyFavTableViewCell.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomView/DisLineLabel.h \
   /WorkSpace/LQ/lq/Model/AddToCartRequestModel.h \
+  /WorkSpace/LQ/lq/Model/DelCartRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
   /WorkSpace/LQ/lq/CustomController/IntegralViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/IntegralTableViewCell.h \
@@ -55,12 +58,25 @@ dependencies: \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
   /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomController/OrderDetailViewController.h \
+  /WorkSpace/LQ/lq/Model/OrderDetailRequestModel.h \
+  /WorkSpace/LQ/lq/Model/OrderDetailResponseModel.h \
+  /WorkSpace/LQ/lq/CustomView/AddressViewController2.h \
+  /WorkSpace/LQ/lq/alipay/AlixPayResult.h \
+  /WorkSpace/LQ/lq/alipay/RSA/DataVerifier.h \
+  /WorkSpace/LQ/lq/alipay/AlixPayOrder.h \
+  /WorkSpace/LQ/lq/alipay/AlixLibService.h \
+  /WorkSpace/LQ/lq/alipay/PartnerConfig.h \
+  /WorkSpace/LQ/lq/alipay/RSA/DataSigner.h \
+  /WorkSpace/LQ/lq/MJRefresh/MJRefresh.h \
+  /WorkSpace/LQ/lq/MJRefresh/UIScrollView+MJRefresh.h \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \
   /WorkSpace/LQ/lq/CustomView/CusSettingBtn.h \
   /WorkSpace/LQ/lq/CustomController/UserModifyViewController.h \
   /WorkSpace/LQ/lq/Model/UpdateUserInfoModel.h \
   /WorkSpace/LQ/lq/CustomController/PwdModifyViewController.h \
   /WorkSpace/LQ/lq/Model/PasswordRequestModel.h \
+  /WorkSpace/LQ/lq/SDWebImage/SDImageCache.h \
   /WorkSpace/LQ/lq/CustomController/ShooInfoController.h \
   /WorkSpace/LQ/lq/Model/SellerInfoRequestModel.h \
   /WorkSpace/LQ/lq/Model/SellerInfoResponseModel.h \

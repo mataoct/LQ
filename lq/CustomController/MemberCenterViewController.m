@@ -375,10 +375,11 @@
 
 -(void)userlogout
 {
-    [CoreHelper logout];
     
-    [self.tabBarController setSelectedIndex:0];
-    [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-1.png"]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否退出登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    
+    [alert show];
+    
 }
 
 -(void)requestFailed:(NSString *)errorStr
@@ -415,6 +416,7 @@
     //更新按钮状态
     [_punchBtn setTitle:@"已签到" forState:UIControlStateNormal];
     [_punchBtn setEnabled:false];
+    [SVProgressHUD showSuccessWithStatus_custom:@"签到成功" duration:1.2];
     //更新积分显示
     
     _integrationLabel.text =  [NSString stringWithFormat:@"%d分",[_responseModel.integral integerValue] + _signResponseModel.integral];
@@ -458,100 +460,24 @@
     [self presentViewController:balanceVC animated:YES completion:nil];
 }
 
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        NSLog(@"sorry, no camera or camera is unavailable.");
-//        return;
-//    }
-//    //获得相机模式下支持的媒体类型
-//    NSArray* availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-//    BOOL canTakePicture = NO;
-//    for (NSString* mediaType in availableMediaTypes) {
-//        if ([mediaType isEqualToString:(NSString*)kUTTypeImage]) {
-//            //支持拍照
-//            canTakePicture = YES;
-//            break;
-//        }
-//    }
-//    //检查是否支持拍照
-//    if (!canTakePicture) {
-//        NSLog(@"sorry, taking picture is not supported.");
-//        return;
-//    }
-//    
-//    
-//    switch (buttonIndex) {
-//        case 0:
-//        {
-//            
-//            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-//            
-//            imagePicker.delegate = self;
-//            imagePicker.allowsEditing = YES;
-//            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//            
-//            [self presentViewController:imagePicker animated:YES completion:nil];
-//            
-//        }
-//            break;
-//        case 1:
-//        {
-//            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-//            
-//            imagePicker.delegate = self;
-//            imagePicker.allowsEditing = YES;
-//            imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-//            
-//            [self presentViewController:imagePicker animated:YES completion:nil];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//}
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 1:
+        {
+            [CoreHelper logout];
+            
+            [self.tabBarController setSelectedIndex:0];
+            [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbg-1.png"]];
 
-//-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    NSLog(@"image info %@",info);
-//
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//    
-//    
-//    UIImage *temp = [[UIImage alloc] init];
-//    temp = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-//    
-//    
-//    
-//    
-////    dispatch_async(dispatch_get_main_queue(), ^{
-//        [_headImageView setImage:temp];
-////    });
-//    
-////    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-//}
-//
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editInfo {
-//    
-//    
-//    NSLog(@"image EditInfo %@",editInfo);
-//    
-////    [self dismissModalViewControllerAnimated:YES];
-////    
-////    UIImage *temp = [[UIImage alloc] init];
-////    temp = [editInfo objectForKey:@"UIImagePickerControllerEditedImage"];
-////    
-////    [_headImageView setImage:temp];
-//}
-//
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//    [picker dismissViewControllerAnimated:YES completion:^{
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-//    }];
-//    
-//}
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 @end

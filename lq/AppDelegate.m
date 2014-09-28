@@ -209,7 +209,7 @@ BMKMapManager* _mapManager;
                 //                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"alipaySuccess" object:nil userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:@"9000",@"payResultStatus", nil]];
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"orderlist" object:self];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"kPaySuccess" object:nil];
 			}
         }
         else

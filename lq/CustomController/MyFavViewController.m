@@ -38,8 +38,8 @@
     
     
     UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn. frame=CGRectMake(15, 5, 13, 24);
-    [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
+    btn. frame=CGRectMake(15, 5, 40, 40);
+    [btn setBackgroundImage:[UIImage imageNamed:@"删除.png"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(deleteCheckedItem:)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];
     
@@ -60,8 +60,10 @@
     UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     
     _allCheckBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 5, 80, 20)];
-    [_allCheckBtn setTitle:@"全选" forState:UIControlStateNormal];
-    _allCheckBtn.backgroundColor = [UIColor blueColor];
+//    [_allCheckBtn setTitle:@"全选" forState:UIControlStateNormal];
+    
+    [_allCheckBtn setBackgroundImage:[UIImage imageNamed:@"全选黑色未选中.png"] forState:UIControlStateNormal];
+//    _allCheckBtn.backgroundColor = [UIColor blueColor];
     _favCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, 100, 20)];
     
     [temp addSubview:_allCheckBtn];
@@ -189,6 +191,8 @@
     else
     {
         [_selectDic removeObjectForKey:[NSString stringWithFormat:@"%d",indexPath.row]];
+        _selecFlag = 0;
+        [_allCheckBtn setBackgroundImage:[UIImage imageNamed:@"全选黑色未选中.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -204,11 +208,13 @@
         for (i = 0; i < [_responseModel.goodsArr count]; i++) {
             [_selectDic setObject:[_responseModel.goodsArr objectAtIndex:i] forKey:[NSString stringWithFormat:@"%d",i]];
         }
+        [_allCheckBtn setBackgroundImage:[UIImage imageNamed:@"全选黑色选中.png"] forState:UIControlStateNormal];
     }
     else
     {
         _selecFlag = 0;
         [_selectDic removeAllObjects];
+        [_allCheckBtn setBackgroundImage:[UIImage imageNamed:@"全选黑色未选中.png"] forState:UIControlStateNormal];
     }
     
     [_favTable reloadData];
@@ -219,31 +225,7 @@
 {
     if([_selectDic count] > 0)
     {
-        
-//        _responseModel.goodsArr remo
-        
-        
-        
-        _delRequestModel.uid = [CoreHelper getLoginUid]; 
-//
-//        
-//        if ([_selectDic count] > 0) {
-//            ShoppingCartItemModel *temp = [[ShoppingCartItemModel alloc] init];
-//            
-//            temp = [_responseModel.cartArr  objectAtIndex:[[[_selectDic allKeys] objectAtIndex:0] intValue]];
-//            
-//            _delRequestModel.gid = temp.gid;
-//            
-//            _delRequestModel.tag = 10003;
-//            [_delRequestModel postData];
-//        }
-        
-        
-        
-        
-//        for (GoodsModel *model in _selectDic) {
-//            [_responseModel.goodsArr removeObject:model];
-//        }
+        _delRequestModel.uid = [CoreHelper getLoginUid];
         
         
         //删除ID 列表

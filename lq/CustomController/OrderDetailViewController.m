@@ -87,9 +87,11 @@
     [tempOrderType addSubview:_inRestroomBtn];
     [tempOrderType addSubview:_dinnerTimeLabel];
     [headView addSubview:tempOrderType];
-    [_takeoutBtn setTitle:@"送餐" forState:UIControlStateNormal];
-    [_inRestroomBtn setTitle:@"到店" forState:UIControlStateNormal];
-    _takeoutBtn.backgroundColor = DarkGreen;_inRestroomBtn.backgroundColor = DarkGreen;
+
+    
+    [_takeoutBtn addTarget:self action:@selector(takeOutBtnClcik:) forControlEvents:UIControlEventTouchUpInside];
+    [_inRestroomBtn addTarget:self action:@selector(inRestroomBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     _dinnerTimeLabel.font = [UIFont systemFontOfSize:12];
     
     
@@ -138,7 +140,7 @@
     _orderDiscountTotalLabel = [[DisLineLabel alloc] initWithFrame:CGRectMake(250, 0, 36, 24)];
     _orderDiscountTotalLabel.font = [UIFont systemFontOfSize:10];
     _messageText = [[UITextView alloc] initWithFrame:CGRectMake(10, 34, 280, 50)];
-    _messageText.backgroundColor = [UIColor lightGrayColor];
+    _messageText.backgroundColor = BackGray;
     _messageText.delegate = self;
     _messageText.returnKeyType = UIReturnKeyDone;
     
@@ -147,7 +149,7 @@
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolbar.barStyle = UIBarStyleBlackTranslucent;
     UIBarButtonItem *hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStyleDone target:self action:@selector(inputDown:)];
-    UIBarButtonItem *send = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(updateDescription)];
+    UIBarButtonItem *send = [[UIBarButtonItem alloc] initWithTitle:@"修改备注" style:UIBarButtonItemStylePlain target:self action:@selector(updateDescription)];
     
     [toolbar setItems:@[send,hiddenButtonItem]];
     
@@ -247,6 +249,12 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kPaySuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccess) name:@"kCouponUse" object:nil];
+    
+    
+    
 }
 
 
@@ -262,6 +270,7 @@
     _updateRequestModel.address = [dic objectForKey:@"address"];
     _updateRequestModel.mobile = [dic objectForKey:@"tel"];
     _updateRequestModel.linkMan = [dic objectForKey:@"name"];
+    _updateRequestModel.tag = 10003;
     [_updateRequestModel postData];
     
     _orderAddressLabel.text = [NSString stringWithFormat:@"收货地址：%@",[dic objectForKey:@"address"]];
@@ -283,14 +292,17 @@
 -(void)refillLayouts
 {
     _orderTypeTitleLabel.text = @"订单类型";
-    if (_responseModel.orderType == 0) {
-        _inRestroomBtn.selected = false;
-        _takeoutBtn.selected = true;
+    if ([_responseModel.orderType isEqualToString:@"0"]) {
+
+        // 0 外卖 ，1 到店
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐未选中.png"] forState:UIControlStateNormal];
+        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门选中.png"] forState:UIControlStateNormal];
     }
     else
     {
-        _inRestroomBtn.selected = true;
-        _takeoutBtn.selected = false;
+        
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateNormal];
+        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门未选中.png"] forState:UIControlStateNormal];
     }
     
     _dinnerTimeLabel.text = [NSString stringWithFormat:@"用餐时间：%@",_responseModel.orderTime];
@@ -355,6 +367,7 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
+    [SVProgressHUD showSuccessWithStatus_custom:errorStr duration:1.2];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -377,6 +390,45 @@
             else
             {
                
+            }
+        }
+            break;
+        case 10003:
+        {
+            if (model.ResponseStatus == 1) {
+                [SVProgressHUD showSuccessWithStatus_custom:@"地址已更新" duration:1.6];
+                
+                //                NSLog(@"订单信息更新成功");
+            }
+            else
+            {
+                
+            }
+        }
+            break;
+        case 10004:
+        {
+            if (model.ResponseStatus == 1) {
+                [SVProgressHUD showSuccessWithStatus_custom:@"订单信息已更新" duration:1.6];
+                
+                //                NSLog(@"订单信息更新成功");
+            }
+            else
+            {
+                
+            }
+        }
+            break;
+        case 10005:
+        {
+            if (model.ResponseStatus == 1) {
+                [SVProgressHUD showSuccessWithStatus_custom:@"订单信息已更新" duration:1.6];
+                
+                //                NSLog(@"订单信息更新成功");
+            }
+            else
+            {
+                [SVProgressHUD showSuccessWithStatus_custom:model.ErrMessage duration:1.6];
             }
         }
             break;
@@ -514,7 +566,14 @@
             {
                 //验证签名成功，交易结果无篡改
                 
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                    [SVProgressHUD showSuccessWithStatus_custom:@"支付成功" duration:1.2];
+                }];
+                
                 NSLog(@"hehe success");
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"kPaySuccess" object:nil];
 			}
         }
         else
@@ -596,16 +655,68 @@
     if ([_messageText.text length]> 0) {
         
         _updateRequestModel.remark  = _messageText.text;
+        _updateRequestModel.tag = 10004;
         [_updateRequestModel postData];
     }
+    
+}
+
+
+-(void)takeOutBtnClcik:(id)sender
+{
+    
+    // 0 外卖 ，1 到店
+    if ([_updateRequestModel.orderType isEqualToString:@"1"]) {
+        
+        [self updateOrderType:@"0"];
+        
+        
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐未选中.png"] forState:UIControlStateNormal];
+        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门选中.png"] forState:UIControlStateNormal];
+        
+    }
+    else
+    {
+        
+    }
+}
+
+-(void)inRestroomBtnClick:(id)sender
+{
+    if (![_updateRequestModel.orderType isEqualToString:@"1"]) {
+        [self updateOrderType:@"1"];
+        
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateNormal];
+        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门未选中.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        
+    }
+}
+
+
+
+-(void)updateOrderType:(NSString *)type
+{
+    _updateRequestModel.orderType = type;
+    _updateRequestModel.tag = 10005;
+    [_updateRequestModel postData];
     
 }
 
 -(void)selectRightAction:(id)sender
 {
     [CoreHelper callService:[CoreHelper getSellerPhone]];
-    
-    //    NSLog(@"call");
+}
+
+
+-(void)paySuccess
+{    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        [SVProgressHUD showSuccessWithStatus_custom:@"支付成功" duration:1.2];
+    }];
 }
 
 @end

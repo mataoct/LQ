@@ -168,7 +168,7 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 {
     NSLog(@"heheheh");
     
-    WaterFlowModel  *object = [_arrayData objectAtIndex:indexPath.row];
+    WaterFlowModel  *object = [_sourceArr objectAtIndex:indexPath.row];
     
     WaterDetailViewController *waterVC = [[WaterDetailViewController alloc] initWithTitle:@"图片墙详情" andPid:object.pid];
     
@@ -198,7 +198,6 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
         for (id model in _arrayData) {
             [_sourceArr addObject:model];
         }
-        
         _start ++;
     }
     

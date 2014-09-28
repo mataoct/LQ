@@ -23,7 +23,7 @@
 #import "SDImageCache.h"
 
 
-@interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface MemberCenterViewController : LQ7ViewController<RequestModelDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) UIButton *settingBtn;
 

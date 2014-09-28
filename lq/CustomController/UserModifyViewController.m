@@ -34,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    _rightButton.image = [UIImage imageNamed:@"保存.png"];
+    _rightButton.tintColor = [UIColor whiteColor];
     self.item.rightBarButtonItem = _rightButton;
     
     _subScorller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];

@@ -44,8 +44,8 @@
     _delRequestModel = [[DelCartRequestModel alloc] init];
     
     UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn. frame=CGRectMake(15, 5, 13, 24);
-    [btn setBackgroundImage:[UIImage imageNamed:@"返回.png"] forState:UIControlStateNormal];
+    btn. frame=CGRectMake(15, 5, 40, 40);
+    [btn setBackgroundImage:[UIImage imageNamed:@"删除.png"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(deleteCheckedItem:)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *back=[[UIBarButtonItem alloc]initWithCustomView:btn];
     

@@ -123,9 +123,21 @@
 }
 
 
--(void)setScroller:(NSArray *)arr
+-(void)setScroller:(NSMutableArray *)arr
 {
+    
+    if ([arr count] == 1) {
+        [arr addObject:[arr objectAtIndex:0]];
+        [arr addObject:[arr objectAtIndex:0]];
+    }
+    else if([arr count] == 2)
+    {
+        [arr addObject:[arr objectAtIndex:0]];
+        [arr addObject:[arr objectAtIndex:1]];
+    }
+    
     NSMutableArray *viewsArray = [@[] mutableCopy];
+    
 
     for (int i = 0; i < [arr count]; ++i) {
         UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 170)];

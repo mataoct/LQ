@@ -106,19 +106,27 @@
 {
     
     HistoryModel *temp = [_sourceArr objectAtIndex:section];
-    return temp.orderId;
+    return [NSString stringWithFormat:@" 订单编号：%@",temp.orderId];
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* myView = [[UIView alloc] init];
+    HistoryModel *temp = [_sourceArr objectAtIndex:section];
+    myView.backgroundColor = DarkGreen;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 22)];
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.text=[NSString stringWithFormat:@" 订单编号：%@",temp.orderId];
+    
+    [myView addSubview:titleLabel];
+    return myView;
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    switch (indexPath.row) {
-//        case <#constant#>:
-//            <#statements#>
-//            break;
-//            
-//        default:
-//            break;
-//    }
     
     HistoryModel *temp = [_sourceArr objectAtIndex:indexPath.section];
     

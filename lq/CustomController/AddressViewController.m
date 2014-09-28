@@ -56,6 +56,8 @@
     
     
     _rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    _rightButton.image = [UIImage imageNamed:@"保存.png"];
+    _rightButton.tintColor = [UIColor whiteColor];
     self.item.rightBarButtonItem = _rightButton;
     // Do any additional setup after loading the view.
     

@@ -34,6 +34,40 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MenuViewController.m \
   /WorkSpace/LQ/lq/Model/CommentReuqestModel.h \
   /WorkSpace/LQ/lq/Model/CommentListResponseModel.h \
   /WorkSpace/LQ/lq/Model/UserCommentRequestModel.h \
+  /WorkSpace/LQ/lq/Model/SignatureRequestModel.h \
+  /WorkSpace/LQ/lq/Model/ShoppingCartItemModel.h \
+  /WorkSpace/LQ/lq/Model/SignatureResponseModel.h \
+  /WorkSpace/LQ/lq/CustomController/OrderDetailViewController.h \
+  /WorkSpace/LQ/lq/Model/OrderDetailRequestModel.h \
+  /WorkSpace/LQ/lq/Model/OrderDetailResponseModel.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell2.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/CartTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomController/UserCouponViewController.h \
+  /WorkSpace/LQ/lq/Model/CouponRequestModel.h \
+  /WorkSpace/LQ/lq/Model/CouponResponseModel.h \
+  /WorkSpace/LQ/lq/Model/CouponModel.h \
+  /WorkSpace/LQ/lq/Model/UserCouponResponseModel.h \
+  /WorkSpace/LQ/lq/Model/MyFavResponseModel.h \
+  /WorkSpace/LQ/lq/Model/HistoryResponseModel.h \
+  /WorkSpace/LQ/lq/Model/HistoryModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceResponseModel.h \
+  /WorkSpace/LQ/lq/Model/BalanceDetailModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralResponseModel.h \
+  /WorkSpace/LQ/lq/Model/IntegralDetailModel.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/DiscountTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/updateOrderRequestModel.h \
+  /WorkSpace/LQ/lq/CustomView/AddressViewController2.h \
+  /WorkSpace/LQ/lq/CustomController/AddressViewController.h \
+  /WorkSpace/LQ/lq/Model/UserInfoRequestModel.h \
+  /WorkSpace/LQ/lq/Model/AnotherUserInfoResponseModel.h \
+  /WorkSpace/LQ/lq/Model/AddressResponseModel.h \
+  /WorkSpace/LQ/lq/Model/SignResponseModel.h \
+  /WorkSpace/LQ/lq/alipay/AlixPayResult.h \
+  /WorkSpace/LQ/lq/alipay/RSA/DataVerifier.h \
+  /WorkSpace/LQ/lq/alipay/AlixPayOrder.h \
+  /WorkSpace/LQ/lq/alipay/AlixLibService.h \
+  /WorkSpace/LQ/lq/alipay/PartnerConfig.h \
+  /WorkSpace/LQ/lq/alipay/RSA/DataSigner.h \
   /WorkSpace/LQ/lq/CustomView/NIDropDown/NIDropDown.h \
   /WorkSpace/LQ/lq/MJRefresh/MJRefresh.h \
   /WorkSpace/LQ/lq/MJRefresh/UIScrollView+MJRefresh.h
