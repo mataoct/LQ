@@ -261,12 +261,18 @@
     
     model.ResponseTag = self.tag;
     
-    if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
-        [[super delegate] requestSuccess:model];
+    if (model.ResponseStatus == 1) {
+        if ([[super delegate] respondsToSelector:@selector(requestSuccess:)]) {
+            [[super delegate] requestSuccess:model];
+        }
     }
-    
-    
-    
+    else
+    {
+        if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+        {
+            [[super delegate] requestFailed:model.ErrMessage];
+        }
+    }
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

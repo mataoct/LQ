@@ -73,6 +73,7 @@ dependencies: /WorkSpace/LQ/lq/CustomController/MainViewController.m \
   /WorkSpace/LQ/lq/CustomController/RegistViewController.h \
   /WorkSpace/LQ/lq/Model/RegistModel.h \
   /WorkSpace/LQ/lq/Model/RegisterResponseModel.h \
+  /WorkSpace/LQ/lq/CustomController/ForgetPwdViewController.h \
   /WorkSpace/LQ/lq/Model/LoginRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/Water2ViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CollectionCell.h \

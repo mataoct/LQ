@@ -24,4 +24,8 @@
 
 -(void)getVerifyCodeByTel;
 
+-(void)postChangePWD;
+
+-(void)getPWDCodeByTel;
+
 @end

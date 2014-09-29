@@ -152,6 +152,10 @@
 
 -(void)sendRegisterInfo
 {
+    if (!_requestModel) {
+        _requestModel = [[RegistModel alloc] initWithTel:_telText.text];
+    }
+    _requestModel.tel = _telText.text;
     [_requestModel fillModelWithverifyCode:_verifyCodeText.text nikcName:_telText.text pwd:_pwdText.text];
     _requestModel.delegate = self;
     _requestModel.tag = 10002;
@@ -161,6 +165,7 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.2];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -170,12 +175,16 @@
         {
             
             [SVProgressHUD showSuccessWithStatus_custom:@"验证码已发送" duration:1.5];
+            _telText.enabled = false;
         
         }
             break;
         case 10002:
         {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+                [SVProgressHUD showSuccessWithStatus_custom:@"注册成功" duration:1.5];
+            }];
+            
         }
             break;
         default:

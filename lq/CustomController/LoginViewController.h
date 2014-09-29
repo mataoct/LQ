@@ -8,9 +8,10 @@
 
 #import "LQUIViewController.h"
 #import "RegistViewController.h"
-
+#import "ForgetPwdViewController.h"
 #import "LoginRequestModel.h"
 #import "UserInfoModel.h"
+
 
 @interface LoginViewController : LQUIViewController<UITextFieldDelegate,RequestModelDelegate>
 

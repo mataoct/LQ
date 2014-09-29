@@ -74,6 +74,7 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/CustomController/RegistViewController.h \
   /WorkSpace/LQ/lq/Model/RegistModel.h \
   /WorkSpace/LQ/lq/Model/RegisterResponseModel.h \
+  /WorkSpace/LQ/lq/CustomController/ForgetPwdViewController.h \
   /WorkSpace/LQ/lq/Model/LoginRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/Water2ViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/CollectionCell.h \
@@ -113,13 +114,13 @@ dependencies: /WorkSpace/LQ/lq/main.m /WorkSpace/LQ/lq/AppDelegate.h \
   /WorkSpace/LQ/lq/Model/MyCommentModel.h \
   /WorkSpace/LQ/lq/Model/MyCommentRequestModel.h \
   /WorkSpace/LQ/lq/Model/MyCommentResponseModel.h \
+  /WorkSpace/LQ/lq/CustomController/IntegralViewController.h \
+  /WorkSpace/LQ/lq/CustomView/Cell/IntegralTableViewCell.h \
+  /WorkSpace/LQ/lq/CustomController/BalanceViewController.h \
   /WorkSpace/LQ/lq/CustomView/CustomTable/CYTableView.h \
   /WorkSpace/LQ/lq/CustomView/CustomTable/EGORefreshTableHeaderView.h \
   /WorkSpace/LQ/lq/CustomView/CustomTable/CYRefreshTableFooterView.h \
   /WorkSpace/LQ/lq/CustomView/CustomTable/CYRefreshTableHeaderView.h \
-  /WorkSpace/LQ/lq/CustomController/IntegralViewController.h \
-  /WorkSpace/LQ/lq/CustomView/Cell/IntegralTableViewCell.h \
-  /WorkSpace/LQ/lq/CustomController/BalanceViewController.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \

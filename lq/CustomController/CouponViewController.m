@@ -33,19 +33,20 @@
     if (self) {
         //
         
-        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 36)];
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 46)];
         
         _sourceArr = [[NSMutableArray alloc] init];
         
 //        self.view.backgroundColor  = BackGray;
         
-        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 26)];
+        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 85, 36)];
         integrationLabel.backgroundColor = [UIColor whiteColor];
         integrationLabel.textAlignment = NSTextAlignmentCenter;
-        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 210, 26)];
+        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 10, 210, 36)];
         _integralValueLabel.backgroundColor = [UIColor whiteColor];
         integrationLabel.text = @"可用积分：";
-        integrationLabel.font = [UIFont systemFontOfSize:16];_integralValueLabel.font = [UIFont systemFontOfSize:16];
+        integrationLabel.font = [UIFont systemFontOfSize:14];_integralValueLabel.font = [UIFont systemFontOfSize:16];
+        _integralValueLabel.textColor = DarkGreen;
         [headView addSubview:integrationLabel];
         [headView addSubview:_integralValueLabel];
         
@@ -76,6 +77,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn. frame=CGRectMake(15, 5, 23, 23);
+    [btn setBackgroundImage:[UIImage imageNamed:@"标题--电话.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(selectRightAction:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *call=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    
+    
+    self.item.rightBarButtonItem = call;
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,6 +152,7 @@
 -(void)requestFailed:(NSString *)errorStr
 {
                 [_couponTable footerEndRefreshing];
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.2];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -205,5 +217,12 @@
         wself.model.start = [NSString stringWithFormat:@"%d",wself.start];
         [wself.model postData];
     }];
+}
+
+
+-(void)selectRightAction:(id)sender
+{
+    [CoreHelper callService:[CoreHelper getSellerPhone]];
+    NSLog(@"call");
 }
 @end

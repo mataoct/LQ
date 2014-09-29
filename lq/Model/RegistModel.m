@@ -62,6 +62,61 @@
     NSLog(@"post already %@",self);
 }
 
+-(void)getPWDCodeByTel
+{
+    NSString *token = [CoreHelper tokenController:@"GeneralHandler" action:@"getresetpwdcode"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/GeneralHandler.ashx?action=getresetpwdcode"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_tel forKey:@"phone"];
+    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+
+-(void)postChangePWD
+{
+    
+    NSString *token = [CoreHelper tokenController:@"apiuserhandler" action:@"resetpwd"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/apiuserhandler.ashx?action=resetpwd"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request addPostValue:_tel forKey:@"username"];
+    [request addPostValue:_verifyCode forKey:@"code"];
+    [request addPostValue:_tel forKey:@"phone"];
+    [request addPostValue:_pwd forKey:@"password"];
+    
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    //    request.tag = 10002;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
 
 -(void)postData
 {

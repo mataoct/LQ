@@ -36,6 +36,7 @@
 		A012CB3E199A112A000335B6 /* WaterFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A012CB3A199A112A000335B6 /* WaterFlowView.m */; };
 		A012CB3F199A112A000335B6 /* WaterFlowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A012CB3C199A112A000335B6 /* WaterFlowViewCell.m */; };
 		A012CB42199A1139000335B6 /* WaterFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A012CB41199A1139000335B6 /* WaterFlowViewController.m */; };
+		A0130E9319D967A4004339D9 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0130E9219D967A4004339D9 /* ForgetPwdViewController.m */; };
 		A016D668195FEFD9006C7AEB /* CoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A016D667195FEFD9006C7AEB /* CoreHelper.m */; };
 		A016D66B195FF0A6006C7AEB /* NSString+MD5HexDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = A016D66A195FF0A6006C7AEB /* NSString+MD5HexDigest.m */; };
 		A01AD62D1952D4D4005DD9C4 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01AD6281952D4D4005DD9C4 /* CycleScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -369,6 +370,8 @@
 		A012CB3C199A112A000335B6 /* WaterFlowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowViewCell.m; sourceTree = "<group>"; };
 		A012CB40199A1139000335B6 /* WaterFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaterFlowViewController.h; path = CustomController/WaterFlowViewController.h; sourceTree = "<group>"; };
 		A012CB41199A1139000335B6 /* WaterFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaterFlowViewController.m; path = CustomController/WaterFlowViewController.m; sourceTree = "<group>"; };
+		A0130E9119D967A4004339D9 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPwdViewController.h; path = CustomController/ForgetPwdViewController.h; sourceTree = "<group>"; };
+		A0130E9219D967A4004339D9 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPwdViewController.m; path = CustomController/ForgetPwdViewController.m; sourceTree = "<group>"; };
 		A016D666195FEFD9006C7AEB /* CoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreHelper.h; path = Helper/CoreHelper.h; sourceTree = "<group>"; };
 		A016D667195FEFD9006C7AEB /* CoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreHelper.m; path = Helper/CoreHelper.m; sourceTree = "<group>"; };
 		A016D669195FF0A6006C7AEB /* NSString+MD5HexDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5HexDigest.h"; path = "CoreHelper/NSString+MD5HexDigest.h"; sourceTree = "<group>"; };
@@ -1832,6 +1835,8 @@
 				A035A45819D06D0E00277240 /* UserModifyViewController.m */,
 				A05C433119D3F1F800469F73 /* PwdModifyViewController.h */,
 				A05C433219D3F1F800469F73 /* PwdModifyViewController.m */,
+				A0130E9119D967A4004339D9 /* ForgetPwdViewController.h */,
+				A0130E9219D967A4004339D9 /* ForgetPwdViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -2228,6 +2233,7 @@
 				A0FBCE7519543D17000146C3 /* MenuItemView.m in Sources */,
 				A0A96BF419A63FDC009C4A6A /* AddressViewController.m in Sources */,
 				A0521A2319D3177D004B00C0 /* UpdateUserInfoModel.m in Sources */,
+				A0130E9319D967A4004339D9 /* ForgetPwdViewController.m in Sources */,
 				A010B0CD1982436D00E170DA /* AdModel.m in Sources */,
 				A00504D619927A5800318806 /* InfoViewController.m in Sources */,
 				A002EDBE1991188400141C49 /* CommentTableViewCell.m in Sources */,

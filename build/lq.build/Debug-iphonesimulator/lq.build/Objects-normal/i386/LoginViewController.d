@@ -11,4 +11,5 @@ dependencies: /WorkSpace/LQ/lq/CustomController/LoginViewController.m \
   /WorkSpace/LQ/lq/ASIHttpRequest/ASIProgressDelegate.h \
   /WorkSpace/LQ/lq/ASIHttpRequest/ASICacheDelegate.h \
   /WorkSpace/LQ/lq/Model/RegisterResponseModel.h \
+  /WorkSpace/LQ/lq/CustomController/ForgetPwdViewController.h \
   /WorkSpace/LQ/lq/Model/LoginRequestModel.h

@@ -63,15 +63,15 @@
     _titleLabel.font = [UIFont systemFontOfSize:16];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    _viewCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 30, 50, 20)];
+    _viewCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 30, 50, 20)];
     _viewCountLabel.font = [UIFont systemFontOfSize:12];
     
     
     _commentNumLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(240, 30, 50, 20)];
     _commentNumLabel1.font = [UIFont systemFontOfSize:12];
     
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 40, 280, 200)];
-    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(10, 240, 280, 110)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 55, 280, 200)];
+    _detailText = [[UITextView alloc] initWithFrame:CGRectMake(10, 255, 280, 110)];
     _detailText.font = [UIFont systemFontOfSize:14];
     
     

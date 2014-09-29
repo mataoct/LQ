@@ -79,6 +79,9 @@
 //    [_rememberPwdBtn setTitle:@"记住密码" forState:UIControlStateNormal];
     [_forgetPwdBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
     [_forgetPwdBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    
+    [_forgetPwdBtn addTarget:self action:@selector(forgetPwd) forControlEvents:UIControlEventTouchUpInside];
+    
 //    _forgetPwdBtn.backgroundColor = [UIColor blueColor];
     _forgetPwdBtn.font = [UIFont systemFontOfSize:14];
 //    _rememberPwdBtn.backgroundColor = [UIColor blueColor];
@@ -169,6 +172,8 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
+    
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.2];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
@@ -192,7 +197,8 @@
 
 -(void)forgetPwd
 {
-    
+    ForgetPwdViewController *registVC = [[ForgetPwdViewController alloc] initWithTitle:@"忘记密码"];
+    [self presentViewController:registVC animated:YES completion:nil];
 }
 
 @end
