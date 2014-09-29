@@ -78,6 +78,32 @@
     NSLog(@"post already %@",self);
 }
 
+-(void)deleteComment
+{
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"delmycommentlist"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=delmycommentlist"];
+    self.request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [self.request addPostValue:token forKey:@"token"];
+    
+    [self.request addPostValue:_uid forKey:@"uid"];
+    [self.request addPostValue:_gid forKey:@"ids"];
+    [self.request addPostValue:_sellerId forKey:@"sellerid"];
+    [self.request setRequestMethod:@"POST"];
+    
+    [self.request setDelegate:self];
+    
+    [self.request setTag:10003];
+    
+    NSLog(@"post ready %@",token);
+    
+    [self.request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
 
 
 -(void)requestStarted:(ASIHTTPRequest *)request

@@ -85,6 +85,13 @@
             [[super delegate] requestSuccess:model];
         }
     }
+    else
+    {
+        if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+        {
+            [[super delegate] requestFailed:model.ErrMessage];
+        }
+    }
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

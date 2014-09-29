@@ -17,7 +17,7 @@
 @property (nonatomic,strong) NSString *dateLine;
 @property (nonatomic,strong) NSString *summary;
 
-@property (nonatomic,strong) NSString *description;
+@property (nonatomic,strong) NSString *mdescription;
 @property (nonatomic,strong) NSString *views;
 @property (nonatomic,strong) NSString *commentnum;
 

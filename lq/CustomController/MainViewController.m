@@ -203,7 +203,8 @@
                 break;
             case 4:
             {
-//                CouponDetailViewController *cdVC = [[CouponDetailViewController alloc] init]
+                CouponDetailViewController *cdVC = [[CouponDetailViewController alloc] initWithTitle:@"优惠券详情" andCouponId:tempSlider.type_id];
+                [wself presentViewController:cdVC animated:YES completion:nil];
             }
                 break;
             default:

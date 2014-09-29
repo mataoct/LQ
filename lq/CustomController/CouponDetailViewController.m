@@ -299,8 +299,6 @@
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    
-    
     switch (model.ResponseTag) {
         case 10001:
         {
@@ -312,8 +310,6 @@
 
         case 10002:
         {
-            
-            NSLog(@"评论成功");
             
             [_textView resignFirstResponder];
             _textView.text = @"";

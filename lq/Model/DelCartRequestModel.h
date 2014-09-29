@@ -12,7 +12,9 @@
 
 @property (nonatomic,strong) NSString *uid;
 @property (nonatomic,strong) NSString *gid;
+@property (nonatomic,strong) NSString *sellerId;
 
 -(void)deleteFav;
+-(void)deleteComment;
 
 @end

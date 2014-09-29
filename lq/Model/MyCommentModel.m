@@ -30,6 +30,8 @@
         _img = [[NSURL alloc] init];
         _title = [[NSString alloc] init];
         
+        _ischeck = 0;
+        
         
         _commentId =  safeString([dic objectForKey:@"id"]);
         _createTime = [CoreHelper timeStampToDate: safeString([dic objectForKey:@"createtime"])];

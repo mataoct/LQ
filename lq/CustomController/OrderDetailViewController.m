@@ -49,6 +49,31 @@
     [super viewDidLoad];
     
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kCouponUse" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(couponHasBeenUsed:) name:@"kCouponUse" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kAddressChange" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressChange:) name:@"kAddressChange" object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kPaySuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccess) name:@"kPaySuccess" object:nil];
+    
+    
+    
+    
     UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn. frame=CGRectMake(15, 5, 23, 23);
     [btn setBackgroundImage:[UIImage imageNamed:@"标题--电话.png"] forState:UIControlStateNormal];
@@ -225,43 +250,20 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    //注册优惠券使用通知
-    
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kCouponUse" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(couponHasBeenUsed:) name:@"kCouponUse" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kAddressChange" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressChange:) name:@"kAddressChange" object:nil];
-    
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kPaySuccess" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccess) name:@"kCouponUse" object:nil];
-    
-    
-    
-}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    //注册优惠券使用通知
+//    
+//  
+//    
+//}
 
 
--(void)viewDidDisappear:(BOOL)animated
-{
-    
-}
+//-(void)viewDidDisappear:(BOOL)animated
+//{
+//    [super viewDidDisappear:animated];
+//}
 
 -(void)addressChange:(NSNotification *)noti
 {
@@ -572,7 +574,12 @@
                     [SVProgressHUD showSuccessWithStatus_custom:@"支付成功" duration:1.2];
                 }];
                 
-                NSLog(@"hehe success");
+                
+                
+//                [self pres]
+                
+                
+                NSLog(@"hehe success  %@",self.view);
 //                [[NSNotificationCenter defaultCenter] postNotificationName:@"kPaySuccess" object:nil];
 			}
         }

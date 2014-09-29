@@ -38,7 +38,7 @@
     self = [super initWithTitle:str];
     if (self) {
         
-        _historyRequest = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
+        _historyRequest = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"30"];
         _historyRequest.delegate = self;
         _historyRequest.tag = 10001;
         
@@ -87,7 +87,21 @@
     [self.view addSubview:_hstTable];
     [self.view addSubview:_seg];
     
+//    [_historyRequest postForHistory:[CoreHelper getLoginUid]];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    _start = 0;
+    _historyRequest.start = [NSString stringWithFormat:@"%d",_start];
+    
+    [_oneArr removeAllObjects];
+    [_twoArr removeAllObjects];
+    [_sourceArr removeAllObjects];
     [_historyRequest postForHistory:[CoreHelper getLoginUid]];
+
 }
 
 
@@ -297,8 +311,6 @@
 -(void)selectRightAction:(id)sender
 {
     [CoreHelper callService:[CoreHelper getSellerPhone]];
-    
-    //    NSLog(@"call");
 }
 
 @end

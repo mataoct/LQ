@@ -22,7 +22,7 @@
         _title = [[NSString alloc] init];
         _summary= [[NSString alloc] init];
         
-        _description = [[NSString alloc] init];
+        _mdescription = [[NSString alloc] init];
         _views = [[NSString alloc] init];
         _commentnum = [[NSString alloc] init];
         
@@ -35,7 +35,7 @@
         _title = safeString([dic objectForKey:@"title"]);
         
         
-        _description = safeString([dic objectForKey:@"descrition"]);
+        _mdescription = safeString([dic objectForKey:@"descrition"]);
         _views = safeString([dic objectForKey:@"views"]);
         _commentnum = safeString([dic objectForKey:@"commentnum"]);
     }

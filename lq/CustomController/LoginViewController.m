@@ -189,4 +189,10 @@
 //    NSLog(@"call");
 }
 
+
+-(void)forgetPwd
+{
+    
+}
+
 @end

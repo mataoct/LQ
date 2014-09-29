@@ -12,6 +12,10 @@
 
 @property (nonatomic,assign) NSInteger start;
 
+@property (nonatomic,strong) NSMutableArray *checkArr;
+
+@property (nonatomic,strong) UIBarButtonItem * rightButton;
+
 @end
 
 @implementation MyCommentViewController
@@ -34,13 +38,19 @@
         
         
         _sourceArr = [[NSMutableArray alloc] init];
-        
+        _checkArr = [[NSMutableArray alloc] init];
         self.view.backgroundColor = BackGray;
         _start = 0;
         _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] start:[NSString stringWithFormat:@"%d",_start] limit:@"10" type:@"0"];
         _responseModel = [[MyCommentResponseModel alloc] init];
         
-        _commentTable = [[CYTableView alloc] initWithFrame:CGRectMake(10, 110, 300, self.view.frame.size.height - 110) style:UITableViewStylePlain];
+        
+        _delRequestModel = [[DelCartRequestModel alloc] init];
+        _delRequestModel.delegate = self;
+        _delRequestModel.uid = [CoreHelper getLoginUid];
+        _delRequestModel.sellerId = @"100";
+        
+        _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, 300, self.view.frame.size.height - 110) style:UITableViewStylePlain];
         
         
         NSArray *buttonNames = [NSArray arrayWithObjects:@"所有评论", @"商品评论", @"图片墙评论", nil];
@@ -62,11 +72,11 @@
         _commentTable.dataSource =self;
         _commentTable.backgroundColor = BackGray;
         _commentTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _commentTable.CYdelegate = self;
-            [_commentTable setHeaderRefreshEnabled:YES];
+        
+        [self addHeader];
         
         _requestModel.delegate = self;
-        
+        _requestModel.tag = 10001;
         
     }
     return self;
@@ -76,6 +86,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _rightButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    _rightButton.image = [UIImage imageNamed:@"删除.png"];
+    _rightButton.tintColor = [UIColor whiteColor];
+    self.item.rightBarButtonItem = _rightButton;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -113,7 +128,7 @@
     }
     
     [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
-    
+    cell.delegate = self;
     return cell;
 }
 
@@ -135,35 +150,43 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
-    
+    [_commentTable headerEndRefreshing];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _responseModel = (MyCommentResponseModel *)model;
     
-    
-    
-    if ([_responseModel.myCommArr count] > 0) {
-        _start = _start +10;
-        
-        
-        
-        for (id model in _responseModel.myCommArr) {
-            [_sourceArr addObject:model];
+    switch (model.ResponseTag) {
+        case 10001:
+        {
+            _responseModel = (MyCommentResponseModel *)model;
+            
+            
+            if ([_responseModel.myCommArr count] > 0) {
+                _start = _start +10;
+                for (id model in _responseModel.myCommArr) {
+                    [_sourceArr addObject:model];
+                }
+            }
+            [_commentTable headerEndRefreshing];
+            [_commentTable reloadData];
         }
-        
-        
-        
-        [_commentTable reloadData];
+            break;
+        case 10002:
+            
+            _start = 0;
+            _requestModel.start = [NSString stringWithFormat:@"%d",_start];
+            [_sourceArr removeAllObjects];
+            [_checkArr removeAllObjects];
+            [_requestModel postData];
+            [SVProgressHUD showErrorWithStatus_custom:@"删除成功" duration:1.2];
+            break;
+        default:
+            break;
     }
     
     
-    
-    
-    
-    [_commentTable endHearderRefreshing];
-    
+
 }
 
 
@@ -197,6 +220,7 @@
     
     _start = 0;
     [_sourceArr removeAllObjects];
+    [_checkArr removeAllObjects];
     
     switch (seg.selectedSegmentIndex) {
         case 0:
@@ -214,70 +238,59 @@
     }
 }
 
-#pragma mark - UIScrollViewDelegate Methods
+- (void)addHeader
+{
+    __unsafe_unretained typeof(self) wself = self;
+    // 添加下拉刷新头部控件
+    [_commentTable addHeaderWithCallback:^{
+        // 进入刷新状态就会回调这个Block
+        
+        wself.requestModel.start = [NSString stringWithFormat:@"%d",wself.start];
+        [wself.requestModel postData];
+    }];
+}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if ([scrollView isKindOfClass:[CYTableView class]] && !_commentTable.headerRefreshing && !_commentTable.footerRefreshing)
+-(void)commentBtnClick:(MyCommentModel *)model checkStatus:(NSInteger)status
+{
+    if (status == 0) {
+        //消除选择
+        [_checkArr removeObject:model];
+    }
+    else
     {
-        [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidScroll:scrollView];
-        [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidScroll:scrollView];
+        [_checkArr addObject:model];
+    }
+    
+    NSLog(@"check arr is %@",_checkArr);
+}
+
+-(void)selectRightAction:(id)sender
+{
+    if([_checkArr count] > 0)
+    {
+
+            MyCommentModel *temp = [[MyCommentModel alloc] init];
+
+            for (int i = 0; i < [_checkArr count]; i ++) {
+                temp = [_sourceArr objectAtIndex:i];
+                
+                
+                if (i == 0) {
+                    _delRequestModel.gid = temp.commentId;
+                }
+                else
+                {
+                    _delRequestModel.gid = [_delRequestModel.gid stringByAppendingFormat:@",%@",temp.commentId];
+                }
+            }
+            _delRequestModel.delegate = self;
+            _delRequestModel.tag = 10002;
+            [_delRequestModel deleteComment];
+//
+//        }
+//    
     }
 }
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-	
-    if ([scrollView isKindOfClass:[CYTableView class]])
-    {
-        [((CYTableView *)scrollView).hearderView egoRefreshScrollViewDidEndDragging:scrollView];
-        
-        [((CYTableView *)scrollView).footerView egoRefreshScrollViewDidEndDragging:scrollView];
-        
-    }
-}
-
-
-
-
-
-#pragma mark -
-#pragma mark CYTableViewDelegate
-
--(void)refreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view
-{
-    NSLog(@"loading header");
-    
-    //    [self requestAll];
-    
-    _commentTable.headerRefreshing = YES;
-    
-    
-    _requestModel.start = [NSString stringWithFormat:@"%d",_start + 10];
-    
-    
-    
-    
-    
-    
-    
-    [_requestModel postData];
-    
-    //    [_contentTable setFooterRefreshEnabled:YES];
-    //    [_contentTable.tableFooterView removeFromSuperview];
-    //    [_table endHearderRefreshing];
-}
-
--(void)refreshTableFooterDataSourceIsLoading:(EGORefreshTableHeaderView *)view
-{
-    //    [self requestForData: [NSString stringWithFormat:@"/mobilegame/news/newslist?page=%d&pagesize=10",_nextPage] withTag:REQUEST_MORENEWS];
-    //    [_table endFooterRefreshing];
-}
-
--(void)refreshTableFinish:(EGORefreshTableHeaderView *)view
-{
-    NSLog(@"finish");
-}
-
-
 
 
 

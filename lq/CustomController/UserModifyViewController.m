@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
+    _rightButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(selectRightAction:)];
     _rightButton.image = [UIImage imageNamed:@"保存.png"];
     _rightButton.tintColor = [UIColor whiteColor];
     self.item.rightBarButtonItem = _rightButton;
@@ -119,9 +119,13 @@
     _maleBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 0, 100, 40)];
     _femaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 0, 100, 40)];
     
-    [_maleBtn setTitle:@"男" forState:UIControlStateNormal];
-    [_femaleBtn setTitle:@"女" forState:UIControlStateNormal];
-    _femaleBtn.backgroundColor = BackGray;_maleBtn.backgroundColor = BackGray;
+//    [_maleBtn setTitle:@"男" forState:UIControlStateNormal];
+//    [_femaleBtn setTitle:@"女" forState:UIControlStateNormal];
+//    _femaleBtn.backgroundColor = BackGray;_maleBtn.backgroundColor = BackGray;
+
+    [_maleBtn addTarget:self action:@selector(maleClick) forControlEvents:UIControlEventTouchUpInside];
+    [_femaleBtn addTarget:self action:@selector(femaleClick) forControlEvents:UIControlEventTouchUpInside];
+    
     
     [self setSexMaleOrFemale:_user.sex];
     
@@ -354,14 +358,14 @@
 {
     
     if (str == 0) {
-        [_maleBtn setBackgroundImage:[UIImage imageNamed:@"male_select@2x.png"] forState:UIControlStateNormal];
-        [_femaleBtn setBackgroundImage:[UIImage imageNamed:@"female@2x.png"] forState:UIControlStateNormal];
+        [_maleBtn setBackgroundImage:[UIImage imageNamed:@"男选中.png"] forState:UIControlStateNormal];
+        [_femaleBtn setBackgroundImage:[UIImage imageNamed:@"女未选中.png"] forState:UIControlStateNormal];
         _sex = @"0";
     }
     else
     {
-        [_maleBtn setBackgroundImage:[UIImage imageNamed:@"male@2x.png"] forState:UIControlStateNormal];
-        [_femaleBtn setBackgroundImage:[UIImage imageNamed:@"female_select@2x.png"] forState:UIControlStateNormal];
+        [_maleBtn setBackgroundImage:[UIImage imageNamed:@"男未选中.png"] forState:UIControlStateNormal];
+        [_femaleBtn setBackgroundImage:[UIImage imageNamed:@"女选中.png"] forState:UIControlStateNormal];
         _sex = @"1";
     }
     
@@ -373,9 +377,16 @@
     _requestModel.nickName = _nickTf.text;
     _requestModel.sellerId = @"100";
     _requestModel.uid = _user.uid;
-    _requestModel.avatar = [UIImageJPEGRepresentation(_headImg.image, 0.1) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+    _requestModel.avatar =[UIImageJPEGRepresentation([self imageByScalingProportionallyToSize:CGSizeMake(80, 80) sourceImage:_headImg.image], 1) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
     
     
+//    UIImage *tempAvatar = [[UIImage alloc] init];
+//    tempAvatar = UIImageJPEGRepresentation(_headImg.image, 1);
+    
+    // [UIImageJPEGRepresentation([self imageByScalingProportionallyToSize:CGSizeMake(80, 80) sourceImage:_headImg.image], 1) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+    
+    
+//    [self imageByScalingProportionallyToSize:CGSizeMake(80, 80) sourceImage:_headImg.image];
     
     
     _requestModel.sex = _sex;
@@ -397,6 +408,45 @@
 -(void)requestSuccess:(BaseResponseModel *)model
 {
     [SVProgressHUD showSuccessWithStatus_custom:@"修改成功" duration:1.2];
+}
+
+
+
+- (UIImage *) imageByScalingProportionallyToSize:(CGSize)targetSize sourceImage:(UIImage *)sourceImage {
+    
+    UIGraphicsBeginImageContext(targetSize);
+    [sourceImage drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
+    
+    UIImage *newImage = nil;
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    UIGraphicsBeginImageContext(targetSize); // this will crop
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [sourceImage drawInRect:thumbnailRect];
+    
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    if(newImage == nil)
+        NSLog(@"could not scale image");
+    
+    //pop the context to get back to the default
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end

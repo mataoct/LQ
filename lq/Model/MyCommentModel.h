@@ -17,6 +17,8 @@
 @property (nonatomic,strong) NSURL *img;
 @property (nonatomic,strong) NSString *title;
 
+@property (nonatomic,assign) NSInteger ischeck;
+
 -(id)initWithDic:(NSDictionary *)dic;
 
 

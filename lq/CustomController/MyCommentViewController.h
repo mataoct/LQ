@@ -10,9 +10,12 @@
 #import "MyCommentTableViewCell.h"
 
 #import "MyCommentRequestModel.h"
-#import "CYTableView.h"
+#import "MJRefresh.h"
 
-@interface MyCommentViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,CYTableViewDelegate>
+#import "DelCartRequestModel.h"
+
+
+@interface MyCommentViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,commentClickDelegate>
 
 //@property (nonatomic,strong) UIButton *allCommnetBtn;
 //@property (nonatomic,strong) UIButton *goodCommentBtn;
@@ -20,12 +23,14 @@
 
 @property (nonatomic,strong) UISegmentedControl *seg;
 
-@property (nonatomic,strong) CYTableView *commentTable;
+@property (nonatomic,strong) UITableView *commentTable;
 
 @property (nonatomic,strong) MyCommentRequestModel *requestModel;
 @property (nonatomic,strong) MyCommentResponseModel *responseModel;
 
 @property (nonatomic,strong) NSMutableArray *sourceArr;
+
+@property (nonatomic,strong) DelCartRequestModel *delRequestModel;
 
 -(id)initWithTitle:(NSString *)str;
 

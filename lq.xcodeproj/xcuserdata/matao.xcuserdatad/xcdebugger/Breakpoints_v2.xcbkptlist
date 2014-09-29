@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomController/OrderDetailViewController.m"
-            timestampString = "433593756.0371"
+            filePath = "lq/CustomController/MyCommentViewController.m"
+            timestampString = "433615672.748629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "555"
-            endingLineNumber = "555"
-            landmarkName = "-paymentResult:"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-requestSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomController/OrderDetailViewController.m"
-            timestampString = "433593916.070032"
+            filePath = "lq/CustomController/MyCommentViewController.m"
+            timestampString = "433615787.775138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "576"
-            endingLineNumber = "576"
-            landmarkName = "-paymentResult:"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-requestSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lq/CustomController/OrderDetailViewController.m"
-            timestampString = "433593786.062834"
+            filePath = "lq/Model/MyCommentRequestModel.m"
+            timestampString = "433615863.621325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "-viewDidAppear:"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-postData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lq/CustomController/MyCommentViewController.m"
+            timestampString = "433615973.881989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-requestFailed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
