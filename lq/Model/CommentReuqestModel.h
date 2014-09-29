@@ -23,4 +23,6 @@
 
 -(void)postDataWaterFlow;
 
+-(void)postActionComment;
+
 @end

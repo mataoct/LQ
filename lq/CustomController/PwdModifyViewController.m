@@ -92,7 +92,7 @@
     if ([_PwdTF.text isEqualToString:_reNewPwdTF.text])
     {
         _requestModel.oldPwd = _oldPwdTF.text;
-        _requestModel.sellerId = @"100";
+        _requestModel.sellerId = CustomID;
         _requestModel.uid = [CoreHelper getLoginUid];
         _requestModel.pwd = _PwdTF.text;
         _requestModel.delegate = self;

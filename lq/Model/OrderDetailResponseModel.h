@@ -35,5 +35,7 @@
 @property (nonatomic,strong) NSString *discount;
 @property (nonatomic,strong) NSMutableArray *goodList;
 
+@property (nonatomic,strong) NSString *hasdelivery;
+
 -(id)initWithDic:(NSDictionary *)dic;
 @end

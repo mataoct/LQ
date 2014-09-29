@@ -72,7 +72,7 @@
     NSArray *actionButtonItems = @[_favBtn,_shareBtn];
     [self.item setRightBarButtonItems:actionButtonItems animated:YES];
     
-    _requestModel = [[ProductionRequestModel alloc] initWithSellId:@"100" Gid:_gid];
+    _requestModel = [[ProductionRequestModel alloc] initWithSellId:CustomID Gid:_gid];
     _commentRequestModel = [[CommentReuqestModel alloc] initWithStart:@"0" Limit:@"10" Gid:_gid];
     
     _add2CartModel = [[AddToCartRequestModel alloc] initWithGid:_gid uid:[CoreHelper getLoginUid]];
@@ -298,19 +298,7 @@
         [self fillScrollerByArray:_model.imageArr];
     }
     
-    
-    
-//    if ([_model.isfav integerValue] == 0) {
-//        //
-//        _favBtn.image = [UIImage imageNamed:@"已收藏.png"];
-//    }
-//    else
-//    {
-//        _favBtn.image = [UIImage imageNamed:@"收藏-已收藏.png"];
-//    }
-//    
-//    
-////    _favBtn.image = [UIImage imageNamed:@"收藏"];
+
 //
     [self refillFavBtn];
     _titleLabel.text = _model.title;
@@ -355,7 +343,7 @@
     temp.gid = _model.gid;
     temp.num = @"1";
     
-    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:@[temp]];
+    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:CustomID uid:[CoreHelper getLoginUid] args:@[temp]];
     
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10006;

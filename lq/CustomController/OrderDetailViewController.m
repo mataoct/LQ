@@ -98,8 +98,8 @@
     
     //订单类型
     _orderTypeTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 290, 24)];
-    _takeoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 34, 100, 20)];
-    _inRestroomBtn = [[UIButton alloc] initWithFrame:CGRectMake(130, 34, 100, 20)];
+    _inRestroomBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 34, 100, 20)];
+    _takeoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(130, 34, 100, 20)];
     _dinnerTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 57, 260, 20)];
     UIView *tempOrderType = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, 80)];
     tempOrderType.backgroundColor = [UIColor whiteColor];
@@ -294,18 +294,36 @@
 -(void)refillLayouts
 {
     _orderTypeTitleLabel.text = @"订单类型";
-    if ([_responseModel.orderType isEqualToString:@"0"]) {
-
-        // 0 外卖 ，1 到店
-        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐未选中.png"] forState:UIControlStateNormal];
-        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门选中.png"] forState:UIControlStateNormal];
+    
+    
+    if ([_responseModel.hasdelivery isEqualToString:@"0"]) {
+        //
+        _takeoutBtn.hidden = YES;
+        _inRestroomBtn.enabled = false;
+        
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateNormal];
+        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateDisabled];
+//        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门未选中.png"] forState:UIControlStateNormal];
+        
     }
     else
     {
-        
-        [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateNormal];
-        [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门未选中.png"] forState:UIControlStateNormal];
+        _inRestroomBtn.enabled = true;
+        if ([_responseModel.orderType isEqualToString:@"0"]) {
+            
+            // 0 外卖 ，1 到店
+            [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐未选中.png"] forState:UIControlStateNormal];
+            [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门选中.png"] forState:UIControlStateNormal];
+        }
+        else
+        {
+            
+            [_inRestroomBtn setImage:[UIImage imageNamed:@"到店用餐选中.png"] forState:UIControlStateNormal];
+            [_takeoutBtn setImage:[UIImage imageNamed:@"送餐上门未选中.png"] forState:UIControlStateNormal];
+        }
     }
+    
+
     
     _dinnerTimeLabel.text = [NSString stringWithFormat:@"用餐时间：%@",_responseModel.orderTime];
     _orderInfoTitleLabel.text = @"收货信息";
@@ -515,7 +533,7 @@
     //	Product *product = [_products objectAtIndex:index];
     AlixPayOrder *order = [[AlixPayOrder alloc] init];
     order.partner = PartnerID;
-    order.seller = SellerID;
+    order.seller = CustomID;
     
     order.tradeNO = _orderId;
 	order.productName = @"福建省商友网络科技有限公司"; //商品标题

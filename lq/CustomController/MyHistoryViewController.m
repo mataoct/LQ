@@ -17,6 +17,9 @@
 
 @property (nonatomic,assign) NSInteger start;
 
+
+@property (nonatomic,strong) HistoryModel *deleteTarget;
+
 @end
 
 @implementation MyHistoryViewController
@@ -38,9 +41,13 @@
     self = [super initWithTitle:str];
     if (self) {
         
-        _historyRequest = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"30"];
+        _historyRequest = [[CouponRequestModel alloc] initWithSeller:CustomID Start:@"0" Limit:@"30"];
         _historyRequest.delegate = self;
         _historyRequest.tag = 10001;
+        
+        _cancleRequest = [[CancleRequestModel alloc] init];
+        _cancleRequest.delegate = self;
+        _cancleRequest.tag = 10002;
         
         
         _historyResponse = [[HistoryResponseModel alloc] init];
@@ -174,10 +181,12 @@
         
         if (defaultCell.model.status != 0 ) {
             [defaultCell.payBtn setHidden:YES];
+            [defaultCell.cancleBtn setHidden:YES];
         }
         else
         {
             [defaultCell.payBtn setHidden:NO];
+            [defaultCell.cancleBtn setHidden:NO];
         }
         
         defaultCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -224,39 +233,63 @@
 -(void)requestFailed:(NSString *)errorStr
 {
     [_hstTable headerEndRefreshing];
+    
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.3];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
 {
-    _historyResponse = (HistoryResponseModel *)model;
-//    NSLog(@"heheheheh %@,%@",_historyResponse.historyArr,_historyResponse.unPayArr);
     
-    if ([_historyResponse.historyArr count] > 0) {
-        for (HistoryModel *temp in _historyResponse.historyArr) {
-            if (temp.status != 0) {
-                //
-                [_oneArr addObject:temp];
+    
+    switch (model.ResponseTag) {
+        case 10001:
+            //
+        {
+            _historyResponse = (HistoryResponseModel *)model;
+            //    NSLog(@"heheheheh %@,%@",_historyResponse.historyArr,_historyResponse.unPayArr);
+            
+            if ([_historyResponse.historyArr count] > 0) {
+                for (HistoryModel *temp in _historyResponse.historyArr) {
+                    if (temp.status != 0) {
+                        //
+                        [_oneArr addObject:temp];
+                    }
+                    else
+                    {
+                        [_twoArr addObject:temp];
+                    }
+                }
+                
+                _start ++;
+            }
+            
+            if (_seg.selectedSegmentIndex != 0) {
+                _sourceArr = _oneArr;
             }
             else
             {
-                [_twoArr addObject:temp];
+                _sourceArr = _twoArr;
             }
+            
+            [_hstTable headerEndRefreshing];
+            [_hstTable reloadData];
+
         }
-        
-        _start ++;
+            break;
+        case 10002:
+        {            
+            [_sourceArr removeObject:_deleteTarget];
+            [_hstTable reloadData];
+            
+            [SVProgressHUD showSuccessWithStatus_custom:@"订单已取消" duration:1.2];
+        }
+            break;
+        default:
+            break;
     }
     
-    if (_seg.selectedSegmentIndex != 0) {
-        _sourceArr = _oneArr;
-    }
-    else
-    {
-        _sourceArr = _twoArr;
-    }
     
-        [_hstTable headerEndRefreshing];
-    [_hstTable reloadData];
-}
+ }
 
 
 
@@ -303,9 +336,14 @@
 }
 
 
--(void)cancleOrder:(NSString *)orderId
+-(void)cancleOrder:(NSString *)orderId model:(HistoryModel *)model
 {
+    _cancleRequest.orderId = orderId;
+    _cancleRequest.status = @"-1";
+    _cancleRequest.uid = [CoreHelper getLoginUid];
+    _deleteTarget = model;
     
+    [_cancleRequest postData];
 }
 
 -(void)selectRightAction:(id)sender

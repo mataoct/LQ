@@ -83,6 +83,33 @@
     NSLog(@"post already %@",self);
 }
 
+
+-(void)postActionComment
+{
+    NSString *token = [CoreHelper tokenController:@"ActiveHandler" action:@"activecommentlist"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ActiveHandler.ashx?action=activecommentlist"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_start forKey:@"start"];
+    [request addPostValue:_limit forKey:@"limit"];
+    [request addPostValue:_gid forKey:@"newid"];
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
 -(void)postDataWaterFlow
 {
     NSString *token = [CoreHelper tokenController:@"SourceMaterialHandler" action:@"imgcommentlist"];

@@ -41,14 +41,14 @@
         _checkArr = [[NSMutableArray alloc] init];
         self.view.backgroundColor = BackGray;
         _start = 0;
-        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] start:[NSString stringWithFormat:@"%d",_start] limit:@"10" type:@"0"];
+        _requestModel = [[MyCommentRequestModel alloc] initWithSeller:CustomID uid:[CoreHelper getLoginUid] start:[NSString stringWithFormat:@"%d",_start] limit:@"10" type:@"0"];
         _responseModel = [[MyCommentResponseModel alloc] init];
         
         
         _delRequestModel = [[DelCartRequestModel alloc] init];
         _delRequestModel.delegate = self;
         _delRequestModel.uid = [CoreHelper getLoginUid];
-        _delRequestModel.sellerId = @"100";
+        _delRequestModel.sellerId = CustomID;
         
         _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, 300, self.view.frame.size.height - 110) style:UITableViewStylePlain];
         

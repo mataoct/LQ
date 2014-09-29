@@ -41,7 +41,7 @@
     // Do any additional setup after loading the view.
     
     
-    _menuRequest = [[MenuReuqestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
+    _menuRequest = [[MenuReuqestModel alloc] initWithSellId:CustomID uid:[CoreHelper getLoginUid]];
     
     _menuRequest.delegate = self;
 
@@ -71,9 +71,10 @@
     [_classfy addTarget:self action:@selector(classfyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [_price addTarget:self action:@selector(interfacetest) forControlEvents:UIControlEventTouchUpInside];
     [_volume addTarget:self action:@selector(volumeClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [_time addTarget:self action:@selector(timeClick:) forControlEvents:UIControlEventTouchUpInside];
     _volumeFlag = true;
     _priceFlag = true;
+    _timeFlag = true;
     
     [self.view addSubview:_classfy];
     [self.view addSubview:_volume];
@@ -185,9 +186,14 @@
             _menuResponseModel = (MenuResponseModel *)model;
             
             [_categoryArr removeAllObjects];
+            
+            [_categoryArr addObject:@"全部"];
+            
             for (CategoriesModel *cate in _menuResponseModel.categoriesArr) {
                 [_categoryArr addObject:cate.title];
             }
+            
+            
             
             
             if (_start == 0) {
@@ -255,9 +261,22 @@
     
     CategoriesModel *temp = [[CategoriesModel alloc] init];
     
-    temp = [_menuResponseModel.categoriesArr objectAtIndex:indexPath.row];
     
-    _menuRequest.cid = temp.cid;
+    switch (indexPath.row) {
+        case 0:
+            //
+        {
+            _menuRequest.cid = 0;
+        }
+            break;
+        default:
+        {
+            temp = [_menuResponseModel.categoriesArr objectAtIndex:indexPath.row];
+            
+            _menuRequest.cid = temp.cid;
+        }
+            break;
+    }
     
     _start = 0;
     _menuRequest.start = [NSString stringWithFormat:@"%d",_start];
@@ -286,9 +305,13 @@
                           NSInteger num1 = [obj1.sales integerValue];
                           NSInteger num2 = [obj2.sales integerValue];
                           
-                          return _volumeFlag ? (num1 > num2 ? NSOrderedDescending : NSOrderedDescending) : (num1 < num2 ? NSOrderedDescending : NSOrderedDescending);
+                          NSLog(@"num1 %d,num2 %d",num1,num2);
+                          
+                          return _volumeFlag ? (num1 > num2 ? NSOrderedAscending : NSOrderedDescending) : (num1 > num2 ? NSOrderedDescending : NSOrderedAscending);
 
                       }];
+    
+    
     
     _volumeFlag = !_volumeFlag;
     
@@ -305,21 +328,24 @@
 
 -(void)timeClick:(id)sender
 {
-//    NSArray *temp  = [_sourceArr sortedArrayUsingComparator:^NSComparisonResult(GoodsModel *obj1,GoodsModel *obj2)
-//                      {
-//                          NSComparisonResult result = [obj1. compare:obj2.sales];
-//                          return result == NSOrderedDescending;
-//                      }];
-//    
-//    
-//    [_sourceArr removeAllObjects];
-//    for (id model in temp) {
-//        [_sourceArr addObject:model];
-//    }
-//    
-//    
-//    NSLog(@"temp = %@",_sourceArr);
-//    [_menuTable reloadData];
+    NSArray *temp  = [_sourceArr sortedArrayUsingComparator:^NSComparisonResult(GoodsModel *obj1,GoodsModel *obj2)
+                      {
+                          NSInteger num1 = [obj1.gid integerValue];
+                          NSInteger num2 = [obj2.gid integerValue];
+                          
+                          return _timeFlag ? (num1 > num2 ? NSOrderedAscending : NSOrderedDescending) : (num1 > num2 ? NSOrderedDescending : NSOrderedAscending);                      }];
+    
+    
+    _timeFlag = !_timeFlag;
+    
+    [_sourceArr removeAllObjects];
+    for (id model in temp) {
+        [_sourceArr addObject:model];
+    }
+    
+    
+    NSLog(@"temp = %@",_sourceArr);
+    [_menuTable reloadData];
 }
 
 -(void)interfacetest
@@ -330,7 +356,7 @@
                           NSInteger num1 = [obj1.nowprice integerValue];
                           NSInteger num2 = [obj2.nowprice integerValue];
                           
-                          return _priceFlag ? (num1 > num2 ? NSOrderedDescending : NSOrderedDescending) : (num1 < num2 ? NSOrderedDescending : NSOrderedDescending);
+                          return _priceFlag ? (num1 > num2 ? NSOrderedAscending : NSOrderedDescending) : (num1 > num2 ? NSOrderedDescending : NSOrderedAscending);
                           
                       }];
     

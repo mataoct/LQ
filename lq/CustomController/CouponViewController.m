@@ -39,10 +39,10 @@
         
 //        self.view.backgroundColor  = BackGray;
         
-        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 85, 36)];
+        UILabel *integrationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 90, 36)];
         integrationLabel.backgroundColor = [UIColor whiteColor];
         integrationLabel.textAlignment = NSTextAlignmentCenter;
-        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 10, 210, 36)];
+        _integralValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 210, 36)];
         _integralValueLabel.backgroundColor = [UIColor whiteColor];
         integrationLabel.text = @"可用积分：";
         integrationLabel.font = [UIFont systemFontOfSize:14];_integralValueLabel.font = [UIFont systemFontOfSize:16];
@@ -61,11 +61,11 @@
         
         
         
-        _model = [[CouponRequestModel alloc] initWithSeller:@"100" Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
+        _model = [[CouponRequestModel alloc] initWithSeller:CustomID Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
         _model.delegate = self;
         _model.tag = 10001;
         
-        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
+        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:[CoreHelper getLoginUid]];
         _requestModel.delegate = self;
         _requestModel.tag = 10002;
         

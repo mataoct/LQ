@@ -47,7 +47,7 @@
     
     _sourceArr = [[NSMutableArray alloc] init];
     
-    _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
+    _requestModel = [[CouponRequestModel alloc] initWithSeller:CustomID Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
     _requestModel.uid = [CoreHelper getLoginUid];
     
     _responseModel = [[BalanceResponseModel alloc] init];

@@ -226,7 +226,9 @@
         _priceCountLabel.text = @"合计：";
         _priceCountLabel.textColor = [UIColor blackColor];
         _priceCountValueLabel.text = @"￥0.0";// [NSString stringWithFormat:@"￥%@",_responseModel.totalPrice]  ;
-        _priceCountValueLabel.textColor = [UIColor blackColor];
+        
+        
+        _priceCountValueLabel.textColor = Pink;
     }
     else
     {
@@ -300,7 +302,7 @@
     
 
     
-    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:@"100" uid:[CoreHelper getLoginUid] args:[_selectDic allValues]];
+    _signRequestModel = [[SignatureRequestModel alloc] initWithSeller:CustomID uid:[CoreHelper getLoginUid] args:[_selectDic allValues]];
     
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10002;

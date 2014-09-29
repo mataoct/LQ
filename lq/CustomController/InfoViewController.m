@@ -50,7 +50,7 @@
     
     _sourceArr = [[NSMutableArray alloc] init];
     _start = 0;
-    _model = [[InfoRequestModel alloc] initWithSeller:@"100" Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
+    _model = [[InfoRequestModel alloc] initWithSeller:CustomID Start:[NSString stringWithFormat:@"%d",_start] Limit:@"10"];
     _infoTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 64 - 49 ) style:UITableViewStylePlain];
     _infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     _infoTable.backgroundColor = BackGray;
@@ -95,10 +95,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    InfoDetailViewController *detailVC = [[InfoDetailViewController alloc] initWithModel:[_sourceArr objectAtIndex:indexPath.row]];
+    InfoDetailViewController *detailVC = [[InfoDetailViewController alloc] initWithTitle:@"咨询活动详情" Model:[_sourceArr objectAtIndex:indexPath.row]];
     
-    [detailVC showBackButton];
-    [self.navigationController pushViewController:detailVC animated:YES];
+//    [detailVC showBackButton];
+//    [self.navigationController pushViewController:detailVC animated:YES];
+    
+    [self presentViewController:detailVC animated:YES completion:nil];
 }
 
 

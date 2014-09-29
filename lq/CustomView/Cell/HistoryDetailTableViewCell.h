@@ -14,7 +14,7 @@
 @required
 
 -(void)payNowClick:(NSString *)orderId;
--(void)cancleOrder:(NSString *)orderId;
+-(void)cancleOrder:(NSString *)orderId model:(HistoryModel *)model;
 
 @end
 

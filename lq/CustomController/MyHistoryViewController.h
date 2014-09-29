@@ -12,12 +12,15 @@
 #import "HistoryDetailTableViewCell.h"
 #import "OrderDetailViewController.h"
 #import "MJRefresh.h"
+#import "CancleRequestModel.h"
 
 @interface MyHistoryViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,HistoryDetailDelegate>
 
 @property (nonatomic,strong) CouponRequestModel *historyRequest;
 @property (nonatomic,strong) HistoryResponseModel *historyResponse;
 @property (nonatomic,strong) UISegmentedControl *seg;
+
+@property (nonatomic,strong) CancleRequestModel *cancleRequest;
 
 @property (nonatomic,strong) UITableView *hstTable;
 

@@ -266,6 +266,7 @@
 		A0B10D3119693F6D003CFAC4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B10D3019693F6D003CFAC4 /* LoginViewController.m */; };
 		A0B10D3419698DAE003CFAC4 /* LQ7ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B10D3319698DAE003CFAC4 /* LQ7ViewController.m */; };
 		A0B10D371969A215003CFAC4 /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B10D361969A215003CFAC4 /* LoginRequestModel.m */; };
+		A0B4378A19D983A300139C40 /* CancleRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B4378919D983A300139C40 /* CancleRequestModel.m */; };
 		A0B87DE71990DBFA003091C0 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B87DE11990DBFA003091C0 /* HPGrowingTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0B87DE81990DBFA003091C0 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B87DE31990DBFA003091C0 /* HPTextViewInternal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0B87DE91990DBFA003091C0 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B87DE61990DBFA003091C0 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -858,6 +859,8 @@
 		A0B10D3319698DAE003CFAC4 /* LQ7ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQ7ViewController.m; path = CustomController/LQ7ViewController.m; sourceTree = "<group>"; };
 		A0B10D351969A215003CFAC4 /* LoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginRequestModel.h; path = Model/LoginRequestModel.h; sourceTree = "<group>"; };
 		A0B10D361969A215003CFAC4 /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LoginRequestModel.m; path = Model/LoginRequestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A0B4378819D983A300139C40 /* CancleRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CancleRequestModel.h; path = Model/CancleRequestModel.h; sourceTree = "<group>"; };
+		A0B4378919D983A300139C40 /* CancleRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CancleRequestModel.m; path = Model/CancleRequestModel.m; sourceTree = "<group>"; };
 		A0B87DE01990DBFA003091C0 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
 		A0B87DE11990DBFA003091C0 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		A0B87DE21990DBFA003091C0 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
@@ -1081,6 +1084,8 @@
 				A05C433519D3F9C100469F73 /* PasswordRequestModel.m */,
 				A06E7B4519D425CF00F72BE2 /* DelCartRequestModel.h */,
 				A06E7B4619D425CF00F72BE2 /* DelCartRequestModel.m */,
+				A0B4378819D983A300139C40 /* CancleRequestModel.h */,
+				A0B4378919D983A300139C40 /* CancleRequestModel.m */,
 			);
 			name = RequestModel;
 			sourceTree = "<group>";
@@ -2255,6 +2260,7 @@
 				A00504D3199275C400318806 /* InfoModel.m in Sources */,
 				A012CB3F199A112A000335B6 /* WaterFlowViewCell.m in Sources */,
 				A096EB4919B2DFF600887462 /* Integral2CouponRequestModel.m in Sources */,
+				A0B4378A19D983A300139C40 /* CancleRequestModel.m in Sources */,
 				A0664C95195E981C00F3E490 /* MainPageBaseRequestModel.m in Sources */,
 				A09EC15C195278FC0036219B /* SBJsonParser.m in Sources */,
 				A075DEA019BDE55F0059E02D /* CYRefreshTableHeaderView.m in Sources */,

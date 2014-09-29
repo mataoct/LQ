@@ -28,7 +28,7 @@
     self = [super init];
     if (self) {
         //
-        _requestModel = [[SellerInfoRequestModel alloc] initWithSeller:@"100"];
+        _requestModel = [[SellerInfoRequestModel alloc] initWithSeller:CustomID];
         _responseModel = [[SellerInfoResponseModel alloc] init];
         
     }

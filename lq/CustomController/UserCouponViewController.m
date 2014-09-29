@@ -32,7 +32,7 @@
     if (self) {
         //
         
-        _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
+        _requestModel = [[CouponRequestModel alloc] initWithSeller:CustomID Start:@"0" Limit:@"10"];
         _responseModel = [[UserCouponResponseModel alloc] init];
         
         _uoRequestModel = [[updateOrderRequestModel alloc] init];

@@ -59,7 +59,7 @@
     _subScorller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
     
-    _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:@"100"];
+    _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:CustomID];
     _mainResponseModel = [[MainResponseModel alloc] init];
     _requestModel.delegate = self;
     
@@ -190,9 +190,10 @@
                 break;
             case 2:
             {
-                InfoDetailViewController *idVC = [[InfoDetailViewController alloc] initWithNewsId:tempSlider.type_id];
-                [idVC showBackButton];
-                [wself.navigationController pushViewController:idVC animated:YES];
+                InfoDetailViewController *idVC = [[InfoDetailViewController alloc] initWithTitle:@"咨询活动详情" NewsId:tempSlider.type_id ]; // initWithNewsId:tempSlider.type_id];
+//                [idVC showBackButton];
+//                [wself.navigationController pushViewController:idVC animated:YES];
+                [wself presentViewController:idVC animated:YES completion:nil];
             }
                 break;
             case 3:
@@ -292,7 +293,7 @@
 
 -(void)jumpToWaterFlow
 {
-    Water2ViewController *waterVC = [[Water2ViewController alloc] initWithTitle:@"图片墙" sellerid:@"100" start:@"0" limit:@"10"];
+    Water2ViewController *waterVC = [[Water2ViewController alloc] initWithTitle:@"图片墙" sellerid:CustomID start:@"0" limit:@"10"];
     [self.navigationController presentViewController:waterVC animated:YES completion:nil];
 }
 -(void)jumpToMyFav

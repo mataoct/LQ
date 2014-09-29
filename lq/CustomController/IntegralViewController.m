@@ -40,7 +40,7 @@
     
     [self.view addSubview:_contentTable];
     
-    _requestModel = [[CouponRequestModel alloc] initWithSeller:@"100" Start:@"0" Limit:@"10"];
+    _requestModel = [[CouponRequestModel alloc] initWithSeller:CustomID Start:@"0" Limit:@"10"];
     _requestModel.uid = [CoreHelper getLoginUid];
     
     _responseModel = [[IntegralResponseModel alloc] init];

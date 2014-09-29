@@ -35,6 +35,7 @@
         _linkMan = [[NSString alloc] init];
         _pid = [[NSString alloc] init];
         _discount = [[NSString alloc] init];
+        _hasdelivery = [[NSString alloc] init];
         
         
         _orderId = safeString([[dic objectForKey:@"data"] objectForKey:@"orderid"]);
@@ -58,7 +59,7 @@
         _pid = safeString([[dic objectForKey:@"data"] objectForKey:@"pid"]);
         _discount = safeString([[dic objectForKey:@"data"] objectForKey:@"discount"]);
         
-        
+        _hasdelivery = safeString([[dic objectForKey:@"data"] objectForKey:@"hasdelivery"]); //hasdelivery
         
         
     

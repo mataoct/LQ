@@ -32,7 +32,7 @@
         _uid = [[NSString alloc] init];
         _uid = uid;
         
-        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
+        _requestModel = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:_uid];
         _responseModel = [[AddressResponseModel alloc] init];
         
         
@@ -137,7 +137,7 @@
 
 -(void)selectRightAction:(id)sender
 {
-    _saveRequestModel   = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:_uid];
+    _saveRequestModel   = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:_uid];
     _saveRequestModel.delegate = self;
     _saveRequestModel.tag = 10002;
     [_saveRequestModel sendAddressLinkMan:_nameTf.text phone:_telTf.text address:_addrTf.text];

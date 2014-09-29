@@ -50,7 +50,7 @@
     
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_tel forKey:@"phone"];
-    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request addPostValue:CustomID forKey:@"sellerId"];
     [request setRequestMethod:@"POST"];
     request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
@@ -74,7 +74,7 @@
     
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_tel forKey:@"phone"];
-    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request addPostValue:CustomID forKey:@"sellerId"];
     [request setRequestMethod:@"POST"];
     request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
@@ -90,16 +90,16 @@
 -(void)postChangePWD
 {
     
-    NSString *token = [CoreHelper tokenController:@"apiuserhandler" action:@"resetpwd"];
+    NSString *token = [CoreHelper tokenController:@"ApiUserHandler" action:@"resetpwd"];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/apiuserhandler.ashx?action=resetpwd"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ApiUserHandler.ashx?action=resetpwd"];
     
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
     
     
     [request addPostValue:token forKey:@"token"];
-    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request addPostValue:CustomID forKey:@"sellerId"];
     [request addPostValue:_tel forKey:@"username"];
     [request addPostValue:_verifyCode forKey:@"code"];
     [request addPostValue:_tel forKey:@"phone"];
@@ -130,7 +130,7 @@
     
     
     [request addPostValue:token forKey:@"token"];
-    [request addPostValue:@"100" forKey:@"sellerId"];
+    [request addPostValue:CustomID forKey:@"sellerId"];
     [request addPostValue:_tel forKey:@"username"];
     [request addPostValue:_verifyCode forKey:@"code"];
     [request addPostValue:_tel forKey:@"phone"];

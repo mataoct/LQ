@@ -23,4 +23,5 @@
 -(void)sendCouponComment:(NSString *)couponid  message:(NSString *)message;
 -(void)sendGoodComment:(NSString *)gid  message:(NSString *)message;
 -(void)sendPicComment:(NSString *)pid message:(NSString *)message;
+-(void)sendActionComment:(NSString *)newsid  message:(NSString *)message;
 @end

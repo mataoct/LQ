@@ -120,6 +120,38 @@
 }
 
 
+-(void)sendActionComment:(NSString *)newsid  message:(NSString *)message
+{
+    
+    _couponid = [[NSString alloc] init];
+    _couponid = newsid;
+    _message = message;
+    
+    NSString *token = [CoreHelper tokenController:@"ActiveHandler" action:@"activecomment"];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.mto2o.cn/bg/Handler/Api/ActiveHandler.ashx?action=activecomment"];
+    
+    
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
+    
+    [request addPostValue:token forKey:@"token"];
+    [request addPostValue:_message forKey:@"message"];
+    [request addPostValue:_uid forKey:@"uid"];
+    [request addPostValue:_couponid forKey:@"newid"];
+    
+    [request setRequestMethod:@"POST"];
+    request.defaultResponseEncoding = NSUTF8StringEncoding;
+    request.tag = 10003;
+    [request setDelegate:self];
+    
+    NSLog(@"post ready %@",token);
+    
+    [request startAsynchronous];
+    
+    NSLog(@"post already %@",self);
+}
+
+
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
     NSLog(@"another user info request start");

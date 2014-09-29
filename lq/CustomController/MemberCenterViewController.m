@@ -214,11 +214,11 @@
 //    [self reFillLayouts];
     
 //    UserInfoModel *user = [CoreHelper getLoginInfo];
-//    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:user.uid];
+//    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:user.uid];
     
     _responseModel = [[AnotherUserInfoResponseModel alloc] init];
     _signResponseModel = [[SignResponseModel alloc] init];
-    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
+    _requestModel = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:[CoreHelper getLoginUid]];
     _requestModel.delegate = self;
     _requestModel.tag = 10001;
     
@@ -434,7 +434,7 @@
 
 -(void)punchClick
 {
-    _signRequestModel = [[UserInfoRequestModel alloc] initWithSellId:@"100" uid:[CoreHelper getLoginUid]];
+    _signRequestModel = [[UserInfoRequestModel alloc] initWithSellId:CustomID uid:[CoreHelper getLoginUid]];
     _signRequestModel.delegate = self;
     _signRequestModel.tag = 10002;
     [_signRequestModel sign];

@@ -147,8 +147,8 @@
 
 -(void)cancleClick
 {
-    if ([_delegate respondsToSelector:@selector(cancleOrder:)]) {
-        [_delegate cancleOrder:_orderId];
+    if ([_delegate respondsToSelector:@selector(cancleOrder:model:)]) {
+        [_delegate cancleOrder:_orderId model:_model];
     }
 }
 

@@ -165,7 +165,7 @@
 
 -(void)goLogin
 {
-    _requestModel = [[LoginRequestModel alloc] initWithUsername:_userName.text Pwd:_userPwd.text sellerId:@"100"];
+    _requestModel = [[LoginRequestModel alloc] initWithUsername:_userName.text Pwd:_userPwd.text sellerId:CustomID];
     _requestModel.delegate = self;
     [_requestModel postData];
 }
