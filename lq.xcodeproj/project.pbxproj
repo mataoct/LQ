@@ -73,6 +73,9 @@
 		A05E4B25199FB25900A7C424 /* MyFavResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B24199FB25900A7C424 /* MyFavResponseModel.m */; };
 		A05E4B28199FB38800A7C424 /* MyFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B27199FB38800A7C424 /* MyFavViewController.m */; };
 		A05E832D1975698600E2B553 /* ShooInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E832C1975698600E2B553 /* ShooInfoController.m */; };
+		A05ED54219DAB08300231DE6 /* MenuForEnterpriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05ED54119DAB08300231DE6 /* MenuForEnterpriceController.m */; };
+		A05ED54519DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05ED54419DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m */; };
+		A05ED54719DAB33500231DE6 /* EnterpriceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05ED54619DAB33500231DE6 /* EnterpriceCollectionViewCell.xib */; };
 		A05FCBF019D80BDE00A2B8E5 /* 保存@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A05FCBE619D80BDE00A2B8E5 /* 保存@2x.png */; };
 		A05FCBF119D80BDE00A2B8E5 /* 到店用餐未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A05FCBE719D80BDE00A2B8E5 /* 到店用餐未选中@2x.png */; };
 		A05FCBF219D80BDE00A2B8E5 /* 到店用餐选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A05FCBE819D80BDE00A2B8E5 /* 到店用餐选中@2x.png */; };
@@ -445,6 +448,11 @@
 		A05E4B27199FB38800A7C424 /* MyFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFavViewController.m; path = CustomController/MyFavViewController.m; sourceTree = "<group>"; };
 		A05E832B1975698600E2B553 /* ShooInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShooInfoController.h; path = CustomController/ShooInfoController.h; sourceTree = "<group>"; };
 		A05E832C1975698600E2B553 /* ShooInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShooInfoController.m; path = CustomController/ShooInfoController.m; sourceTree = "<group>"; };
+		A05ED54019DAB08300231DE6 /* MenuForEnterpriceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuForEnterpriceController.h; path = CustomController/MenuForEnterpriceController.h; sourceTree = "<group>"; };
+		A05ED54119DAB08300231DE6 /* MenuForEnterpriceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuForEnterpriceController.m; path = CustomController/MenuForEnterpriceController.m; sourceTree = "<group>"; };
+		A05ED54319DAB2EE00231DE6 /* EnterpriceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnterpriceCollectionViewCell.h; path = CustomView/EnterpriceCollectionViewCell.h; sourceTree = "<group>"; };
+		A05ED54419DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnterpriceCollectionViewCell.m; path = CustomView/EnterpriceCollectionViewCell.m; sourceTree = "<group>"; };
+		A05ED54619DAB33500231DE6 /* EnterpriceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EnterpriceCollectionViewCell.xib; path = CustomView/EnterpriceCollectionViewCell.xib; sourceTree = "<group>"; };
 		A05FCBE619D80BDE00A2B8E5 /* 保存@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "保存@2x.png"; sourceTree = "<group>"; };
 		A05FCBE719D80BDE00A2B8E5 /* 到店用餐未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "到店用餐未选中@2x.png"; sourceTree = "<group>"; };
 		A05FCBE819D80BDE00A2B8E5 /* 到店用餐选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "到店用餐选中@2x.png"; sourceTree = "<group>"; };
@@ -1842,6 +1850,8 @@
 				A05C433219D3F1F800469F73 /* PwdModifyViewController.m */,
 				A0130E9119D967A4004339D9 /* ForgetPwdViewController.h */,
 				A0130E9219D967A4004339D9 /* ForgetPwdViewController.m */,
+				A05ED54019DAB08300231DE6 /* MenuForEnterpriceController.h */,
+				A05ED54119DAB08300231DE6 /* MenuForEnterpriceController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1919,6 +1929,9 @@
 				A0E71C5919CD88C5001F4C24 /* CollectionCell.h */,
 				A0E71C5A19CD88C5001F4C24 /* CollectionCell.m */,
 				A0E71C5C19CD93B8001F4C24 /* CollectionCell.xib */,
+				A05ED54319DAB2EE00231DE6 /* EnterpriceCollectionViewCell.h */,
+				A05ED54419DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m */,
+				A05ED54619DAB33500231DE6 /* EnterpriceCollectionViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -2091,6 +2104,7 @@
 				A0839C0419D11AFE00C060F6 /* MessageEntryInputField@2x.png in Resources */,
 				A0839C2519D11AFE00C060F6 /* 菜单栏-活动资讯.png in Resources */,
 				A0839C2B19D11AFE00C060F6 /* 标题-分享.png in Resources */,
+				A05ED54719DAB33500231DE6 /* EnterpriceCollectionViewCell.xib in Resources */,
 				A0839C1919D11AFE00C060F6 /* 图片默认2.png in Resources */,
 				A09D5AAD19D6A830007B5430 /* 返回@2x.png in Resources */,
 				A0839C0519D11AFE00C060F6 /* MessageEntrySendButton.png in Resources */,
@@ -2196,6 +2210,7 @@
 				A05E4B16199F832C00A7C424 /* MyCommentTableViewCell.m in Sources */,
 				A034657119AF838500032526 /* AddToCartRequestModel.m in Sources */,
 				A075DEA119BDE55F0059E02D /* CYTableView.m in Sources */,
+				A05ED54219DAB08300231DE6 /* MenuForEnterpriceController.m in Sources */,
 				A05E4B28199FB38800A7C424 /* MyFavViewController.m in Sources */,
 				A075DE9F19BDE55F0059E02D /* CYRefreshTableFooterView.m in Sources */,
 				A00504D919927CE500318806 /* InfoTableViewCell.m in Sources */,
@@ -2269,6 +2284,7 @@
 				A0ECE332196B8FB0003E0BE3 /* RegistModel.m in Sources */,
 				A0E71C4F19CD815C001F4C24 /* MJRefreshBaseView.m in Sources */,
 				A05E4B13199F811200A7C424 /* MyCommentRequestModel.m in Sources */,
+				A05ED54519DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m in Sources */,
 				A0A1C1411993C71B009F7B5A /* CouponModel.m in Sources */,
 				A0FBCE7919544EC3000146C3 /* DiscountTableViewController.m in Sources */,
 				A09EC175195278FC0036219B /* UIImageView+WebCache.m in Sources */,
