@@ -53,7 +53,7 @@
         _commentTable = [[UITableView alloc] initWithFrame:CGRectMake(10, 110, 300, self.view.frame.size.height - 110) style:UITableViewStylePlain];
         
         
-        NSArray *buttonNames = [NSArray arrayWithObjects:@"所有评论", @"商品评论", @"图片墙评论", nil];
+        NSArray *buttonNames = [NSArray arrayWithObjects:@"所有评论", @"商品评论", @"图片墙评论",@"活动评论", nil];
         _seg = [[UISegmentedControl alloc] initWithItems:buttonNames];
         [_seg addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
         [_seg setFrame:CGRectMake(10, 74, 300, 26)];
@@ -201,12 +201,20 @@
 -(void)goodCommentClick
 {
     [_requestModel.request cancel];
-    _requestModel.type = @"1";
+    _requestModel.type = @"3";
     _requestModel.start = [NSString stringWithFormat:@"%d",_start];
     [_requestModel postData];
 }
 
 -(void)picCommentClick
+{
+    [_requestModel.request cancel];
+    _requestModel.type = @"1";
+    _requestModel.start = [NSString stringWithFormat:@"%d",_start];
+    [_requestModel postData];
+}
+
+-(void)actionCommentClick
 {
     [_requestModel.request cancel];
     _requestModel.type = @"2";
@@ -232,7 +240,8 @@
         case 2:
             [self picCommentClick];
             break;
-            
+        case 3:
+            [self actionCommentClick];
         default:
             break;
     }

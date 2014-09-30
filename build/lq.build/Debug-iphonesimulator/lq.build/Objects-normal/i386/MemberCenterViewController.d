@@ -70,6 +70,7 @@ dependencies: \
   /WorkSpace/LQ/lq/alipay/AlixLibService.h \
   /WorkSpace/LQ/lq/alipay/PartnerConfig.h \
   /WorkSpace/LQ/lq/alipay/RSA/DataSigner.h \
+  /WorkSpace/LQ/lq/Model/CancleRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \
   /WorkSpace/LQ/lq/CustomView/CusSettingBtn.h \
   /WorkSpace/LQ/lq/CustomController/UserModifyViewController.h \

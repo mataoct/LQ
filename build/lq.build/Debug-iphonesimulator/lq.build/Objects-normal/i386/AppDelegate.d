@@ -124,6 +124,7 @@ dependencies: /WorkSpace/LQ/lq/AppDelegate.m \
   /WorkSpace/LQ/lq/CustomView/CustomTable/CYRefreshTableHeaderView.h \
   /WorkSpace/LQ/lq/CustomController/MyHistoryViewController.h \
   /WorkSpace/LQ/lq/CustomView/Cell/HistoryDetailTableViewCell.h \
+  /WorkSpace/LQ/lq/Model/CancleRequestModel.h \
   /WorkSpace/LQ/lq/CustomController/SettingViewController.h \
   /WorkSpace/LQ/lq/CustomView/CusSettingBtn.h \
   /WorkSpace/LQ/lq/CustomController/UserModifyViewController.h \

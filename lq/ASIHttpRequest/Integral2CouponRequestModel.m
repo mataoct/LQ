@@ -35,7 +35,7 @@
     
     [request addPostValue:token forKey:@"token"];
     [request addPostValue:_uid forKey:@"uid"];
-    [request addPostValue:_couponId forKey:@"gid"];
+    [request addPostValue:_couponId forKey:@"couponid"];
     [request setRequestMethod:@"POST"];
     request.defaultResponseEncoding = NSUTF8StringEncoding;
     [request setDelegate:self];
@@ -56,10 +56,21 @@
     
     BaseResponseModel *model= [[BaseResponseModel alloc] initWithDic:jsonDic];
     model.ResponseTag = self.tag;
+    
+    if (model.ResponseStatus == 1) {
         if ([[super delegate] respondsToSelector:@selector(requestSuccess:)])
         {
             [[super delegate] requestSuccess:model];
         }
+    }
+    else
+    {
+        if ([[super delegate] respondsToSelector:@selector(requestFailed:)])
+        {
+            [[super delegate] requestFailed:model.ErrMessage];
+        }
+    }
+
 }
     
 -(void)requestFailed:(ASIHTTPRequest *)request

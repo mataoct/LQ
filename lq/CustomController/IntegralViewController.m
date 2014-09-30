@@ -134,7 +134,7 @@
 
 -(void)requestFailed:(NSString *)errorStr
 {
-    
+    [SVProgressHUD showErrorWithStatus_custom:errorStr duration:1.3];
 }
 
 -(void)requestSuccess:(BaseResponseModel *)model
