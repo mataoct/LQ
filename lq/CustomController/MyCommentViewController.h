@@ -14,6 +14,11 @@
 
 #import "DelCartRequestModel.h"
 
+#import "WaterDetailViewController.h"
+#import "InfoDetailViewController.h"
+#import "GoodsViewController.h"
+#import "CouponDetailViewController.h"
+
 
 @interface MyCommentViewController : LQUIViewController<RequestModelDelegate,UITableViewDataSource,UITableViewDelegate,commentClickDelegate>
 

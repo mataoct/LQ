@@ -104,6 +104,9 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     _start = 0;
+    
+    [_checkArr removeAllObjects];
+    [_sourceArr removeAllObjects];
     [super viewDidDisappear:animated];
     [_requestModel.request cancel];
 }
@@ -136,6 +139,47 @@
 {
     return 100.0;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    MyCommentModel *temp = [_sourceArr objectAtIndex:indexPath.row];
+    
+    
+    
+    switch (temp.type) {
+        case 1:
+        {
+            WaterDetailViewController *wdVC = [[WaterDetailViewController alloc] initWithTitle:@"图片详情" andPid:temp.type_id];
+            [self presentViewController:wdVC animated:YES completion:nil];
+        }
+            break;
+        case 2:
+        {
+            InfoDetailViewController *idVC = [[InfoDetailViewController alloc] initWithTitle:@"咨询活动详情" NewsId:temp.type_id ];
+            [self presentViewController:idVC animated:YES completion:nil];
+        }
+            break;
+        case 3:
+        {
+            GoodsViewController *gVC = [[GoodsViewController alloc] initWithGid:temp.type_id Title:@"商品详情"];
+            [self presentViewController:gVC animated:YES completion:nil];
+        }
+            break;
+        case 4:
+        {
+            CouponDetailViewController *cdVC = [[CouponDetailViewController alloc] initWithTitle:@"优惠券详情" andCouponId:temp.type_id];
+            [self presentViewController:cdVC animated:YES completion:nil];
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

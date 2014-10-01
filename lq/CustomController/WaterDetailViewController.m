@@ -22,6 +22,16 @@
     }
     return self;
 }
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [_waterDetailRequestModel.request cancel];
+    [_commentRequestModel.request cancel];
+    [_userCommentRequestModel.request cancel];
+
+    
+}
+
 
 -(id)initWithTitle:(NSString *)str andPid:(NSString *)pid
 {

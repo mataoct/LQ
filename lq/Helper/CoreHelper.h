@@ -30,7 +30,7 @@ static UIWebView *phoneCallWebView;
 
 +(NSString *)getLoginUid;
 
-
++(void)loadWebPage:(NSString *)str;
 
 + (CGFloat)uiWidth;
 

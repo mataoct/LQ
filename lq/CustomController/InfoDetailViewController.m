@@ -23,6 +23,15 @@
     return self;
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [_requestModel.request cancel];
+    [_commentRequestModel.request cancel];
+    [_userCommentRequestModel.request cancel];
+}
+
 -(id)initWithTitle:(NSString *)str Model:(InfoModel *)model
 {
     self = [super initWithTitle:str];
@@ -65,6 +74,8 @@
         
         _requestModel = [[InfoDetailRequestModel alloc] initWithNewID:_newsId];
         _requestModel.delegate = self;
+        
+        _requestModel.tag = 10001;
         [_requestModel postData];
         
         

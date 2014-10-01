@@ -80,6 +80,16 @@
     return self;
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    
+    [_requestModel.request cancel];
+    [_userCommentRequestModel.request cancel];
+    [_integralRequestModel.request cancel];
+    [_couponDetailRequestModel.request cancel];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

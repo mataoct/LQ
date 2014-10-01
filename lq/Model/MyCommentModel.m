@@ -38,7 +38,8 @@
         _content=  safeString([dic objectForKey:@"content"]);
         _title = safeString([dic objectForKey:@"title"]);
         _img = [NSURL URLWithString:[safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ;
-        
+        _type = [safeString([dic objectForKey:@"type"])  integerValue];
+        _type_id = safeString([dic objectForKey:@"typeid"]);
         
     }
     return self;

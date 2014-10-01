@@ -265,6 +265,7 @@
 -(void)adTouch:(UIGestureRecognizer *)gesture
 {
     NSLog(@"ad to %@",_mainResponseModel.admodel.url);
+    [CoreHelper loadWebPage:_mainResponseModel.admodel.url];
 }
 
 

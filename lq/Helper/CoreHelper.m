@@ -207,6 +207,11 @@
     
 }
 
++(void)loadWebPage:(NSString *)str
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
+
 
 +(void)addTabbarBadgeValue
 {    

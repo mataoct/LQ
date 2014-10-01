@@ -53,6 +53,17 @@
     return self;
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [_requestModel.request cancel];
+    [_commentRequestModel.request cancel];
+    [_userCommentRequestModel.request cancel];
+    [_favRequestModel.request cancel];
+    [_signRequestModel.request cancel];
+}
+
 
 - (void)viewDidLoad
 {
