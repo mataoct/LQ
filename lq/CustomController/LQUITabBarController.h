@@ -14,7 +14,8 @@
 
 #import "LoginViewController.h"
 
-#import "MenuViewController.h"
+//#import "MenuViewController.h"
+#import "MenuForEnterpriceController.h"
 
 #import "MemberCenterViewController.h"
 
@@ -32,7 +33,7 @@
 @property (nonatomic,strong) MemberCenterViewController *mbVC;
 @property (nonatomic,strong) MainNavigationController *memberCenterNC;
 
-@property (nonatomic,strong) MenuViewController *menuVC;
+@property (nonatomic,strong) MenuForEnterpriceController *menuVC;
 @property (nonatomic,strong) MainNavigationController *menuNC;
 
 @property (nonatomic,strong) CartViewController *cartVC;

@@ -10,12 +10,14 @@
 #import "LQUINavigationController.h"
 #import "MenuReuqestModel.h"
 #import "ProductionRequestModel.h"
-#import "MenuTableViewCell.h"
+//#import "MenuTableViewCell.h"
+
+#import "EnterpriceCollectionViewCell.h"
 #import "GoodsViewController.h"
 #import "NIDropDown.h"
 #import "MJRefresh.h"
 
-@interface MenuForEnterpriceController : LQ7ViewController<UICollectionViewDataSource,UICollectionViewDelegate,RequestModelDelegate,MenuTableViewCellDelegate,NIDropDownDelegate>
+@interface MenuForEnterpriceController : LQ7ViewController<UICollectionViewDataSource,UICollectionViewDelegate,RequestModelDelegate,EnterpriceCollectionViewCellDelegate,NIDropDownDelegate>
 
 @property (nonatomic,strong) UICollectionView *menuTable;
 @property (nonatomic,strong) UIButton *classfy;

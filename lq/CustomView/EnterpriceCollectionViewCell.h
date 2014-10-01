@@ -14,7 +14,7 @@
 #import "DisLineLabel.h"
 
 
-@protocol MenuTableViewCellDelegate <NSObject>
+@protocol EnterpriceCollectionViewCellDelegate <NSObject>
 
 -(void)shareBtnClicked:(GoodsModel *)goodModel;
 //-(void)favBtnClick;
@@ -45,7 +45,7 @@
 @property (nonatomic,strong) AddToCartRequestModel *add2CartModel;
 
 
-@property (nonatomic,assign) id<MenuTableViewCellDelegate> delegate;
+@property (nonatomic,assign) id<EnterpriceCollectionViewCellDelegate> delegate;
 
 
 -(void)fillCellByModel:(GoodsModel *)model;

@@ -83,7 +83,7 @@
 
     
     
-    _menuVC = [[MenuViewController alloc] init];
+    _menuVC = [[MenuForEnterpriceController alloc] init];
     _menuVC.title = @"菜单";
     _menuNC = [[MainNavigationController alloc] initWithRootViewController:_menuVC];
     
