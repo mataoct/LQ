@@ -12,10 +12,11 @@
 
 @property (nonatomic,strong) NSString *commentId;
 @property (nonatomic,strong) NSString *createTime;
-@property (nonatomic,assign) NSInteger *type;
+@property (nonatomic,assign) NSInteger type;
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) NSURL *img;
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *type_id ;
 
 @property (nonatomic,assign) NSInteger ischeck;
 

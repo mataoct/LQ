@@ -29,6 +29,7 @@
         _content = [[NSString alloc] init];
         _img = [[NSURL alloc] init];
         _title = [[NSString alloc] init];
+        _type_id = [[NSString alloc] init];
         
         _ischeck = 0;
         
@@ -38,8 +39,8 @@
         _content=  safeString([dic objectForKey:@"content"]);
         _title = safeString([dic objectForKey:@"title"]);
         _img = [NSURL URLWithString:[safeString([dic objectForKey:@"img"]) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ;
-        
-        
+        _type = [safeString([dic objectForKey:@"type"])  integerValue];
+        _type_id = safeString([dic objectForKey:@"typeid"]);
     }
     return self;
 }

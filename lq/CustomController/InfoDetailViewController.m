@@ -65,6 +65,7 @@
         
         _requestModel = [[InfoDetailRequestModel alloc] initWithNewID:_newsId];
         _requestModel.delegate = self;
+        _requestModel.tag = 10001;
         [_requestModel postData];
         
         
