@@ -31,6 +31,11 @@
     self.textColor = SkyBlue;
     [self setTextAlignment:NSTextAlignmentCenter];
     
+    if (!_disLine) {
+        _disLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        
+    }
+    
     [_disLine setImage:[UIImage imageNamed:@"disline.png"]];
     
     [self addSubview:_disLine];

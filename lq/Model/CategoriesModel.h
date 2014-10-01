@@ -13,7 +13,8 @@
 
 @property (nonatomic,strong) NSString *cid;
 @property (nonatomic,strong) NSString *title;
-
+@property (nonatomic,strong) NSURL *imgUrl;
+@property (nonatomic,strong) UIColor *imgColor;
 
 -(id)initWithDic:(NSDictionary *)dic;
 

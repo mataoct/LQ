@@ -48,4 +48,6 @@ static UIWebView *phoneCallWebView;
 
 +(void)addTabbarBadgeValue;
 
++(UIColor *) stringTOColor:(NSString *)str;
+
 @end

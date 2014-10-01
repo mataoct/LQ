@@ -83,13 +83,26 @@
 
     
     
-    _menuVC = [[MenuForEnterpriceController alloc] init];
-    _menuVC.title = @"菜单";
-    _menuNC = [[MainNavigationController alloc] initWithRootViewController:_menuVC];
+    
+    
+    _frontVC = [[FrontMenuViewController alloc] init];
+    _frontVC.title = @"菜单";
+    _menuNC = [[MainNavigationController alloc] initWithRootViewController:_frontVC];
     
     UITabBarItem *menuItem = [[UITabBarItem alloc] initWithTitle:@"菜单" image:[UIImage imageNamed:@"菜单栏-菜单.png"] selectedImage:[UIImage imageNamed:@"菜单栏-菜单.png"]];
     menuItem.tag = 1;
     _menuNC.tabBarItem = menuItem   ;
+    
+    
+//    _menuVC = [[MenuForEnterpriceController alloc] init];
+//    _menuVC.title = @"菜单";
+//    _menuNC = [[MainNavigationController alloc] initWithRootViewController:_menuVC];
+//    
+//    UITabBarItem *menuItem = [[UITabBarItem alloc] initWithTitle:@"菜单" image:[UIImage imageNamed:@"菜单栏-菜单.png"] selectedImage:[UIImage imageNamed:@"菜单栏-菜单.png"]];
+//    menuItem.tag = 1;
+//    _menuNC.tabBarItem = menuItem   ;
+    
+    //FrontMenuViewController
     
     
     

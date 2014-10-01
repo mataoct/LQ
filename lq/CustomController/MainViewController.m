@@ -57,32 +57,37 @@
 //    [self.item setRightBarButtonItem:rightItem];
     
     _subScorller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
+    [_subScorller setContentSize:CGSizeMake(self.view.frame.size.width, 576)];
     
     _requestModel = [[MainPageBaseRequestModel alloc] initWithSellId:CustomID];
     _mainResponseModel = [[MainResponseModel alloc] init];
     _requestModel.delegate = self;
     
     
-    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
-    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 170) animationDuration:3];
+//    _menuList = [[MenuItemView alloc] initWithFrame:CGRectMake(0, 290, 320,self.view.frame.size.height- 290 - 64 - 49)];
+    _headView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 250) animationDuration:3];
     [_subScorller addSubview:_headView];
     
-    [_subScorller addSubview:_menuList];
+//    [_subScorller addSubview:_menuList];
     
     
-    _fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(0, 170, 80, 80)];
-    _picWall = [[UIButton alloc] initWithFrame:CGRectMake(80, 170, 80, 80)];
-    _myFav = [[UIButton alloc] initWithFrame:CGRectMake(160, 170, 80, 80)];
-    _discount = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 80, 80)];
-    _adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
+    _fastOrder = [[UIButton alloc] initWithFrame:CGRectMake(200, 260, 110, 175)];
+    _picWall = [[UIButton alloc] initWithFrame:CGRectMake(10, 350, 90, 85)];
+    _myFav = [[UIButton alloc] initWithFrame:CGRectMake(10, 260, 185, 85)];
+    _discount = [[UIButton alloc] initWithFrame:CGRectMake(105, 350, 90, 85)];
+    
+    _fastOrder.backgroundColor = [UIColor blueColor];
+    _picWall.backgroundColor = [UIColor brownColor];
+    _myFav.backgroundColor = [UIColor redColor];
+    _discount.backgroundColor = [UIColor orangeColor];
+//    _adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
     
     
     [_subScorller addSubview:_fastOrder];
     [_subScorller addSubview:_picWall];
     [_subScorller addSubview:_myFav];
     [_subScorller addSubview:_discount];
-    [_subScorller addSubview:_adView];
+//    [_subScorller addSubview:_adView];
     
     [_subScorller setBackgroundColor:BackGray];
     
@@ -113,13 +118,13 @@
     }
     
     [self setMenu];
-    [_menuList setDataSource:_mainResponseModel.hotArr];
-    _menuList.menuDelegate = self;
+//    [_menuList setDataSource:_mainResponseModel.hotArr];
+//    _menuList.menuDelegate = self;
     
     
-    [_subScorller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
-    [_subScorller setContentSize:CGSizeMake(320, self.view.frame.size.height > _menuList.frame.origin.y + _menuList.frame.size.height ? self.view.frame.size.height : _menuList.frame.origin.y + _menuList.frame.size.height )];
+//    [_subScorller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    
+//    [_subScorller setContentSize:CGSizeMake(320, self.view.frame.size.height > _menuList.frame.origin.y + _menuList.frame.size.height ? self.view.frame.size.height : _menuList.frame.origin.y + _menuList.frame.size.height )];
 }
 
 
@@ -140,8 +145,8 @@
     
 
     for (int i = 0; i < [arr count]; ++i) {
-        UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 170)];
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 140, 320, 30)];
+        UIImageView *tempLabel = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 250)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, 320, 30)];
         textLabel.alpha = 0.5;
         textLabel.backgroundColor = [UIColor grayColor];
     
@@ -230,13 +235,13 @@
     [_picWall addTarget:self action:@selector(jumpToWaterFlow) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [_adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
+//    [_adView setImageWithURL:_mainResponseModel.admodel.img placeholderImage:[UIImage imageNamed:@"图片默认2.png"] success:nil failure:nil];
     
-    _adView.userInteractionEnabled = YES;
+//    _adView.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adTouch:)];
+//    UITapGestureRecognizer *imageTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adTouch:)];
     
-    [_adView addGestureRecognizer:imageTouch];
+//    [_adView addGestureRecognizer:imageTouch];
     
 }
 
@@ -299,17 +304,23 @@
 }
 -(void)jumpToMyFav
 {
-    if (![CoreHelper checkLogin])
-    {
-        LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
-        [self.navigationController presentViewController:loginController animated:YES completion:nil];
-    }
-    else
-    {
-        MyFavViewController *favVC = [[MyFavViewController alloc] init];
-        [favVC showBackButton];
-        [self.navigationController pushViewController:favVC animated:YES];
-    }
+//    if (![CoreHelper checkLogin])
+//    {
+//        LoginViewController *loginController = [[LoginViewController alloc] initWithTitle:@"登陆"];
+//        [self.navigationController presentViewController:loginController animated:YES completion:nil];
+//    }
+//    else
+//    {
+//        MyFavViewController *favVC = [[MyFavViewController alloc] init];
+//        [favVC showBackButton];
+//        [self.navigationController pushViewController:favVC animated:YES];
+//    }
+    
+    
+    ShooInfoController *shopInfoVC = [[ShooInfoController alloc] init];
+    [shopInfoVC showBackButton];
+    //    shopInfoVC.title = @"商家信息";
+    [self.navigationController pushViewController:shopInfoVC animated:YES];
 }
 
 -(void)callSeller

@@ -26,20 +26,21 @@
 #import "InfoDetailViewController.h"
 
 #import "GoodsViewController.h"
+#import "ShooInfoController.h"
 
 @interface MainViewController : LQ7ViewController<SDWebImageDownloaderDelegate,SDImageCacheDelegate,SDWebImageManagerDelegate,RequestModelDelegate,MenuItemDelegate>
 
 @property (nonatomic,retain) CycleScrollView *headView;
 @property (nonatomic,retain) MainPageBaseRequestModel  *requestModel;
 @property (nonatomic,strong) MainResponseModel *mainResponseModel;
-@property (nonatomic,strong) MenuItemView *menuList;
+//@property (nonatomic,strong) MenuItemView *menuList;
 
 @property (nonatomic,strong)   UIButton *fastOrder;
 @property (nonatomic,strong)   UIButton *picWall;
 @property (nonatomic,strong)   UIButton *myFav;
 @property (nonatomic,strong)   UIButton *discount;
 
-@property (nonatomic,strong) UIImageView *adView;
+//@property (nonatomic,strong) UIImageView *adView;
 
 
 

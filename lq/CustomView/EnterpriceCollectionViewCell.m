@@ -60,7 +60,9 @@
     [_shareBtn setImage:[UIImage imageNamed:@"分享.png"] forState:UIControlStateNormal];
     
     [_shareBtn addTarget:self action:@selector(shareBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
+    [_addCartBtn setBackgroundColor:SkyBlue];
+//    [_toBuyButton setFont:[UIFont systemFontOfSize:14]];
+    _addCartBtn.layer.cornerRadius = 3;
     [_addCartBtn addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -79,7 +81,7 @@
     _favRequestModel.tag = 10001;
     
     
-    
+    [_favRequestModel.request cancel];
     [_favRequestModel postData:[_model.isfav isEqualToString:@"0"]?@"1":@"0"];
     
     NSLog(@"clcik") ;

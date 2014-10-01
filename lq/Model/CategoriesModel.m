@@ -19,8 +19,13 @@
         _cid = [[NSString alloc] init];
         _title = [[NSString alloc] init];
         
+        _imgUrl = [[NSURL alloc] init];
+        
         _title = safeString([dic objectForKey:@"title"]);
         _cid = safeString([dic objectForKey:@"cid"]);
+        _imgUrl = [NSURL URLWithString:safeString([dic objectForKey:@"img"])];
+        
+        _imgColor = [CoreHelper stringTOColor:safeString([dic objectForKey:@"color"])];
         
     }
     return self;

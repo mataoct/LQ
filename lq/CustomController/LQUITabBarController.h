@@ -17,6 +17,7 @@
 //#import "MenuViewController.h"
 #import "MenuForEnterpriceController.h"
 
+#import "FrontMenuViewController.h"
 #import "MemberCenterViewController.h"
 
 #import "CartViewController.h"
@@ -41,6 +42,8 @@
 
 @property (nonatomic,strong) InfoViewController *infoVC;
 @property (nonatomic,strong) MainNavigationController *infoNC;
+
+@property (nonatomic,strong) FrontMenuViewController *frontVC;
 
 
 

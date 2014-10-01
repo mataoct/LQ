@@ -158,7 +158,7 @@ NSString *const MJEnterpriceCollectionViewCellIdentifier = @"EnterpriceCollectio
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     //    return self.fakeColors.count;
-    return  10 ;//[_sourceArr count];
+    return [_sourceArr count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -188,13 +188,22 @@ NSString *const MJEnterpriceCollectionViewCellIdentifier = @"EnterpriceCollectio
     if (cell == nil) {
         cell = [[EnterpriceCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 145, 230)];
     }
-//    [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
+    [cell fillCellByModel:[_sourceArr objectAtIndex:indexPath.row]];
+    cell.delegate = self;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"heheheh");
+    
+    GoodsModel *model = [[GoodsModel alloc]init];
+    
+    model = [_sourceArr objectAtIndex:indexPath.row];
+    
+    GoodsViewController  *goodController = [[GoodsViewController alloc] initWithGid:model.gid Title:@"菜品详情"];
+    
+    [self presentViewController:goodController animated:YES completion:nil];
     
 //    WaterFlowModel  *object = [_sourceArr objectAtIndex:indexPath.row];
 //    

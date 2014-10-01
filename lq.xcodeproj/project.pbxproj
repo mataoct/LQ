@@ -57,6 +57,8 @@
 		A0413CCD199A66CA00726C51 /* WaterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0413CCC199A66CA00726C51 /* WaterDetailViewController.m */; };
 		A044C3B31980B47F00D2139F /* BaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A044C3B21980B47F00D2139F /* BaseResponseModel.m */; };
 		A0521A2319D3177D004B00C0 /* UpdateUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */; };
+		A052CFA319DC3F3F00B484AC /* FrontMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A052CFA219DC3F3F00B484AC /* FrontMenuViewController.m */; };
+		A052CFA619DC3FE200B484AC /* FrontMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A052CFA519DC3FE200B484AC /* FrontMenuTableViewCell.m */; };
 		A05C433319D3F1F800469F73 /* PwdModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C433219D3F1F800469F73 /* PwdModifyViewController.m */; };
 		A05C433619D3F9C100469F73 /* PasswordRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C433519D3F9C100469F73 /* PasswordRequestModel.m */; };
 		A05E4B04199E94D500A7C424 /* HKBaiduMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A05E4B03199E94D500A7C424 /* HKBaiduMapViewController.mm */; };
@@ -416,6 +418,10 @@
 		A044C3B21980B47F00D2139F /* BaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseResponseModel.m; path = Model/BaseResponseModel.m; sourceTree = "<group>"; };
 		A0521A2119D3177D004B00C0 /* UpdateUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoModel.h; path = Model/UpdateUserInfoModel.h; sourceTree = "<group>"; };
 		A0521A2219D3177D004B00C0 /* UpdateUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoModel.m; path = Model/UpdateUserInfoModel.m; sourceTree = "<group>"; };
+		A052CFA119DC3F3F00B484AC /* FrontMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FrontMenuViewController.h; path = CustomController/FrontMenuViewController.h; sourceTree = "<group>"; };
+		A052CFA219DC3F3F00B484AC /* FrontMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FrontMenuViewController.m; path = CustomController/FrontMenuViewController.m; sourceTree = "<group>"; };
+		A052CFA419DC3FE200B484AC /* FrontMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FrontMenuTableViewCell.h; path = CustomView/FrontMenuTableViewCell.h; sourceTree = "<group>"; };
+		A052CFA519DC3FE200B484AC /* FrontMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FrontMenuTableViewCell.m; path = CustomView/FrontMenuTableViewCell.m; sourceTree = "<group>"; };
 		A05C433119D3F1F800469F73 /* PwdModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PwdModifyViewController.h; path = CustomController/PwdModifyViewController.h; sourceTree = "<group>"; };
 		A05C433219D3F1F800469F73 /* PwdModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PwdModifyViewController.m; path = CustomController/PwdModifyViewController.m; sourceTree = "<group>"; };
 		A05C433419D3F9C100469F73 /* PasswordRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordRequestModel.h; path = Model/PasswordRequestModel.h; sourceTree = "<group>"; };
@@ -1852,6 +1858,8 @@
 				A0130E9219D967A4004339D9 /* ForgetPwdViewController.m */,
 				A05ED54019DAB08300231DE6 /* MenuForEnterpriceController.h */,
 				A05ED54119DAB08300231DE6 /* MenuForEnterpriceController.m */,
+				A052CFA119DC3F3F00B484AC /* FrontMenuViewController.h */,
+				A052CFA219DC3F3F00B484AC /* FrontMenuViewController.m */,
 			);
 			name = CustomController;
 			sourceTree = "<group>";
@@ -1932,6 +1940,8 @@
 				A05ED54319DAB2EE00231DE6 /* EnterpriceCollectionViewCell.h */,
 				A05ED54419DAB2EE00231DE6 /* EnterpriceCollectionViewCell.m */,
 				A05ED54619DAB33500231DE6 /* EnterpriceCollectionViewCell.xib */,
+				A052CFA419DC3FE200B484AC /* FrontMenuTableViewCell.h */,
+				A052CFA519DC3FE200B484AC /* FrontMenuTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -2191,6 +2201,7 @@
 				A0A53CE51952BEDD00DBD397 /* LQUIViewController.m in Sources */,
 				A0413CBB199A4D3100726C51 /* WaterFlowModel.m in Sources */,
 				A06E0A9619B9BA4E0041D9A2 /* IntegralResponseModel.m in Sources */,
+				A052CFA619DC3FE200B484AC /* FrontMenuTableViewCell.m in Sources */,
 				A09EC156195278FC0036219B /* AlixPayOrder.m in Sources */,
 				A09EC174195278FC0036219B /* UIButton+WebCache.m in Sources */,
 				A09EC172195278FC0036219B /* SDWebImageManager.m in Sources */,
@@ -2218,6 +2229,7 @@
 				A05E832D1975698600E2B553 /* ShooInfoController.m in Sources */,
 				A096EB5719B3724500887462 /* HistoryModel.m in Sources */,
 				A09EC163195278FC0036219B /* ASIDownloadCache.m in Sources */,
+				A052CFA319DC3F3F00B484AC /* FrontMenuViewController.m in Sources */,
 				A0E71C5319CD815C001F4C24 /* UIScrollView+Extension.m in Sources */,
 				A0B10D3119693F6D003CFAC4 /* LoginViewController.m in Sources */,
 				A00504CD199273E100318806 /* InfoRequestModel.m in Sources */,
