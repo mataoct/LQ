@@ -166,6 +166,11 @@
 		A0839C3619D11AFE00C060F6 /* 首页_04.png in Resources */ = {isa = PBXBuildFile; fileRef = A0839BFD19D11AFE00C060F6 /* 首页_04.png */; };
 		A0839C3719D11AFE00C060F6 /* 首页_05.png in Resources */ = {isa = PBXBuildFile; fileRef = A0839BFE19D11AFE00C060F6 /* 首页_05.png */; };
 		A089303819B07A7900F42B3D /* CartTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A089303719B07A7900F42B3D /* CartTableViewCell2.m */; };
+		A08B858D19E2D8CE00937134 /* 标题-收藏@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B858819E2D8CE00937134 /* 标题-收藏@2x.png */; };
+		A08B858E19E2D8CE00937134 /* 电话2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B858919E2D8CE00937134 /* 电话2@2x.png */; };
+		A08B858F19E2D8CE00937134 /* 关于@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B858A19E2D8CE00937134 /* 关于@2x.png */; };
+		A08B859019E2D8CE00937134 /* 图@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B858B19E2D8CE00937134 /* 图@2x.png */; };
+		A08B859119E2D8CE00937134 /* 优惠@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B858C19E2D8CE00937134 /* 优惠@2x.png */; };
 		A08EF40D19CF297C00A00C79 /* InfoDetailRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */; };
 		A096EB4619B2DE9100887462 /* DiscountTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A096EB4519B2DE9100887462 /* DiscountTableViewCell2.m */; };
 		A096EB4919B2DFF600887462 /* Integral2CouponRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A096EB4819B2DFF600887462 /* Integral2CouponRequestModel.m */; };
@@ -567,6 +572,11 @@
 		A0839BFE19D11AFE00C060F6 /* 首页_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_05.png"; sourceTree = "<group>"; };
 		A089303619B07A7900F42B3D /* CartTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewCell2.h; path = CustomView/Cell/CartTableViewCell2.h; sourceTree = "<group>"; };
 		A089303719B07A7900F42B3D /* CartTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewCell2.m; path = CustomView/Cell/CartTableViewCell2.m; sourceTree = "<group>"; };
+		A08B858819E2D8CE00937134 /* 标题-收藏@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标题-收藏@2x.png"; sourceTree = "<group>"; };
+		A08B858919E2D8CE00937134 /* 电话2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电话2@2x.png"; sourceTree = "<group>"; };
+		A08B858A19E2D8CE00937134 /* 关于@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关于@2x.png"; sourceTree = "<group>"; };
+		A08B858B19E2D8CE00937134 /* 图@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图@2x.png"; sourceTree = "<group>"; };
+		A08B858C19E2D8CE00937134 /* 优惠@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "优惠@2x.png"; sourceTree = "<group>"; };
 		A08EF40B19CF297C00A00C79 /* InfoDetailRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDetailRequestModel.h; path = Model/InfoDetailRequestModel.h; sourceTree = "<group>"; };
 		A08EF40C19CF297C00A00C79 /* InfoDetailRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDetailRequestModel.m; path = Model/InfoDetailRequestModel.m; sourceTree = "<group>"; };
 		A096EB4419B2DE9100887462 /* DiscountTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscountTableViewCell2.h; path = CustomView/Cell/DiscountTableViewCell2.h; sourceTree = "<group>"; };
@@ -1208,6 +1218,11 @@
 		A0839BC219D11AFE00C060F6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A08B858819E2D8CE00937134 /* 标题-收藏@2x.png */,
+				A08B858919E2D8CE00937134 /* 电话2@2x.png */,
+				A08B858A19E2D8CE00937134 /* 关于@2x.png */,
+				A08B858B19E2D8CE00937134 /* 图@2x.png */,
+				A08B858C19E2D8CE00937134 /* 优惠@2x.png */,
 				A05FCBE619D80BDE00A2B8E5 /* 保存@2x.png */,
 				A05FCBE719D80BDE00A2B8E5 /* 到店用餐未选中@2x.png */,
 				A05FCBE819D80BDE00A2B8E5 /* 到店用餐选中@2x.png */,
@@ -2027,6 +2042,7 @@
 				A0E71C5D19CD93B8001F4C24 /* CollectionCell.xib in Resources */,
 				A0839C1119D11AFE00C060F6 /* 会员_02.png in Resources */,
 				A0839C1F19D11AFE00C060F6 /* tabbg-4.png in Resources */,
+				A08B858E19E2D8CE00937134 /* 电话2@2x.png in Resources */,
 				A0839C2F19D11AFE00C060F6 /* 电话.png in Resources */,
 				A09AA73E19C46B5C0024DC2F /* UMSCommentDetailController.xib in Resources */,
 				A0839C2E19D11AFE00C060F6 /* 标题-设置.png in Resources */,
@@ -2047,6 +2063,7 @@
 				A06E7B4419D410D500F72BE2 /* 购物车-空.png in Resources */,
 				A0839C2319D11AFE00C060F6 /* 菜单栏-主页.png in Resources */,
 				A09D5AA219D6A70F007B5430 /* 标题--电话@2x.png in Resources */,
+				A08B859019E2D8CE00937134 /* 图@2x.png in Resources */,
 				A0839C2819D11AFE00C060F6 /* 收藏-已收藏.png in Resources */,
 				A0839C0919D11AFE00C060F6 /* logo-暂代.png in Resources */,
 				A0839C3319D11AFE00C060F6 /* 返回.png in Resources */,
@@ -2058,6 +2075,7 @@
 				A09AA74619C46B5C0024DC2F /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A05FCBF319D80BDE00A2B8E5 /* 返回-灰色.png in Resources */,
 				A09D5AAB19D6A830007B5430 /* 地址@2x.png in Resources */,
+				A08B858F19E2D8CE00937134 /* 关于@2x.png in Resources */,
 				A09AA74019C46B5C0024DC2F /* UMSCommentInputControlleriPad.xib in Resources */,
 				A0839C0719D11AFE00C060F6 /* MessageEntrySendButtonPressed.png in Resources */,
 				A0839C0E19D11AFE00C060F6 /* 性别-女.png in Resources */,
@@ -2112,6 +2130,7 @@
 				A09D5A9E19D66464007B5430 /* 收藏@2x.png in Resources */,
 				A09AA74419C46B5C0024DC2F /* UMSnsAccountViewController.xib in Resources */,
 				A0839C0419D11AFE00C060F6 /* MessageEntryInputField@2x.png in Resources */,
+				A08B858D19E2D8CE00937134 /* 标题-收藏@2x.png in Resources */,
 				A0839C2519D11AFE00C060F6 /* 菜单栏-活动资讯.png in Resources */,
 				A0839C2B19D11AFE00C060F6 /* 标题-分享.png in Resources */,
 				A05ED54719DAB33500231DE6 /* EnterpriceCollectionViewCell.xib in Resources */,
@@ -2120,6 +2139,7 @@
 				A0839C0519D11AFE00C060F6 /* MessageEntrySendButton.png in Resources */,
 				A09EC0611951ABD70036219B /* Images.xcassets in Resources */,
 				A0839C0C19D11AFE00C060F6 /* 头像-会员.png in Resources */,
+				A08B859119E2D8CE00937134 /* 优惠@2x.png in Resources */,
 				A09EC153195278FC0036219B /* Alixpay.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -76,10 +76,10 @@
     _myFav = [[UIButton alloc] initWithFrame:CGRectMake(10, 260, 185, 85)];
     _discount = [[UIButton alloc] initWithFrame:CGRectMake(105, 350, 90, 85)];
     
-    _fastOrder.backgroundColor = [UIColor blueColor];
-    _picWall.backgroundColor = [UIColor brownColor];
-    _myFav.backgroundColor = [UIColor redColor];
-    _discount.backgroundColor = [UIColor orangeColor];
+//    _fastOrder.backgroundColor = [UIColor blueColor];
+//    _picWall.backgroundColor = [UIColor brownColor];
+//    _myFav.backgroundColor = [UIColor redColor];
+//    _discount.backgroundColor = [UIColor orangeColor];
 //    _adView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 250, 320, 40)];
     
     
@@ -224,10 +224,10 @@
 
 -(void)setMenu
 {
-    [_fastOrder setBackgroundImage:[UIImage imageNamed:@"首页_02.png"] forState:UIControlStateNormal];
-    [_picWall setBackgroundImage:[UIImage imageNamed:@"首页_03.png"] forState:UIControlStateNormal];
-    [_myFav setBackgroundImage:[UIImage imageNamed:@"首页_04.png"] forState:UIControlStateNormal];
-    [_discount setBackgroundImage:[UIImage imageNamed:@"首页_05.png"] forState:UIControlStateNormal];
+    [_fastOrder setBackgroundImage:[UIImage imageNamed:@"电话2.png"] forState:UIControlStateNormal];
+    [_picWall setBackgroundImage:[UIImage imageNamed:@"图.png"] forState:UIControlStateNormal];
+    [_myFav setBackgroundImage:[UIImage imageNamed:@"关于.png"] forState:UIControlStateNormal];
+    [_discount setBackgroundImage:[UIImage imageNamed:@"优惠.png"] forState:UIControlStateNormal];
     
     [_fastOrder addTarget:self action:@selector(callSeller) forControlEvents:UIControlEventTouchUpInside];
     [_discount addTarget:self action:@selector(jumpToDiscountTable) forControlEvents:UIControlEventTouchUpInside];

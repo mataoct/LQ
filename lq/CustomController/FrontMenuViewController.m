@@ -139,6 +139,7 @@
     
     _menuVC = [[MenuForEnterpriceController alloc] init];
     _menuVC.title = @"菜单列表";
+    [_menuVC showBackButton];
     
     
     [self.navigationController pushViewController:_menuVC animated:YES];
